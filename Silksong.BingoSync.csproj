@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <!-- BepInEx Properties -->
+    <PropertyGroup>
+        <AssemblyTitle>Silksong.BingoSync</AssemblyTitle>
+        <Authors>WarperSan</Authors>
+        <Description>TODO</Description>
+        <RepositoryUrl>https://github.com/WarperSan/Silksong.BingoSync</RepositoryUrl>
+    </PropertyGroup>
+
+    <!-- Project Properties -->
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <!-- Primary Package References -->
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.4.21"/>
+        <PackageReference Include="Hamunii.BepInEx.AutoPlugin" Version="2.0.1" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.Unity.Analyzers" Version="1.25.0" PrivateAssets="all"/>
+        <PackageReference
+                Include="UnityEngine.Modules"
+                Version="6000.0.50"
+                IncludeAssets="compile"
+        />
+        <PackageReference
+                Include="Silksong.GameLibs"
+                Version="*-*"
+                PrivateAssets="all"
+
+        />
+        <PackageReference Include="MinVer" Version="6.*" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <!-- Thunderstore Package metadata -->
+    <PropertyGroup>
+        <ThunderstoreTeam>$(Authors)</ThunderstoreTeam>
+        <ThunderstoreName>$(AssemblyTitle)</ThunderstoreName>
+        <ThunderstoreDescription>$(Description)</ThunderstoreDescription>
+        <ThunderstoreWebsite>$(RepositoryUrl)</ThunderstoreWebsite>
+
+        <ThunderstoreCommunities>hollow-knight-silksong</ThunderstoreCommunities>
+        <ThunderstoreCategories>mods</ThunderstoreCategories>
+
+        <ThunderstoreToken>$(THUNDERSTORE_TOKEN)</ThunderstoreToken>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Mod Files -->
+        <ThunderstoreFile Include="$(TargetPath)" Destination="plugins/"/>
+
+        <!-- Package Files -->
+        <ThunderstorePackageFile Include="$(SolutionDir)README.md"/>
+        <ThunderstorePackageFile Include="$(SolutionDir)icon.png"/>
+
+        <!-- Thunderstore Dependencies -->
+        <ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3"/>
+    </ItemGroup>
+</Project>
