@@ -1,4 +1,5 @@
 using BepInEx;
+using Silksong.BingoSync.Helpers;
 
 namespace Silksong.BingoSync;
 
@@ -7,7 +8,7 @@ public partial class Plugin : BaseUnityPlugin
 {
 	private void Awake()
 	{
-		// Put your initialization logic here
-		Logger.LogInfo($"Plugin {Name} ({Id}) has loaded!");
+		Patch.ApplyAll();
+		Log.Info($"Plugin {Name} ({Id}) has loaded!");
 	}
 }

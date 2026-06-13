@@ -27,9 +27,16 @@
                 Include="Silksong.GameLibs"
                 Version="*-*"
                 PrivateAssets="all"
-
         />
         <PackageReference Include="MinVer" Version="6.*" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <!-- Dependencies -->
+    <ItemGroup>
+        <!-- Hard -->
+        <Reference Include="BingoAPI">
+            <HintPath>/home/warpersan/Projects/C#/BingoAPI/BingoAPI/bin/Debug/netstandard2.0/BingoAPI.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
     <!-- Thunderstore Package metadata -->

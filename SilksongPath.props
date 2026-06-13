@@ -2,7 +2,7 @@
     <PropertyGroup>
         <Profile>Default</Profile>
 
-        <ModManagerFolder>/home/warpersan/.var/app/com.github.ebkr.r2modman/config/r2modmanPlus-local/</ModManagerFolder>
+        <ModManagerFolder>/home/warpersan/.var/app/io.github.ebkr.r2modman/config/r2modmanPlus-local/</ModManagerFolder>
         <ProfilesFolder>$(ModManagerFolder)HollowKnightSilksong/profiles/</ProfilesFolder>
         <PluginsFolder>$(ProfilesFolder)$(Profile)/BepInEx/plugins/</PluginsFolder>
     </PropertyGroup>
