@@ -34,5 +34,5 @@ internal static class Fonts
 	/// <summary>
 	/// Accesses to the bold font
 	/// </summary>
-	public static Font? Trajan => TrajanFonts.Value.Bold;
+	public static Font? Bold => TrajanFonts.Value.Bold;
 }
