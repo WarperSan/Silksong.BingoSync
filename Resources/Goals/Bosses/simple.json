@@ -1,0 +1,419 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"goals": [
+		{
+			"name": "Kill Bell Beast",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "bell_beast"
+				}
+			}
+		},
+		{
+			"name": "Kill Fourth Chorus",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "fourth_chorus"
+				}
+			}
+		},
+		{
+			"name": "Kill Great Conchflies",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "great_conchflies"
+				}
+			}
+		},
+		{
+			"name": "Kill Lace 1",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "lace_1"
+				}
+			}
+		},
+		{
+			"name": "Kill Last Judge",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "last_judge"
+				}
+			}
+		},
+		{
+			"name": "Kill Moorwing",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "moorwing"
+				}
+			}
+		},
+		{
+			"name": "Kill Moss Mother",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "moss_mother"
+				}
+			}
+		},
+		{
+			"name": "Kill Moss Mothers",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "moss_mothers"
+				}
+			}
+		},
+		{
+			"name": "Kill Phantom",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "phantom"
+				}
+			}
+		},
+		{
+			"name": "Kill Savage Beastfly 1",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "savage_beastfly_1"
+				}
+			}
+		},
+		{
+			"name": "Kill Sister Splinter",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "sister_splinter"
+				}
+			}
+		},
+		{
+			"name": "Kill Skull Tyrant 1",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "skull_tyrant_1"
+				}
+			}
+		},
+		{
+			"name": "Kill Skull Tyrant 2",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "skull_tyrant_2"
+				}
+			}
+		},
+		{
+			"name": "Kill Widow",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "widow"
+				}
+			}
+		},
+		{
+			"name": "Kill Broodmother",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "broodmother"
+				}
+			}
+		},
+		{
+			"name": "Kill Cogwork Dancers",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "cogwork_dancers"
+				}
+			}
+		},
+		{
+			"name": "Kill Disgraced Chef Lugoli",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "disgraced_chef_lugoli"
+				}
+			}
+		},
+		{
+			"name": "Kill Father of the Flame",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "father_of_the_flame"
+				}
+			}
+		},
+		{
+			"name": "Kill First Sinner",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "first_sinner"
+				}
+			}
+		},
+		{
+			"name": "Kill Forebrothers",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "forebrothers"
+				}
+			}
+		},
+		{
+			"name": "Kill Garmond",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "garmond"
+				}
+			}
+		},
+		{
+			"name": "Kill Grand Mother Silk",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "grand_mother_silk"
+				}
+			}
+		},
+		{
+			"name": "Kill Groal the Great",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "groal_the_great"
+				}
+			}
+		},
+		{
+			"name": "Kill Lace 2",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "lace_2"
+				}
+			}
+		},
+		{
+			"name": "Kill Raging Conchfly",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "raging_conchfly"
+				}
+			}
+		},
+		{
+			"name": "Kill Savage Beastfly 2",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "savage_beastfly_2"
+				}
+			}
+		},
+		{
+			"name": "Kill Second Sentinel",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "second_sentinel"
+				}
+			}
+		},
+		{
+			"name": "Kill Shakra",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "shakra"
+				}
+			}
+		},
+		{
+			"name": "Kill The Unravelled",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "the_unravelled"
+				}
+			}
+		},
+		{
+			"name": "Kill Trobbio",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "trobbio"
+				}
+			}
+		},
+		{
+			"name": "Kill Voltvyrm",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "voltvyrm"
+				}
+			}
+		},
+		{
+			"name": "Kill Bell Eater",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "bell_eater"
+				}
+			}
+		},
+		{
+			"name": "Kill Clover Dancers",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "clover_dancers"
+				}
+			}
+		},
+		{
+			"name": "Kill Crawfather",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "crawfather"
+				}
+			}
+		},
+		{
+			"name": "Kill Crust King Khann",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "crust_king_khann"
+				}
+			}
+		},
+		{
+			"name": "Kill Gurr the Outcast",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "gurr_the_outcast"
+				}
+			}
+		},
+		{
+			"name": "Kill Lost Garmond",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "lost_garmond"
+				}
+			}
+		},
+		{
+			"name": "Kill Lost Lace",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "lost_lace"
+				}
+			}
+		},
+		{
+			"name": "Kill Nyleth",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "nyleth"
+				}
+			}
+		},
+		{
+			"name": "Kill Palestag",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "palestag"
+				}
+			}
+		},
+		{
+			"name": "Kill Pinstress",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "pinstress"
+				}
+			}
+		},
+		{
+			"name": "Kill Plasmified Zango",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "plasmified_zango"
+				}
+			}
+		},
+		{
+			"name": "Kill Shrine Guardian Seth",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "shrine_guardian_seth"
+				}
+			}
+		},
+		{
+			"name": "Kill Skarrsinger Karmelita",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "skarrsinger_karmelita"
+				}
+			}
+		},
+		{
+			"name": "Kill Tormented Trobbio",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "tormented_trobbio"
+				}
+			}
+		},
+		{
+			"name": "Kill Watcher",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "watcher_at_the_edge"
+				}
+			}
+		}
+	]
+}

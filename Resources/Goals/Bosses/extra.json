@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
 	"goals": [
 		{
 			"name": "Kill Moss Mother",
@@ -105,7 +105,7 @@
 		},
 		{
 			"name": "Kill 4 bosses in Act 1",
-			"condition":{
+			"condition": {
 				"action": "SOME",
 				"params": {
 					"amount": 4,
