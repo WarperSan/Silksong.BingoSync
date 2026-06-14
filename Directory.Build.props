@@ -1,6 +1,4 @@
 <Project>
-    <Import Condition="Exists('SilksongPath.props')" Project="SilksongPath.props"/>
-
     <!-- Project Properties -->
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>

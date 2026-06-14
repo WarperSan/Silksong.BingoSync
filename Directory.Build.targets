@@ -1,14 +1,21 @@
 <Project>
     <Sdk Name="ThunderPipe.Sdk" Version="0.1.5"/>
+    <Import Condition="Exists('SilksongPath.props')" Project="SilksongPath.props"/>
 
     <Target Name="CopyOutput" AfterTargets="PostBuildEvent">
         <ItemGroup>
             <OutputFiles Include="$(TargetPath)"/>
+            <GoalFiles Include="$(SolutionDir)Resources/Goals/**/*.json"/>
         </ItemGroup>
 
         <Copy
                 SourceFiles="@(OutputFiles)"
-                DestinationFolder="$(PluginsFolder)$(Authors)-$(AssemblyTitle)"
+                DestinationFolder="$(PluginFolder)"
+        />
+        <RemoveDir Directories="$(PluginFolder)Goals"/>
+        <Copy
+                SourceFiles="@(GoalFiles)"
+                DestinationFiles="@(GoalFiles->'$(PluginFolder)Goals/%(RecursiveDir)%(Filename)%(Extension)')"
         />
     </Target>
 
