@@ -137,7 +137,7 @@ internal class ConnectionMenu : MonoBehaviour
 
 		menu._joinRoomButtonLabel = CreateJoinButton(
 			root.transform,
-			async void () => await menu.JoinRoom()
+			async void () => await menu.JoinRoom(Plugin.Controller)
 		);
 
 		return menu;
@@ -154,13 +154,13 @@ internal class ConnectionMenu : MonoBehaviour
 			currentPicker.Select();
 	}
 
-	private void Awake()
+	private void Start()
 	{
 		if (_roomCodeInput != null)
 			_roomCodeInput.Text = "6MuWtbUFQE-P70lS6-5BhQ";
 
 		if (_nicknameInput != null)
-			_nicknameInput.Text = "HK_BingoAP";
+			_nicknameInput.Text = "HK_BingoAPI";
 
 		if (_passwordInput != null)
 			_passwordInput.Text = "abc";
@@ -176,7 +176,7 @@ internal class ConnectionMenu : MonoBehaviour
 	public void Update()
 	{
 		// ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-		switch (Controller.Instance?.State)
+		switch (Plugin.Controller?.State)
 		{
 			case ClientState.Connected:
 				_joinRoomButtonLabel?.text = "Exit Room";
@@ -192,11 +192,9 @@ internal class ConnectionMenu : MonoBehaviour
 				break;
 		}
 	}
-	
-	private async Task JoinRoom()
-	{
-		var controller = Controller.Instance;
 
+	private async Task JoinRoom(Controller? controller)
+	{
 		if (controller == null)
 			return;
 
@@ -207,7 +205,7 @@ internal class ConnectionMenu : MonoBehaviour
 			return;
 		}
 
-		await controller.JoinRoom(
+		await controller.Join(
 			_roomCodeInput?.Text ?? "",
 			_nicknameInput?.Text ?? "",
 			_passwordInput?.Text ?? "",

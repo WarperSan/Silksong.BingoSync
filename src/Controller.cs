@@ -3,7 +3,6 @@ using BingoAPI.Goals;
 using BingoAPI.Models;
 using BingoAPI.Models.Settings;
 using BingoAPI.Networking;
-using JetBrains.Annotations;
 
 namespace Silksong.BingoSync;
 
@@ -15,109 +14,37 @@ public enum ClientState
 	Loading,
 }
 
-internal class Controller : IDisposable
+public class Controller : IDisposable
 {
 	// --- SINGLETON ---
-	public static Controller? Instance { get; private set; }
-
-	/// <summary>
-	/// Creates a new instance of <see cref="Controller"/>
-	/// </summary>
-	public static void Create(GoalPool pool)
-	{
-		Instance?.Dispose();
-
-		Instance = new Controller(pool);
-	}
 
 	/// <summary>
 	/// Calls <see cref="GoalTracker.Evaluate()"/> of the current instance
 	/// </summary>
-	public static void Evaluate() => Instance?._tracker.Evaluate();
+	//public static void Evaluate() => Instance?._tracker.Evaluate();
 
 	// --- STATES ---
 	public ClientState State { get; private set; } = ClientState.None;
 
 	public Card? Card { get; private set; }
 
-	public bool IsCardRevealed { get; private set; }
-
 	private readonly GoalPool _pool;
 	public readonly EventDispatcher Events;
 	private readonly GoalTracker _tracker;
 	private readonly Session _session;
 
-	private Controller(GoalPool pool)
+	public Controller(GoalPool pool)
 	{
 		_pool = pool;
 
 		Events = new EventDispatcher();
-		Events.OnSelfSquareMarked += OnSquareMarked;
-		Events.OnOtherSquareMarked += OnSquareMarked;
-		Events.OnSelfSquareCleared += OnSquareCleared;
-		Events.OnOtherSquareCleared += OnSquareCleared;
-		Events.OnSelfCardRevealed += OnCardRevealed;
-		Events.OnOtherCardRevealed += OnCardRevealed;
-		Events.OnSelfCardGenerated += async (_,  _) => await UpdateCard();
-		Events.OnOtherCardGenerated += async (_, _) => await UpdateCard();
+		SubscribeToEvents(Events);
 
 		_tracker = new GoalTracker();
 		_tracker.OnGoalMarked += OnGoalMarked;
 		_tracker.OnGoalCleared += OnGoalCleared;
 
 		_session = new Session(Events);
-	}
-
-	public void RevealCard()
-	{
-		if (Card == null)
-			return;
-
-		if (IsCardRevealed)
-			return;
-
-		_session.RevealCard();
-	}
-
-	public async Task JoinRoom(
-		string roomID,
-		string nickname,
-		string password,
-		Team   team
-	)
-	{
-		if (State == ClientState.Loading)
-			return;
-
-		State = ClientState.Loading;
-
-		var settings = new JoinRoomSettings
-		{
-			Code = roomID,
-			Nickname = nickname,
-			Password = password,
-		};
-
-		var hasJoined = await _session.JoinRoom(settings);
-
-		if (!hasJoined)
-		{
-			State = ClientState.None;
-			return;
-		}
-
-		State = ClientState.Connected;
-
-		await _session.ChangeTeam(team);
-		await UpdateCard();
-
-		_tracker.Clear();
-
-		if (Card != null)
-		{
-			foreach (var goal in Card.GetAllGoals())
-				_tracker.TryAdd(goal);
-		}
 	}
 
 	public async Task ExitRoom()
@@ -130,6 +57,45 @@ internal class Controller : IDisposable
 	{
 		Card = await _session.GetCard(_pool);
 		OnCardUpdated?.Invoke(Card);
+	}
+
+	#region Events
+
+	public delegate void CardCallback(Card? card);
+
+	/// <summary>
+	/// Called when <see cref="Card"/> was updated
+	/// </summary>
+	public event CardCallback? OnCardUpdated;
+
+	#endregion
+
+	#region Callbacks
+
+	/// <summary>
+	/// Subscribes this controller to the given <see cref="EventDispatcher"/>
+	/// </summary>
+	private void SubscribeToEvents(EventDispatcher events)
+	{
+		events.OnSelfSquareMarked += OnSquareMarked;
+		events.OnOtherSquareMarked += OnSquareMarked;
+		events.OnSelfSquareCleared += OnSquareCleared;
+		events.OnOtherSquareCleared += OnSquareCleared;
+		events.OnSelfCardGenerated += OnCardGenerated;
+		events.OnOtherCardGenerated += OnCardGenerated;
+	}
+
+	/// <summary>
+	/// Unsubscribes this controller from the given <see cref="EventDispatcher"/>
+	/// </summary>
+	private void UnsubscribeFromEvents(EventDispatcher events)
+	{
+		events.OnSelfSquareMarked -= OnSquareMarked;
+		events.OnOtherSquareMarked -= OnSquareMarked;
+		events.OnSelfSquareCleared -= OnSquareCleared;
+		events.OnOtherSquareCleared -= OnSquareCleared;
+		events.OnSelfCardGenerated -= OnCardGenerated;
+		events.OnOtherCardGenerated -= OnCardGenerated;
 	}
 
 	private void OnGoalMarked(Goal goal)
@@ -176,25 +142,65 @@ internal class Controller : IDisposable
 		OnCardUpdated?.Invoke(Card);
 	}
 
-	private void OnCardRevealed(Player player)
+	private void OnCardGenerated(Player player, bool isHidden)
 	{
-		IsCardRevealed = true;
+		Task.Run(UpdateCard);
 	}
 
-	#region Events
+	#endregion
 
-	public delegate void CardCallback(Card? card);
+	#region Actions
 
 	/// <summary>
-	/// Called when <see cref="Card"/> was updated
+	/// Joins the room with the given settings
 	/// </summary>
-	public event CardCallback? OnCardUpdated;
+	public async Task Join(
+		string code,
+		string nickname,
+		string password,
+		Team   team
+	)
+	{
+		if (State == ClientState.Loading)
+			return;
+
+		State = ClientState.Loading;
+
+		var settings = new JoinRoomSettings
+		{
+			Code = code,
+			Nickname = nickname,
+			Password = password,
+		};
+
+		var hasJoined = await _session.JoinRoom(settings);
+
+		if (!hasJoined)
+		{
+			State = ClientState.None;
+			return;
+		}
+
+		State = ClientState.Connected;
+
+		await _session.ChangeTeam(team);
+		await UpdateCard();
+
+		_tracker.Clear();
+
+		if (Card != null)
+		{
+			foreach (var goal in Card.GetAllGoals())
+				_tracker.TryAdd(goal);
+		}
+	}
 
 	#endregion
 
 	/// <inheritdoc />
 	public void Dispose()
 	{
+		UnsubscribeFromEvents(Events);
 		_session.Dispose();
 	}
 }
