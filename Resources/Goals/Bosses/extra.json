@@ -4,7 +4,7 @@
 		{
 			"name": "Kill Moss Mother",
 			"condition": {
-				"action": "kill_boss",
+				"action": "has_killed_boss",
 				"params": {
 					"boss": "moss_mother"
 				}
@@ -17,13 +17,13 @@
 				"params": {
 					"conditions": [
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "trobbio"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "tormented_trobbio"
 							}
@@ -39,13 +39,13 @@
 				"params": {
 					"conditions": [
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "great_conchflies"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "raging_conchfly"
 							}
@@ -61,13 +61,13 @@
 				"params": {
 					"conditions": [
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "lace_1"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "phantom"
 							}
@@ -83,7 +83,7 @@
 				"params": {
 					"conditions": [
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "widow"
 							}
@@ -92,7 +92,7 @@
 							"action": "NOT",
 							"params": {
 								"condition": {
-									"action": "kill_boss",
+									"action": "has_killed_boss",
 									"params": {
 										"boss": "fourth_chorus"
 									}
@@ -111,85 +111,85 @@
 					"amount": 4,
 					"conditions": [
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "bell_beast"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "fourth_chorus"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "great_conchflies"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "lace_1"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "last_judge"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "moorwing"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "moss_mother"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "moss_mothers"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "phantom"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "savage_beastfly_1"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "sister_splinter"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "skull_tyrant_1"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "skull_tyrant_2"
 							}
 						},
 						{
-							"action": "kill_boss",
+							"action": "has_killed_boss",
 							"params": {
 								"boss": "widow"
 							}
