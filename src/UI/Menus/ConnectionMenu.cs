@@ -1,9 +1,6 @@
-using BingoAPI.Models;
 using BingoAPI.Models.Settings;
 using Silksong.BingoSync.Helpers;
-using Silksong.BingoSync.UI.Constants;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Silksong.BingoSync.UI.Menus;

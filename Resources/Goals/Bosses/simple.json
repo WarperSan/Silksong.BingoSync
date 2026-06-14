@@ -1,5 +1,7 @@
 {
 	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Boss Goals",
+	"description": "Goals focused on defeating each boss",
 	"goals": [
 		{
 			"name": "Kill Bell Beast",

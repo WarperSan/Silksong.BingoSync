@@ -18,6 +18,9 @@ internal class UIManager_Patches
 	{
 		_board = BingoBoard.Create(null);
 		_board.transform.SetParent(__instance.UICanvas.transform, false);
+		
+		_board.Subscribe(Plugin.Controller.Events);
+		Plugin.Controller.OnCardUpdated += _board.DisplayCard;
 
 		var connectionMenuContainer = new GameObject(nameof(ConnectionMenu) + "-Container");
 		connectionMenuContainer.transform.SetParent(__instance.UICanvas.transform, false);

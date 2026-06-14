@@ -1,7 +1,6 @@
 using System.Reflection;
 using BepInEx;
 using BingoAPI.Conditions;
-using BingoAPI.Goals;
 using Silksong.BingoSync.Conditions;
 using Silksong.BingoSync.Helpers;
 
@@ -18,7 +17,12 @@ public partial class Plugin : BaseUnityPlugin
 	private void Awake()
 	{
 		AddConditions();
-		var pool = LoadPool();
+
+		var pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
+		var goalsFolder = Path.Combine(pluginFolder, "Goals");
+		var pool = GoalLoader.LoadPoolFromFolder(goalsFolder);
+		Log.Info($"Loaded '{pool.Count}' goals.");
+
 		Controller = new Controller(pool);
 
 		Patch.ApplyAll();
@@ -28,11 +32,5 @@ public partial class Plugin : BaseUnityPlugin
 	private static void AddConditions()
 	{
 		ConditionRegistry.TryAdd("has_killed_boss", data => new HasKilledBossCondition(data));
-	}
-
-	private static GoalPool LoadPool()
-	{
-		Log.Info($"Loading goal pool: " + Assembly.GetExecutingAssembly().Location);
-		return new GoalPool();
 	}
 }

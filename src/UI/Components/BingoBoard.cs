@@ -1,5 +1,6 @@
 using BingoAPI.Events;
 using BingoAPI.Models;
+using Silksong.BingoSync.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,7 @@ public class BingoBoard : MonoBehaviour
 	/// </summary>
 	public void DisplayCard(Card? card)
 	{
+		Log.Info(card?.ToString());
 		if (card == null)
 			return;
 

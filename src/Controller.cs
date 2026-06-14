@@ -3,16 +3,9 @@ using BingoAPI.Goals;
 using BingoAPI.Models;
 using BingoAPI.Models.Settings;
 using BingoAPI.Networking;
+using Silksong.BingoSync.Helpers;
 
 namespace Silksong.BingoSync;
-
-public enum ClientState
-{
-	None,
-	Disconnected,
-	Connected,
-	Loading,
-}
 
 public class Controller : IDisposable
 {
@@ -24,11 +17,8 @@ public class Controller : IDisposable
 	//public static void Evaluate() => Instance?._tracker.Evaluate();
 
 	// --- STATES ---
-	public ClientState State { get; private set; } = ClientState.None;
-
-	public Card? Card { get; private set; }
-
 	private readonly GoalPool _pool;
+
 	public readonly EventDispatcher Events;
 	private readonly GoalTracker _tracker;
 	private readonly Session _session;
@@ -47,18 +37,12 @@ public class Controller : IDisposable
 		_session = new Session(Events);
 	}
 
-	public async Task UpdateCard()
-	{
-		Card = await _session.GetCard(_pool);
-		OnCardUpdated?.Invoke(Card);
-	}
-
 	#region Events
 
 	public delegate void CardCallback(Card? card);
 
 	/// <summary>
-	/// Called when <see cref="Card"/> was updated
+	/// Called when <see cref="_card"/> was updated
 	/// </summary>
 	public event CardCallback? OnCardUpdated;
 
@@ -71,6 +55,7 @@ public class Controller : IDisposable
 	/// </summary>
 	private void SubscribeToEvents(EventDispatcher events)
 	{
+		events.OnSelfConnected += OnConnected;
 		events.OnSelfSquareMarked += OnSquareMarked;
 		events.OnOtherSquareMarked += OnSquareMarked;
 		events.OnSelfSquareCleared += OnSquareCleared;
@@ -84,6 +69,7 @@ public class Controller : IDisposable
 	/// </summary>
 	private void UnsubscribeFromEvents(EventDispatcher events)
 	{
+		events.OnSelfConnected -= OnConnected;
 		events.OnSelfSquareMarked -= OnSquareMarked;
 		events.OnOtherSquareMarked -= OnSquareMarked;
 		events.OnSelfSquareCleared -= OnSquareCleared;
@@ -92,16 +78,28 @@ public class Controller : IDisposable
 		events.OnOtherCardGenerated -= OnCardGenerated;
 	}
 
+	private void OnConnected(Player player)
+	{
+		UpdateCard();
+		/*_tracker.Clear();
+
+		if (Card != null)
+		{
+			foreach (var goal in Card.GetAllGoals())
+				_tracker.TryAdd(goal);
+		}*/
+	}
+
 	private void OnGoalMarked(Goal goal)
 	{
-		if (Card == null)
+		if (_card == null)
 			return;
 
-		var indexes = Card.FindByGoal(goal);
+		var indexes = _card.FindByGoal(goal);
 
 		foreach (var index in indexes)
 		{
-			if (Card.IsMarkedBy(index, _session.Team))
+			if (_card.IsMarkedBy(index, _session.Team))
 				continue;
 
 			_session.MarkSquare(index);
@@ -110,14 +108,14 @@ public class Controller : IDisposable
 
 	private void OnGoalCleared(Goal goal)
 	{
-		if (Card == null)
+		if (_card == null)
 			return;
 
-		var indexes = Card.FindByGoal(goal);
+		var indexes = _card.FindByGoal(goal);
 
 		foreach (var index in indexes)
 		{
-			if (!Card.IsMarkedBy(index, _session.Team))
+			if (!_card.IsMarkedBy(index, _session.Team))
 				continue;
 
 			_session.ClearSquare(index);
@@ -126,20 +124,17 @@ public class Controller : IDisposable
 
 	private void OnSquareMarked(Player player, Square square, Team team)
 	{
-		Card?.Mark(square.Index, team);
-		OnCardUpdated?.Invoke(Card);
+		_card?.Mark(square.Index, team);
+		OnCardUpdated?.Invoke(_card);
 	}
 
 	private void OnSquareCleared(Player player, Square square, Team team)
 	{
-		Card?.Unmark(square.Index, team);
-		OnCardUpdated?.Invoke(Card);
+		_card?.Unmark(square.Index, team);
+		OnCardUpdated?.Invoke(_card);
 	}
 
-	private void OnCardGenerated(Player player, bool isHidden)
-	{
-		Task.Run(UpdateCard);
-	}
+	private void OnCardGenerated(Player player, bool isHidden) => UpdateCard();
 
 	#endregion
 
@@ -155,48 +150,31 @@ public class Controller : IDisposable
 	/// </summary>
 	public Task<bool> Exit() => _session.LeaveRoom();
 
-	/// <summary>
-	/// Joins the room with the given settings
-	/// </summary>
-	public async Task Join(
-		string code,
-		string nickname,
-		string password,
-		Team   team
-	)
+	#endregion
+
+	#region Card
+
+	private Card? _card;
+
+	private Task<Card?>? _runningCardUpdate;
+
+	private void UpdateCard()
 	{
-		if (State == ClientState.Loading)
-			return;
-
-		State = ClientState.Loading;
-
-		var settings = new JoinRoomSettings
+		if (_runningCardUpdate != null && !_runningCardUpdate.IsCompleted)
 		{
-			Code = code,
-			Nickname = nickname,
-			Password = password,
-		};
-
-		var hasJoined = await _session.JoinRoom(settings);
-
-		if (!hasJoined)
-		{
-			State = ClientState.None;
+			Log.Warning($"An update of '{nameof(Card)}' is already pending.");
 			return;
 		}
 
-		State = ClientState.Connected;
+		_runningCardUpdate = Task.Run(() => _session.GetCard(_pool));
 
-		await _session.ChangeTeam(team);
-		await UpdateCard();
-
-		_tracker.Clear();
-
-		if (Card != null)
+		_runningCardUpdate.ContinueWith(task =>
 		{
-			foreach (var goal in Card.GetAllGoals())
-				_tracker.TryAdd(goal);
-		}
+			var card = task.Result;
+
+			_card = card;
+			OnCardUpdated?.Invoke(_card);
+		});
 	}
 
 	#endregion
