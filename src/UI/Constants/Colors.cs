@@ -5,6 +5,9 @@ namespace Silksong.BingoSync.UI.Constants;
 
 internal static class Colors
 {
+	/// <summary>
+	/// Gets the <see cref="Color"/> of this <see cref="Team"/>
+	/// </summary>
 	public static Color GetColor(this Team team) => team switch
 	{
 		Team.Orange => new Color(1.000f, 0.612f, 0.070f),
@@ -18,5 +21,24 @@ internal static class Colors
 		Team.Pink   => new Color(0.929f, 0.525f, 0.667f),
 		Team.Yellow => new Color(0.847f, 0.816f, 0.078f),
 		_           => Color.black,
+	};
+
+	/// <summary>
+	/// Gets the display name of this <see cref="Team"/>
+	/// </summary>
+	public static string GetDisplayName(this Team team) => team switch
+	{
+		Team.Pink   => "Pink",
+		Team.Red    => "Red",
+		Team.Orange => "Orange",
+		Team.Brown  => "Brown",
+		Team.Yellow => "Yellow",
+		Team.Green  => "Green",
+		Team.Teal   => "Teal",
+		Team.Blue   => "Blue",
+		Team.Navy   => "Navy",
+		Team.Purple => "Purple",
+		Team.None   => throw new ArgumentException($"Team '{team}' is not a valid team."),
+		_           => throw new ArgumentException($"Team '{team}' is not a valid team."),
 	};
 }

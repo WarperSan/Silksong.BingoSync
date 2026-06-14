@@ -63,4 +63,9 @@
         <!-- Thunderstore Dependencies -->
         <ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\Goals\" />
+      <Folder Include="src\UI\Containers\" />
+    </ItemGroup>
 </Project>
