@@ -1,4 +1,6 @@
 using BingoAPI.Models;
+using BingoAPI.Models.Settings;
+using Silksong.BingoSync.Helpers;
 using Silksong.BingoSync.UI.Constants;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,151 +10,131 @@ namespace Silksong.BingoSync.UI.Menus;
 
 internal class ConnectionMenu : MonoBehaviour
 {
+	private enum State
+	{
+		Offline,
+		Connecting,
+		Online,
+		Disconnecting,
+	}
+
+	private State _state = State.Offline;
+
+	private Button? _actionButton;
+
+	private void OnActionClicked()
+	{
+		// TODO: Add functionality to cancel these states
+		if (_state is State.Connecting or State.Disconnecting)
+		{
+			Log.Warning($"State '{_state}' has no action assigned.");
+			return;
+		}
+
+		if (_state == State.Offline)
+			_ = JoinRoom();
+		else if (_state == State.Online)
+			_ = LeaveRoom();
+	}
+
+	private async Task JoinRoom()
+	{
+		if (_state != State.Offline)
+			throw new InvalidOperationException();
+
+		var controller = Plugin.Controller;
+
+		if (controller == null)
+			throw new NullReferenceException();
+
+		DisableInputs();
+
+		var settings = GetSettings();
+
+		try
+		{
+			_state = State.Connecting;
+
+			var succeeded = await controller.Join(settings);
+
+			if (!succeeded)
+			{
+				_state = State.Offline;
+				Log.Error($"Failed to join the room '{settings.Code}'.");
+				EnableInputs();
+				return;
+			}
+
+			_state = State.Online;
+		}
+		catch (Exception e)
+		{
+			_state = State.Offline;
+			Log.Error($"Error while joining the room '{settings.Code}': {e}");
+			EnableInputs();
+		}
+	}
+
+	private async Task LeaveRoom()
+	{
+		if (_state != State.Online)
+			throw new InvalidOperationException();
+
+		var controller = Plugin.Controller;
+
+		if (controller == null)
+			throw new NullReferenceException();
+
+		try
+		{
+			_state = State.Disconnecting;
+
+			var succeeded = await controller.Exit();
+
+			if (!succeeded)
+			{
+				_state = State.Online;
+				Log.Error("Failed to exit the room.");
+				return;
+			}
+
+			_state = State.Offline;
+			EnableInputs();
+		}
+		catch (Exception e)
+		{
+			_state = State.Online;
+			Log.Error($"Error while joining the room: {e}");
+		}
+	}
+
+	#region Inputs
+
+	private CanvasGroup? _inputsGroup;
 	private TextField? _roomCodeInput;
 	private TextField? _nicknameInput;
 	private TextField? _passwordInput;
 
-	private CanvasGroup? _canvasGroup;
-
-	private Dictionary<Team, TeamPickerButton>? _colorButtons;
-	private Team _selectedColor = Team.Orange;
-
-	#region Join Button
-
-	private Text? _joinRoomButtonLabel;
-
-	private static Text CreateJoinButton(Transform parent, UnityAction onClick)
+	private JoinRoomSettings GetSettings()
 	{
-		var go = new GameObject("Join");
-		go.transform.SetParent(parent, false);
+		JoinRoomSettings settings = new();
 
-		var rectTransform = go.AddComponent<RectTransform>();
-		rectTransform.anchorMin = Vector2.zero;
-		rectTransform.anchorMax = Vector2.one;
-		rectTransform.sizeDelta = new Vector2(300f, 50f);
+		if (_roomCodeInput != null)
+			settings.Code = _roomCodeInput.Text;
 
-		var image = go.AddComponent<Image>();
+		if (_nicknameInput != null)
+			settings.Nickname = _nicknameInput.Text;
 
-		image.color = new Color(
-			0f,
-			0f,
-			0f,
-			0.6f
-		);
+		if (_passwordInput != null)
+			settings.Password = _passwordInput.Text;
 
-		var button = go.AddComponent<Button>();
-		button.targetGraphic = image;
-		button.onClick.AddListener(onClick);
-
-		var textGameObject = new GameObject("Text", typeof(RectTransform));
-		textGameObject.transform.SetParent(go.transform, false);
-
-		var textRect = textGameObject.GetComponent<RectTransform>();
-		textRect.anchorMin = Vector2.zero;
-		textRect.anchorMax = Vector2.one;
-		textRect.offsetMin = Vector2.zero;
-		textRect.offsetMax = Vector2.zero;
-
-		var label = textGameObject.AddComponent<Text>();
-		label.font = Fonts.Normal;
-		label.fontSize = 18;
-		label.color = Color.white;
-		label.alignment = TextAnchor.MiddleCenter;
-
-		return label;
+		return settings;
 	}
+
+	private void EnableInputs()  => _inputsGroup?.interactable = true;
+	private void DisableInputs() => _inputsGroup?.interactable = false;
 
 	#endregion
-
-	/// <summary>
-	/// Builds the connection menu UI from scratch under the given parent transform.
-	/// </summary>
-	public static ConnectionMenu Create()
-	{
-		var root = new GameObject(nameof(ConnectionMenu), typeof(RectTransform));
-
-		var rootRect = root.GetComponent<RectTransform>();
-		rootRect.anchorMin = new Vector2(0f, 0f);
-		rootRect.anchorMax = new Vector2(1f, 0.5f);
-		rootRect.pivot = new Vector2(1f, 0.5f);
-		rootRect.anchoredPosition = new Vector2(-20f, 0f);
-
-		var rootLayout = root.AddComponent<VerticalLayoutGroup>();
-		rootLayout.spacing = 10f;
-		rootLayout.childAlignment = TextAnchor.MiddleRight;
-		rootLayout.childControlWidth = true;
-		rootLayout.childForceExpandWidth = true;
-		rootLayout.childControlHeight = false;
-		rootLayout.childForceExpandHeight = false;
-
-		var rootFitter = root.AddComponent<ContentSizeFitter>();
-		rootFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
-		rootFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-		var menu = root.AddComponent<ConnectionMenu>();
-
-		// Text inputs
-		var roomCodeInput = TextField.Create("Room Link");
-		roomCodeInput.transform.SetParent(root.transform, false);
-		menu._roomCodeInput = roomCodeInput;
-
-		var nicknameInput = TextField.Create("Nickname Link");
-		nicknameInput.transform.SetParent(root.transform, false);
-		menu._nicknameInput = nicknameInput;
-
-		var passwordInput = TextField.Create("Room Link", InputField.ContentType.Password);
-		passwordInput.transform.SetParent(root.transform, false);
-		menu._passwordInput = passwordInput;
-
-		// Canvas Group
-		menu._canvasGroup = root.AddComponent<CanvasGroup>();
-
-		// Color buttons grid
-		var colorGrid = new GameObject("ColorButtons", typeof(RectTransform));
-		colorGrid.transform.SetParent(root.transform, false);
-
-		var colorGridLayout = colorGrid.AddComponent<GridLayoutGroup>();
-		colorGridLayout.cellSize = new Vector2(100f, 50f);
-		colorGridLayout.spacing = new Vector2(10f, 10f);
-		colorGridLayout.childAlignment = TextAnchor.MiddleRight;
-		colorGridLayout.constraint = GridLayoutGroup.Constraint.FixedRowCount;
-		colorGridLayout.constraintCount = 2;
-
-		var colorGridFitter = colorGrid.AddComponent<ContentSizeFitter>();
-		colorGridFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
-		colorGridFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-		menu._colorButtons = [];
-
-		foreach (Team team in Enum.GetValues(typeof(Team)))
-		{
-			if (team == Team.None)
-				continue;
-
-			var picker = TeamPickerButton.Create(team, menu.OnTeamPicked);
-			picker.transform.SetParent(colorGridFitter.transform, false);
-
-			menu._colorButtons[team] = picker;
-		}
-
-		menu._joinRoomButtonLabel = CreateJoinButton(
-			root.transform,
-			async void () => await menu.JoinRoom(Plugin.Controller)
-		);
-
-		return menu;
-	}
-
-	private void OnTeamPicked(Team team)
-	{
-		if (_colorButtons != null && _colorButtons.TryGetValue(_selectedColor, out var previousPicker))
-			previousPicker.Unselect();
-
-		_selectedColor = team;
-
-		if (_colorButtons != null && _colorButtons.TryGetValue(_selectedColor, out var currentPicker))
-			currentPicker.Select();
-	}
 
 	private void Start()
 	{
@@ -160,58 +142,93 @@ internal class ConnectionMenu : MonoBehaviour
 			_roomCodeInput.Text = "6MuWtbUFQE-P70lS6-5BhQ";
 
 		if (_nicknameInput != null)
-			_nicknameInput.Text = "HK_BingoAPI";
+			_nicknameInput.Text = "Silksong_Bingo";
 
 		if (_passwordInput != null)
 			_passwordInput.Text = "abc";
-
-		const Team TEAM = Team.Red;
-
-		if (_colorButtons != null && _colorButtons.TryGetValue(TEAM, out var picker))
-			picker.Select();
-
-		_selectedColor = TEAM;
 	}
 
-	public void Update()
+	private void Update()
 	{
-		// ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-		switch (Plugin.Controller?.State)
+		switch (_state)
 		{
-			case ClientState.Connected:
-				_joinRoomButtonLabel?.text = "Exit Room";
-				_canvasGroup?.interactable = false;
+			case State.Offline:
+				_actionButton?.SetText("Join");
 				break;
-			case ClientState.Loading:
-				_joinRoomButtonLabel?.text = "Loading...";
-				_canvasGroup?.interactable = false;
+			case State.Connecting:
+				_actionButton?.SetText("Connecting...");
+				break;
+			case State.Online:
+				_actionButton?.SetText("Leave");
+				break;
+			case State.Disconnecting:
+				_actionButton?.SetText("Disconnecting...");
 				break;
 			default:
-				_joinRoomButtonLabel?.text = "Join Room";
-				_canvasGroup?.interactable = true;
-				break;
+				throw new ArgumentOutOfRangeException();
 		}
 	}
 
-	private async Task JoinRoom(Controller? controller)
+	/// <summary>
+	/// Creates a new instance of <see cref="ConnectionMenu"/>
+	/// </summary>
+	public static ConnectionMenu Create()
 	{
-		if (controller == null)
-			return;
+		var gameObject = new GameObject(nameof(ConnectionMenu));
+		var menu = gameObject.AddComponent<ConnectionMenu>();
 
-		if (controller.State == ClientState.Connected)
-		{
-			await controller.ExitRoom();
-			Update();
-			return;
-		}
+		var rectTransform = gameObject.AddComponent<RectTransform>();
+		rectTransform.anchorMin = Vector2.zero;
+		rectTransform.anchorMax = Vector2.one;
+		rectTransform.offsetMin = Vector2.zero;
+		rectTransform.offsetMax = Vector2.zero;
 
-		await controller.Join(
-			_roomCodeInput?.Text ?? "",
-			_nicknameInput?.Text ?? "",
-			_passwordInput?.Text ?? "",
-			_selectedColor
-		);
+		var mainLayoutGroup = gameObject.AddComponent<VerticalLayoutGroup>();
+		mainLayoutGroup.spacing = 10f;
+		mainLayoutGroup.childAlignment = TextAnchor.LowerCenter;
+		mainLayoutGroup.childControlWidth = true;
+		mainLayoutGroup.childForceExpandWidth = true;
+		mainLayoutGroup.childControlHeight = false;
+		mainLayoutGroup.childForceExpandHeight = false;
 
-		Update();
+		// Input Container
+		var inputsGameObject = new GameObject("Inputs");
+		inputsGameObject.transform.SetParent(mainLayoutGroup.transform, false);
+
+		var inputsRect = inputsGameObject.AddComponent<RectTransform>();
+		inputsRect.pivot = new Vector2(0.5f, 0f);
+
+		var inputContentSizer = inputsGameObject.AddComponent<ContentSizeFitter>();
+		inputContentSizer.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
+		var inputContainer = inputsGameObject.AddComponent<VerticalLayoutGroup>();
+		inputContainer.childControlWidth = true;
+		inputContainer.childForceExpandWidth = true;
+		inputContainer.childControlHeight = false;
+		inputContainer.childForceExpandHeight = false;
+		inputContainer.spacing = 10f;
+
+		menu._inputsGroup = inputsGameObject.AddComponent<CanvasGroup>();
+
+		// Inputs
+		var codeInput = TextField.Create("Room Code");
+		codeInput.transform.SetParent(inputsGameObject.transform, false);
+		menu._roomCodeInput = codeInput;
+
+		var nicknameInput = TextField.Create("Nickname");
+		nicknameInput.transform.SetParent(inputsGameObject.transform, false);
+		menu._nicknameInput = nicknameInput;
+
+		var passwordInput = TextField.Create("Password", InputField.ContentType.Password);
+		passwordInput.transform.SetParent(inputsGameObject.transform, false);
+		menu._passwordInput = passwordInput;
+
+		// Action Button
+		var actionButton = Button.Create(menu.OnActionClicked);
+		actionButton.transform.SetParent(gameObject.transform, false);
+		actionButton.SetText("Join");
+		menu._actionButton = actionButton;
+
+		return menu;
 	}
 }

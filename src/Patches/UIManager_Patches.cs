@@ -1,6 +1,7 @@
 using HarmonyLib;
 using Silksong.BingoSync.UI;
 using Silksong.BingoSync.UI.Menus;
+using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 
@@ -18,8 +19,18 @@ internal class UIManager_Patches
 		_board = BingoBoard.Create(null);
 		_board.transform.SetParent(__instance.UICanvas.transform, false);
 
+		var connectionMenuContainer = new GameObject(nameof(ConnectionMenu) + "-Container");
+		connectionMenuContainer.transform.SetParent(__instance.UICanvas.transform, false);
+
+		var rectTransform = connectionMenuContainer.AddComponent<RectTransform>();
+		rectTransform.anchorMin = new Vector2(0.75f, 0f);
+		rectTransform.anchorMax = new Vector2(1f, 0.5f);
+		rectTransform.offsetMin = new Vector2(-20f, 0f);
+		rectTransform.offsetMax = new Vector2(0f, 20f);
+		rectTransform.pivot = new Vector2(1f, 0f);
+
 		var menu = ConnectionMenu.Create();
-		menu.transform.SetParent(__instance.UICanvas.transform, false);
+		menu.transform.SetParent(connectionMenuContainer.transform, false);
 	}
 
 	[HarmonyPostfix]

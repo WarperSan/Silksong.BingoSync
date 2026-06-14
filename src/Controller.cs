@@ -47,12 +47,6 @@ public class Controller : IDisposable
 		_session = new Session(Events);
 	}
 
-	public async Task ExitRoom()
-	{
-		await _session.LeaveRoom();
-		State = ClientState.Disconnected;
-	}
-
 	public async Task UpdateCard()
 	{
 		Card = await _session.GetCard(_pool);
@@ -150,6 +144,16 @@ public class Controller : IDisposable
 	#endregion
 
 	#region Actions
+
+	/// <summary>
+	/// Joins the room with the given settings
+	/// </summary>
+	public Task<bool> Join(JoinRoomSettings settings) => _session.JoinRoom(settings);
+
+	/// <summary>
+	/// Exits the current room
+	/// </summary>
+	public Task<bool> Exit() => _session.LeaveRoom();
 
 	/// <summary>
 	/// Joins the room with the given settings
