@@ -65,7 +65,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\Goals\" />
       <Folder Include="src\UI\Containers\" />
     </ItemGroup>
 </Project>

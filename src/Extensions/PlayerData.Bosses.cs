@@ -21,7 +21,7 @@ public static partial class PlayerDataExtensions
 		Boss.Lace1               => data.defeatedLace1,
 		Boss.LastJudge           => data.defeatedLastJudge,
 		Boss.Moorwing            => data.defeatedVampireGnatBoss,
-		Boss.MossMother1         => data.defeatedMossMother,
+		Boss.MossMother         => data.defeatedMossMother,
 		Boss.MossMothers         => throw new NotImplementedException(),
 		Boss.Phantom             => data.defeatedPhantom,
 		Boss.SavageBeastfly1     => data.defeatedBoneFlyerGiant,

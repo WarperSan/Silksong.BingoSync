@@ -1,0 +1,202 @@
+{
+	"$schema": "../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"goals": [
+		{
+			"name": "Kill Moss Mother",
+			"condition": {
+				"action": "kill_boss",
+				"params": {
+					"boss": "moss_mother"
+				}
+			}
+		},
+		{
+			"name": "Kill Trobbio twice",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "trobbio"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "tormented_trobbio"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Kill all Conchfly bosses",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "great_conchflies"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "raging_conchfly"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Kill either Lace 1 or Phantom",
+			"condition": {
+				"action": "OR",
+				"params": {
+					"conditions": [
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "lace_1"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "phantom"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Kill Widow before Fourth Chorus",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "widow"
+							}
+						},
+						{
+							"action": "NOT",
+							"params": {
+								"condition": {
+									"action": "kill_boss",
+									"params": {
+										"boss": "fourth_chorus"
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Kill 4 bosses in Act 1",
+			"condition":{
+				"action": "SOME",
+				"params": {
+					"amount": 4,
+					"conditions": [
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "bell_beast"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "fourth_chorus"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "great_conchflies"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "lace_1"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "last_judge"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "moorwing"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "moss_mother"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "moss_mothers"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "phantom"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "savage_beastfly_1"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "sister_splinter"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "skull_tyrant_1"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "skull_tyrant_2"
+							}
+						},
+						{
+							"action": "kill_boss",
+							"params": {
+								"boss": "widow"
+							}
+						}
+					]
+				}
+			}
+		}
+	]
+}

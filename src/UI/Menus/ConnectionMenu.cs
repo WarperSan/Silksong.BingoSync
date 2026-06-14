@@ -29,6 +29,7 @@ internal class ConnectionMenu : MonoBehaviour
 		var rectTransform = go.AddComponent<RectTransform>();
 		rectTransform.anchorMin = Vector2.zero;
 		rectTransform.anchorMax = Vector2.one;
+		rectTransform.sizeDelta = new Vector2(300f, 50f);
 
 		var image = go.AddComponent<Image>();
 

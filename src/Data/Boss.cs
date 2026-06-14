@@ -27,11 +27,11 @@ public enum Boss
 	[EnumMember(Value = "last_judge")]
 	LastJudge,
 
-	[EnumMember(Value = "Moorwing")]
+	[EnumMember(Value = "moorwing")]
 	Moorwing,
 
-	[EnumMember(Value = "moss_mother_1")]
-	MossMother1,
+	[EnumMember(Value = "moss_mother")]
+	MossMother,
 
 	[EnumMember(Value = "moss_mothers")]
 	MossMothers,
@@ -51,10 +51,10 @@ public enum Boss
 	[EnumMember(Value = "skull_tyrant_2")]
 	SkullTyrant2,
 
-	[EnumMember(Value = "Widow")]
+	[EnumMember(Value = "widow")]
 	Widow,
 
-	[EnumMember(Value = "Broodmother")]
+	[EnumMember(Value = "broodmother")]
 	Broodmother,
 
 	[EnumMember(Value = "cogwork_dancers")]
@@ -93,16 +93,16 @@ public enum Boss
 	[EnumMember(Value = "second_sentinel")]
 	SecondSentinel,
 
-	[EnumMember(Value = "Shakra")]
+	[EnumMember(Value = "shakra")]
 	Shakra,
 
 	[EnumMember(Value = "the_unravelled")]
 	TheUnravelled,
 
-	[EnumMember(Value = "Trobbio")]
+	[EnumMember(Value = "trobbio")]
 	Trobbio,
 
-	[EnumMember(Value = "Voltvyrm")]
+	[EnumMember(Value = "voltvyrm")]
 	Voltvyrm,
 
 	[EnumMember(Value = "bell_eater")]
@@ -111,7 +111,7 @@ public enum Boss
 	[EnumMember(Value = "clover_dancers")]
 	CloverDancers,
 
-	[EnumMember(Value = "Crawfather")]
+	[EnumMember(Value = "crawfather")]
 	Crawfather,
 
 	[EnumMember(Value = "crust_king_khann")]
@@ -126,13 +126,13 @@ public enum Boss
 	[EnumMember(Value = "lost_lace")]
 	LostLace,
 
-	[EnumMember(Value = "Nyleth")]
+	[EnumMember(Value = "nyleth")]
 	Nyleth,
 
-	[EnumMember(Value = "Palestag")]
+	[EnumMember(Value = "palestag")]
 	Palestag,
 
-	[EnumMember(Value = "Pinstress")]
+	[EnumMember(Value = "pinstress")]
 	Pinstress,
 
 	[EnumMember(Value = "plasmified_zango")]
