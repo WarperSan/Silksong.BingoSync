@@ -1,5 +1,6 @@
 using BingoAPI.Events;
 using BingoAPI.Models;
+using Silksong.BingoSync.Configurations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ namespace Silksong.BingoSync.UI;
 public class BingoBoard : MonoBehaviour
 {
 	private BingoCell[]? _cells;
+	private CanvasGroup? _group;
 
 	/// <summary>
 	/// Subscribes this board to the given <see cref="EventDispatcher"/>
@@ -40,6 +42,18 @@ public class BingoBoard : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Toggles the visibility of this board
+	/// </summary>
+	private void ToggleVisibility()
+	{
+		if (_group == null)
+			return;
+
+		var isActive = _group.alpha > 0f;
+		_group.alpha = isActive ? 0f : 1f;
+	}
+
 	private void OnSquareMarked(Player player, Square square, Team team) => _cells?[square.Slot.Index].AddTeam(team);
 
 	private void OnSquareCleared(Player player, Square square, Team team) => _cells?[square.Slot.Index].RemoveTeam(team);
@@ -60,6 +74,7 @@ public class BingoBoard : MonoBehaviour
 		sizeFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
 		var backgroundShadow = gameObject.AddComponent<Image>();
+
 		backgroundShadow.color = new Color(
 			0f,
 			0f,
@@ -87,6 +102,17 @@ public class BingoBoard : MonoBehaviour
 		}
 
 		board._cells = cells;
+
+		var canvasGroup = gameObject.AddComponent<CanvasGroup>();
+		canvasGroup.blocksRaycasts = false;
+		board._group = canvasGroup;
+
+		var input = gameObject.AddComponent<CallOnInput>();
+
+		input.SetInput(
+			Configuration.SafeInstance.Board.ToggleUI,
+			board.ToggleVisibility
+		);
 
 		return board;
 	}
