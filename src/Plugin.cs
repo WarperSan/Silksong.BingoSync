@@ -42,5 +42,6 @@ public partial class Plugin : BaseUnityPlugin
 		// obtained: Gain something as the result of a plan
 
 		ConditionRegistry.TryAdd("has_killed_boss", data => new HasKilledBossCondition(data));
+		ConditionRegistry.TryAdd("has_obtained_crest", data => new HasObtainedCrestCondition(data));
 	}
 }
