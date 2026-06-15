@@ -21,18 +21,28 @@ internal class ConnectionMenu : MonoBehaviour
 
 	private State _state = State.Offline;
 
-	private void SetOnline()
+	private void SetOnline(Controller controller)
 	{
 		_state = State.Online;
 		_joinForm?.DisableInputs();
-		_teamPicker?.EnableInputs();
+
+		if (_teamPicker != null)
+		{
+			_teamPicker?.EnableInputs();
+			_teamPicker?.SetTeam(controller.Team);
+		}
 	}
 
 	private void SetOffline()
 	{
 		_state = State.Offline;
 		_joinForm?.EnableInputs();
-		_teamPicker?.DisableInputs();
+
+		if (_teamPicker != null)
+		{
+			_teamPicker?.DisableInputs();
+			_teamPicker?.SetTeam(Team.None);
+		}
 	}
 
 	#endregion
@@ -133,7 +143,7 @@ internal class ConnectionMenu : MonoBehaviour
 				return;
 			}
 
-			SetOnline();
+			SetOnline(controller);
 		}
 		catch (Exception e)
 		{
@@ -162,7 +172,7 @@ internal class ConnectionMenu : MonoBehaviour
 
 			if (!succeeded)
 			{
-				SetOnline();
+				SetOnline(controller);
 				Log.Error("Failed to exit the room.");
 				return;
 			}
@@ -171,7 +181,7 @@ internal class ConnectionMenu : MonoBehaviour
 		}
 		catch (Exception e)
 		{
-			SetOnline();
+			SetOnline(controller);
 			Log.Error($"Error while joining the room: {e}");
 		}
 	}
