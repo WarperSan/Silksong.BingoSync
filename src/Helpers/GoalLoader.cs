@@ -6,7 +6,7 @@ namespace Silksong.BingoSync.Helpers;
 /// <summary>
 /// Class helping with loading <see cref="Goal"/>
 /// </summary>
-internal class GoalLoader
+internal static class GoalLoader
 {
 	/// <summary>
 	/// Loads a <see cref="GoalPool"/> from the given folder

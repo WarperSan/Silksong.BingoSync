@@ -9,18 +9,9 @@ namespace Silksong.BingoSync;
 
 public class Controller : IDisposable
 {
-	// --- SINGLETON ---
-
-	/// <summary>
-	/// Calls <see cref="GoalTracker.Evaluate()"/> of the current instance
-	/// </summary>
-	//public static void Evaluate() => Instance?._tracker.Evaluate();
-
-	// --- STATES ---
 	private readonly GoalPool _pool;
 
 	public readonly EventDispatcher Events;
-	private readonly GoalTracker _tracker;
 	private readonly Session _session;
 
 	public Controller(GoalPool pool)
@@ -78,17 +69,7 @@ public class Controller : IDisposable
 		events.OnOtherCardGenerated -= OnCardGenerated;
 	}
 
-	private void OnConnected(Player player)
-	{
-		UpdateCard();
-		/*_tracker.Clear();
-
-		if (Card != null)
-		{
-			foreach (var goal in Card.GetAllGoals())
-				_tracker.TryAdd(goal);
-		}*/
-	}
+	private void OnConnected(Player player) => UpdateCard();
 
 	private void OnGoalMarked(Goal goal)
 	{
@@ -124,13 +105,13 @@ public class Controller : IDisposable
 
 	private void OnSquareMarked(Player player, Square square, Team team)
 	{
-		_card?.Mark(square.Index, team);
+		_card?.Mark(square.Slot.Index, team);
 		OnCardUpdated?.Invoke(_card);
 	}
 
 	private void OnSquareCleared(Player player, Square square, Team team)
 	{
-		_card?.Unmark(square.Index, team);
+		_card?.Unmark(square.Slot.Index, team);
 		OnCardUpdated?.Invoke(_card);
 	}
 
@@ -172,10 +153,29 @@ public class Controller : IDisposable
 		{
 			var card = task.Result;
 
+			_tracker.Clear();
+
+			if (card != null)
+			{
+				foreach (var goal in card.GetAllGoals())
+					_tracker.TryAdd(goal);
+			}
+
 			_card = card;
 			OnCardUpdated?.Invoke(_card);
 		});
 	}
+
+	#endregion
+
+	#region Tracker
+
+	private readonly GoalTracker _tracker;
+
+	/// <summary>
+	/// Evaluates every tracked <see cref="Goal"/> for updates
+	/// </summary>
+	public void Evaluate() => _tracker.Evaluate();
 
 	#endregion
 

@@ -1,6 +1,5 @@
 using BingoAPI.Events;
 using BingoAPI.Models;
-using Silksong.BingoSync.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +25,6 @@ public class BingoBoard : MonoBehaviour
 	/// </summary>
 	public void DisplayCard(Card? card)
 	{
-		Log.Info(card?.ToString());
 		if (card == null)
 			return;
 
@@ -42,9 +40,9 @@ public class BingoBoard : MonoBehaviour
 		}
 	}
 
-	private void OnSquareMarked(Player player, Square square, Team team) => _cells?[square.Index].AddTeam(team);
+	private void OnSquareMarked(Player player, Square square, Team team) => _cells?[square.Slot.Index].AddTeam(team);
 
-	private void OnSquareCleared(Player player, Square square, Team team) => _cells?[square.Index].RemoveTeam(team);
+	private void OnSquareCleared(Player player, Square square, Team team) => _cells?[square.Slot.Index].RemoveTeam(team);
 
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoBoard"/>
@@ -60,6 +58,14 @@ public class BingoBoard : MonoBehaviour
 		var sizeFitter = gameObject.AddComponent<ContentSizeFitter>();
 		sizeFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
 		sizeFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
+		var backgroundShadow = gameObject.AddComponent<Image>();
+		backgroundShadow.color = new Color(
+			0f,
+			0f,
+			0f,
+			0.7f
+		);
 
 		var board = gameObject.AddComponent<BingoBoard>();
 		var grid = gameObject.AddComponent<GridLayoutGroup>();
