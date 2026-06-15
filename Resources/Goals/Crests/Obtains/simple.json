@@ -1,0 +1,106 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Crest Goals",
+	"description": "Goals focused on obtaining each crest",
+	"goals": [
+		{
+			"name": "Obtain Hunter",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "hunter"
+				}
+			}
+		},
+		{
+			"name": "Obtain Hunter Evolved",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "hunter_evolved"
+				}
+			}
+		},
+		{
+			"name": "Obtain Hunter Fully Evolved",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "hunter_fully_evolved"
+				}
+			}
+		},
+		{
+			"name": "Obtain Reaper",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "reaper"
+				}
+			}
+		},
+		{
+			"name": "Obtain Wanderer",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "wanderer"
+				}
+			}
+		},
+		{
+			"name": "Obtain Beast",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "beast"
+				}
+			}
+		},
+		{
+			"name": "Obtain Cursed",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "cursed"
+				}
+			}
+		},
+		{
+			"name": "Obtain Witch",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "witch"
+				}
+			}
+		},
+		{
+			"name": "Obtain Architect",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "architect"
+				}
+			}
+		},
+		{
+			"name": "Obtain Shaman",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "shaman"
+				}
+			}
+		},
+		{
+			"name": "Obtain Cloakless",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"boss": "cloakless"
+				}
+			}
+		}
+	]
+}
