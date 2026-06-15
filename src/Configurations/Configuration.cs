@@ -8,10 +8,12 @@ namespace Silksong.BingoSync.Configurations;
 internal class Configuration
 {
 	public readonly BoardConfig Board;
+	public readonly JoinConfig Join;
 
 	private Configuration(ConfigFile cfg)
 	{
 		Board = new BoardConfig(cfg);
+		Join = new JoinConfig(cfg);
 	}
 
 	/// <summary>

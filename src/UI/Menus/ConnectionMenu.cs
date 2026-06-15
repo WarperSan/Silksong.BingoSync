@@ -78,19 +78,6 @@ internal class ConnectionMenu : MonoBehaviour
 		_ = ChangeTeam(team);
 	}
 
-	private void Start()
-	{
-		var settings = new JoinRoomSettings
-		{
-			Code = "6MuWtbUFQE-P70lS6-5BhQ",
-			Nickname = "Silksong_Bingo",
-			Password = "abc",
-		};
-
-		if (_joinForm != null)
-			_joinForm.SetSettings(settings);
-	}
-
 	private void Update()
 	{
 		switch (_state)
@@ -223,7 +210,7 @@ internal class ConnectionMenu : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="ConnectionMenu"/>
 	/// </summary>
-	public static ConnectionMenu Create()
+	public static ConnectionMenu Create(JoinRoomSettings settings)
 	{
 		var gameObject = new GameObject(nameof(ConnectionMenu));
 		var menu = gameObject.AddComponent<ConnectionMenu>();
@@ -245,6 +232,7 @@ internal class ConnectionMenu : MonoBehaviour
 		// Input Container
 		var joinForm = JoinForm.Create();
 		joinForm.transform.SetParent(mainLayoutGroup.transform, false);
+		joinForm.SetSettings(settings);
 		menu._joinForm = joinForm;
 
 		// Team Picker
@@ -269,7 +257,6 @@ internal class ConnectionMenu : MonoBehaviour
 		// Action Button
 		var actionButton = Button.Create(menu.OnActionClicked);
 		actionButton.transform.SetParent(gameObject.transform, false);
-		actionButton.SetText("Join");
 		menu._actionButton = actionButton;
 
 		menu.SetOffline();
