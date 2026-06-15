@@ -1,0 +1,61 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Silk Skill Goals",
+	"description": "Goals focused on obtaining each silk skill",
+	"goals": [
+		{
+			"name": "Obtain Silkspear",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "silkspear"
+				}
+			}
+		},
+		{
+			"name": "Obtain Thread Storm",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "thread_storm"
+				}
+			}
+		},
+		{
+			"name": "Obtain Cross Stitch",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "cross_stitch"
+				}
+			}
+		},
+		{
+			"name": "Obtain Sharpdart",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "sharpdart"
+				}
+			}
+		},
+		{
+			"name": "Obtain Rune Rage",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "rune_rage"
+				}
+			}
+		},
+		{
+			"name": "Obtain Pale Nails",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "pale_nails"
+				}
+			}
+		}
+	]
+}

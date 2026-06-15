@@ -44,5 +44,6 @@ public partial class Plugin : BaseUnityPlugin
 		ConditionRegistry.TryAdd("has_killed_boss", data => new HasKilledBossCondition(data));
 		ConditionRegistry.TryAdd("has_obtained_crest", data => new HasObtainedCrestCondition(data));
 		ConditionRegistry.TryAdd("has_obtained_vesticrest", data => new HasObtainedVesticrestCondition(data));
+		ConditionRegistry.TryAdd("has_obtained_silk_skill", data => new HasObtainedSilkSkillCondition(data));
 	}
 }
