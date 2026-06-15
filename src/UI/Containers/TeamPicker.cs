@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using BingoAPI.Models;
+using Silksong.BingoSync.UI.Items;
 using UnityEngine;
 using UnityEngine.UI;
 

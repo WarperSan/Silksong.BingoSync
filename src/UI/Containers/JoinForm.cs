@@ -1,4 +1,5 @@
 using BingoAPI.Models.Settings;
+using Silksong.BingoSync.UI.Components;
 using UnityEngine;
 using UnityEngine.UI;
 

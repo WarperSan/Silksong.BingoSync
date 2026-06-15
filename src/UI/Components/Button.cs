@@ -2,7 +2,7 @@ using Silksong.BingoSync.UI.Constants;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Silksong.BingoSync.UI;
+namespace Silksong.BingoSync.UI.Components;
 
 /// <summary>
 /// Component responsible to manage a 'pressed' input

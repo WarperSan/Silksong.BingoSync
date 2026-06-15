@@ -4,7 +4,7 @@ using Silksong.BingoSync.UI.Constants;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Silksong.BingoSync.UI;
+namespace Silksong.BingoSync.UI.Items;
 
 /// <summary>
 /// Component responsible to display a given <see cref="Goal"/>

@@ -1,10 +1,12 @@
 using BingoAPI.Events;
 using BingoAPI.Models;
 using Silksong.BingoSync.Configurations;
+using Silksong.BingoSync.UI.Components;
+using Silksong.BingoSync.UI.Items;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Silksong.BingoSync.UI;
+namespace Silksong.BingoSync.UI.Containers;
 
 public class BingoBoard : MonoBehaviour
 {

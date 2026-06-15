@@ -4,6 +4,7 @@ using Silksong.BingoSync.Helpers;
 using Silksong.BingoSync.UI.Containers;
 using UnityEngine;
 using UnityEngine.UI;
+using Button = Silksong.BingoSync.UI.Components.Button;
 
 namespace Silksong.BingoSync.UI.Menus;
 

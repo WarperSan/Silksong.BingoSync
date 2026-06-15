@@ -1,7 +1,7 @@
 using BepInEx.Configuration;
 using UnityEngine;
 
-namespace Silksong.BingoSync.UI;
+namespace Silksong.BingoSync.UI.Components;
 
 /// <summary>
 /// Component responsible to call a callback when an input is activated
