@@ -28,8 +28,8 @@ internal class ConnectionMenu : MonoBehaviour
 
 		if (_teamPicker != null)
 		{
-			_teamPicker?.EnableInputs();
-			_teamPicker?.SetTeam(controller.Team);
+			_teamPicker.EnableInputs();
+			_teamPicker.SetTeam(controller.Team);
 		}
 	}
 
@@ -40,8 +40,8 @@ internal class ConnectionMenu : MonoBehaviour
 
 		if (_teamPicker != null)
 		{
-			_teamPicker?.DisableInputs();
-			_teamPicker?.SetTeam(Team.None);
+			_teamPicker.DisableInputs();
+			_teamPicker.SetTeam(Team.None);
 		}
 	}
 
