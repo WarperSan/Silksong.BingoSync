@@ -10,6 +10,8 @@ namespace Silksong.BingoSync.Extensions;
 [SuppressMessage("ReSharper", "ConvertToExtensionBlock")]
 public static partial class PlayerDataExtensions
 {
+	// TODO: Evaluate if it is safer to use data or journal entries
+
 	/// <summary>
 	/// Checks if the given <see cref="Boss"/> was killed
 	/// </summary>
