@@ -79,6 +79,7 @@ internal class TeamPicker : MonoBehaviour
 		rectTransform.pivot = new Vector2(0.5f, 0f);
 
 		var layoutGroup = gameObject.AddComponent<GridLayoutGroup>();
+		layoutGroup.childAlignment = TextAnchor.MiddleCenter;
 		layoutGroup.cellSize = new Vector2(100f, 50f);
 		layoutGroup.spacing = Vector2.one * 10f;
 		
