@@ -81,8 +81,8 @@ internal class JoinForm : MonoBehaviour
 		var rectTransform = gameObject.AddComponent<RectTransform>();
 		rectTransform.pivot = new Vector2(0.5f, 0f);
 
-		var contentSizer = gameObject.AddComponent<ContentSizeFitter>();
-		contentSizer.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+		var contentFitter = gameObject.AddComponent<ContentSizeFitter>();
+		contentFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
 		var layoutGroup = gameObject.AddComponent<VerticalLayoutGroup>();
 		layoutGroup.childControlWidth = true;

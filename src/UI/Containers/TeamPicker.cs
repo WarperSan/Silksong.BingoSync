@@ -81,6 +81,9 @@ internal class TeamPicker : MonoBehaviour
 		var layoutGroup = gameObject.AddComponent<GridLayoutGroup>();
 		layoutGroup.cellSize = new Vector2(100f, 50f);
 		layoutGroup.spacing = Vector2.one * 10f;
+		
+		var contentFitter = gameObject.AddComponent<ContentSizeFitter>();
+		contentFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
 		picker._canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
