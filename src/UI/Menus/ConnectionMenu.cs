@@ -1,5 +1,6 @@
 using BingoAPI.Models.Settings;
 using Silksong.BingoSync.Helpers;
+using Silksong.BingoSync.UI.Containers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ internal class ConnectionMenu : MonoBehaviour
 	private State _state = State.Offline;
 
 	private Button? _actionButton;
+	private JoinForm? _joinForm;
 
 	private void OnActionClicked()
 	{
@@ -42,11 +44,14 @@ internal class ConnectionMenu : MonoBehaviour
 		var controller = Plugin.Controller;
 
 		if (controller == null)
-			throw new NullReferenceException();
+			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
 
-		DisableInputs();
+		if (_joinForm == null)
+			throw new NullReferenceException($"No '{nameof(JoinForm)}' assigned.");
 
-		var settings = GetSettings();
+		_joinForm.DisableInputs();
+
+		var settings = _joinForm.GetSettings();
 
 		try
 		{
@@ -58,7 +63,7 @@ internal class ConnectionMenu : MonoBehaviour
 			{
 				_state = State.Offline;
 				Log.Error($"Failed to join the room '{settings.Code}'.");
-				EnableInputs();
+				_joinForm.EnableInputs();
 				return;
 			}
 
@@ -68,7 +73,7 @@ internal class ConnectionMenu : MonoBehaviour
 		{
 			_state = State.Offline;
 			Log.Error($"Error while joining the room '{settings.Code}': {e}");
-			EnableInputs();
+			_joinForm.EnableInputs();
 		}
 	}
 
@@ -80,7 +85,7 @@ internal class ConnectionMenu : MonoBehaviour
 		var controller = Plugin.Controller;
 
 		if (controller == null)
-			throw new NullReferenceException();
+			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
 
 		try
 		{
@@ -96,7 +101,7 @@ internal class ConnectionMenu : MonoBehaviour
 			}
 
 			_state = State.Offline;
-			EnableInputs();
+			_joinForm?.EnableInputs();
 		}
 		catch (Exception e)
 		{
@@ -105,44 +110,17 @@ internal class ConnectionMenu : MonoBehaviour
 		}
 	}
 
-	#region Inputs
-
-	private CanvasGroup? _inputsGroup;
-	private TextField? _roomCodeInput;
-	private TextField? _nicknameInput;
-	private TextField? _passwordInput;
-
-	private JoinRoomSettings GetSettings()
-	{
-		JoinRoomSettings settings = new();
-
-		if (_roomCodeInput != null)
-			settings.Code = _roomCodeInput.Text;
-
-		if (_nicknameInput != null)
-			settings.Nickname = _nicknameInput.Text;
-
-		if (_passwordInput != null)
-			settings.Password = _passwordInput.Text;
-
-		return settings;
-	}
-
-	private void EnableInputs()  => _inputsGroup?.interactable = true;
-	private void DisableInputs() => _inputsGroup?.interactable = false;
-
-	#endregion
-
 	private void Start()
 	{
-		if (_roomCodeInput != null)
-			_roomCodeInput.Text = "6MuWtbUFQE-P70lS6-5BhQ";
+		var settings = new JoinRoomSettings
+		{
+			Code = "6MuWtbUFQE-P70lS6-5BhQ",
+			Nickname = "Silksong_Bingo",
+			Password = "abc",
+		};
 
-		if (_nicknameInput != null)
-			_nicknameInput.Text = "Silksong_Bingo";
-
-		if (_passwordInput != null)
-			_passwordInput.Text = "abc";
+		if (_joinForm != null)
+			_joinForm.SetSettings(settings);
 	}
 
 	private void Update()
@@ -189,36 +167,9 @@ internal class ConnectionMenu : MonoBehaviour
 		mainLayoutGroup.childForceExpandHeight = false;
 
 		// Input Container
-		var inputsGameObject = new GameObject("Inputs");
-		inputsGameObject.transform.SetParent(mainLayoutGroup.transform, false);
-
-		var inputsRect = inputsGameObject.AddComponent<RectTransform>();
-		inputsRect.pivot = new Vector2(0.5f, 0f);
-
-		var inputContentSizer = inputsGameObject.AddComponent<ContentSizeFitter>();
-		inputContentSizer.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-		var inputContainer = inputsGameObject.AddComponent<VerticalLayoutGroup>();
-		inputContainer.childControlWidth = true;
-		inputContainer.childForceExpandWidth = true;
-		inputContainer.childControlHeight = false;
-		inputContainer.childForceExpandHeight = false;
-		inputContainer.spacing = 10f;
-
-		menu._inputsGroup = inputsGameObject.AddComponent<CanvasGroup>();
-
-		// Inputs
-		var codeInput = TextField.Create("Room Code");
-		codeInput.transform.SetParent(inputsGameObject.transform, false);
-		menu._roomCodeInput = codeInput;
-
-		var nicknameInput = TextField.Create("Nickname");
-		nicknameInput.transform.SetParent(inputsGameObject.transform, false);
-		menu._nicknameInput = nicknameInput;
-
-		var passwordInput = TextField.Create("Password", InputField.ContentType.Password);
-		passwordInput.transform.SetParent(inputsGameObject.transform, false);
-		menu._passwordInput = passwordInput;
+		var joinForm = JoinForm.Create();
+		joinForm.transform.SetParent(mainLayoutGroup.transform, false);
+		menu._joinForm = joinForm;
 
 		// Action Button
 		var actionButton = Button.Create(menu.OnActionClicked);
