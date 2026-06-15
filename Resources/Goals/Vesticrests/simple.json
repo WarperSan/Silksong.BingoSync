@@ -1,0 +1,25 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Vesticrest Goals",
+	"description": "Goals focused on obtaining each vesticrest",
+	"goals": [
+		{
+			"name": "Obtain Basic Vesticrest",
+			"condition": {
+				"action": "has_obtained_vesticrest",
+				"params": {
+					"vesticrest": "basic"
+				}
+			}
+		},
+		{
+			"name": "Obtain Upgraded Vesticrest",
+			"condition": {
+				"action": "has_obtained_vesticrest",
+				"params": {
+					"vesticrest": "upgraded"
+				}
+			}
+		}
+	]
+}
