@@ -10,6 +10,8 @@ namespace Silksong.BingoSync.Extensions;
 [SuppressMessage("ReSharper", "ConvertToExtensionBlock")]
 public static partial class PlayerDataExtensions
 {
+	// TODO: Consider if it is better to associate Crest with ToolCrest
+
 	/// <summary>
 	/// Gets the identifier of the given <see cref="Crest"/>
 	/// </summary>
