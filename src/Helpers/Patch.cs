@@ -13,6 +13,7 @@ internal static class Patch
 		var harmony = new HarmonyLib.Harmony(Plugin.Id);
 
 		harmony.PatchAll(typeof(Patches.UIManager_Patches));
+		harmony.PatchAll(typeof(Patches.PlayerData_Patches));
 
 		Log.Debug("All patches applied.");
 	}
