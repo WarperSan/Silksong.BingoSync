@@ -8,7 +8,7 @@ namespace Silksong.BingoSync.Configurations;
 /// </summary>
 internal class BoardConfig
 {
-	private const string SECTION = "Chute";
+	private const string SECTION = "Board";
 
 	public readonly ConfigEntry<KeyCode> ToggleUI;
 
