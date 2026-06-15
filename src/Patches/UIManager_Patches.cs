@@ -1,5 +1,4 @@
 using HarmonyLib;
-using Silksong.BingoSync.UI;
 using Silksong.BingoSync.UI.Menus;
 using UnityEngine;
 
@@ -10,17 +9,19 @@ namespace Silksong.BingoSync.Patches;
 [HarmonyPatch(typeof(UIManager))]
 internal class UIManager_Patches
 {
-	private static BingoBoard? _board;
-
 	[HarmonyPostfix]
 	[HarmonyPatch(nameof(UIManager.Awake))]
 	private static void Awake_Postfix(UIManager __instance)
 	{
-		_board = BingoBoard.Create(null);
-		_board.transform.SetParent(__instance.UICanvas.transform, false);
-		
-		_board.Subscribe(Plugin.Controller.Events);
-		Plugin.Controller.OnCardUpdated += _board.DisplayCard;
+		var board = UI.UIManager.Board.Value;
+
+		if (board != null)
+		{
+			board.transform.SetParent(__instance.UICanvas.transform, false);
+
+			board.Subscribe(Plugin.Controller.Events);
+			Plugin.Controller.OnCardUpdated += board.DisplayCard;
+		}
 
 		var connectionMenuContainer = new GameObject(nameof(ConnectionMenu) + "-Container");
 		connectionMenuContainer.transform.SetParent(__instance.UICanvas.transform, false);
@@ -40,10 +41,12 @@ internal class UIManager_Patches
 	[HarmonyPatch(nameof(UIManager.DisableScreens))]
 	private static void Disable_Postfix()
 	{
-		if (_board == null)
+		var board = UI.UIManager.Board.Value;
+
+		if (board == null)
 			return;
 
 		// Keep active
-		_board.gameObject.SetActive(true);
+		board.gameObject.SetActive(true);
 	}
 }
