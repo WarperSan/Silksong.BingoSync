@@ -60,7 +60,7 @@ internal class BingoCell : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoCell"/>
 	/// </summary>
-	public static BingoCell Create(Sprite? backgroundSprite)
+	public static BingoCell Create()
 	{
 		var gameObject = new GameObject(nameof(BingoCell));
 		gameObject.AddComponent<RectTransform>();
@@ -84,7 +84,6 @@ internal class BingoCell : MonoBehaviour
 			backgroundImage.transform.SetParent(backgroundContainer.transform, false);
 
 			var image = backgroundImage.AddComponent<Image>();
-			image.sprite = backgroundSprite;
 
 			var color = team.GetColor();
 			color.a = 0.3f;

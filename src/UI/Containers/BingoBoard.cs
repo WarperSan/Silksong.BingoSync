@@ -63,7 +63,7 @@ public class BingoBoard : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoBoard"/>
 	/// </summary>
-	public static BingoBoard Create(Sprite? backgroundSprite)
+	public static BingoBoard Create()
 	{
 		var gameObject = new GameObject(nameof(BingoBoard));
 		var rectTransform = gameObject.AddComponent<RectTransform>();
@@ -96,7 +96,7 @@ public class BingoBoard : MonoBehaviour
 
 		for (var i = 0; i < cells.Length; i++)
 		{
-			var cell = BingoCell.Create(backgroundSprite);
+			var cell = BingoCell.Create();
 
 			cell.transform.SetParent(grid.transform, false);
 
