@@ -2,6 +2,7 @@ using System.Reflection;
 using BepInEx;
 using BingoAPI.Conditions;
 using Silksong.BingoSync.Conditions;
+using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.Helpers;
 
 namespace Silksong.BingoSync;
@@ -16,6 +17,9 @@ public partial class Plugin : BaseUnityPlugin
 
 	private void Awake()
 	{
+		Configuration.Load(Config);
+		Patch.ApplyAll();
+
 		AddConditions();
 
 		var pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
@@ -25,8 +29,7 @@ public partial class Plugin : BaseUnityPlugin
 
 		Controller = new Controller(pool);
 
-		Patch.ApplyAll();
-		Log.Info($"Plugin {Name} ({Id}) has loaded!");
+		Log.Info($"{Id} v{Version} has loaded!");
 	}
 
 	private static void AddConditions()

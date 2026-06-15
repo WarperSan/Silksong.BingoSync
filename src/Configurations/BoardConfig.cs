@@ -1,0 +1,24 @@
+using BepInEx.Configuration;
+using UnityEngine;
+
+namespace Silksong.BingoSync.Configurations;
+
+/// <summary>
+/// Class that holds the configurations related to the board itself
+/// </summary>
+internal class BoardConfig
+{
+	private const string SECTION = "Chute";
+
+	public readonly ConfigEntry<KeyCode> ToggleUI;
+
+	public BoardConfig(ConfigFile cfg)
+	{
+		ToggleUI = cfg.Bind(
+			SECTION,
+			"ToggleBoard",
+			KeyCode.B,
+			"configuration.board.toggle.description"
+		);
+	}
+}
