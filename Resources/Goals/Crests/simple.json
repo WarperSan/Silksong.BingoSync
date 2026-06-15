@@ -8,7 +8,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "hunter"
+					"crest": "hunter"
 				}
 			}
 		},
@@ -17,7 +17,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "hunter_evolved"
+					"crest": "hunter_evolved"
 				}
 			}
 		},
@@ -26,7 +26,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "hunter_fully_evolved"
+					"crest": "hunter_fully_evolved"
 				}
 			}
 		},
@@ -35,7 +35,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "reaper"
+					"crest": "reaper"
 				}
 			}
 		},
@@ -44,7 +44,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "wanderer"
+					"crest": "wanderer"
 				}
 			}
 		},
@@ -53,7 +53,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "beast"
+					"crest": "beast"
 				}
 			}
 		},
@@ -62,7 +62,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "cursed"
+					"crest": "cursed"
 				}
 			}
 		},
@@ -71,7 +71,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "witch"
+					"crest": "witch"
 				}
 			}
 		},
@@ -80,7 +80,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "architect"
+					"crest": "architect"
 				}
 			}
 		},
@@ -89,7 +89,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "shaman"
+					"crest": "shaman"
 				}
 			}
 		},
@@ -98,7 +98,7 @@
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
-					"boss": "cloakless"
+					"crest": "cloakless"
 				}
 			}
 		}
