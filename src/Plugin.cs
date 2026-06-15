@@ -34,6 +34,13 @@ public partial class Plugin : BaseUnityPlugin
 
 	private static void AddConditions()
 	{
+		// is- / are- : is_talking_to (Is the player currently talking to X character?)
+		// has- / have- : has_talked_to (Has the player talked to X character?)
+
+		// killed: Slay an entity forever
+		// defeated: Slay an entity temporarily
+		// obtained: Gain something as the result of a plan
+
 		ConditionRegistry.TryAdd("has_killed_boss", data => new HasKilledBossCondition(data));
 	}
 }
