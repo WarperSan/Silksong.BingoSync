@@ -122,6 +122,11 @@ public class Controller : IDisposable
 	#region Actions
 
 	/// <summary>
+	/// Current team
+	/// </summary>
+	public Team Team => _session.Team;
+
+	/// <summary>
 	/// Joins the room with the given settings
 	/// </summary>
 	public Task<bool> Join(JoinRoomSettings settings) => _session.JoinRoom(settings);
@@ -130,6 +135,11 @@ public class Controller : IDisposable
 	/// Exits the current room
 	/// </summary>
 	public Task<bool> Exit() => _session.LeaveRoom();
+
+	/// <summary>
+	/// Changes team
+	/// </summary>
+	public Task<bool> SetTeam(Team team) => _session.ChangeTeam(team);
 
 	#endregion
 

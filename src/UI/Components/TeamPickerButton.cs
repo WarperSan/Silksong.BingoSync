@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Silksong.BingoSync.UI;
 
 /// <summary>
-/// Component responsible to pick a <see cref="BingoAPI.Models.Team"/>
+/// Component responsible to display a <see cref="BingoAPI.Models.Team"/>
 /// </summary>
 internal class TeamPickerButton : MonoBehaviour
 {
@@ -58,7 +58,7 @@ internal class TeamPickerButton : MonoBehaviour
 
 		var outline = button.gameObject.AddComponent<Outline>();
 
-		var textGo = new GameObject();
+		var textGo = new GameObject(nameof(Text));
 		textGo.transform.SetParent(gameObject.transform, false);
 
 		var textRect = textGo.AddComponent<RectTransform>();

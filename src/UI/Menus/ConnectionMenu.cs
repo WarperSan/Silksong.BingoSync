@@ -1,3 +1,4 @@
+using BingoAPI.Models;
 using BingoAPI.Models.Settings;
 using Silksong.BingoSync.Helpers;
 using Silksong.BingoSync.UI.Containers;
@@ -8,6 +9,8 @@ namespace Silksong.BingoSync.UI.Menus;
 
 internal class ConnectionMenu : MonoBehaviour
 {
+	#region State
+
 	private enum State
 	{
 		Offline,
@@ -18,8 +21,25 @@ internal class ConnectionMenu : MonoBehaviour
 
 	private State _state = State.Offline;
 
+	private void SetOnline()
+	{
+		_state = State.Online;
+		_joinForm?.DisableInputs();
+		_teamPicker?.EnableInputs();
+	}
+
+	private void SetOffline()
+	{
+		_state = State.Offline;
+		_joinForm?.EnableInputs();
+		_teamPicker?.DisableInputs();
+	}
+
+	#endregion
+
 	private Button? _actionButton;
 	private JoinForm? _joinForm;
+	private TeamPicker? _teamPicker;
 
 	private void OnActionClicked()
 	{
@@ -36,78 +56,15 @@ internal class ConnectionMenu : MonoBehaviour
 			_ = LeaveRoom();
 	}
 
-	private async Task JoinRoom()
-	{
-		if (_state != State.Offline)
-			throw new InvalidOperationException();
-
-		var controller = Plugin.Controller;
-
-		if (controller == null)
-			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
-
-		if (_joinForm == null)
-			throw new NullReferenceException($"No '{nameof(JoinForm)}' assigned.");
-
-		_joinForm.DisableInputs();
-
-		var settings = _joinForm.GetSettings();
-
-		try
-		{
-			_state = State.Connecting;
-
-			var succeeded = await controller.Join(settings);
-
-			if (!succeeded)
-			{
-				_state = State.Offline;
-				Log.Error($"Failed to join the room '{settings.Code}'.");
-				_joinForm.EnableInputs();
-				return;
-			}
-
-			_state = State.Online;
-		}
-		catch (Exception e)
-		{
-			_state = State.Offline;
-			Log.Error($"Error while joining the room '{settings.Code}': {e}");
-			_joinForm.EnableInputs();
-		}
-	}
-
-	private async Task LeaveRoom()
+	private void OnTeamSelected(Team team)
 	{
 		if (_state != State.Online)
-			throw new InvalidOperationException();
-
-		var controller = Plugin.Controller;
-
-		if (controller == null)
-			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
-
-		try
 		{
-			_state = State.Disconnecting;
-
-			var succeeded = await controller.Exit();
-
-			if (!succeeded)
-			{
-				_state = State.Online;
-				Log.Error("Failed to exit the room.");
-				return;
-			}
-
-			_state = State.Offline;
-			_joinForm?.EnableInputs();
+			Log.Warning("Cannot change team without being online.");
+			return;
 		}
-		catch (Exception e)
-		{
-			_state = State.Online;
-			Log.Error($"Error while joining the room: {e}");
-		}
+
+		_ = ChangeTeam(team);
 	}
 
 	private void Start()
@@ -144,6 +101,114 @@ internal class ConnectionMenu : MonoBehaviour
 		}
 	}
 
+	#region Tasks
+
+	private async Task JoinRoom()
+	{
+		if (_state != State.Offline)
+			throw new InvalidOperationException();
+
+		var controller = Plugin.Controller;
+
+		if (controller == null)
+			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
+
+		if (_joinForm == null)
+			throw new NullReferenceException($"No '{nameof(JoinForm)}' assigned.");
+
+		_joinForm.DisableInputs();
+
+		var settings = _joinForm.GetSettings();
+
+		try
+		{
+			_state = State.Connecting;
+
+			var succeeded = await controller.Join(settings);
+
+			if (!succeeded)
+			{
+				SetOffline();
+				Log.Error($"Failed to join the room '{settings.Code}'.");
+				return;
+			}
+
+			SetOnline();
+		}
+		catch (Exception e)
+		{
+			SetOffline();
+			Log.Error($"Error while joining the room '{settings.Code}': {e}");
+		}
+	}
+
+	private async Task LeaveRoom()
+	{
+		if (_state != State.Online)
+			throw new InvalidOperationException();
+
+		var controller = Plugin.Controller;
+
+		if (controller == null)
+			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
+
+		_teamPicker?.DisableInputs();
+
+		try
+		{
+			_state = State.Disconnecting;
+
+			var succeeded = await controller.Exit();
+
+			if (!succeeded)
+			{
+				SetOnline();
+				Log.Error("Failed to exit the room.");
+				return;
+			}
+
+			SetOffline();
+		}
+		catch (Exception e)
+		{
+			SetOnline();
+			Log.Error($"Error while joining the room: {e}");
+		}
+	}
+
+	private async Task ChangeTeam(Team team)
+	{
+		if (_state != State.Online)
+			throw new InvalidOperationException();
+
+		var controller = Plugin.Controller;
+
+		if (controller == null)
+			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
+
+		if (_teamPicker == null)
+			throw new NullReferenceException($"No '{nameof(TeamPicker)}' assigned.");
+
+		_teamPicker.DisableInputs();
+
+		try
+		{
+			var succeeded = await controller.SetTeam(team);
+
+			if (!succeeded)
+				Log.Error("Failed to change team.");
+		}
+		catch (Exception e)
+		{
+			Log.Error($"Error while joining the room: {e}");
+		}
+
+		_teamPicker.SetTeam(controller.Team);
+		_teamPicker.EnableInputs();
+	}
+
+	#endregion
+
 	/// <summary>
 	/// Creates a new instance of <see cref="ConnectionMenu"/>
 	/// </summary>
@@ -171,11 +236,32 @@ internal class ConnectionMenu : MonoBehaviour
 		joinForm.transform.SetParent(mainLayoutGroup.transform, false);
 		menu._joinForm = joinForm;
 
+		// Team Picker
+		var teamPicker = TeamPicker.Create(
+			[
+				Team.Orange,
+				Team.Red,
+				Team.Blue,
+				Team.Green,
+				Team.Purple,
+				Team.Navy,
+				Team.Teal,
+				Team.Brown,
+				Team.Pink,
+				Team.Yellow,
+			],
+			menu.OnTeamSelected
+		);
+		teamPicker.transform.SetParent(mainLayoutGroup.transform, false);
+		menu._teamPicker = teamPicker;
+
 		// Action Button
 		var actionButton = Button.Create(menu.OnActionClicked);
 		actionButton.transform.SetParent(gameObject.transform, false);
 		actionButton.SetText("Join");
 		menu._actionButton = actionButton;
+
+		menu.SetOffline();
 
 		return menu;
 	}
