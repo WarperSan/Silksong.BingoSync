@@ -4,37 +4,6 @@
 	"description": "Harder goals focused on defeating each boss",
 	"goals": [
 		{
-			"name": "Kill Moss Mother",
-			"condition": {
-				"action": "has_killed_boss",
-				"params": {
-					"boss": "moss_mother"
-				}
-			}
-		},
-		{
-			"name": "Kill Trobbio twice",
-			"condition": {
-				"action": "AND",
-				"params": {
-					"conditions": [
-						{
-							"action": "has_killed_boss",
-							"params": {
-								"boss": "trobbio"
-							}
-						},
-						{
-							"action": "has_killed_boss",
-							"params": {
-								"boss": "tormented_trobbio"
-							}
-						}
-					]
-				}
-			}
-		},
-		{
 			"name": "Kill all Conchfly bosses",
 			"condition": {
 				"action": "AND",
