@@ -52,9 +52,19 @@ internal class TeamPickerButton : MonoBehaviour
 		color.a = 0.6f;
 		image.color = color;
 
-		var button = gameObject.AddComponent<UnityEngine.UI.Button>();
+		var button = gameObject.AddComponent<Button>();
 		button.targetGraphic = image;
 		button.onClick.AddListener(picker.OnClick);
+
+		var buttonColors = button.colors;
+
+		buttonColors.disabledColor = new Color(
+			0.3f,
+			0.3f,
+			0.3f,
+			1f
+		);
+		button.colors = buttonColors;
 
 		var outline = button.gameObject.AddComponent<Outline>();
 
