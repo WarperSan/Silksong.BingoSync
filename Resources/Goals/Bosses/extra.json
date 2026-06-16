@@ -1,5 +1,7 @@
 {
 	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Extra Boss Goals",
+	"description": "Harder goals focused on defeating each boss",
 	"goals": [
 		{
 			"name": "Kill Moss Mother",

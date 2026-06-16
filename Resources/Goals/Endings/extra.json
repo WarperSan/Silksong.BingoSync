@@ -1,0 +1,45 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Extra Ending Goals",
+	"description": "Harder goals focused on completing each ending",
+	"goals": [
+		{
+			"name": "Complete Twisted Child as the first ending",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_completed_ending",
+							"params": {
+								"ending": "twisted_child"
+							}
+						},
+						{
+							"action": "NOT",
+							"params": {
+								"condition": {
+									"action": "has_completed_ending",
+									"params": {
+										"ending": "weaver_queen"
+									}
+								}
+							}
+						},
+						{
+							"action": "NOT",
+							"params": {
+								"condition": {
+									"action": "has_completed_ending",
+									"params": {
+										"ending": "snared_silk"
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	]
+}

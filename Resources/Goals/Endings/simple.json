@@ -1,0 +1,52 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Ending Goals",
+	"description": "Goals focused on completing each ending",
+	"goals": [
+		{
+			"name": "Complete Weaver Queen",
+			"condition": {
+				"action": "has_completed_ending",
+				"params": {
+					"ending": "weaver_queen"
+				}
+			}
+		},
+		{
+			"name": "Complete Snared Silk",
+			"condition": {
+				"action": "has_completed_ending",
+				"params": {
+					"ending": "snared_silk"
+				}
+			}
+		},
+		{
+			"name": "Complete Twisted Child",
+			"condition": {
+				"action": "has_completed_ending",
+				"params": {
+					"ending": "twisted_child"
+				}
+			}
+		},
+		{
+			"name": "Complete Sister of the Void",
+			"condition": {
+				"action": "has_completed_ending",
+				"params": {
+					"ending": "sister_of_the_void"
+				}
+			}
+		},
+		{
+			"name": "Complete Passing of the Age",
+			"condition": {
+				"action": "has_completed_ending",
+				"params": {
+					"ending": "passing_of_the_age"
+				}
+			}
+		}
+	]
+}
