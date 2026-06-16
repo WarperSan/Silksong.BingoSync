@@ -1,4 +1,5 @@
 using BepInEx.Configuration;
+using UnityEngine;
 
 namespace Silksong.BingoSync.Configurations;
 
@@ -10,6 +11,7 @@ internal class JoinConfig
 	private const string SECTION = "Join";
 
 	public readonly ConfigEntry<string> Nickname;
+	public readonly ConfigEntry<KeyCode> ToggleUI;
 
 	public JoinConfig(ConfigFile cfg)
 	{
@@ -18,6 +20,12 @@ internal class JoinConfig
 			"DefaultNickname",
 			"",
 			"configuration.join.nickname.description"
+		);
+		ToggleUI = cfg.Bind(
+			SECTION,
+			"ToggleJoinUI",
+			KeyCode.H,
+			"configuration.join.toggle.description"
 		);
 	}
 }

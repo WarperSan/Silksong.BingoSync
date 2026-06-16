@@ -1,6 +1,8 @@
 using BingoAPI.Models;
 using BingoAPI.Models.Settings;
+using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.Helpers;
+using Silksong.BingoSync.UI.Components;
 using Silksong.BingoSync.UI.Containers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,6 +50,7 @@ internal class ConnectionMenu : MonoBehaviour
 
 	#endregion
 
+	private CanvasGroup? _canvasGroup;
 	private Button? _actionButton;
 	private JoinForm? _joinForm;
 	private TeamPicker? _teamPicker;
@@ -76,6 +79,18 @@ internal class ConnectionMenu : MonoBehaviour
 		}
 
 		_ = ChangeTeam(team);
+	}
+
+	/// <summary>
+	/// Toggles the visibility of this menu
+	/// </summary>
+	private void ToggleVisibility()
+	{
+		if (_canvasGroup == null)
+			return;
+
+		var isActive = _canvasGroup.alpha > 0f;
+		_canvasGroup.alpha = isActive ? 0f : 1f;
 	}
 
 	private void Update()
@@ -229,6 +244,8 @@ internal class ConnectionMenu : MonoBehaviour
 		mainLayoutGroup.childControlHeight = false;
 		mainLayoutGroup.childForceExpandHeight = false;
 
+		menu._canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
 		// Input Container
 		var joinForm = JoinForm.Create();
 		joinForm.transform.SetParent(mainLayoutGroup.transform, false);
@@ -258,6 +275,13 @@ internal class ConnectionMenu : MonoBehaviour
 		var actionButton = Button.Create(menu.OnActionClicked);
 		actionButton.transform.SetParent(gameObject.transform, false);
 		menu._actionButton = actionButton;
+
+		var input = gameObject.AddComponent<CallOnInput>();
+
+		input.SetInput(
+			Configuration.SafeInstance.Join.ToggleUI,
+			menu.ToggleVisibility
+		);
 
 		menu.SetOffline();
 
