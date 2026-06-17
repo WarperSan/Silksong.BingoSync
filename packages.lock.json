@@ -48,6 +48,15 @@
         "resolved": "6000.0.50",
         "contentHash": "hEFz1r4NGzeYXPY2yPh+/btcnwVB6EnEeRjDMCVNi19PD7VvRMvJeu46x1dNH9jYkT0B/ZXuyMBYiuI7YlRnKw=="
       },
+      "WarperSan.BingoAPI": {
+        "type": "Direct",
+        "requested": "[0.0.0, )",
+        "resolved": "0.0.0",
+        "contentHash": "MR3X8xmO1A8L6EzTJbm2cylbi3QqycPiQbpMzWXEU57xdY8cMs4CYwn7jyDSPMxjZLOIPB/FgwV3RIEqcPwbcw==",
+        "dependencies": {
+          "JetBrains.Annotations": "2026.2.0"
+        }
+      },
       "BepInEx.BaseLib": {
         "type": "Transitive",
         "resolved": "5.4.20",
@@ -387,12 +396,6 @@
           "Microsoft.NETCore.Platforms": "1.1.0",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
-        }
-      },
-      "WarperSan.BingoAPI": {
-        "type": "Project",
-        "dependencies": {
-          "JetBrains.Annotations": "[2026.2.0, )"
         }
       }
     }

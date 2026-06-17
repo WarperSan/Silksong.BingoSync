@@ -10,6 +10,7 @@
     <!-- Project Properties -->
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
 
     <!-- Primary Package References -->
@@ -34,9 +35,7 @@
     <!-- Dependencies -->
     <ItemGroup>
         <!-- Hard -->
-        <Reference Include="BingoAPI">
-            <HintPath>/home/warpersan/Projects/C#/BingoAPI/BingoAPI/bin/Debug/netstandard2.0/BingoAPI.dll</HintPath>
-        </Reference>
+        <PackageReference Include="WarperSan.BingoAPI" Version="0.0.0"/>
     </ItemGroup>
 
     <!-- Thunderstore Package metadata -->
@@ -55,6 +54,7 @@
     <ItemGroup>
         <!-- Mod Files -->
         <ThunderstoreFile Include="$(TargetPath)" Destination="plugins/"/>
+        <ThunderstoreFile Include="$(OutputPath)BingoAPI.dll" Destination="plugins/"/>
 
         <!-- Package Files -->
         <ThunderstorePackageFile Include="$(SolutionDir)README.md"/>
