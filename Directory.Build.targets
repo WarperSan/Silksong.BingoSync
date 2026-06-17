@@ -4,7 +4,7 @@
 
     <Target Name="CopyOutput" AfterTargets="PostBuildEvent">
         <ItemGroup>
-            <OutputFiles Include="$(TargetPath)"/>
+            <OutputFiles Include="@(ThunderstoreFile)"/>
             <GoalFiles Include="$(SolutionDir)Resources/Goals/**/*.json"/>
         </ItemGroup>
 
