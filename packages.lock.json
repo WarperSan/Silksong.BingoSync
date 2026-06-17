@@ -62,6 +62,11 @@
           "System.Reflection.Emit": "4.7.0"
         }
       },
+      "JetBrains.Annotations": {
+        "type": "Transitive",
+        "resolved": "2026.2.0",
+        "contentHash": "drvAEaI7Xf4wU6dx4UTB9MoZWXZlraaQ0qoeThPQ411FxNhId7QdUTukIC9I8aUHP0ycAaGwZNKqSvfOZQvUlg=="
+      },
       "Microsoft.NETCore.Platforms": {
         "type": "Transitive",
         "resolved": "1.1.0",
@@ -382,6 +387,12 @@
           "Microsoft.NETCore.Platforms": "1.1.0",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "WarperSan.BingoAPI": {
+        "type": "Project",
+        "dependencies": {
+          "JetBrains.Annotations": "[2026.2.0, )"
         }
       }
     }
