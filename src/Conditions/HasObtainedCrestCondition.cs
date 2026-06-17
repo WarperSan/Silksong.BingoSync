@@ -11,6 +11,7 @@ internal sealed class HasObtainedCrestCondition : ICondition
 {
 	private readonly Crest _crest;
 
+	[Condition("has_obtained_crest")]
 	public HasObtainedCrestCondition(ConditionData data)
 	{
 		_crest = data.GetRequiredParameter<Crest>("crest");

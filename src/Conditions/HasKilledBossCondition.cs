@@ -11,6 +11,7 @@ internal sealed class HasKilledBossCondition : ICondition
 {
 	private readonly Boss _boss;
 
+	[Condition("has_killed_boss")]
 	public HasKilledBossCondition(ConditionData data)
 	{
 		_boss = data.GetRequiredParameter<Boss>("boss");

@@ -11,6 +11,7 @@ internal sealed class HasCompletedEndingCondition : ICondition
 {
 	private readonly Ending _ending;
 
+	[Condition("has_completed_ending")]
 	public HasCompletedEndingCondition(ConditionData data)
 	{
 		_ending = data.GetRequiredParameter<Ending>("ending");

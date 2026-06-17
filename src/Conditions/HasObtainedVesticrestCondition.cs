@@ -11,6 +11,7 @@ internal sealed class HasObtainedVesticrestCondition : ICondition
 {
 	private readonly Vesticrest _vesticrest;
 
+	[Condition("has_obtained_vesticrest")]
 	public HasObtainedVesticrestCondition(ConditionData data)
 	{
 		_vesticrest = data.GetRequiredParameter<Vesticrest>("vesticrest");

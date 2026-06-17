@@ -11,6 +11,7 @@ internal sealed class HasObtainedSilkSkillCondition : ICondition
 {
 	private readonly SilkSkill _skill;
 
+	[Condition("has_obtained_silk_skill")]
 	public HasObtainedSilkSkillCondition(ConditionData data)
 	{
 		_skill = data.GetRequiredParameter<SilkSkill>("skill");
