@@ -17,6 +17,7 @@ public static partial class PlayerDataExtensions
 	/// </summary>
 	private static string GetCrestId(Crest crest) => crest switch
 	{
+		// ReSharper disable StringLiteralTypo
 		Crest.Hunter             => "Hunter",
 		Crest.HunterEvolved      => "Hunter_v2",
 		Crest.HunterFullyEvolved => "Hunter_v3",
@@ -28,7 +29,8 @@ public static partial class PlayerDataExtensions
 		Crest.Architect          => "Toolmaster",
 		Crest.Shaman             => "Spell",
 		Crest.Cloakless          => "Cloakless",
-		_                        => throw new InvalidCheckException<Crest>(crest),
+		// ReSharper restore StringLiteralTypo
+		_ => throw new InvalidCheckException<Crest>(crest),
 	};
 
 	/// <summary>

@@ -8,6 +8,8 @@ namespace Silksong.BingoSync.Data;
 /// List of every silk skill the player can obtain
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+// ReSharper disable IdentifierTypo
+// ReSharper disable StringLiteralTypo
 public enum SilkSkill
 {
 	[EnumMember(Value = "silkspear")]
