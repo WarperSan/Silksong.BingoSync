@@ -1,6 +1,4 @@
 using BingoAPI.Models;
-using Silksong.BingoSync.Configurations;
-using Silksong.BingoSync.UI.Components;
 using Silksong.BingoSync.UI.Items;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +8,6 @@ namespace Silksong.BingoSync.UI.Containers;
 public class BingoBoard : MonoBehaviour
 {
 	private BingoCell[]? _cells;
-	private CanvasGroup? _group;
 
 	private void Awake() => Subscribe(Plugin.Controller);
 
@@ -34,39 +31,6 @@ public class BingoBoard : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// Toggles the visibility of this board
-	/// </summary>
-	private void ToggleVisibility()
-	{
-		if (!Plugin.Controller.IsConnected)
-			return;
-		
-		if (!_group)
-			return;
-
-		if (_group.alpha > 0f)
-			Hide();
-		else
-			Show();
-	}
-
-	private void Show()
-	{
-		if (!_group)
-			return;
-
-		_group.alpha = 1f;
-	}
-
-	private void Hide()
-	{
-		if (!_group)
-			return;
-
-		_group.alpha = 0f;
-	}
-
 	#region Events
 
 	/// <summary>
@@ -78,7 +42,6 @@ public class BingoBoard : MonoBehaviour
 
 		var dispatcher = controller.Events;
 
-		dispatcher.OnSelfDisconnected += _ => Hide();
 		dispatcher.OnSelfSquareMarked += OnSquareMarked;
 		dispatcher.OnOtherSquareMarked += OnSquareMarked;
 		dispatcher.OnSelfSquareCleared += OnSquareCleared;
@@ -138,14 +101,6 @@ public class BingoBoard : MonoBehaviour
 
 		var canvasGroup = gameObject.AddComponent<CanvasGroup>();
 		canvasGroup.blocksRaycasts = false;
-		board._group = canvasGroup;
-
-		var input = gameObject.AddComponent<CallOnInput>();
-
-		input.SetInput(
-			Configuration.SafeInstance.Board.ToggleUI,
-			board.ToggleVisibility
-		);
 
 		return board;
 	}

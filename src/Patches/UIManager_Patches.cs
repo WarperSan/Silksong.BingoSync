@@ -38,7 +38,9 @@ internal class UIManager_Patches
 		_bingoCanvas = canvas;
 
 		CreateConnectionMenu(gameObject.transform);
-		CreateBoard(gameObject.transform);
+		
+		var boardContainer = BoardContainer.Create();
+		boardContainer.transform.SetParent(gameObject.transform, false);
 	}
 
 	private static void CreateConnectionMenu(Transform parent)
