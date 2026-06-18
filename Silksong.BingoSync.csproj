@@ -30,7 +30,7 @@
                 PrivateAssets="all"
         />
         <PackageReference Include="MinVer" Version="6.*" PrivateAssets="all"/>
-        <PackageReference Include="WarperSan.BingoAPI" Version="0.0.0"/>
+        <PackageReference Include="WarperSan.BingoAPI" Version="0.1.2-alpha" />
     </ItemGroup>
 
     <Import Project="Thunderstore.props"/>
