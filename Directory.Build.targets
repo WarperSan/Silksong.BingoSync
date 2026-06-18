@@ -4,18 +4,16 @@
 
     <Target Name="CopyOutput" AfterTargets="PostBuildEvent">
         <ItemGroup>
-            <OutputFiles Include="@(ThunderstoreFile)"/>
-            <GoalFiles Include="$(SolutionDir)Resources/Goals/**/*.json"/>
+            <OutputFiles Include="@(ThunderstoreFile)">
+                <RelativeDestination>$([System.String]::Copy('%(Destination)').Replace('plugins/', ''))</RelativeDestination>
+            </OutputFiles>
         </ItemGroup>
+
+        <RemoveDir Directories="$(PluginFolder)"/>
 
         <Copy
                 SourceFiles="@(OutputFiles)"
-                DestinationFolder="$(PluginFolder)"
-        />
-        <RemoveDir Directories="$(PluginFolder)Goals"/>
-        <Copy
-                SourceFiles="@(GoalFiles)"
-                DestinationFiles="@(GoalFiles->'$(PluginFolder)Goals/%(RecursiveDir)%(Filename)%(Extension)')"
+                DestinationFiles="@(OutputFiles->'$(PluginFolder)%(RelativeDestination)%(RecursiveDir)%(Filename)%(Extension)')"
         />
     </Target>
 
