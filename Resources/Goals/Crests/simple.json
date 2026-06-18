@@ -4,7 +4,7 @@
 	"description": "Goals focused on obtaining each crest",
 	"goals": [
 		{
-			"name": "Obtain Hunter",
+			"name": "Obtain Hunter Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -13,7 +13,7 @@
 			}
 		},
 		{
-			"name": "Obtain Hunter Evolved",
+			"name": "Obtain Hunter Crest Evolved",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"name": "Obtain Hunter Fully Evolved",
+			"name": "Obtain Hunter Crest Fully Evolved",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -31,7 +31,7 @@
 			}
 		},
 		{
-			"name": "Obtain Reaper",
+			"name": "Obtain Reaper Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -40,7 +40,7 @@
 			}
 		},
 		{
-			"name": "Obtain Wanderer",
+			"name": "Obtain Wanderer Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -49,7 +49,7 @@
 			}
 		},
 		{
-			"name": "Obtain Beast",
+			"name": "Obtain Beast Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -58,7 +58,7 @@
 			}
 		},
 		{
-			"name": "Obtain Cursed",
+			"name": "Obtain Cursed Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -67,7 +67,7 @@
 			}
 		},
 		{
-			"name": "Obtain Witch",
+			"name": "Obtain Witch Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -76,7 +76,7 @@
 			}
 		},
 		{
-			"name": "Obtain Architect",
+			"name": "Obtain Architect Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -85,7 +85,7 @@
 			}
 		},
 		{
-			"name": "Obtain Shaman",
+			"name": "Obtain Shaman Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -94,7 +94,7 @@
 			}
 		},
 		{
-			"name": "Obtain Cloakless",
+			"name": "Obtain Cloakless Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
