@@ -33,29 +33,5 @@
         <PackageReference Include="WarperSan.BingoAPI" Version="0.0.0"/>
     </ItemGroup>
 
-    <!-- Thunderstore Package metadata -->
-    <PropertyGroup>
-        <ThunderstoreTeam>$(Authors)</ThunderstoreTeam>
-        <ThunderstoreName>$(AssemblyTitle)</ThunderstoreName>
-        <ThunderstoreDescription>$(Description)</ThunderstoreDescription>
-        <ThunderstoreWebsite>$(RepositoryUrl)</ThunderstoreWebsite>
-
-        <ThunderstoreCommunities>hollow-knight-silksong</ThunderstoreCommunities>
-        <ThunderstoreCategories>mods</ThunderstoreCategories>
-
-        <ThunderstoreToken>$(THUNDERSTORE_TOKEN)</ThunderstoreToken>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <!-- Mod Files -->
-        <ThunderstoreFile Include="$(TargetPath)" Destination="plugins/"/>
-        <ThunderstoreFile Include="$(OutputPath)BingoAPI.dll" Destination="plugins/"/>
-
-        <!-- Package Files -->
-        <ThunderstorePackageFile Include="$(SolutionDir)README.md"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)icon.png"/>
-
-        <!-- Thunderstore Dependencies -->
-        <ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3"/>
-    </ItemGroup>
+    <Import Project="Thunderstore.props"/>
 </Project>
