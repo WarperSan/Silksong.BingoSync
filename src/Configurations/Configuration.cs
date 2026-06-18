@@ -9,11 +9,13 @@ internal class Configuration
 {
 	public readonly BoardConfig Board;
 	public readonly JoinConfig Join;
+	public readonly ExperimentalConfig Experimental;
 
 	private Configuration(ConfigFile cfg)
 	{
 		Board = new BoardConfig(cfg);
 		Join = new JoinConfig(cfg);
+		Experimental = new ExperimentalConfig(cfg);
 	}
 
 	/// <summary>
