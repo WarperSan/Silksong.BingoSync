@@ -18,7 +18,7 @@ internal class BoardConfig
 			SECTION,
 			"ToggleBoard",
 			KeyCode.B,
-			"configuration.board.toggle.description"
+			"Defines the keybind to toggle the board"
 		);
 	}
 }

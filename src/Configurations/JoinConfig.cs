@@ -19,13 +19,13 @@ internal class JoinConfig
 			SECTION,
 			"DefaultNickname",
 			"",
-			"configuration.join.nickname.description"
+			"Defines the default nickname in the join panel"
 		);
 		ToggleUI = cfg.Bind(
 			SECTION,
 			"ToggleJoinUI",
 			KeyCode.H,
-			"configuration.join.toggle.description"
+			"Defines the keybind to toggle the join panel"
 		);
 	}
 }
