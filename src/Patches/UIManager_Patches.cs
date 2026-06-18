@@ -65,7 +65,10 @@ internal class UIManager_Patches
 		var menu = ConnectionMenu.Create(joinSettings);
 		menu.transform.SetParent(container.transform, false);
 
-		Canvas.ForceUpdateCanvases();
-		LayoutRebuilder.ForceRebuildLayoutImmediate(menu.GetComponent<RectTransform>());
+		if (menu.TryGetComponent(out RectTransform menuTransform))
+		{
+			Canvas.ForceUpdateCanvases();
+			LayoutRebuilder.ForceRebuildLayoutImmediate(menuTransform);
+		}
 	}
 }
