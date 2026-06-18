@@ -3,7 +3,7 @@
     <PropertyGroup>
         <AssemblyTitle>Silksong.BingoSync</AssemblyTitle>
         <Authors>WarperSan</Authors>
-        <Description>TODO</Description>
+        <Description>Connects Silksong to BingoSync, letting you play bingo directly in-game</Description>
         <RepositoryUrl>https://github.com/WarperSan/Silksong.BingoSync</RepositoryUrl>
     </PropertyGroup>
 
