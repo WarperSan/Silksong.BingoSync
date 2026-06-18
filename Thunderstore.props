@@ -23,6 +23,8 @@
 
         <!-- Package Files -->
         <ThunderstorePackageFile Include="$(SolutionDir)README.md"/>
+        <ThunderstorePackageFile Include="$(SolutionDir)CHANGELOG.md"/>
+        <ThunderstorePackageFile Include="$(SolutionDir)LICENSE"/>
         <ThunderstorePackageFile Include="$(SolutionDir)icon.png"/>
 
         <!-- Thunderstore Dependencies -->
