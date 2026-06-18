@@ -1,7 +1,7 @@
 using System.Reflection;
 using BepInEx;
 using BingoAPI.Conditions;
-using Silksong.BingoSync.Conditions;
+using Newtonsoft.Json;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.Helpers;
 
@@ -13,22 +13,39 @@ public partial class Plugin : BaseUnityPlugin
 	/// <summary>
 	/// Loaded instance of <see cref="Silksong.BingoSync.Controller"/>
 	/// </summary>
-	public static Controller? Controller { get; private set; }
+	internal static readonly Controller Controller = new();
 
 	private void Awake()
 	{
+		BingoAPI.Helpers.Log.Logger = Log.LogCore;
+
 		Configuration.Load(Config);
 		Patch.ApplyAll();
 
-		AddConditions();
+		Log.Info($"{Id} v{Version} has loaded!");
+	}
+
+	private void Start()
+	{
+		ConditionAttribute.AddAll();
 
 		var pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
 		var goalsFolder = Path.Combine(pluginFolder, "Goals");
 		var pool = GoalLoader.LoadPoolFromFolder(goalsFolder);
+
+		var content = new List<dynamic>();
+
+		foreach (var goal in pool)
+		{
+			content.Add(new
+			{
+				name = goal.Name,
+			});
+		}
+
+		Log.Info(JsonConvert.SerializeObject(content));
+
+		Controller.Pool = pool;
 		Log.Info($"Loaded '{pool.Count}' goals.");
-
-		Controller = new Controller(pool);
-
-		Log.Info($"{Id} v{Version} has loaded!");
 	}
 }

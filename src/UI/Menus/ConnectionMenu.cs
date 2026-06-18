@@ -24,7 +24,7 @@ internal class ConnectionMenu : MonoBehaviour
 
 	private State _state = State.Offline;
 
-	private void SetOnline(Controller controller)
+	private void SetOnline()
 	{
 		_state = State.Online;
 		_joinForm?.DisableInputs();
@@ -32,7 +32,7 @@ internal class ConnectionMenu : MonoBehaviour
 		if (_teamPicker != null)
 		{
 			_teamPicker.EnableInputs();
-			_teamPicker.SetTeam(controller.Team);
+			_teamPicker.SetTeam(Plugin.Controller.Team);
 		}
 	}
 
@@ -121,11 +121,6 @@ internal class ConnectionMenu : MonoBehaviour
 		if (_state != State.Offline)
 			throw new InvalidOperationException();
 
-		var controller = Plugin.Controller;
-
-		if (controller == null)
-			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
-
 		if (_joinForm == null)
 			throw new NullReferenceException($"No '{nameof(JoinForm)}' assigned.");
 
@@ -137,7 +132,7 @@ internal class ConnectionMenu : MonoBehaviour
 		{
 			_state = State.Connecting;
 
-			var succeeded = await controller.Join(settings);
+			var succeeded = await Plugin.Controller.Join(settings);
 
 			if (!succeeded)
 			{
@@ -146,7 +141,7 @@ internal class ConnectionMenu : MonoBehaviour
 				return;
 			}
 
-			SetOnline(controller);
+			SetOnline();
 		}
 		catch (Exception e)
 		{
@@ -160,22 +155,17 @@ internal class ConnectionMenu : MonoBehaviour
 		if (_state != State.Online)
 			throw new InvalidOperationException();
 
-		var controller = Plugin.Controller;
-
-		if (controller == null)
-			throw new NullReferenceException($"No '{nameof(Controller)}' assigned.");
-
 		_teamPicker?.DisableInputs();
 
 		try
 		{
 			_state = State.Disconnecting;
 
-			var succeeded = await controller.Exit();
+			var succeeded = await Plugin.Controller.Exit();
 
 			if (!succeeded)
 			{
-				SetOnline(controller);
+				SetOnline();
 				Log.Error("Failed to exit the room.");
 				return;
 			}
@@ -184,7 +174,7 @@ internal class ConnectionMenu : MonoBehaviour
 		}
 		catch (Exception e)
 		{
-			SetOnline(controller);
+			SetOnline();
 			Log.Error($"Error while joining the room: {e}");
 		}
 	}

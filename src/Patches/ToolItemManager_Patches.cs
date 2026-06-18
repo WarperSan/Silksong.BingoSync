@@ -11,6 +11,6 @@ internal class ToolItemManager_Patches
 	[HarmonyPatch(nameof(ToolItemManager.ReportCrestUnlocked))]
 	private static void ReportCrestUnlocked_Postfix()
 	{
-		Plugin.Controller?.Evaluate();
+		Plugin.Controller.Evaluate();
 	}
 }

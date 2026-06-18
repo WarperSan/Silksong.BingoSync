@@ -68,8 +68,5 @@ internal class UIManager_Patches
 	{
 		var board = BingoBoard.Create();
 		board.transform.SetParent(parent, false);
-
-		board.Subscribe(Plugin.Controller.Events);
-		Plugin.Controller.OnCardUpdated += board.DisplayCard;
 	}
 }

@@ -7,17 +7,14 @@ using Silksong.BingoSync.Helpers;
 
 namespace Silksong.BingoSync;
 
-public class Controller : IDisposable
+internal class Controller : IDisposable
 {
-	private readonly GoalPool _pool;
-
+	public GoalPool Pool = [];
 	public readonly EventDispatcher Events;
 	private readonly Session _session;
 
-	public Controller(GoalPool pool)
+	public Controller()
 	{
-		_pool = pool;
-
 		Events = new EventDispatcher();
 		SubscribeToEvents(Events);
 
@@ -127,6 +124,11 @@ public class Controller : IDisposable
 	public Team Team => _session.Team;
 
 	/// <summary>
+	/// Defines if this client is connected
+	/// </summary>
+	public bool IsConnected => _session.IsInRoom;
+
+	/// <summary>
 	/// Joins the room with the given settings
 	/// </summary>
 	public Task<bool> Join(JoinRoomSettings settings) => _session.JoinRoom(settings);
@@ -157,7 +159,7 @@ public class Controller : IDisposable
 			return;
 		}
 
-		_runningCardUpdate = Task.Run(() => _session.GetCard(_pool));
+		_runningCardUpdate = Task.Run(() => _session.GetCard(Pool));
 
 		_runningCardUpdate.ContinueWith(task =>
 		{

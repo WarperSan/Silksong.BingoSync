@@ -11,6 +11,6 @@ internal class PlayerData_Patches
 	[HarmonyPatch(nameof(PlayerData.SetBool))]
 	private static void SetBool_Postfix()
 	{
-		Plugin.Controller?.Evaluate();
+		Plugin.Controller.Evaluate();
 	}
 }

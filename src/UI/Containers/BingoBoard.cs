@@ -1,4 +1,3 @@
-using BingoAPI.Events;
 using BingoAPI.Models;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Components;
@@ -13,21 +12,12 @@ public class BingoBoard : MonoBehaviour
 	private BingoCell[]? _cells;
 	private CanvasGroup? _group;
 
-	/// <summary>
-	/// Subscribes this board to the given <see cref="EventDispatcher"/>
-	/// </summary>
-	public void Subscribe(EventDispatcher dispatcher)
-	{
-		dispatcher.OnSelfSquareMarked += OnSquareMarked;
-		dispatcher.OnOtherSquareMarked += OnSquareMarked;
-		dispatcher.OnSelfSquareCleared += OnSquareCleared;
-		dispatcher.OnOtherSquareCleared += OnSquareCleared;
-	}
+	private void Awake() => Subscribe(Plugin.Controller);
 
 	/// <summary>
 	/// Displays the given <see cref="Card"/>
 	/// </summary>
-	public void DisplayCard(Card? card)
+	private void DisplayCard(Card? card)
 	{
 		if (card == null)
 			return;
@@ -49,16 +39,57 @@ public class BingoBoard : MonoBehaviour
 	/// </summary>
 	private void ToggleVisibility()
 	{
-		if (_group == null)
+		if (!Plugin.Controller.IsConnected)
+			return;
+		
+		if (!_group)
 			return;
 
-		var isActive = _group.alpha > 0f;
-		_group.alpha = isActive ? 0f : 1f;
+		if (_group.alpha > 0f)
+			Hide();
+		else
+			Show();
+	}
+
+	private void Show()
+	{
+		if (!_group)
+			return;
+
+		_group.alpha = 1f;
+	}
+
+	private void Hide()
+	{
+		if (!_group)
+			return;
+
+		_group.alpha = 0f;
+	}
+
+	#region Events
+
+	/// <summary>
+	/// Subscribes this board to the given <see cref="Controller"/>
+	/// </summary>
+	private void Subscribe(Controller controller)
+	{
+		controller.OnCardUpdated += DisplayCard;
+
+		var dispatcher = controller.Events;
+
+		dispatcher.OnSelfDisconnected += _ => Hide();
+		dispatcher.OnSelfSquareMarked += OnSquareMarked;
+		dispatcher.OnOtherSquareMarked += OnSquareMarked;
+		dispatcher.OnSelfSquareCleared += OnSquareCleared;
+		dispatcher.OnOtherSquareCleared += OnSquareCleared;
 	}
 
 	private void OnSquareMarked(Player player, Square square, Team team) => _cells?[square.Slot.Index].AddTeam(team);
 
 	private void OnSquareCleared(Player player, Square square, Team team) => _cells?[square.Slot.Index].RemoveTeam(team);
+
+	#endregion
 
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoBoard"/>
