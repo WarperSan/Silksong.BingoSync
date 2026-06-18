@@ -4,8 +4,8 @@
 
 # Silksong.BingoSync
 
-[![Thunderstore Version](https://img.shields.io/thunderstore/v/WarperSan/Silksong.BingoSync)](https://thunderstore.io/package/WarperSan/Silksong.BingoSync/)
-[![Thunderstore Downloads](https://img.shields.io/thunderstore/dt/WarperSan/Silksong.BingoSync?color=purple)](https://thunderstore.io/package/WarperSan/Silksong.BingoSync/versions/)
+[![Thunderstore Version](https://img.shields.io/thunderstore/v/WarperSan/Silksong_BingoSync)](https://thunderstore.io/package/WarperSan/Silksong_BingoSync/)
+[![Thunderstore Downloads](https://img.shields.io/thunderstore/dt/WarperSan/Silksong_BingoSync?color=purple)](https://thunderstore.io/package/WarperSan/Silksong_BingoSync/versions/)
 [![License](https://img.shields.io/github/license/WarperSan/Silksong.BingoSync?color=orange)](https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/master/LICENSE)
 
 
