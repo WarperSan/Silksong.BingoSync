@@ -1,0 +1,538 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Tool Goals",
+	"description": "Goals focused on obtaining each tool",
+	"goals": [
+		{
+			"name": "Obtain Straight Pin",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "straight_pin"
+				}
+			}
+		},
+		{
+			"name": "Obtain Threefold Pin",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "threefold_pin"
+				}
+			}
+		},
+		{
+			"name": "Obtain Sting Shard",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "sting_shard"
+				}
+			}
+		},
+		{
+			"name": "Obtain Tacks",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "tacks"
+				}
+			}
+		},
+		{
+			"name": "Obtain Longpin",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "longpin"
+				}
+			}
+		},
+		{
+			"name": "Obtain Curveclaw",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "curveclaw"
+				}
+			}
+		},
+		{
+			"name": "Obtain Curvesickle",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "curvesickle"
+				}
+			}
+		},
+		{
+			"name": "Obtain Throwing Ring",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "throwing_ring"
+				}
+			}
+		},
+		{
+			"name": "Obtain Pimpillo",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "pimpillo"
+				}
+			}
+		},
+		{
+			"name": "Obtain Conchcutter",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "conchcutter"
+				}
+			}
+		},
+		{
+			"name": "Obtain Weaver Silkshot",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "weaver_silkshot"
+				}
+			}
+		},
+		{
+			"name": "Obtain Architect Silkshot",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "architect_silkshot"
+				}
+			}
+		},
+		{
+			"name": "Obtain Forge Silkshot",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "forge_silkshot"
+				}
+			}
+		},
+		{
+			"name": "Obtain Delver's Drill",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "delvers_drill"
+				}
+			}
+		},
+		{
+			"name": "Obtain Cogwork Wheel",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "cogwork_wheel"
+				}
+			}
+		},
+		{
+			"name": "Obtain Cogfly",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "cogfly"
+				}
+			}
+		},
+		{
+			"name": "Obtain Rosary Cannon",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "rosary_cannon"
+				}
+			}
+		},
+		{
+			"name": "Obtain Voltvessels",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "voltvessels"
+				}
+			}
+		},
+		{
+			"name": "Obtain Flintslate",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "flintslate"
+				}
+			}
+		},
+		{
+			"name": "Obtain Snare Setter",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "snare_setter"
+				}
+			}
+		},
+		{
+			"name": "Obtain Flea Brew",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "flea_brew"
+				}
+			}
+		},
+		{
+			"name": "Obtain Plasmium Phial",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "plasmium_phial"
+				}
+			}
+		},
+		{
+			"name": "Obtain Needle Phial",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "needle_phial"
+				}
+			}
+		},
+		{
+			"name": "Obtain Druid's Eye",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "druids_eye"
+				}
+			}
+		},
+		{
+			"name": "Obtain Druid's Eyes",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "druids_eyes"
+				}
+			}
+		},
+		{
+			"name": "Obtain Magma Bell",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "magma_bell"
+				}
+			}
+		},
+		{
+			"name": "Obtain Warding Bell",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "warding_bell"
+				}
+			}
+		},
+		{
+			"name": "Obtain Pollip Pouch",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "pollip_pouch"
+				}
+			}
+		},
+		{
+			"name": "Obtain Fractured Mask",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "fractured_mask"
+				}
+			}
+		},
+		{
+			"name": "Obtain Multibinder",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "multibinder"
+				}
+			}
+		},
+		{
+			"name": "Obtain Weavelight",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "weavelight"
+				}
+			}
+		},
+		{
+			"name": "Obtain Sawtooth Circlet",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "sawtooth_circlet"
+				}
+			}
+		},
+		{
+			"name": "Obtain Injector Band",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "injector_band"
+				}
+			}
+		},
+		{
+			"name": "Obtain Spool Extender",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "spool_extender"
+				}
+			}
+		},
+		{
+			"name": "Obtain Reserve Bind",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "reserve_bind"
+				}
+			}
+		},
+		{
+			"name": "Obtain Claw Mirror",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "claw_mirror"
+				}
+			}
+		},
+		{
+			"name": "Obtain Claw Mirrors",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "claw_mirrors"
+				}
+			}
+		},
+		{
+			"name": "Obtain Memory Crystal",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "memory_crystal"
+				}
+			}
+		},
+		{
+			"name": "Obtain Snitch Pick",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "snitch_pick"
+				}
+			}
+		},
+		{
+			"name": "Obtain Volt Filament",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "volt_filament"
+				}
+			}
+		},
+		{
+			"name": "Obtain Quick Sling",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "quick_sling"
+				}
+			}
+		},
+		{
+			"name": "Obtain Wreath of Purity",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "wreath_of_purity"
+				}
+			}
+		},
+		{
+			"name": "Obtain Longclaw",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "longclaw"
+				}
+			}
+		},
+		{
+			"name": "Obtain Wispfire Lantern",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "wispfire_lantern"
+				}
+			}
+		},
+		{
+			"name": "Obtain Egg of Flealia",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "egg_of_flealia"
+				}
+			}
+		},
+		{
+			"name": "Obtain Pin Badge",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "pin_badge"
+				}
+			}
+		},
+		{
+			"name": "Obtain Compass",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "compass"
+				}
+			}
+		},
+		{
+			"name": "Obtain Shard Pendant",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "shard_pendant"
+				}
+			}
+		},
+		{
+			"name": "Obtain Magnetite Brooch",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "magnetite_brooch"
+				}
+			}
+		},
+		{
+			"name": "Obtain Weighted Belt",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "weighted_belt"
+				}
+			}
+		},
+		{
+			"name": "Obtain Barbed Bracelet",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "barbed_bracelet"
+				}
+			}
+		},
+		{
+			"name": "Obtain Dead Bug's Purse",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "dead_bugs_purse"
+				}
+			}
+		},
+		{
+			"name": "Obtain Shell Satchel",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "shell_satchel"
+				}
+			}
+		},
+		{
+			"name": "Obtain Magnetite Dice",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "magnetite_dice"
+				}
+			}
+		},
+		{
+			"name": "Obtain Scuttlebrace",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "scuttlebrace"
+				}
+			}
+		},
+		{
+			"name": "Obtain Ascendant's Grip",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "ascendants_grip"
+				}
+			}
+		},
+		{
+			"name": "Obtain Spider Strings",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "spider_strings"
+				}
+			}
+		},
+		{
+			"name": "Obtain Silkspeed Anklets",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "silkspeed_anklets"
+				}
+			}
+		},
+		{
+			"name": "Obtain Thief's Mark",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "thiefs_mark"
+				}
+			}
+		}
+	]
+}
