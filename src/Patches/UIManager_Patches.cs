@@ -38,7 +38,7 @@ internal class UIManager_Patches
 		_bingoCanvas = canvas;
 
 		CreateConnectionMenu(gameObject.transform);
-		
+
 		var boardContainer = BoardContainer.Create();
 		boardContainer.transform.SetParent(gameObject.transform, false);
 	}
@@ -64,11 +64,8 @@ internal class UIManager_Patches
 
 		var menu = ConnectionMenu.Create(joinSettings);
 		menu.transform.SetParent(container.transform, false);
-	}
 
-	private static void CreateBoard(Transform parent)
-	{
-		var board = BingoBoard.Create();
-		board.transform.SetParent(parent, false);
+		Canvas.ForceUpdateCanvases();
+		LayoutRebuilder.ForceRebuildLayoutImmediate(menu.GetComponent<RectTransform>());
 	}
 }
