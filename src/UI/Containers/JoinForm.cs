@@ -38,7 +38,14 @@ internal class JoinForm : MonoBehaviour
 		JoinRoomSettings settings = new();
 
 		if (_roomCodeInput != null)
-			settings.Code = _roomCodeInput.Text;
+		{
+			var codeOrLink = _roomCodeInput.Text;
+
+			if (BingoAPI.Helpers.Network.TryGetRoomCode(codeOrLink, out var code))
+				codeOrLink = code;
+
+			settings.Code = codeOrLink;
+		}
 
 		if (_nicknameInput != null)
 			settings.Nickname = _nicknameInput.Text;
@@ -95,7 +102,7 @@ internal class JoinForm : MonoBehaviour
 		form._canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
 		// Inputs
-		var codeInput = TextField.Create("Room Code");
+		var codeInput = TextField.Create("Room Code / Link");
 		codeInput.transform.SetParent(gameObject.transform, false);
 		form._roomCodeInput = codeInput;
 
