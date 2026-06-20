@@ -50,9 +50,9 @@
       },
       "WarperSan.BingoAPI": {
         "type": "Direct",
-        "requested": "[0.1.2-alpha, )",
-        "resolved": "0.1.2-alpha",
-        "contentHash": "HLdF7npQkLpI40ycUAPWWGEr0wxLtQpbPiTHerFxW1rBKqdyR8+FJhkUjWG/y9+u6Gmzz+Q8rmISnMnNsVd/Zw==",
+        "requested": "[0.1.3-alpha, )",
+        "resolved": "0.1.3-alpha",
+        "contentHash": "pI4uZLp76FWGKcCu2bkVmqQfxfIeHR96LO6QwsDICP3Qu9tNgMv1fh3Xyk7IjLHUiAHsOpekNzrVQ1FYAD+NFw==",
         "dependencies": {
           "JetBrains.Annotations": "2026.2.0"
         }
