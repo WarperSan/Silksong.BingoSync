@@ -1,0 +1,43 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Needle Goals",
+	"description": "Goals focused on obtaining each needle",
+	"goals": [
+		{
+			"name": "Obtain Sharpened Needle",
+			"condition": {
+				"action": "has_obtained_needle",
+				"params": {
+					"needle": "sharpened_needle"
+				}
+			}
+		},
+		{
+			"name": "Obtain Shining Needle",
+			"condition": {
+				"action": "has_obtained_needle",
+				"params": {
+					"needle": "shining_needle"
+				}
+			}
+		},
+		{
+			"name": "Obtain Hivesteel Needle",
+			"condition": {
+				"action": "has_obtained_needle",
+				"params": {
+					"needle": "hivesteel_needle"
+				}
+			}
+		},
+		{
+			"name": "Obtain Pale Steel Needle",
+			"condition": {
+				"action": "has_obtained_needle",
+				"params": {
+					"needle": "pale_steel_needle"
+				}
+			}
+		}
+	]
+}
