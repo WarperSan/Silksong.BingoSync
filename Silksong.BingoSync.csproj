@@ -42,7 +42,7 @@
         </When>
         <Otherwise>
             <ItemGroup>
-                <PackageReference Include="WarperSan.BingoAPI" Version="0.1.3"/>
+                <PackageReference Include="WarperSan.BingoAPI" Version="0.1.3-alpha"/>
             </ItemGroup>
         </Otherwise>
     </Choose>
