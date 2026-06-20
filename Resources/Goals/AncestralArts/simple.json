@@ -1,0 +1,61 @@
+{
+	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"name": "Simple Ancestral Art Goals",
+	"description": "Goals focused on obtaining each ancestral art",
+	"goals": [
+		{
+			"name": "Acquire Swift Step",
+			"condition": {
+				"action": "has_obtained_ancestral_art",
+				"params": {
+					"art": "swift_step"
+				}
+			}
+		},
+		{
+			"name": "Acquire Cling Grip",
+			"condition": {
+				"action": "has_obtained_ancestral_art",
+				"params": {
+					"art": "cling_grip"
+				}
+			}
+		},
+		{
+			"name": "Acquire Needolin",
+			"condition": {
+				"action": "has_obtained_ancestral_art",
+				"params": {
+					"art": "needolin"
+				}
+			}
+		},
+		{
+			"name": "Acquire Clawline",
+			"condition": {
+				"action": "has_obtained_ancestral_art",
+				"params": {
+					"art": "clawline"
+				}
+			}
+		},
+		{
+			"name": "Acquire Silk Soar",
+			"condition": {
+				"action": "has_obtained_ancestral_art",
+				"params": {
+					"art": "silk_soar"
+				}
+			}
+		},
+		{
+			"name": "Acquire Sylphsong",
+			"condition": {
+				"action": "has_obtained_ancestral_art",
+				"params": {
+					"art": "sylphsong"
+				}
+			}
+		}
+	]
+}
