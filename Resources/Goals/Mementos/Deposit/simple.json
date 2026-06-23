@@ -1,0 +1,106 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/BingoAPI/refs/heads/master/docs/goals.schema.json",
+	"name": "Simple Memento Goals",
+	"description": "Goals focused on depositing each memento",
+	"goals": [
+		{
+			"name": "Deposit Sprintmaster Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "sprintmaster"
+				}
+			}
+		},
+		{
+			"name": "Deposit Guardian's Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "guardian"
+				}
+			}
+		},
+		{
+			"name": "Deposit Hero's Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "hero"
+				}
+			}
+		},
+		{
+			"name": "Deposit Hunter's Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "hunter"
+				}
+			}
+		},
+		{
+			"name": "Deposit Grey Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "grey"
+				}
+			}
+		},
+		{
+			"name": "Deposit Surface Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "surface"
+				}
+			}
+		},
+		{
+			"name": "Deposit Craw Memento",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "craw"
+				}
+			}
+		},
+		{
+			"name": "Deposit Encrusted Heart",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "encrusted_heart"
+				}
+			}
+		},
+		{
+			"name": "Deposit Pollen Heart",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "pollen_heart"
+				}
+			}
+		},
+		{
+			"name": "Deposit Hunter Heart",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "hunter_heart"
+				}
+			}
+		},
+		{
+			"name": "Deposit Conjoined Heart",
+			"condition": {
+				"action": "has_deposited_memento",
+				"params": {
+					"memento": "conjoined_heart"
+				}
+			}
+		}
+	]
+}

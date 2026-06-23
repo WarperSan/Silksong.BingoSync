@@ -5,6 +5,8 @@
 
 ## Changes
 - Switched the schema used, so any set-up can have the IntelliSense
+- Added condition `has_obtained_memento` with 11 simple goals
+- Added condition `has_deposited_memento` with 11 simple goals
 
 </details>
 
