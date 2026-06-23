@@ -1,6 +1,14 @@
 # Changelog
 
 <details>
+<summary>v1.2.0</summary>
+
+## Changes
+- Switched the schema used, so any set-up can have the IntelliSense
+
+</details>
+
+<details>
 <summary>v1.1.0</summary>
 
 ## Changes

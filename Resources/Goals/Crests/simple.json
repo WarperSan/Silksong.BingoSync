@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../../../../C#/BingoAPI/docs/goals.schema.json",
+	"$schema": "https://raw.githubusercontent.com/WarperSan/BingoAPI/refs/heads/master/docs/goals.schema.json",
 	"name": "Simple Crest Goals",
 	"description": "Goals focused on obtaining each crest",
 	"goals": [
