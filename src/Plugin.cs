@@ -1,9 +1,9 @@
-using System.Reflection;
 using BepInEx;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.Helpers;
+using Path = Silksong.BingoSync.Helpers.Path;
 
 namespace Silksong.BingoSync;
 
@@ -29,8 +29,7 @@ public partial class Plugin : BaseUnityPlugin
 	{
 		ConditionAttribute.AddAll();
 
-		var pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
-		var goalsFolder = Path.Combine(pluginFolder, "Goals");
+		var goalsFolder = Path.GetAbsolutePath("Goals/");
 		var pool = GoalLoader.LoadPoolFromFolder(goalsFolder);
 
 		var content = new List<dynamic>();
