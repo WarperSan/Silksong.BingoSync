@@ -7,7 +7,7 @@
         <RepositoryUrl>https://github.com/WarperSan/Silksong.BingoSync</RepositoryUrl>
     </PropertyGroup>
 
-    <Import Condition="Exists('SilksongPath.props')" Project="SilksongPath.props"/>
+    <Import Condition="Exists('env.props')" Project="env.props"/>
     
     <!-- Project Properties -->
     <PropertyGroup>
