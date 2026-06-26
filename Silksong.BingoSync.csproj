@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <Import Condition="Exists('env.props')" Project="env.props"/>
-    
+
     <!-- Project Properties -->
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
@@ -46,6 +46,14 @@
             </ItemGroup>
         </Otherwise>
     </Choose>
+
+    <!-- Dependencies -->
+    <ItemGroup>
+        <!-- Hard -->
+        <PackageReference Include="Silksong.ModMenu" Version="0.4.5"/>
+
+        <!-- Soft -->
+    </ItemGroup>
 
     <Import Project="Thunderstore.props"/>
 </Project>
