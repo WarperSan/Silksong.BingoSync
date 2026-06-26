@@ -70,6 +70,15 @@ internal class BingoCell : MonoBehaviour
 		var backgroundGo = new GameObject("Background");
 		backgroundGo.transform.SetParent(gameObject.transform, false);
 
+		var background = backgroundGo.AddComponent<Image>();
+
+		background.color = new Color(
+			0.1f,
+			0.1f,
+			0.1f,
+			1f
+		);
+
 		var backgroundContainer = backgroundGo.AddComponent<VerticalLayoutGroup>();
 		backgroundContainer.childAlignment = TextAnchor.MiddleCenter;
 
@@ -85,12 +94,22 @@ internal class BingoCell : MonoBehaviour
 
 			var image = backgroundImage.AddComponent<Image>();
 
-			var color = team.GetColor();
-			color.a = 0.3f;
-			image.color = color;
+			image.color = team.GetColor();
 
 			backgroundImages.Add(team, image);
 		}
+
+		var darkenerGo = new GameObject("Darkener");
+		darkenerGo.transform.SetParent(gameObject.transform, false);
+
+		var darkener = darkenerGo.AddComponent<Image>();
+
+		darkener.color = new Color(
+			0f,
+			0f,
+			0f,
+			0.4f
+		);
 
 		var textGo = new GameObject("Text");
 		textGo.transform.SetParent(gameObject.transform, false);

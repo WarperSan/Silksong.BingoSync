@@ -71,12 +71,7 @@ public class BingoBoard : MonoBehaviour
 
 		var backgroundShadow = gameObject.AddComponent<Image>();
 
-		backgroundShadow.color = new Color(
-			0f,
-			0f,
-			0f,
-			0.7f
-		);
+		backgroundShadow.color = Color.black;
 
 		var board = gameObject.AddComponent<BingoBoard>();
 		var grid = gameObject.AddComponent<GridLayoutGroup>();
