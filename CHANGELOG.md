@@ -10,6 +10,7 @@
 ## Changes
 - Changed color of teams to suit the theme
 - Changed name of teams to suit the theme
+- Changed colors of the board to make it more readable
 
 </details>
 
