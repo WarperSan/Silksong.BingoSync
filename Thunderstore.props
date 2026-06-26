@@ -29,6 +29,6 @@
 
         <!-- Thunderstore Dependencies -->
         <ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3"/>
-        <ThunderstoreDependency Include="silksong_modding-ModMenu" Version="0.4.5"/>
+        <ThunderstoreDependency Include="silksong_modding-ModMenu" Version="0.7.5"/>
     </ItemGroup>
 </Project>
