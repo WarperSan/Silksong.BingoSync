@@ -1,7 +1,7 @@
 # Changelog
 
 <details>
-<summary>v1.3.0</summary>
+<summary>v1.2.1</summary>
 
 ## Added
 - Added custom menu for configurations using `ModMenu`
