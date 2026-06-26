@@ -8,6 +8,7 @@ using Path = Silksong.BingoSync.Helpers.Path;
 namespace Silksong.BingoSync;
 
 [BepInAutoPlugin(id: "dev.warpersan.silksong.bingosync")]
+[BepInDependency(ModMenu.ModMenuPlugin.Id)]
 public partial class Plugin : BaseUnityPlugin
 {
 	/// <summary>
