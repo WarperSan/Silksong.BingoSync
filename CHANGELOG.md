@@ -5,6 +5,11 @@
 
 ## Added
 - Added custom menu for configurations using `ModMenu`
+- Added config `AddMoreTeams` to add extra teams
+
+## Changes
+- Changed color of teams to suit the theme
+- Changed name of teams to suit the theme
 
 </details>
 

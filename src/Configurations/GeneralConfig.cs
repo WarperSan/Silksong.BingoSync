@@ -15,9 +15,9 @@ internal class GeneralConfig
 	{
 		UseAdvancedTeams = cfg.Bind(
 			SECTION,
-			"UseAdvancedTeams",
+			"AddMoreTeams",
 			false,
-			"Defines if the advanced teams are enabled"
+			"Defines if 4 extra teams are added upon loading"
 		);
 	}
 }
