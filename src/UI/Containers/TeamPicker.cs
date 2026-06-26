@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using BingoAPI.Models;
+using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Items;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,7 +72,7 @@ internal class TeamPicker : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="TeamPicker"/>
 	/// </summary>
-	public static TeamPicker Create(Team[] teams, Action<Team> onTeamSelected)
+	public static TeamPicker Create(Action<Team> onTeamSelected)
 	{
 		var gameObject = new GameObject(nameof(TeamPicker));
 		var picker = gameObject.AddComponent<TeamPicker>();
@@ -81,15 +82,31 @@ internal class TeamPicker : MonoBehaviour
 
 		var layoutGroup = gameObject.AddComponent<GridLayoutGroup>();
 		layoutGroup.childAlignment = TextAnchor.MiddleCenter;
-		layoutGroup.cellSize = new Vector2(100f, 50f);
+		layoutGroup.cellSize = new Vector2(125f, 50f);
 		layoutGroup.spacing = Vector2.one * 10f;
-		
+
 		var contentFitter = gameObject.AddComponent<ContentSizeFitter>();
 		contentFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
 		picker._canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
 		var buttons = new Dictionary<Team, TeamPickerButton>();
+
+		List<Team> teams =
+		[
+			Team.Red,
+			Team.Blue,
+			Team.Green,
+			Team.Yellow,
+		];
+
+		if (Configuration.SafeInstance.General.UseAdvancedTeams.Value)
+		{
+			teams.Add(Team.Purple);
+			teams.Add(Team.Navy);
+			teams.Add(Team.Pink);
+			teams.Add(Team.Brown);
+		}
 
 		foreach (var team in teams)
 		{

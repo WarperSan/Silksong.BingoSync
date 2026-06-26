@@ -79,7 +79,7 @@ internal class TeamPickerButton : MonoBehaviour
 
 		var label = textGo.AddComponent<Text>();
 		label.font = Fonts.Normal;
-		label.fontSize = 15;
+		label.fontSize = 17;
 		label.color = Color.white;
 		label.alignment = TextAnchor.MiddleCenter;
 		label.text = team.GetDisplayName();

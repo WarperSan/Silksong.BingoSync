@@ -243,21 +243,7 @@ internal class ConnectionMenu : MonoBehaviour
 		menu._joinForm = joinForm;
 
 		// Team Picker
-		var teamPicker = TeamPicker.Create(
-			[
-				Team.Orange,
-				Team.Red,
-				Team.Blue,
-				Team.Green,
-				Team.Purple,
-				Team.Navy,
-				Team.Teal,
-				Team.Brown,
-				Team.Pink,
-				Team.Yellow,
-			],
-			menu.OnTeamSelected
-		);
+		var teamPicker = TeamPicker.Create(menu.OnTeamSelected);
 		teamPicker.transform.SetParent(mainLayoutGroup.transform, false);
 		menu._teamPicker = teamPicker;
 

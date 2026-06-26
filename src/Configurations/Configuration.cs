@@ -7,12 +7,14 @@ namespace Silksong.BingoSync.Configurations;
 /// </summary>
 internal class Configuration
 {
+	public readonly GeneralConfig General;
 	public readonly BoardConfig Board;
 	public readonly JoinConfig Join;
 	public readonly ExperimentalConfig Experimental;
 
 	private Configuration(ConfigFile cfg)
 	{
+		General = new GeneralConfig(cfg);
 		Board = new BoardConfig(cfg);
 		Join = new JoinConfig(cfg);
 		Experimental = new ExperimentalConfig(cfg);

@@ -18,6 +18,7 @@ internal static class ConfigMenu
 	{
 		var screens = new[]
 		{
+			CreateGeneralConfig(configuration.General),
 			CreateJoinConfig(configuration.Join),
 			CreateBoardConfig(configuration.Board),
 			CreateExperimentalConfig(configuration.Experimental),
@@ -35,6 +36,16 @@ internal static class ConfigMenu
 		return builder.Build();
 	}
 
+	private static AbstractMenuScreen CreateGeneralConfig(GeneralConfig config)
+	{
+		PaginatedMenuScreenBuilder builder = new("General");
+		
+		if (ConfigEntryFactory.GenerateBoolElement(config.UseAdvancedTeams, out var advancedTeamsElement))
+			builder.Add(advancedTeamsElement);
+
+		return builder.Build();
+	}
+	
 	private static AbstractMenuScreen CreateJoinConfig(JoinConfig config)
 	{
 		PaginatedMenuScreenBuilder builder = new("Join");
