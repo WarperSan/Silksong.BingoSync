@@ -91,6 +91,7 @@ internal class ConnectionMenu : MonoBehaviour
 
 		var isActive = _canvasGroup.alpha > 0f;
 		_canvasGroup.alpha = isActive ? 0f : 1f;
+		_canvasGroup.blocksRaycasts = !isActive;
 	}
 
 	private void Update()
