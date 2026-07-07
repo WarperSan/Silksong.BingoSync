@@ -13,6 +13,13 @@ internal sealed class GoalSetSchemaBuilder
 	/// </summary>
 	public JsonSchema Build()
 	{
-		return new JsonSchema();
+		var schema = new JsonSchema
+		{
+			Title = "Goals",
+			Description = "Set of goals available",
+			Type = JsonObjectType.Object,
+		};
+
+		return schema;
 	}
 }
