@@ -18,6 +18,14 @@ internal sealed class GoalSetSchemaBuilder
 			Title = "Goals",
 			Description = "Set of goals available",
 			Type = JsonObjectType.Object,
+			Properties =
+			{
+				["name"] = new JsonSchemaProperty
+				{
+					Description = "Name of the goal",
+					Type = JsonObjectType.String,
+				},
+			},
 		};
 
 		return schema;
