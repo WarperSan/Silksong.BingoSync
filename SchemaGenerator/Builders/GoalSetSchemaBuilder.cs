@@ -9,7 +9,10 @@ internal sealed class GoalSetSchemaBuilder
 {
 	public JsonSchema Build()
 	{
-		var goalSchema = CreateGoalSchema();
+		const string GOALS_PROPERTY_NAME = "goals";
+
+		var conditionsSchema = new JsonSchema();
+		var goalSchema = CreateGoalSchema(conditionsSchema);
 
 		var schema = new JsonSchema
 		{
@@ -28,7 +31,7 @@ internal sealed class GoalSetSchemaBuilder
 					Type = JsonObjectType.String,
 					Description = "Description of the set",
 				},
-				["goals"] = new JsonSchemaProperty
+				[GOALS_PROPERTY_NAME] = new JsonSchemaProperty
 				{
 					Type = JsonObjectType.Array,
 					Description = "List of goals added by this set",
@@ -37,31 +40,39 @@ internal sealed class GoalSetSchemaBuilder
 					UniqueItems = true,
 				},
 			},
-			RequiredProperties = { "goals" },
+			RequiredProperties = { GOALS_PROPERTY_NAME },
+			Definitions =
+			{
+				["conditions"] = conditionsSchema,
+			},
 		};
 
 		return schema;
 	}
 
-	private static JsonSchema CreateGoalSchema()
+	private static JsonSchema CreateGoalSchema(JsonSchema conditionsSchema)
 	{
+		const string NAME_PROPERTY_NAME = "name";
+		const string CONDITION_PROPERTY_NAME = "condition";
+
 		var schema = new JsonSchema
 		{
 			Type = JsonObjectType.Object,
 			Properties =
 			{
-				["name"] = new JsonSchemaProperty
+				[NAME_PROPERTY_NAME] = new JsonSchemaProperty
 				{
 					Type = JsonObjectType.String,
 					Description = "Text to display for this goal",
 				},
-				["condition"] = new JsonSchemaProperty
+				[CONDITION_PROPERTY_NAME] = new JsonSchemaProperty
 				{
 					Type = JsonObjectType.Object,
 					Description = "Condition to meet to complete this goal",
+					Reference = conditionsSchema,
 				},
 			},
-			RequiredProperties = { "name", "condition" },
+			RequiredProperties = { NAME_PROPERTY_NAME, CONDITION_PROPERTY_NAME },
 		};
 
 		return schema;
