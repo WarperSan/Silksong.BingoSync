@@ -1,3 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using SchemaGenerator.Builders;
 
-Console.WriteLine("Hello, World!");
+var builder = new GoalSetSchemaBuilder();
+
+var schema = builder.Build();
+
+File.WriteAllText("../schema.json", schema.ToJson());
