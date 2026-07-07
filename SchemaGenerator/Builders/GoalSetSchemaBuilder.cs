@@ -1,3 +1,4 @@
+using BingoAPI.Conditions;
 using BingoAPI.Goals;
 using NJsonSchema;
 
@@ -8,12 +9,24 @@ namespace SchemaGenerator.Builders;
 /// </summary>
 internal sealed class GoalSetSchemaBuilder
 {
+	#region Conditions
+
+	/// <summary>
+	/// Compiles the gathered information about <see cref="ICondition"/> into a <see cref="JsonSchema"/>
+	/// </summary>
+	private JsonSchema BuildConditionsSchema()
+	{
+		return new JsonSchema();
+	}
+
+	#endregion
+
 	/// <summary>
 	/// Compiles the gathered information into a <see cref="JsonSchema"/>
 	/// </summary>
 	public JsonSchema Build()
 	{
-		var conditionsSchema = new JsonSchema();
+		var conditionsSchema = BuildConditionsSchema();
 
 		var schema = new JsonSchema
 		{
