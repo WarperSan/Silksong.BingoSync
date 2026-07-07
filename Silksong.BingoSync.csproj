@@ -15,6 +15,11 @@
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
 
+    <!-- Files -->
+    <ItemGroup>
+        <Compile Remove="SchemaGenerator/**/*.cs" />
+    </ItemGroup>
+
     <!-- Primary Package References -->
     <ItemGroup>
         <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
