@@ -1,0 +1,259 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/BingoAPI/refs/heads/master/docs/goals.schema.json",
+	"name": "Simple Map Goals",
+	"description": "Goals focused on obtaining each map",
+	"goals": [
+		{
+			"name": "Obtain The Abyss Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "the_abyss"
+				}
+			}
+		},
+		{
+			"name": "Obtain Bellhart Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "bellhart"
+				}
+			}
+		},
+		{
+			"name": "Obtain Bilewater Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "bilewater"
+				}
+			}
+		},
+		{
+			"name": "Obtain Blasted Steps Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "blasted_steps"
+				}
+			}
+		},
+		{
+			"name": "Obtain Bone Bottom Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "bone_bottom"
+				}
+			}
+		},
+		{
+			"name": "Obtain The Cradle Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "the_cradle"
+				}
+			}
+		},
+		{
+			"name": "Obtain Deep Docks Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "deep_docks"
+				}
+			}
+		},
+		{
+			"name": "Obtain Far Fields Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "far_fields"
+				}
+			}
+		},
+		{
+			"name": "Obtain Greymoor Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "greymoor"
+				}
+			}
+		},
+		{
+			"name": "Obtain Hunter's March Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "hunters_march"
+				}
+			}
+		},
+		{
+			"name": "Obtain The Marrow Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "the_marrow"
+				}
+			}
+		},
+		{
+			"name": "Obtain Mount Fay Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "mount_fay"
+				}
+			}
+		},
+		{
+			"name": "Obtain Putrified Ducts Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "putrified_ducts"
+				}
+			}
+		},
+		{
+			"name": "Obtain Sands of Karak Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "sands_of_karak"
+				}
+			}
+		},
+		{
+			"name": "Obtain Shellwood Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "shellwood"
+				}
+			}
+		},
+		{
+			"name": "Obtain Sinner's Road Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "sinners_road"
+				}
+			}
+		},
+		{
+			"name": "Obtain The Slab Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "the_slab"
+				}
+			}
+		},
+		{
+			"name": "Obtain Underworks Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "underworks"
+				}
+			}
+		},
+		{
+			"name": "Obtain Verdania Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "verdania"
+				}
+			}
+		},
+		{
+			"name": "Obtain Weavenest Atla Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "weavenest_atla"
+				}
+			}
+		},
+		{
+			"name": "Obtain Wormways Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "wormways"
+				}
+			}
+		},
+		{
+			"name": "Obtain Choral Chambers Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "choral_chambers"
+				}
+			}
+		},
+		{
+			"name": "Obtain Cogwork Core Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "cogwork_core"
+				}
+			}
+		},
+		{
+			"name": "Obtain Grand Gate Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "grand_gate"
+				}
+			}
+		},
+		{
+			"name": "Obtain High Halls Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "high_halls"
+				}
+			}
+		},
+		{
+			"name": "Obtain Memorium Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "memorium"
+				}
+			}
+		},
+		{
+			"name": "Obtain Whispering Vaults Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "whispering_vaults"
+				}
+			}
+		},
+		{
+			"name": "Obtain Whiteward Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "whiteward"
+				}
+			}
+		}
+	]
+}
