@@ -1,0 +1,34 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/BingoAPI/refs/heads/master/docs/goals.schema.json",
+	"name": "Simple Quill Goals",
+	"description": "Goals focused on obtaining each quill",
+	"goals": [
+		{
+			"name": "Obtain White Quill",
+			"condition": {
+				"action": "has_obtained_quill",
+				"params": {
+					"quill": "white"
+				}
+			}
+		},
+		{
+			"name": "Obtain Red Quill",
+			"condition": {
+				"action": "has_obtained_quill",
+				"params": {
+					"quill": "red"
+				}
+			}
+		},
+		{
+			"name": "Obtain Purple Quill",
+			"condition": {
+				"action": "has_obtained_quill",
+				"params": {
+					"quill": "purple"
+				}
+			}
+		}
+	]
+}
