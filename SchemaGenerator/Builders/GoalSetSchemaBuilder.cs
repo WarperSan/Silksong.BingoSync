@@ -13,6 +13,8 @@ internal sealed class GoalSetSchemaBuilder
 	/// </summary>
 	public JsonSchema Build()
 	{
+		var conditionsSchema = new JsonSchema();
+
 		var schema = new JsonSchema
 		{
 			Title = "Goals",
@@ -30,6 +32,38 @@ internal sealed class GoalSetSchemaBuilder
 					Description = "Description of the set",
 					Type = JsonObjectType.String,
 				},
+				["goals"] = new JsonSchemaProperty
+				{
+					Description = "List of goals added by this set",
+					Type = JsonObjectType.Array,
+					Item = new JsonSchema
+					{
+						Type = JsonObjectType.Object,
+						Properties =
+						{
+							["name"] = new JsonSchemaProperty
+							{
+								Description = "Text to display for this goal",
+								Type = JsonObjectType.String,
+							},
+							["condition"] = new JsonSchemaProperty
+							{
+								Description = "Condition to meet to complete this goal",
+								Reference = conditionsSchema,
+							},
+						},
+					},
+					MinItems = 1,
+					UniqueItems = true,
+				},
+			},
+			RequiredProperties =
+			{
+				"goals",
+			},
+			Definitions =
+			{
+				["conditions"] = conditionsSchema,
 			},
 		};
 
