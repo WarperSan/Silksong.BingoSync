@@ -8,51 +8,32 @@ namespace SchemaGenerator.Builders;
 /// </summary>
 internal sealed class GoalSetSchemaBuilder
 {
+	#region Conditions
+
+	private readonly List<JsonSchema> _conditions = [];
+
+	public GoalSetSchemaBuilder AddCondition(ConditionSchemaBuilder builder)
+	{
+		_conditions.Add(builder.Build());
+		return this;
+	}
+
+	#endregion
+
 	/// <summary>
 	/// Creates a <see cref="JsonSchema"/> from the collected information
 	/// </summary>
 	public JsonSchema Build()
 	{
+		const string GOALS_PROPERTY_NAME = "goals";
+
 		var conditionsSchema = new JsonSchema
 		{
-			OneOf =
-			{
-				new ConditionSchemaBuilder()
-					.Action("owo")
-					.RequiredParameter(
-						"test",
-						new JsonSchemaProperty
-						{
-							Type = JsonObjectType.Integer,
-						}
-					)
-					.Build(),
-				new ConditionSchemaBuilder()
-					.Action("uwu")
-					.RequiredParameter(
-						"test5",
-						new JsonSchemaProperty
-						{
-							Type = JsonObjectType.String,
-						}
-					)
-					.OptionalParameter(
-						"secret",
-						new JsonSchemaProperty
-						{
-							Default = "20",
-						}
-					)
-					.Build(),
-			},
+			MinItems = 1,
 		};
 
-		return CreateGoalSetSchema(conditionsSchema);
-	}
-
-	private static JsonSchema CreateGoalSetSchema(JsonSchema conditionsSchema)
-	{
-		const string GOALS_PROPERTY_NAME = "goals";
+		foreach (var condition in _conditions)
+			conditionsSchema.OneOf.Add(condition);
 
 		var goalSchema = CreateGoalSchema(conditionsSchema);
 
