@@ -1,17 +1,59 @@
+using BingoAPI.Goals;
 using NJsonSchema;
 
 namespace SchemaGenerator.Builders;
 
 /// <summary>
-/// Class responsible for creating a <see cref="JsonSchema"/>
+/// Class responsible for creating a <see cref="JsonSchema"/> for a <see cref="GoalSet"/>
 /// </summary>
 internal sealed class GoalSetSchemaBuilder
 {
+	/// <summary>
+	/// Creates a <see cref="JsonSchema"/> from the collected information
+	/// </summary>
 	public JsonSchema Build()
+	{
+		var conditionsSchema = new JsonSchema
+		{
+			OneOf =
+			{
+				new ConditionSchemaBuilder()
+					.Action("owo")
+					.RequiredParameter(
+						"test",
+						new JsonSchemaProperty
+						{
+							Type = JsonObjectType.Integer,
+						}
+					)
+					.Build(),
+				new ConditionSchemaBuilder()
+					.Action("uwu")
+					.RequiredParameter(
+						"test5",
+						new JsonSchemaProperty
+						{
+							Type = JsonObjectType.String,
+						}
+					)
+					.OptionalParameter(
+						"secret",
+						new JsonSchemaProperty
+						{
+							Default = "20",
+						}
+					)
+					.Build(),
+			},
+		};
+
+		return CreateGoalSetSchema(conditionsSchema);
+	}
+
+	private static JsonSchema CreateGoalSetSchema(JsonSchema conditionsSchema)
 	{
 		const string GOALS_PROPERTY_NAME = "goals";
 
-		var conditionsSchema = new JsonSchema();
 		var goalSchema = CreateGoalSchema(conditionsSchema);
 
 		var schema = new JsonSchema
