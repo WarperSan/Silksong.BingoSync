@@ -15,7 +15,7 @@ public static partial class PlayerDataExtensions
 	/// </summary>
 	public static bool HasQuill(this PlayerData data, Quill quill)
 	{
-		if (data.hasQuill)
+		if (!data.hasQuill)
 			return false;
 
 		return quill switch
