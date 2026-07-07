@@ -7,6 +7,6 @@
 
     <ItemGroup>
         <ProjectReference Include="../Silksong.BingoSync.csproj"/>
-        <PackageReference Include="JsonSchema.Net" Version="9.2.2" />
+        <PackageReference Include="NJsonSchema" Version="11.6.1" />
     </ItemGroup>
 </Project>
