@@ -25,6 +25,11 @@ internal sealed class GoalSetSchemaBuilder
 					Description = "Name of the goal",
 					Type = JsonObjectType.String,
 				},
+				["description"] = new JsonSchemaProperty
+				{
+					Description = "Description of the set",
+					Type = JsonObjectType.String,
+				},
 			},
 		};
 
