@@ -17,7 +17,8 @@
 
     <!-- Files -->
     <ItemGroup>
-        <Compile Remove="SchemaGenerator/**/*.cs" />
+        <Compile Remove="**/*.cs" />
+        <Compile Include="src/**/*.cs" />
     </ItemGroup>
 
     <!-- Primary Package References -->
