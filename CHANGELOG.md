@@ -1,6 +1,14 @@
 # Changelog
 
 <details>
+<summary>v1.2.2</summary>
+
+## Added
+- Added condition `has_obtained_quill` with 3 simple goals
+
+</details>
+
+<details>
 <summary>v1.2.1</summary>
 
 ## Added
