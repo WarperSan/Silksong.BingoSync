@@ -26,24 +26,13 @@ internal sealed class ConditionSchemaBuilder
 	#region Parameters
 
 	private readonly Dictionary<string, JsonSchemaProperty> _parameters = new();
-	private readonly HashSet<string> _requiredParameters = [];
 
 	/// <summary>
-	/// Adds an optional parameter with the given name and schema
+	/// Adds a parameter with the given name and schema
 	/// </summary>
-	public ConditionSchemaBuilder OptionalParameter(string name, JsonSchemaProperty schema)
+	public ConditionSchemaBuilder Parameter(string name, JsonSchemaProperty schema)
 	{
 		_parameters.Add(name, schema);
-		return this;
-	}
-
-	/// <summary>
-	/// Adds a required parameter with the given schema
-	/// </summary>
-	public ConditionSchemaBuilder RequiredParameter(string name, JsonSchemaProperty schema)
-	{
-		_parameters.Add(name, schema);
-		_requiredParameters.Add(name);
 		return this;
 	}
 
@@ -65,7 +54,7 @@ internal sealed class ConditionSchemaBuilder
 		};
 
 		BuildAction(schema, _action);
-		BuildParameters(schema, _parameters, _requiredParameters);
+		BuildParameters(schema, _parameters);
 
 		return schema;
 	}
@@ -86,7 +75,7 @@ internal sealed class ConditionSchemaBuilder
 		schema.RequiredProperties.Add(ACTION_PARAMETER_NAME);
 	}
 
-	private static void BuildParameters(JsonSchema schema, Dictionary<string, JsonSchemaProperty> parameters, HashSet<string> required)
+	private static void BuildParameters(JsonSchema schema, Dictionary<string, JsonSchemaProperty> parameters)
 	{
 		const string PARAMS_PARAMETER_NAME = "params";
 
@@ -99,16 +88,11 @@ internal sealed class ConditionSchemaBuilder
 			AllowAdditionalProperties = false,
 		};
 
-		foreach (var parameter in parameters)
-			paramsProp.Properties.Add(parameter.Key, parameter.Value);
+		foreach ((var name, var parameter) in parameters)
+			paramsProp.Properties.Add(name, parameter);
 
-		if (required.Count > 0)
-		{
+		if (paramsProp.RequiredProperties.Count > 0)
 			schema.RequiredProperties.Add(PARAMS_PARAMETER_NAME);
-
-			foreach (var requiredParameter in required)
-				paramsProp.RequiredProperties.Add(requiredParameter);
-		}
 
 		schema.Properties.Add(
 			PARAMS_PARAMETER_NAME,
