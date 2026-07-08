@@ -1,5 +1,5 @@
 {
-	"$schema": "https://raw.githubusercontent.com/WarperSan/BingoAPI/refs/heads/master/docs/goals.schema.json",
+	"$schema": "https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/refs/heads/master/assets/generated/schema.json",
 	"name": "Extra Ending Goals",
 	"description": "Harder goals focused on completing each ending",
 	"goals": [
