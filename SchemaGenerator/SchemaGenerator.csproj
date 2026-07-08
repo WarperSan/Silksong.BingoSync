@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="UnityEngine" Version="5.6.1" />
         <ProjectReference Include="../Silksong.BingoSync.csproj"/>
         <PackageReference Include="NJsonSchema" Version="11.6.1" />
     </ItemGroup>

@@ -11,11 +11,14 @@ internal static class EnumHelper
 	/// <summary>
 	/// Gets all JSON values of the given <see cref="Enum"/>
 	/// </summary>
-	public static IEnumerable<string> GetValues<T>() where T : Enum
+	public static IEnumerable<string> GetValues(Type type)
 	{
-		foreach (var member in typeof(T).GetFields())
+		if (!typeof(Enum).IsAssignableFrom(type))
+			throw new ArgumentException($"The type '{type.Name}' is not an enum.");
+
+		foreach (var member in type.GetFields())
 		{
-			if (member.FieldType != typeof(T))
+			if (member.FieldType != type)
 				continue;
 
 			var attribute = member.GetCustomAttribute<EnumMemberAttribute>();
