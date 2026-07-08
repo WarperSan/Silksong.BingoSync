@@ -1,9 +1,14 @@
 ﻿using System.Reflection;
+using BingoAPI.Conditions;
 using NJsonSchema;
+using SchemaGenerator;
 using SchemaGenerator.Helpers;
 using Silksong.BingoSync;
 
 var conditionsSchema = new JsonSchema();
+
+var context = new SchemaContext();
+context.AddSchema<ICondition>(conditionsSchema);
 
 foreach (var assembly in AssemblyHelper.GetReferencedAssemblies(typeof(Plugin)))
 {
@@ -23,7 +28,7 @@ foreach (var assembly in AssemblyHelper.GetReferencedAssemblies(typeof(Plugin)))
 		if (type == null)
 			continue;
 
-		if (!ConditionHelper.TryCreateFromType(type, conditionsSchema, out var builder))
+		if (!ConditionHelper.TryCreateFromType(type, context, out var builder))
 			continue;
 
 		conditionsSchema.OneOf.Add(builder.Build());

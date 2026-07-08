@@ -1,7 +1,6 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using NJsonSchema;
 
@@ -17,7 +16,7 @@ internal static class ParameterHelper
 	/// </summary>
 	public static bool TryCreateFromMember(
 		MemberInfo                                  member,
-		JsonSchema                                  conditionsSchema,
+		SchemaContext                               context,
 		[NotNullWhen(true)] out JsonSchemaProperty? schema
 	)
 	{
@@ -34,7 +33,7 @@ internal static class ParameterHelper
 			return false;
 		}
 
-		schema = CreateFromType(dataType, conditionsSchema);
+		schema = CreateFromType(dataType, context);
 		schema.IsRequired = member.GetCustomAttribute<JsonRequiredAttribute>() != null;
 
 		var defaultValueAttr = member.GetCustomAttribute<DefaultValueAttribute>();
@@ -48,21 +47,21 @@ internal static class ParameterHelper
 	/// <summary>
 	/// Creates a <see cref="JsonSchemaProperty"/> from the given <see cref="Type"/>
 	/// </summary>
-	private static JsonSchemaProperty CreateFromType(Type type, JsonSchema conditionsSchema)
+	private static JsonSchemaProperty CreateFromType(Type type, SchemaContext context)
 	{
 		JsonSchemaProperty schema;
 
 		if (type.IsEnum)
 			schema = CreateFromEnum(type);
 		else if (type.IsArray)
-			schema = CreateFromArray(type, conditionsSchema);
+			schema = CreateFromArray(type, context);
 		else if (type.IsPrimitive)
 			schema = CreateFromPrimitive(type);
-		else if (type == typeof(ICondition))
+		else if (context.TryGetSchema(type, out var referenceSchema))
 		{
 			schema = new JsonSchemaProperty
 			{
-				Reference = conditionsSchema,
+				Reference = referenceSchema,
 			};
 		} else
 			throw new NotImplementedException($"Type '{type}' is not implemented yet.");
@@ -89,7 +88,7 @@ internal static class ParameterHelper
 	/// <summary>
 	/// Creates a <see cref="JsonSchemaProperty"/> for the given array type
 	/// </summary>
-	private static JsonSchemaProperty CreateFromArray(Type type, JsonSchema conditionsSchema)
+	private static JsonSchemaProperty CreateFromArray(Type type, SchemaContext context)
 	{
 		var elementType = type.GetElementType();
 
@@ -99,10 +98,8 @@ internal static class ParameterHelper
 		var property = new JsonSchemaProperty
 		{
 			Type = JsonObjectType.Array,
-			Item = CreateFromType(elementType, conditionsSchema),
+			Item = CreateFromType(elementType, context),
 		};
-
-		Console.WriteLine(elementType);
 
 		return property;
 	}

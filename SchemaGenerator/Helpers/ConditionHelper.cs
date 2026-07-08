@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
-using NJsonSchema;
 using SchemaGenerator.Builders;
 
 namespace SchemaGenerator.Helpers;
@@ -15,7 +14,7 @@ internal static class ConditionHelper
 	/// <summary>
 	/// Attempts to create a <see cref="ConditionSchemaBuilder"/> from the given type
 	/// </summary>
-	public static bool TryCreateFromType(Type type, JsonSchema conditionsSchema, [NotNullWhen(true)] out ConditionSchemaBuilder? builder)
+	public static bool TryCreateFromType(Type type, SchemaContext context, [NotNullWhen(true)] out ConditionSchemaBuilder? builder)
 	{
 		// Only allow concrete types
 		if (type.IsAbstract || type.IsInterface)
@@ -49,7 +48,7 @@ internal static class ConditionHelper
 			if (jsonProperty?.PropertyName == null)
 				continue;
 
-			if (!ParameterHelper.TryCreateFromMember(member, conditionsSchema, out var schema))
+			if (!ParameterHelper.TryCreateFromMember(member, context, out var schema))
 				continue;
 
 			builder.Parameter(jsonProperty.PropertyName, schema);
