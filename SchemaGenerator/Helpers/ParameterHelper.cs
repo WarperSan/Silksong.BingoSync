@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Newtonsoft.Json;
@@ -30,6 +31,12 @@ internal static class ParameterHelper
 
 		schema = CreateFromType(dataType);
 		schema.IsRequired = member.GetCustomAttribute<JsonRequiredAttribute>() != null;
+
+		var defaultValueAttr = member.GetCustomAttribute<DefaultValueAttribute>();
+
+		if (defaultValueAttr is not null)
+			schema.Default = defaultValueAttr.Value;
+
 		return true;
 	}
 
@@ -44,8 +51,13 @@ internal static class ParameterHelper
 			schema = CreateFromEnum(type);
 		else if (type.IsArray)
 			schema = CreateFromArray(type);
+		else if (type.IsPrimitive)
+			schema = CreateFromPrimitive(type);
 		else
+		{
 			schema = new JsonSchemaProperty();
+			//throw new NotImplementedException($"Type '{type}' is not implemented yet.");
+		}
 
 		return schema;
 	}
@@ -74,7 +86,7 @@ internal static class ParameterHelper
 		var elementType = type.GetElementType();
 
 		if (elementType is null)
-			throw new ArgumentNullException(nameof(type));
+			throw new ArgumentException($"Type '{type}' has no element type.", nameof(type));
 
 		var property = new JsonSchemaProperty
 		{
@@ -85,5 +97,27 @@ internal static class ParameterHelper
 		Console.WriteLine(elementType);
 
 		return property;
+	}
+
+	/// <summary>
+	/// Creates a <see cref="JsonSchemaProperty"/> for the given primitive type
+	/// </summary>
+	private static JsonSchemaProperty CreateFromPrimitive(Type type)
+	{
+		JsonObjectType objectType;
+
+		if (type == typeof(int) || type == typeof(uint))
+			objectType = JsonObjectType.Integer;
+		else if (type == typeof(bool))
+			objectType = JsonObjectType.Boolean;
+		else if (type == typeof(string))
+			objectType = JsonObjectType.String;
+		else
+			objectType = JsonObjectType.None;
+
+		return new JsonSchemaProperty
+		{
+			Type = objectType,
+		};
 	}
 }
