@@ -1,22 +1,20 @@
 using BingoAPI.Conditions;
+using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Extensions;
 
 namespace Silksong.BingoSync.Conditions;
 
 /// <summary>
-/// Checks if the player has obtained a given <see cref="Vesticrest"/>
+/// Checks if the player has obtained a given <see cref="Data.Vesticrest"/>
 /// </summary>
+[Condition("has_obtained_vesticrest")]
 internal sealed class HasObtainedVesticrestCondition : ICondition
 {
-	private readonly Vesticrest _vesticrest;
-
-	[Condition("has_obtained_vesticrest")]
-	public HasObtainedVesticrestCondition(ConditionData data)
-	{
-		_vesticrest = data.GetRequiredParameter<Vesticrest>("vesticrest");
-	}
+	[JsonProperty("vesticrest")]
+	[JsonRequired]
+	public required Vesticrest Vesticrest { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasVesticrest(_vesticrest);
+	public bool IsMet() => PlayerData.instance.HasVesticrest(Vesticrest);
 }

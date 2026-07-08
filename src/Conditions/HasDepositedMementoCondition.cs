@@ -1,22 +1,20 @@
 using BingoAPI.Conditions;
+using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Extensions;
 
 namespace Silksong.BingoSync.Conditions;
 
 /// <summary>
-/// Checks if the player has deposited a given <see cref="Memento"/>
+/// Checks if the player has deposited a given <see cref="Data.Memento"/>
 /// </summary>
+[Condition("has_deposited_memento")]
 internal sealed class HasDepositedMementoCondition : ICondition
 {
-	private readonly Memento _memento;
-	
-	[Condition("has_deposited_memento")]
-	public HasDepositedMementoCondition(ConditionData data)
-	{
-		_memento = data.GetRequiredParameter<Memento>("memento");
-	}
-	
+	[JsonProperty("memento")]
+	[JsonRequired]
+	public required Memento Memento { get; init; }
+
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasDepositedMemento(_memento);
+	public bool IsMet() => PlayerData.instance.HasDepositedMemento(Memento);
 }

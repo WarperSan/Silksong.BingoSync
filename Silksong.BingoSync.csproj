@@ -15,6 +15,13 @@
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
 
+    <!-- Files -->
+    <ItemGroup>
+        <Compile Remove="**/*.cs" />
+        <Compile Include="src/**/*.cs" />
+        <None Remove="SchemaGenerator/**/*"/>
+    </ItemGroup>
+
     <!-- Primary Package References -->
     <ItemGroup>
         <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
@@ -32,6 +39,7 @@
                 PrivateAssets="all"
         />
         <PackageReference Include="MinVer" Version="7.*" PrivateAssets="all"/>
+        <PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all"/>
     </ItemGroup>
 
     <Choose>
