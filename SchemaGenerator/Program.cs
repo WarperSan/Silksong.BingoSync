@@ -5,6 +5,8 @@ using SchemaGenerator;
 using SchemaGenerator.Helpers;
 using Silksong.BingoSync;
 
+var output = args.Length > 0 ? args[0] : "../schema.json";
+
 var conditionsSchema = new JsonSchema();
 
 var context = new SchemaContext();
@@ -89,4 +91,4 @@ var goalSetSchema = new JsonSchema
 	},
 };
 
-File.WriteAllText("../schema.json", goalSetSchema.ToJson());
+File.WriteAllText(output, goalSetSchema.ToJson());
