@@ -1,22 +1,20 @@
 using BingoAPI.Conditions;
+using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Extensions;
 
 namespace Silksong.BingoSync.Conditions;
 
 /// <summary>
-/// Checks if the player has obtained the given <see cref="Needle"/>
+/// Checks if the player has obtained the given <see cref="Data.Needle"/>
 /// </summary>
+[Condition("has_obtained_needle")]
 internal sealed class HasObtainedNeedleCondition : ICondition
 {
-	private readonly Needle _needle;
-
-	[Condition("has_obtained_needle")]
-	public HasObtainedNeedleCondition(ConditionData data)
-	{
-		_needle = data.GetRequiredParameter<Needle>("needle");
-	}
+	[JsonProperty("needle")]
+	[JsonRequired]
+	public required Needle Needle { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasObtainedNeedle(_needle);
+	public bool IsMet() => PlayerData.instance.HasObtainedNeedle(Needle);
 }

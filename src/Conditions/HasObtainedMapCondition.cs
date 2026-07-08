@@ -1,22 +1,20 @@
 using BingoAPI.Conditions;
+using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Extensions;
 
 namespace Silksong.BingoSync.Conditions;
 
 /// <summary>
-/// Checks if the player has obtained the map of a given <see cref="Area"/>
+/// Checks if the player has obtained the map of a given <see cref="Data.Area"/>
 /// </summary>
+[Condition("has_obtained_map")]
 internal sealed class HasObtainedMapCondition : ICondition
 {
-	private readonly Area _area;
-
-	[Condition("has_obtained_map")]
-	public HasObtainedMapCondition(ConditionData data)
-	{
-		_area = data.GetRequiredParameter<Area>("area");
-	}
+	[JsonProperty("area")]
+	[JsonRequired]
+	public required Area Area { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasMap(_area);
+	public bool IsMet() => PlayerData.instance.HasMap(Area);
 }

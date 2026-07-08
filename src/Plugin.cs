@@ -28,7 +28,7 @@ public partial class Plugin : BaseUnityPlugin
 
 	private void Start()
 	{
-		ConditionAttribute.AddAll();
+		ConditionRegistry.AddAll();
 
 		var goalsFolder = Path.GetAbsolutePath("Goals/");
 		var pool = GoalLoader.LoadPoolFromFolder(goalsFolder);
