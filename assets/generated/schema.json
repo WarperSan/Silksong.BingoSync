@@ -1,0 +1,714 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Goals",
+  "type": "object",
+  "description": "Set of goals available",
+  "required": [
+    "goals"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the goal"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the set"
+    },
+    "goals": {
+      "type": "array",
+      "description": "List of goals added by this set",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "condition"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Text to display for this goal"
+          },
+          "condition": {
+            "description": "Condition to meet to complete this goal",
+            "$ref": "#/definitions/conditions"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "conditions": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_completed_ending"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ending"
+              ],
+              "properties": {
+                "ending": {
+                  "type": "string",
+                  "enum": [
+                    "weaver_queen",
+                    "snared_silk",
+                    "twisted_child",
+                    "sister_of_the_void",
+                    "passing_of_the_age"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_deposited_memento"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "memento"
+              ],
+              "properties": {
+                "memento": {
+                  "type": "string",
+                  "enum": [
+                    "sprintmaster",
+                    "guardian",
+                    "hero",
+                    "hunter",
+                    "grey",
+                    "surface",
+                    "craw",
+                    "encrusted_heart",
+                    "pollen_heart",
+                    "hunter_heart",
+                    "conjoined_heart"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_killed_boss"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "boss"
+              ],
+              "properties": {
+                "boss": {
+                  "type": "string",
+                  "enum": [
+                    "bell_beast",
+                    "fourth_chorus",
+                    "great_conchflies",
+                    "lace_1",
+                    "last_judge",
+                    "moorwing",
+                    "moss_mother",
+                    "moss_mothers",
+                    "phantom",
+                    "savage_beastfly_1",
+                    "sister_splinter",
+                    "skull_tyrant_1",
+                    "skull_tyrant_2",
+                    "widow",
+                    "broodmother",
+                    "cogwork_dancers",
+                    "disgraced_chef_lugoli",
+                    "father_of_the_flame",
+                    "first_sinner",
+                    "forebrothers",
+                    "garmond",
+                    "grand_mother_silk",
+                    "groal_the_great",
+                    "lace_2",
+                    "raging_conchfly",
+                    "savage_beastfly_2",
+                    "second_sentinel",
+                    "shakra",
+                    "the_unravelled",
+                    "trobbio",
+                    "voltvyrm",
+                    "bell_eater",
+                    "clover_dancers",
+                    "crawfather",
+                    "crust_king_khann",
+                    "gurr_the_outcast",
+                    "lost_garmond",
+                    "lost_lace",
+                    "nyleth",
+                    "palestag",
+                    "pinstress",
+                    "plasmified_zango",
+                    "shrine_guardian_seth",
+                    "skarrsinger_karmelita",
+                    "tormented_trobbio",
+                    "watcher_at_the_edge"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_ancestral_art"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "art"
+              ],
+              "properties": {
+                "art": {
+                  "type": "string",
+                  "enum": [
+                    "swift_step",
+                    "cling_grip",
+                    "needolin",
+                    "clawline",
+                    "silk_soar",
+                    "sylphsong"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_crest"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "crest"
+              ],
+              "properties": {
+                "crest": {
+                  "type": "string",
+                  "enum": [
+                    "hunter",
+                    "hunter_evolved",
+                    "hunter_fully_evolved",
+                    "reaper",
+                    "wanderer",
+                    "beast",
+                    "cursed",
+                    "witch",
+                    "architect",
+                    "shaman",
+                    "cloakless"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_map"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "area"
+              ],
+              "properties": {
+                "area": {
+                  "type": "string",
+                  "enum": [
+                    "the_abyss",
+                    "bellhart",
+                    "bilewater",
+                    "blasted_steps",
+                    "bone_bottom",
+                    "the_cradle",
+                    "deep_docks",
+                    "far_fields",
+                    "greymoor",
+                    "hunters_march",
+                    "the_marrow",
+                    "the_mist",
+                    "moss_grotto",
+                    "mount_fay",
+                    "putrified_ducts",
+                    "red_memory",
+                    "sands_of_karak",
+                    "shellwood",
+                    "sinners_road",
+                    "the_slab",
+                    "underworks",
+                    "verdania",
+                    "weavenest_atla",
+                    "wisp_thicket",
+                    "wormways",
+                    "choral_chambers",
+                    "cogwork_core",
+                    "grand_gate",
+                    "high_halls",
+                    "memorium",
+                    "whispering_vaults",
+                    "whiteward"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_memento"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "memento"
+              ],
+              "properties": {
+                "memento": {
+                  "type": "string",
+                  "enum": [
+                    "sprintmaster",
+                    "guardian",
+                    "hero",
+                    "hunter",
+                    "grey",
+                    "surface",
+                    "craw",
+                    "encrusted_heart",
+                    "pollen_heart",
+                    "hunter_heart",
+                    "conjoined_heart"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_needle"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "needle"
+              ],
+              "properties": {
+                "needle": {
+                  "type": "string",
+                  "enum": [
+                    "needle",
+                    "sharpened_needle",
+                    "shining_needle",
+                    "hivesteel_needle",
+                    "pale_steel_needle"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_quill"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "quill"
+              ],
+              "properties": {
+                "quill": {
+                  "type": "string",
+                  "enum": [
+                    "white",
+                    "red",
+                    "purple"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_silk_skill"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "skill"
+              ],
+              "properties": {
+                "skill": {
+                  "type": "string",
+                  "enum": [
+                    "silkspear",
+                    "thread_storm",
+                    "cross_stitch",
+                    "sharpdart",
+                    "rune_rage",
+                    "pale_nails"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_tool"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "tool"
+              ],
+              "properties": {
+                "tool": {
+                  "type": "string",
+                  "enum": [
+                    "straight_pin",
+                    "threefold_pin",
+                    "sting_shard",
+                    "tacks",
+                    "longpin",
+                    "curveclaw",
+                    "curvesickle",
+                    "throwing_ring",
+                    "pimpillo",
+                    "conchcutter",
+                    "weaver_silkshot",
+                    "architect_silkshot",
+                    "forge_silkshot",
+                    "delvers_drill",
+                    "cogwork_wheel",
+                    "cogfly",
+                    "rosary_cannon",
+                    "voltvessels",
+                    "flintslate",
+                    "snare_setter",
+                    "flea_brew",
+                    "plasmium_phial",
+                    "needle_phial",
+                    "druids_eye",
+                    "druids_eyes",
+                    "magma_bell",
+                    "warding_bell",
+                    "pollip_pouch",
+                    "fractured_mask",
+                    "multibinder",
+                    "weavelight",
+                    "sawtooth_circlet",
+                    "injector_band",
+                    "spool_extender",
+                    "reserve_bind",
+                    "claw_mirror",
+                    "claw_mirrors",
+                    "memory_crystal",
+                    "snitch_pick",
+                    "volt_filament",
+                    "quick_sling",
+                    "wreath_of_purity",
+                    "longclaw",
+                    "wispfire_lantern",
+                    "egg_of_flealia",
+                    "pin_badge",
+                    "compass",
+                    "shard_pendant",
+                    "magnetite_brooch",
+                    "weighted_belt",
+                    "barbed_bracelet",
+                    "dead_bugs_purse",
+                    "shell_satchel",
+                    "magnetite_dice",
+                    "scuttlebrace",
+                    "ascendants_grip",
+                    "spider_strings",
+                    "silkspeed_anklets",
+                    "thiefs_mark"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_vesticrest"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "vesticrest"
+              ],
+              "properties": {
+                "vesticrest": {
+                  "type": "string",
+                  "enum": [
+                    "basic",
+                    "upgraded"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "AND"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "conditions"
+              ],
+              "properties": {
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/conditions"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "NOT"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "condition"
+              ],
+              "properties": {
+                "condition": {
+                  "$ref": "#/definitions/conditions"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "OR"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "conditions"
+              ],
+              "properties": {
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/conditions"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "SOME"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "conditions"
+              ],
+              "properties": {
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/conditions"
+                  }
+                },
+                "amount": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
