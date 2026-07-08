@@ -91,4 +91,9 @@ var goalSetSchema = new JsonSchema
 	},
 };
 
+var directory = Path.GetDirectoryName(output);
+
+if (directory != null)
+	Directory.CreateDirectory(directory);
+
 File.WriteAllText(output, goalSetSchema.ToJson());
