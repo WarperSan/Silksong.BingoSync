@@ -1,0 +1,45 @@
+name: Update Goals Schema
+
+env:
+  PROJECT_FILE: './SchemaGenerator/SchemaGenerator.csproj'
+  SCHEMA_FILE: 'assets/generated/schema.json'
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          filter: tree:0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "9.x"
+
+      - name: Restore
+        run: |
+          dotnet restore
+          dotnet tool restore
+
+      - name: Create File
+        run: dotnet run --project "$PROJECT_FILE" "$OUTPUT_FILE"
+        env:
+          PROJECT_FILE: ${{ env.PROJECT_FILE }}
+          OUTPUT_FILE: ${{ env.SCHEMA_FILE }}
+      
+      - name: Push File
+        run: |
+          git add "$OUTPUT_FILE"
+          git commit -m "chore: regenerate goals schema ($(date -u +%Y-%m-%d))"
+          git push
+        env:
+          OUTPUT_FILE: ${{ env.SCHEMA_FILE }}
