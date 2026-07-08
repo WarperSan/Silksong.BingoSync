@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
-using SchemaGenerator.Builders;
+using NJsonSchema;
 using SchemaGenerator.Helpers;
 using Silksong.BingoSync;
 
-var builder = new GoalSetSchemaBuilder();
+var conditionsSchema = new JsonSchema();
 
 foreach (var assembly in AssemblyHelper.GetReferencedAssemblies(typeof(Plugin)))
 {
@@ -23,13 +23,65 @@ foreach (var assembly in AssemblyHelper.GetReferencedAssemblies(typeof(Plugin)))
 		if (type == null)
 			continue;
 
-		if (!ConditionHelper.TryCreateFromType(type, out var conditionBuilder))
+		if (!ConditionHelper.TryCreateFromType(type, conditionsSchema, out var builder))
 			continue;
 
-		builder.AddCondition(conditionBuilder);
+		conditionsSchema.OneOf.Add(builder.Build());
 	}
 }
 
-var schema = builder.Build();
+var goalSchema = new JsonSchema
+{
+	Type = JsonObjectType.Object,
+	Properties =
+	{
+		["name"] = new JsonSchemaProperty
+		{
+			Type = JsonObjectType.String,
+			Description = "Text to display for this goal",
+			IsRequired = true,
+		},
+		["condition"] = new JsonSchemaProperty
+		{
+			Type = JsonObjectType.Object,
+			Description = "Condition to meet to complete this goal",
+			Reference = conditionsSchema,
+			IsRequired = true,
+		},
+	},
+};
 
-File.WriteAllText("../schema.json", schema.ToJson());
+var goalSetSchema = new JsonSchema
+{
+	Title = "Goals",
+	Description = "Set of goals available",
+	Type = JsonObjectType.Object,
+	Properties =
+	{
+		["name"] = new JsonSchemaProperty
+		{
+			Type = JsonObjectType.String,
+			Description = "Name of the goal",
+		},
+		["description"] = new JsonSchemaProperty
+		{
+			Type = JsonObjectType.String,
+			Description = "Description of the set",
+		},
+		["goals"] = new JsonSchemaProperty
+		{
+			Type = JsonObjectType.Array,
+			Description = "List of goals added by this set",
+			Item = goalSchema,
+			MinItems = 1,
+			UniqueItems = true,
+			IsRequired = true,
+		},
+	},
+	Definitions =
+	{
+		["conditions"] = conditionsSchema,
+	},
+};
+
+File.WriteAllText("../schema.json", goalSetSchema.ToJson());

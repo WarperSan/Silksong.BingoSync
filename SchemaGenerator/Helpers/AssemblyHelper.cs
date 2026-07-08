@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Reflection;
 
 namespace SchemaGenerator.Helpers;
@@ -37,7 +38,7 @@ internal static class AssemblyHelper
 				}
 				catch (Exception e)
 				{
-					Console.WriteLine($"Could not load {refName.FullName}: {e.Message}");
+					Debugger.Log((int)TraceLevel.Warning, "Loading", $"Could not load {refName.FullName}: {e.Message}");
 				}
 			}
 		}
