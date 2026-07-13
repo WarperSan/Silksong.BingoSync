@@ -94,7 +94,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Tool"/> was obtained
 	/// </summary>
-	public static bool HasTool(this PlayerData data, Tool tool)
+	public static bool HasObtainedTool(this PlayerData data, Tool tool)
 	{
 		var toolData = data.GetToolData(tool);
 

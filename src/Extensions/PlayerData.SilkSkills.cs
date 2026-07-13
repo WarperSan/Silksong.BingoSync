@@ -39,7 +39,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="SilkSkill"/> was obtained
 	/// </summary>
-	public static bool HasSilkSkill(this PlayerData data, SilkSkill skill)
+	public static bool HasObtainedSilkSkill(this PlayerData data, SilkSkill skill)
 	{
 		var skillData = data.GetSilkSkillData(skill);
 

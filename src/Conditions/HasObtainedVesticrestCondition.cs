@@ -16,5 +16,5 @@ internal sealed class HasObtainedVesticrestCondition : ICondition
 	public required Vesticrest Vesticrest { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasVesticrest(Vesticrest);
+	public bool IsMet() => PlayerData.instance.HasObtainedVesticrest(Vesticrest);
 }

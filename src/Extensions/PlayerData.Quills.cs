@@ -13,7 +13,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Quill"/> was obtained
 	/// </summary>
-	public static bool HasQuill(this PlayerData data, Quill quill)
+	public static bool HasObtainedQuill(this PlayerData data, Quill quill)
 	{
 		if (!data.hasQuill)
 			return false;

@@ -16,5 +16,5 @@ internal sealed class HasObtainedCrestCondition : ICondition
 	public required Crest Crest { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasCrest(Crest);
+	public bool IsMet() => PlayerData.instance.HasObtainedCrest(Crest);
 }

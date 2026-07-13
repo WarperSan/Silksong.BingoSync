@@ -16,5 +16,5 @@ internal sealed class HasObtainedToolCondition : ICondition
 	public required Tool Tool { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasTool(Tool);
+	public bool IsMet() => PlayerData.instance.HasObtainedTool(Tool);
 }
