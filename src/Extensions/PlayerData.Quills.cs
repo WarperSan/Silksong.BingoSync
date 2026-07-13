@@ -11,6 +11,17 @@ namespace Silksong.BingoSync.Extensions;
 public static partial class PlayerDataExtensions
 {
 	/// <summary>
+	/// Gets the state for the given <see cref="Needle"/>
+	/// </summary>
+	private static int GetQuillState(Quill quill) => quill switch
+	{
+		Quill.White  => 1,
+		Quill.Red    => 2,
+		Quill.Purple => 3,
+		_            => throw new InvalidCheckException<Quill>(quill),
+	};
+
+	/// <summary>
 	/// Checks if the given <see cref="Quill"/> was obtained
 	/// </summary>
 	public static bool HasObtainedQuill(this PlayerData data, Quill quill)
@@ -18,12 +29,6 @@ public static partial class PlayerDataExtensions
 		if (!data.hasQuill)
 			return false;
 
-		return quill switch
-		{
-			Quill.White  => data.QuillState == 1,
-			Quill.Red    => data.QuillState == 2,
-			Quill.Purple => data.QuillState == 3,
-			_            => throw new InvalidCheckException<Quill>(quill),
-		};
+		return data.QuillState == GetQuillState(quill);
 	}
 }
