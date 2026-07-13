@@ -12,6 +12,16 @@ public static partial class PlayerDataExtensions
 {
 	// TODO: Consider if it is better to associate Wish with Completion
 
+	// TODO: Check why some wish have "Pre" version:
+	// Wish.CrawbugClearing        => "Crow Feathers Pre",
+	// Wish.BerryPicking           => "Mossberry Collection Pre",
+	// Wish.TheLostFleas           => "Save the Fleas Pre",
+	// Wish.EcstasyOfTheEnd        => "Flea Games Pre",
+	// Wish.FastestInPharloom      => "Sprintmaster Pre",
+	// Wish.SilkAndSoul            => "Soul Snare Pre",
+	// Wish.FatalResolve           => "Pinstress Battle Pre",
+	// Wish.AVassalLost            => "Steel Sentinel",
+	
 	/// <summary>
 	/// Gets the identifier of the given <see cref="Wish"/>
 	/// </summary>
