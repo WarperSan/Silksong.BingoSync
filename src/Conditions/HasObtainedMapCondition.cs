@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedMapCondition : ICondition
 {
 	[JsonProperty("area")]
 	[JsonRequired]
+	[Description("Name of the area for which to obtain the map")]
 	public required Area Area { get; init; }
 
 	/// <inheritdoc />

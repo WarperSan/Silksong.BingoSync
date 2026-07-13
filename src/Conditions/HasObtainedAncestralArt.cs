@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedAncestralArt : ICondition
 {
 	[JsonProperty("art")]
 	[JsonRequired]
+	[Description("Name of the ancestral art to obtain")]
 	public required AncestralArt Art { get; init; }
 
 	/// <inheritdoc />

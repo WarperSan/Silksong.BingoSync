@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedQuillCondition : ICondition
 {
 	[JsonProperty("quill")]
 	[JsonRequired]
+	[Description("Name of the quill to obtain")]
 	public required Quill Quill { get; init; }
 
 	/// <inheritdoc />

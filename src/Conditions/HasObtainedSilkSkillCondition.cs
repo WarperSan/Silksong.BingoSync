@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedSilkSkillCondition : ICondition
 {
 	[JsonProperty("skill")]
 	[JsonRequired]
+	[Description("Name of the silk skill to obtain")]
 	public required SilkSkill Skill { get; init; }
 
 	/// <inheritdoc />

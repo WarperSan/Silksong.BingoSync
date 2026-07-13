@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedToolCondition : ICondition
 {
 	[JsonProperty("tool")]
 	[JsonRequired]
+	[Description("Name of the tool to obtain")]
 	public required Tool Tool { get; init; }
 
 	/// <inheritdoc />

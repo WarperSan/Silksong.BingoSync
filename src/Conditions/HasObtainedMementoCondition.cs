@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedMementoCondition : ICondition
 {
 	[JsonProperty("memento")]
 	[JsonRequired]
+	[Description("Name of the memento to obtain")]
 	public required Memento Memento { get; init; }
 
 	/// <inheritdoc />

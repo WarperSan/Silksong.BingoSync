@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasCompletedEndingCondition : ICondition
 {
 	[JsonProperty("ending")]
 	[JsonRequired]
+	[Description("Name of the ending to complete")]
 	public required Ending Ending { get; init; }
 
 	/// <inheritdoc />
