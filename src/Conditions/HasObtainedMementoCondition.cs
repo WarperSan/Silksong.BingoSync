@@ -16,5 +16,5 @@ internal sealed class HasObtainedMementoCondition : ICondition
 	public required Memento Memento { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasMemento(Memento);
+	public bool IsMet() => PlayerData.instance.HasObtainedMemento(Memento);
 }

@@ -46,7 +46,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Crest"/> was obtained
 	/// </summary>
-	public static bool HasCrest(this PlayerData data, Crest crest)
+	public static bool HasObtainedCrest(this PlayerData data, Crest crest)
 	{
 		var crestData = data.GetCrestData(crest);
 

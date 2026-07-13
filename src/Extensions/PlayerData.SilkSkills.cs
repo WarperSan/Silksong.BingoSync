@@ -17,13 +17,15 @@ public static partial class PlayerDataExtensions
 	/// </summary>
 	private static string GetSilkSkillId(SilkSkill skill) => skill switch
 	{
+		// ReSharper disable StringLiteralTypo
 		SilkSkill.Silkspear   => "Silk Spear",
 		SilkSkill.ThreadStorm => "Thread Sphere",
 		SilkSkill.CrossStitch => "Parry",
 		SilkSkill.Sharpdart   => "Silk Charge",
 		SilkSkill.RuneRage    => "Silk Bomb",
 		SilkSkill.PaleNails   => "Silk Boss Needle",
-		_                     => throw new InvalidCheckException<SilkSkill>(skill),
+		// ReSharper restore StringLiteralTypo
+		_ => throw new InvalidCheckException<SilkSkill>(skill),
 	};
 
 	/// <summary>
@@ -39,7 +41,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="SilkSkill"/> was obtained
 	/// </summary>
-	public static bool HasSilkSkill(this PlayerData data, SilkSkill skill)
+	public static bool HasObtainedSilkSkill(this PlayerData data, SilkSkill skill)
 	{
 		var skillData = data.GetSilkSkillData(skill);
 

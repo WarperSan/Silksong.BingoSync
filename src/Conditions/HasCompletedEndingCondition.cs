@@ -16,5 +16,5 @@ internal sealed class HasCompletedEndingCondition : ICondition
 	public required Ending Ending { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.IsEndingCompleted(Ending);
+	public bool IsMet() => PlayerData.instance.HasCompletedEnding(Ending);
 }

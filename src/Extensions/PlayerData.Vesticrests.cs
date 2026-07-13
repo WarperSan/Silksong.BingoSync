@@ -13,7 +13,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Vesticrest"/> was obtained
 	/// </summary>
-	public static bool HasVesticrest(this PlayerData data, Vesticrest vesticrest) => vesticrest switch
+	public static bool HasObtainedVesticrest(this PlayerData data, Vesticrest vesticrest) => vesticrest switch
 	{
 		Vesticrest.Basic    => data.UnlockedExtraYellowSlot,
 		Vesticrest.Upgraded => data.UnlockedExtraBlueSlot,

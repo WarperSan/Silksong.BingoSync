@@ -16,5 +16,5 @@ internal sealed class HasObtainedSilkSkillCondition : ICondition
 	public required SilkSkill Skill { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasSilkSkill(Skill);
+	public bool IsMet() => PlayerData.instance.HasObtainedSilkSkill(Skill);
 }

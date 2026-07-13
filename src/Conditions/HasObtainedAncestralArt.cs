@@ -16,5 +16,5 @@ internal sealed class HasObtainedAncestralArt : ICondition
 	public required AncestralArt Art { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasAncestralArt(Art);
+	public bool IsMet() => PlayerData.instance.HasObtainedAncestralArt(Art);
 }
