@@ -1,5 +1,5 @@
 {
-	"$schema": "https://raw.githubusercontent.com/WarperSan/BingoAPI/refs/heads/master/docs/goals.schema.json",
+	"$schema": "https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/refs/heads/master/assets/generated/schema.json",
 	"name": "Simple Boss Goals",
 	"description": "Goals focused on defeating each boss",
 	"goals": [

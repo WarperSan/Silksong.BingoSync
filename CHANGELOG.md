@@ -1,6 +1,18 @@
 # Changelog
 
 <details>
+<summary>v1.2.2</summary>
+
+## Added
+- Added condition `has_obtained_quill` with 3 simple goals
+- Added condition `has_obtained_map` with 28 simple goals
+
+## Changes
+- Changed the schema used by files to better autocompletion
+
+</details>
+
+<details>
 <summary>v1.2.1</summary>
 
 ## Added

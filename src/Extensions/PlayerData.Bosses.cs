@@ -15,7 +15,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Boss"/> was killed
 	/// </summary>
-	public static bool IsBossKilled(this PlayerData data, Boss boss) => boss switch
+	public static bool HasKilledBoss(this PlayerData data, Boss boss) => boss switch
 	{
 		Boss.BellBeast           => data.defeatedBellBeast,
 		Boss.FourthChorus        => data.defeatedSongGolem,
@@ -38,8 +38,8 @@ public static partial class PlayerDataExtensions
 		Boss.FirstSinner         => data.defeatedFirstWeaver,
 		Boss.Forebrothers        => data.defeatedDockForemen,
 		Boss.Garmond             => data.HasJournalEntry(Boss.Garmond),
-		Boss.GrandMotherSilk => data.IsEndingCompleted(Ending.WeaverQueen) || data.IsEndingCompleted(Ending.SnaredSilk)
-		                                                                   || data.IsEndingCompleted(Ending.TwistedChild),
+		Boss.GrandMotherSilk => data.HasCompletedEnding(Ending.WeaverQueen) || data.HasCompletedEnding(Ending.SnaredSilk)
+		                                                                   || data.HasCompletedEnding(Ending.TwistedChild),
 		Boss.Groal                => data.DefeatedSwampShaman,
 		Boss.Lace2                => data.defeatedLaceTower,
 		Boss.RagingConchfly       => data.defeatedCoralDrillerSolo,
@@ -55,7 +55,7 @@ public static partial class PlayerDataExtensions
 		Boss.CrustKingKhann       => data.defeatedCoralKing,
 		Boss.GurrTheOutcast       => data.defeatedAntTrapper,
 		Boss.LostGarmond          => data.garmondBlackThreadDefeated,
-		Boss.LostLace             => data.IsEndingCompleted(Ending.SisterOfTheVoid),
+		Boss.LostLace             => data.HasCompletedEnding(Ending.SisterOfTheVoid),
 		Boss.Nyleth               => data.defeatedFlowerQueen,
 		Boss.Palestag             => data.defeatedWhiteCloverstag,
 		Boss.Pinstress            => data.HasJournalEntry(Boss.Pinstress),

@@ -46,7 +46,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Memento"/> was obtained
 	/// </summary>
-	public static bool HasMemento(this PlayerData data, Memento memento) => memento switch
+	public static bool HasObtainedMemento(this PlayerData data, Memento memento) => memento switch
 	{
 		Memento.Sprintmaster   => data.CollectedMementoSprintmaster,
 		Memento.Guardian       => data.FleaGamesMementoGiven,

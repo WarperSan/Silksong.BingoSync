@@ -1,0 +1,33 @@
+name: New Condition
+description: Propose a new condition to add.
+title: "[Condition] "
+labels: [ "new condition" ]
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what the condition will check.
+      placeholder: The condition will check if the chicken has cross the road
+    validations:
+      required: true
+    
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: Give us a suggestion on how to implement it.
+      placeholder: Add it under "has_obtained_X" with the parameter "name"
+    validations:
+      required: false
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Resources
+      description: Give us related resources to better understand what the condition is about.
+      placeholder: Links to the wiki
+    validations:
+      required: true
+

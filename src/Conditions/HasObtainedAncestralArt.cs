@@ -1,4 +1,5 @@
 using BingoAPI.Conditions;
+using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Extensions;
 
@@ -7,16 +8,13 @@ namespace Silksong.BingoSync.Conditions;
 /// <summary>
 /// Checks if the player has obtained a given <see cref="Crest"/>
 /// </summary>
+[Condition("has_obtained_ancestral_art")]
 internal sealed class HasObtainedAncestralArt : ICondition
 {
-	private readonly AncestralArt _art;
-
-	[Condition("has_obtained_ancestral_art")]
-	public HasObtainedAncestralArt(ConditionData data)
-	{
-		_art = data.GetRequiredParameter<AncestralArt>("art");
-	}
+	[JsonProperty("art")]
+	[JsonRequired]
+	public required AncestralArt Art { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasAncestralArt(_art);
+	public bool IsMet() => PlayerData.instance.HasObtainedAncestralArt(Art);
 }
