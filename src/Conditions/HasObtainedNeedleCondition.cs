@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedNeedleCondition : ICondition
 {
 	[JsonProperty("needle")]
 	[JsonRequired]
+	[Description("Name of the needle to obtain")]
 	public required Needle Needle { get; init; }
 
 	/// <inheritdoc />
