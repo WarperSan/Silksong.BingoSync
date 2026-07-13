@@ -16,5 +16,5 @@ internal sealed class HasObtainedMapCondition : ICondition
 	public required Area Area { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasMap(Area);
+	public bool IsMet() => PlayerData.instance.HasObtainedMap(Area);
 }

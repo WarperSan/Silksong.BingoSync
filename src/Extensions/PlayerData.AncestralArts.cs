@@ -13,7 +13,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="AncestralArt"/> was obtained
 	/// </summary>
-	public static bool HasAncestralArt(this PlayerData data, AncestralArt art) => art switch
+	public static bool HasObtainedAncestralArt(this PlayerData data, AncestralArt art) => art switch
 	{
 		AncestralArt.SwiftStep => data.hasDash,
 		AncestralArt.ClingGrip => data.hasWalljump,

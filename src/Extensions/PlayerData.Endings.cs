@@ -13,7 +13,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="Ending"/> was completed
 	/// </summary>
-	public static bool IsEndingCompleted(this PlayerData data, Ending ending) => ending switch
+	public static bool HasCompletedEnding(this PlayerData data, Ending ending) => ending switch
 	{
 		Ending.WeaverQueen     => data.CompletedEndings.HasFlag(SaveSlotCompletionIcons.CompletionState.Act2Regular),
 		Ending.SnaredSilk      => data.CompletedEndings.HasFlag(SaveSlotCompletionIcons.CompletionState.Act2SoulSnare),

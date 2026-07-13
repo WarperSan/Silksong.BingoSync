@@ -16,5 +16,5 @@ internal sealed class HasObtainedQuillCondition : ICondition
 	public required Quill Quill { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasQuill(Quill);
+	public bool IsMet() => PlayerData.instance.HasObtainedQuill(Quill);
 }

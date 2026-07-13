@@ -13,7 +13,7 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the map of the given <see cref="Area"/> was obtained
 	/// </summary>
-	public static bool HasMap(this PlayerData data, Area area) => area switch
+	public static bool HasObtainedMap(this PlayerData data, Area area) => area switch
 	{
 		Area.TheAbyss         => data.HasAbyssMap,
 		Area.Bellhart         => data.HasBellhartMap,

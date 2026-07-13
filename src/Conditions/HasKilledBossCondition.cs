@@ -16,5 +16,5 @@ internal sealed class HasKilledBossCondition : ICondition
 	public required Boss Boss  { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.IsBossKilled(Boss);
+	public bool IsMet() => PlayerData.instance.HasKilledBoss(Boss);
 }
