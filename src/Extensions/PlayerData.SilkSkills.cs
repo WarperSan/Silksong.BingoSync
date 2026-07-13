@@ -17,13 +17,15 @@ public static partial class PlayerDataExtensions
 	/// </summary>
 	private static string GetSilkSkillId(SilkSkill skill) => skill switch
 	{
+		// ReSharper disable StringLiteralTypo
 		SilkSkill.Silkspear   => "Silk Spear",
 		SilkSkill.ThreadStorm => "Thread Sphere",
 		SilkSkill.CrossStitch => "Parry",
 		SilkSkill.Sharpdart   => "Silk Charge",
 		SilkSkill.RuneRage    => "Silk Bomb",
 		SilkSkill.PaleNails   => "Silk Boss Needle",
-		_                     => throw new InvalidCheckException<SilkSkill>(skill),
+		// ReSharper restore StringLiteralTypo
+		_ => throw new InvalidCheckException<SilkSkill>(skill),
 	};
 
 	/// <summary>
