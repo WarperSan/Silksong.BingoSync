@@ -38,57 +38,7 @@
 
 **2 of each tool type** | Progression level: ['dash'] | Other tags: ['tool', 'blocking']
 
-**Straight, Threefold, and Long Pin** | Progression level: ['cloak'] | Other tags: ['tool']
-
 **Dead Bug's Purse & a Silkeater** | Progression level: ['walljump'] | Other tags: ['tool']
-
-**Barbed Bracelet & Fractured Mask** | Progression level: ['walljump'] | Other tags: ['tool']
-
-**Magnetite Dice & Magnetite Brooch** | Progression level: ['walljump'] | Other tags: ['tool']
-
-**Compass, Pendant, Brooch** | Progression level: ['early'] | Other tags: ['tool']
-
-**Warding Bell & Claw Mirror** | Progression level: ['act2'] | Other tags: ['tool']
-
-**Warding Bell & Sawtooth Circlet** | Progression level: ['clawline'] | Other tags: ['tool', 'craft']
-
-**Magma Bell & Curveclaw** | Progression level: ['early'] | Other tags: ['tool', 'craft']
-
-**Weighted Belt & Ascendant's Grip** | Progression level: ['act2'] | Other tags: ['tool', 'expensive']
-
-**Scuttlebrace & Silkspeed** | Progression level: ['clawline'] | Other tags: ['tool', 'craft']
-
-**Pimpillo & Voltvessels** | Progression level: ['faydown'] | Other tags: ['tool', 'craft']
-
-**Delver's Drill** | Progression level: ['act2'] | Other tags: ['tool']
-
-**Pollip Pouch** | Progression level: ['walljump'] | Other tags: ['tool', 'quest']
-
-**Pollip Pouch & Sting Shard** | Progression level: ['walljump'] | Other tags: ['tool', 'craft', 'quest']
-
-**Tacks** | Progression level: ['walljump'] | Other tags: ['tool', 'quest']
-
-**Quick Sling** | Progression level: ['faydown'] | Other tags: ['tool']
-
-**Weavelight & Injector Band** | Progression level: ['act2'] | Other tags: ['tool', 'fight']
-
-**Plasmium Phial** | Progression level: ['walljump'] | Other tags: ['tool', 'quest', 'key']
-
-**Memory Crystal** | Progression level: ['faydown'] | Other tags: ['tool']
-
-**Flintslate** | Progression level: ['walljump'] | Other tags: ['tool', 'key']
-
-**Repair Silkshot** | Progression level: ['widow'] | Other tags: ['tool', 'craft']
-
-**Multibinder** | Progression level: ['act2'] | Other tags: ['tool', 'quest', 'expensive']
-
-**Rosary Cannon** | Progression level: ['clawline'] | Other tags: ['tool', 'key']
-
-**Cogfly** | Progression level: ['clawline'] | Other tags: ['tool', 'craft']
-
-**Snare Setter** | Progression level: ['faydown'] | Other tags: ['tool']
-
-**Conchcutter** | Progression level: ['clawline'] | Other tags: ['tool', 'fight']
 
 **Pale Lake Craftmetal** | Progression level: ['faydown'] | Other tags: ['location', 'collection']
 
@@ -96,19 +46,9 @@
 
 **Sell a Mossberry** | Progression level: ['early'] | Other tags: ['collection']
 
-**Wanderer's Crest** | Progression level: ['walljump'] | Other tags: ['upgrade', 'hardsave']
-
-**Reaper's Crest** | Progression level: ['cloak'] | Other tags: ['upgrade', 'hardsave']
-
-**Beast's Crest** | Progression level: ['cloak'] | Other tags: ['upgrade', 'hardsave', 'hard']
-
 **Needle Strike** | Progression level: ['walljump'] | Other tags: ['upgrade', 'fight']
 
 **Upgrade Needle Twice** | Progression level: ['act2'] | Other tags: ['upgrade', 'quest']
-
-**Thread Storm** | Progression level: ['cloak'] | Other tags: ['upgrade', 'hardsave']
-
-**Sharpdart** | Progression level: ['cloak'] | Other tags: ['upgrade', 'key', 'hardsave']
 
 **Evolved Hunter's Crest** | Progression level: ['widow'] | Other tags: ['upgrade', 'hardsave']
 
@@ -142,49 +82,15 @@
 
 **Craggler** | Progression level: ['early'] | Other tags: ['fight']
 
-**Moorwing** | Progression level: ['cloak'] | Other tags: ['fight']
-
-**Savage Beastfly** | Progression level: ['cloak'] | Other tags: ['fight', 'hard']
-
-**Great Conchflies (Blasted Steps)** | Progression level: ['walljump'] | Other tags: ['fight', 'blocking']
-
-**Raging Conchfly (Sands of Karak)** | Progression level: ['clawline'] | Other tags: ['fight']
-
-**Moss Mother Duo** | Progression level: ['widow'] | Other tags: ['fight']
-
 **Defeat a Rhinogrund** | Progression level: ['walljump'] | Other tags: ['fight', 'hard']
 
 **Disable the Clawmaidens** | Progression level: ['faydown'] | Other tags: ['fight']
 
-**Fourth Chorus** | Progression level: ['cloak'] | Other tags: ['fight']
-
-**Cogwork Dancers** | Progression level: ['act2'] | Other tags: ['fight', 'blocking']
-
-**Last Judge** | Progression level: ['widow'] | Other tags: ['fight']
-
-**Phantom** | Progression level: ['widow'] | Other tags: ['fight']
-
 **Fail the Phantom Cutscene** | Progression level: ['widow'] | Other tags: ['fight', 'silly']
-
-**Trobbio** | Progression level: ['act2'] | Other tags: ['fight', 'tool', 'blocking']
-
-**Red Quill** | Progression level: ['act2'] | Other tags: ['location']
-
-**Disgraced Chef Lugoli** | Progression level: ['faydown'] | Other tags: ['fight', 'hard']
-
-**Father Of The Flame** | Progression level: ['faydown'] | Other tags: ['fight', 'tool', 'hard']
-
-**Forebrothers Signis & Gron** | Progression level: ['clawline'] | Other tags: ['fight', 'hard', 'blocking']
 
 **Defeat a Covetous Pilgrim** | Progression level: ['cloak'] | Other tags: ['fight']
 
 **Cogwork Clapper Journal Entry** | Progression level: ['act2'] | Other tags: ['fight']
-
-**Sister Splinter** | Progression level: ['cloak'] | Other tags: ['fight']
-
-**Voltvyrm** | Progression level: ['faydown'] | Other tags: ['fight', 'tool']
-
-**Skull Tyrant** | Progression level: ['walljump'] | Other tags: ['fight', 'quest']
 
 **Free Green Prince** | Progression level: ['walljump'] | Other tags: ['npc', 'key']
 
@@ -193,8 +99,6 @@
 **Fail a Loddie Minigame** | Progression level: ['widow'] | Other tags: ['npc', 'silly']
 
 **Talk to Styx & Huntress** | Progression level: ['faydown'] | Other tags: ['npc', 'hardsave']
-
-**Wreath of Purity** | Progression level: ['faydown'] | Other tags: ['tool']
 
 **Break Both of Styx's One-ways** | Progression level: ['widow'] | Other tags: ['location']
 
@@ -392,13 +296,9 @@
 
 **Get Cursed** | Progression level: ['clawline'] | Other tags: ['hardsave', 'npc']
 
-**Witch Crest** | Progression level: ['clawline'] | Other tags: ['hardsave']
-
 **Barbed Bracelet & Magnetite Dice** | Progression level: ['widow'] | Other tags: ['tool', 'npc', 'itemsync']
 
 **Claw Mirror & Injector Band** | Progression level: ['act2'] | Other tags: ['tool', 'fight', 'itemsync']
-
-**Cradle Map** | Progression level: ['act3'] | Other tags: ['collection']
 
 **Enter Act 3** | Progression level: ['act3'] | Other tags: ['hardsave', 'blocking']
 
@@ -412,27 +312,17 @@
 
 **Talk to Flick at Survivor's Camp** | Progression level: ['act3'] | Other tags: ['npc']
 
-**3 Non-Hunter Crests** | Progression level: ['act3'] | Other tags: ['upgrade', 'hardsave']
-
 **Defeat a Black-threaded Boss** | Progression level: ['act3'] | Other tags: ['fight']
 
 **Pin Badge** | Progression level: ['act3'] | Other tags: ['fight']
-
-**Abyss Map** | Progression level: ['act3'] | Other tags: ['location']
-
-**Verdania Map** | Progression level: ['act3'] | Other tags: ['location']
 
 **1 Arcane Egg** | Progression level: ['act3'] | Other tags: ['relic', 'collection']
 
 **Shadow Charger Journal Entry** | Progression level: ['act3'] | Other tags: ['collection']
 
-**Fight Seth** | Progression level: ['silksoar'] | Other tags: ['fight']
-
 **Pollen Heart** | Progression level: ['silksoar'] | Other tags: ['fight', 'heart']
 
 **Hunter's Heart** | Progression level: ['silksoar'] | Other tags: ['fight', 'heart']
-
-**Pale Stag** | Progression level: ['silksoar'] | Other tags: ['fight']
 
 **Inspect Magnetite in Brightvein** | Progression level: ['silksoar'] | Other tags: ['collection', 'location']
 
@@ -440,11 +330,7 @@
 
 **Conjoined Heart** | Progression level: ['silksoar'] | Other tags: ['fight', 'heart']
 
-**Pale Nails** | Progression level: ['silksoar'] | Other tags: ['upgrade']
-
 **Clear First Coral Tower Arena** | Progression level: ['silksoar'] | Other tags: ['fight', 'hard']
-
-**Tormented Trobbio** | Progression level: ['silksoar'] | Other tags: ['fight']
 
 **Visit Styx's Nest** | Progression level: ['silksoar'] | Other tags: ['location', 'npc']
 
@@ -461,5 +347,3 @@
 **Brightvein Mask Shard** | Progression level: ['silksoar'] | Other tags: ['upgrade']
 
 **Win A Race** | Progression level: ['silksoar'] | Other tags: ['location', 'npc']
-
-**Shaman Crest** | Progression level: ['silksoar'] | Other tags: ['upgrade']

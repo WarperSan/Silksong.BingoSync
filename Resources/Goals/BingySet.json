@@ -1,0 +1,754 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/refs/heads/master/assets/generated/schema.json",
+	"name": "Bingy Goals",
+	"description": "Goals used by Bingy",
+	"goals": [
+		{
+			"name": "Straight, Threefold, and Long Pin",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "straight_pin"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "threefold_pin"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "longpin"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Barbed Bracelet & Fractured Mask",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "barbed_bracelet"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "fractured_mask"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Magnetite Dice & Magnetite Brooch",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "magnetite_dice"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "magnetite_brooch"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Compass, Pendant, Brooch",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "compass"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "shard_pendant"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "magnetite_brooch"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Warding Bell & Claw Mirror",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "warding_bell"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "claw_mirror"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Warding Bell & Sawtooth Circlet",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "warding_bell"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "sawtooth_circlet"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Magma Bell & Curveclaw",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "magma_bell"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "curveclaw"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Weighted Belt & Ascendant's Grip",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "weighted_belt"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "ascendants_grip"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Scuttlebrace & Silkspeed",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "scuttlebrace"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "silkspeed_anklets"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Pimpillo & Voltvessels",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "pimpillo"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "voltvessels"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Delver's Drill",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "delvers_drill"
+				}
+			}
+		},
+		{
+			"name": "Pollip Pouch",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "pollip_pouch"
+				}
+			}
+		},
+		{
+			"name": "Pollip Pouch & Sting Shard",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "pollip_pouch"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "sting_shard"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Tacks",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "tacks"
+				}
+			}
+		},
+		{
+			"name": "Quick Sling",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "quick_sling"
+				}
+			}
+		},
+		{
+			"name": "Weavelight & Injector Band",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "weavelight"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "injector_band"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Plasmium Phial",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "plasmium_phial"
+				}
+			}
+		},
+		{
+			"name": "Memory Crystal",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "memory_crystal"
+				}
+			}
+		},
+		{
+			"name": "Flintslate",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "flintslate"
+				}
+			}
+		},
+		{
+			"name": "Repair Silkshot",
+			"condition": {
+				"action": "OR",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "architect_silkshot"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "forge_silkshot"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "weaver_silkshot"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Multibinder",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "multibinder"
+				}
+			}
+		},
+		{
+			"name": "Rosary Cannon",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "rosary_cannon"
+				}
+			}
+		},
+		{
+			"name": "Cogfly",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "cogfly"
+				}
+			}
+		},
+		{
+			"name": "Snare Setter",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "snare_setter"
+				}
+			}
+		},
+		{
+			"name": "Conchcutter",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "conchcutter"
+				}
+			}
+		},
+		{
+			"name": "Wreath of Purity",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "wreath_of_purity"
+				}
+			}
+		},
+		{
+			"name": "Wanderer's Crest",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"crest": "wanderer"
+				}
+			}
+		},
+		{
+			"name": "Reaper's Crest",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"crest": "reaper"
+				}
+			}
+		},
+		{
+			"name": "Beast's Crest",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"crest": "beast"
+				}
+			}
+		},
+		{
+			"name": "Witch's Crest",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"crest": "witch"
+				}
+			}
+		},
+		{
+			"name": "Shaman Crest",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"crest": "shaman"
+				}
+			}
+		},
+		{
+			"name": "3 Non-Hunter Crests",
+			"condition": {
+				"action": "SOME",
+				"params": {
+					"amount": 3,
+					"conditions": [
+						{
+							"action": "has_obtained_crest",
+							"params": {
+								"crest": "reaper"
+							}
+						},
+						{
+							"action": "has_obtained_crest",
+							"params": {
+								"crest": "wanderer"
+							}
+						},
+						{
+							"action": "has_obtained_crest",
+							"params": {
+								"crest": "beast"
+							}
+						},
+						{
+							"action": "has_obtained_crest",
+							"params": {
+								"crest": "witch"
+							}
+						},
+						{
+							"action": "has_obtained_crest",
+							"params": {
+								"crest": "architect"
+							}
+						},
+						{
+							"action": "has_obtained_crest",
+							"params": {
+								"crest": "shaman"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Thread Storm",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "thread_storm"
+				}
+			}
+		},
+		{
+			"name": "Sharpdart",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "sharpdart"
+				}
+			}
+		},
+		{
+			"name": "Pale Nails",
+			"condition": {
+				"action": "has_obtained_silk_skill",
+				"params": {
+					"skill": "pale_nails"
+				}
+			}
+		},
+		{
+			"name": "Moorwing",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "moorwing"
+				}
+			}
+		},
+		{
+			"name": "Savage Beastfly",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "savage_beastfly_1"
+				}
+			}
+		},
+		{
+			"name": "Great Conchflies (Blasted Steps)",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "great_conchflies"
+				}
+			}
+		},
+		{
+			"name": "Raging Conchfly (Sands of Karak)",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "raging_conchfly"
+				}
+			}
+		},
+		{
+			"name": "Moss Mother Duo",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "moss_mothers"
+				}
+			}
+		},
+		{
+			"name": "Fourth Chorus",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "fourth_chorus"
+				}
+			}
+		},
+		{
+			"name": "Cogwork Dancers",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "cogwork_dancers"
+				}
+			}
+		},
+		{
+			"name": "Last Judge",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "last_judge"
+				}
+			}
+		},
+		{
+			"name": "Phantom",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "phantom"
+				}
+			}
+		},
+		{
+			"name": "Trobbio",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "trobbio"
+				}
+			}
+		},
+		{
+			"name": "Disgraced Chef Lugoli",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "disgraced_chef_lugoli"
+				}
+			}
+		},
+		{
+			"name": "Father Of The Flame",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "father_of_the_flame"
+				}
+			}
+		},
+		{
+			"name": "Forebrothers Signis & Gron",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "forebrothers"
+				}
+			}
+		},
+		{
+			"name": "Sister Splinter",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "sister_splinter"
+				}
+			}
+		},
+		{
+			"name": "Voltvyrm",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "voltvyrm"
+				}
+			}
+		},
+		{
+			"name": "Skull Tyrant",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "skull_tyrant_1"
+				}
+			}
+		},
+		{
+			"name": "Tormented Trobbio",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "tormented_trobbio"
+				}
+			}
+		},
+		{
+			"name": "Pale Stag",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "palestag"
+				}
+			}
+		},
+		{
+			"name": "Fight Seth",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "shrine_guardian_seth"
+				}
+			}
+		},
+		{
+			"name": "Red Quill",
+			"condition": {
+				"action": "has_obtained_quill",
+				"params": {
+					"quill": "red"
+				}
+			}
+		},
+		{
+			"name": "Cradle Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "the_cradle"
+				}
+			}
+		},
+		{
+			"name": "Abyss Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "the_abyss"
+				}
+			}
+		},
+		{
+			"name": "Verdania Map",
+			"condition": {
+				"action": "has_obtained_map",
+				"params": {
+					"area": "verdania"
+				}
+			}
+		}
+	]
+}
