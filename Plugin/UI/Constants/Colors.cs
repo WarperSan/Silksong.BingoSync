@@ -35,7 +35,7 @@ internal static class Colors
 		new(Team.Green, "Green", new Color(0f, 0.78f, 0.04f)),
 		new(Team.Purple, "Purple", new Color(0.47f, 0.15f, 0.7f)),
 		new(Team.Navy, "Navy", new Color(0f, 0.23f, 0.6f)),
-		new(Team.Teal, "Teal", new Color(0.71f, 0.71f, 0.71f)),
+		new(Team.Teal, "Teal", new Color(0.22f, 0.52f, 0.52f)),
 		new(Team.Brown, "Brown", new Color(0.55f, 0.3f, 0.1f)),
 		new(Team.Pink, "Pink", new Color(0.85f, 0.47f, 0.6f)),
 		new(Team.Yellow, "Yellow", new Color(0.8f, 0.78f, 0.06f)),
@@ -79,9 +79,9 @@ internal static class Colors
 		[
 			Team.Purple,
 			Team.Navy,
-			//Team.Teal,
+			Team.Teal,
 			Team.Brown,
-			Team.Pink,
+			//Team.Pink,
 			//Team.Yellow,
 		]
 	);
