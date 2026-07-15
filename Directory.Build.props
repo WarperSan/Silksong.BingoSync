@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
+        <SolutionRoot Condition="'$(SolutionRoot)' == ''">$(MSBuildThisFileDirectory)</SolutionRoot>
     </PropertyGroup>
 
     <!-- Debug -->
