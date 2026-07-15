@@ -29,5 +29,5 @@ body:
       description: Give us related resources to better understand what the condition is about.
       placeholder: Links to the wiki
     validations:
-      required: true
+      required: false
 
