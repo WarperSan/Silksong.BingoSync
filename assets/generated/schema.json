@@ -87,6 +87,89 @@
             "action": {
               "type": "string",
               "enum": [
+                "has_completed_wish"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "wish"
+              ],
+              "properties": {
+                "wish": {
+                  "type": "string",
+                  "enum": [
+                    "the_lost_fleas",
+                    "pinmasters_oil",
+                    "my_missing_courier",
+                    "my_missing_brother",
+                    "balm_for_the_wounded",
+                    "the_wandering_merchant",
+                    "the_lost_merchant",
+                    "rite_of_rebirth",
+                    "infestation_operation",
+                    "trails_end",
+                    "final_audience",
+                    "silk_and_soul",
+                    "fatal_resolve",
+                    "pain_anguish_and_misery",
+                    "heros_call",
+                    "ecstasy_of_the_end",
+                    "berry_picking",
+                    "rite_of_the_pollip",
+                    "silver_bells",
+                    "alchemists_assistant",
+                    "great_taste_of_pharloom",
+                    "advanced_alchemy",
+                    "garb_of_the_pilgrims",
+                    "flexile_spines",
+                    "volatile_flintbeetles",
+                    "crawbug_clearing",
+                    "roach_guts",
+                    "fine_pins",
+                    "cloaks_of_the_choir",
+                    "broodfeast",
+                    "runtfeast",
+                    "dark_hearts",
+                    "the_terrible_tyrant",
+                    "savage_beastfly",
+                    "the_wailing_mother",
+                    "the_hidden_hunter",
+                    "bone_bottom_repairs",
+                    "a_lifesaving_bridge",
+                    "restoration_of_bellhart",
+                    "an_icon_of_hope",
+                    "bellharts_glory",
+                    "building_up_songclave",
+                    "strengthening_songclave",
+                    "bone_bottom_supplies",
+                    "pilgrims_rest_supplies",
+                    "queens_egg",
+                    "songclave_supplies",
+                    "fleatopia_supplies",
+                    "liquid_lacquer",
+                    "survivors_camp_supplies",
+                    "bugs_of_pharloom",
+                    "fastest_in_pharloom",
+                    "passing_of_the_age",
+                    "a_vassal_lost"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
                 "has_deposited_memento"
               ]
             },
@@ -621,6 +704,7 @@
               "properties": {
                 "conditions": {
                   "type": "array",
+                  "description": "Conditions that must all be met",
                   "items": {
                     "$ref": "#/definitions/conditions"
                   }
@@ -650,6 +734,7 @@
               ],
               "properties": {
                 "condition": {
+                  "description": "Condition to inverse",
                   "$ref": "#/definitions/conditions"
                 }
               }
@@ -678,6 +763,7 @@
               "properties": {
                 "conditions": {
                   "type": "array",
+                  "description": "Conditions where at least one must be met",
                   "items": {
                     "$ref": "#/definitions/conditions"
                   }
@@ -708,12 +794,14 @@
               "properties": {
                 "conditions": {
                   "type": "array",
+                  "description": "Conditions that could be met",
                   "items": {
                     "$ref": "#/definitions/conditions"
                   }
                 },
                 "amount": {
                   "type": "integer",
+                  "description": "Minimum number of conditions that must be met",
                   "default": 1
                 }
               }
