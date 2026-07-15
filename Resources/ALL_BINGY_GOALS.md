@@ -86,8 +86,6 @@
 
 **Disable the Clawmaidens** | Progression level: ['faydown'] | Other tags: ['fight']
 
-**Fail the Phantom Cutscene** | Progression level: ['widow'] | Other tags: ['fight', 'silly']
-
 **Defeat a Covetous Pilgrim** | Progression level: ['cloak'] | Other tags: ['fight']
 
 **Cogwork Clapper Journal Entry** | Progression level: ['act2'] | Other tags: ['fight']
@@ -95,8 +93,6 @@
 **Free Green Prince** | Progression level: ['walljump'] | Other tags: ['npc', 'key']
 
 **Win a Loddie Minigame** | Progression level: ['widow'] | Other tags: ['npc']
-
-**Fail a Loddie Minigame** | Progression level: ['widow'] | Other tags: ['npc', 'silly']
 
 **Talk to Styx & Huntress** | Progression level: ['faydown'] | Other tags: ['npc', 'hardsave']
 
@@ -180,8 +176,6 @@
 
 **Talk to Vog** | Progression level: ['faydown'] | Other tags: ['flea', 'npc']
 
-**Hit a Hoker with the Flea Bottle** | Progression level: ['cloak'] | Other tags: ['flea', 'tool', 'quest', 'silly']
-
 **Deep Docks Spool Fragments (2)** | Progression level: ['clawline'] | Other tags: ['upgrade']
 
 **Greymoor Spool Fragment** | Progression level: ['walljump'] | Other tags: ['upgrade']
@@ -259,10 +253,6 @@
 **Mite Mother Journal Entry** | Progression level: ['cloak'] | Other tags: ['collection']
 
 **Massive Mossgrub Journal Entry** | Progression level: ['faydown'] | Other tags: ['collection']
-
-**Vaultborn Journal Entry** | Progression level: ['act2'] | Other tags: ['collection', 'silly']
-
-**Slap Nuu** | Progression level: ['act2'] | Other tags: ['quest', 'collection', 'silly']
 
 **Obtain 2 Beast Shards** | Progression level: ['dash'] | Other tags: ['fight']
 
