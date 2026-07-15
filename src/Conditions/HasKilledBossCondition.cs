@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasKilledBossCondition : ICondition
 {
 	[JsonProperty("boss")]
 	[JsonRequired]
+	[Description("Name of the boss to kill")]
 	public required Boss Boss  { get; init; }
 
 	/// <inheritdoc />

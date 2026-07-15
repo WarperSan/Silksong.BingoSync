@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using BingoAPI.Conditions;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
@@ -13,6 +14,7 @@ internal sealed class HasObtainedCrestCondition : ICondition
 {
 	[JsonProperty("crest")]
 	[JsonRequired]
+	[Description("Name of the crest to obtain")]
 	public required Crest Crest { get; init; }
 
 	/// <inheritdoc />

@@ -64,6 +64,7 @@
               "properties": {
                 "ending": {
                   "type": "string",
+                  "description": "Name of the ending to complete",
                   "enum": [
                     "weaver_queen",
                     "snared_silk",
@@ -98,6 +99,7 @@
               "properties": {
                 "memento": {
                   "type": "string",
+                  "description": "Name of the memento to deposit",
                   "enum": [
                     "sprintmaster",
                     "guardian",
@@ -138,6 +140,7 @@
               "properties": {
                 "boss": {
                   "type": "string",
+                  "description": "Name of the boss to kill",
                   "enum": [
                     "bell_beast",
                     "fourth_chorus",
@@ -213,6 +216,7 @@
               "properties": {
                 "art": {
                   "type": "string",
+                  "description": "Name of the ancestral art to obtain",
                   "enum": [
                     "swift_step",
                     "cling_grip",
@@ -248,6 +252,7 @@
               "properties": {
                 "crest": {
                   "type": "string",
+                  "description": "Name of the crest to obtain",
                   "enum": [
                     "hunter",
                     "hunter_evolved",
@@ -288,6 +293,7 @@
               "properties": {
                 "area": {
                   "type": "string",
+                  "description": "Name of the area for which to obtain the map",
                   "enum": [
                     "the_abyss",
                     "bellhart",
@@ -349,6 +355,7 @@
               "properties": {
                 "memento": {
                   "type": "string",
+                  "description": "Name of the memento to obtain",
                   "enum": [
                     "sprintmaster",
                     "guardian",
@@ -389,6 +396,7 @@
               "properties": {
                 "needle": {
                   "type": "string",
+                  "description": "Name of the needle to obtain",
                   "enum": [
                     "needle",
                     "sharpened_needle",
@@ -423,6 +431,7 @@
               "properties": {
                 "quill": {
                   "type": "string",
+                  "description": "Name of the quill to obtain",
                   "enum": [
                     "white",
                     "red",
@@ -455,6 +464,7 @@
               "properties": {
                 "skill": {
                   "type": "string",
+                  "description": "Name of the silk skill to obtain",
                   "enum": [
                     "silkspear",
                     "thread_storm",
@@ -490,6 +500,7 @@
               "properties": {
                 "tool": {
                   "type": "string",
+                  "description": "Name of the tool to obtain",
                   "enum": [
                     "straight_pin",
                     "threefold_pin",
@@ -578,6 +589,7 @@
               "properties": {
                 "vesticrest": {
                   "type": "string",
+                  "description": "Name of the vesticrest to obtain",
                   "enum": [
                     "basic",
                     "upgraded"

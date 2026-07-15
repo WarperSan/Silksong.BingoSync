@@ -1,9 +1,11 @@
+using System.Net.Http.Headers;
 using BingoAPI.Events;
 using BingoAPI.Goals;
 using BingoAPI.Models;
 using BingoAPI.Models.Settings;
 using BingoAPI.Networking;
 using Silksong.BingoSync.Helpers;
+using Silksong.BingoSync.Networking;
 
 namespace Silksong.BingoSync;
 
@@ -12,6 +14,7 @@ internal class Controller : IDisposable
 	public GoalPool Pool = [];
 	public readonly EventDispatcher Events;
 	private readonly Session _session;
+	private readonly HttpClient _client;
 
 	public Controller()
 	{
@@ -21,8 +24,25 @@ internal class Controller : IDisposable
 		_tracker = new GoalTracker();
 		_tracker.OnGoalMarked += OnGoalMarked;
 		_tracker.OnGoalCleared += OnGoalCleared;
+		
+		_client = new HttpClient(
+			new LoggingHandler(
+				new HttpClientHandler()
+			)
+		)
+		{
+			Timeout = TimeSpan.FromSeconds(30),
+			BaseAddress = new Uri("https://bingosync.com"),
+			DefaultRequestHeaders =
+			{
+				UserAgent =
+				{
+					new ProductInfoHeaderValue(Plugin.Id, Plugin.Version),
+				},
+			},
+		};
 
-		_session = new Session(Events);
+		_session = new Session(Events, _client);
 	}
 
 	#region Events
@@ -195,6 +215,7 @@ internal class Controller : IDisposable
 	public void Dispose()
 	{
 		UnsubscribeFromEvents(Events);
+		_client.Dispose();
 		_session.Dispose();
 	}
 }

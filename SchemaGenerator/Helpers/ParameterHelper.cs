@@ -36,10 +36,8 @@ internal static class ParameterHelper
 		schema = CreateFromType(dataType, context);
 		schema.IsRequired = member.GetCustomAttribute<JsonRequiredAttribute>() != null;
 
-		var defaultValueAttr = member.GetCustomAttribute<DefaultValueAttribute>();
-
-		if (defaultValueAttr is not null)
-			schema.Default = defaultValueAttr.Value;
+		schema.Default = member.GetCustomAttribute<DefaultValueAttribute>()?.Value;
+		schema.Description = member.GetCustomAttribute<DescriptionAttribute>()?.Description;
 
 		return true;
 	}
