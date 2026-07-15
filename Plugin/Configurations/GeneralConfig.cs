@@ -11,6 +11,16 @@ internal class GeneralConfig
 
 	public readonly ConfigEntry<bool> UseAdvancedTeams;
 
+	public enum ColorTheme
+	{
+		// ReSharper disable IdentifierTypo
+		Materium,
+		BingoSync,
+		// ReSharper restore IdentifierTypo
+	}
+	
+	public readonly ConfigEntry<ColorTheme> SelectedTheme;
+
 	public GeneralConfig(ConfigFile cfg)
 	{
 		UseAdvancedTeams = cfg.Bind(
@@ -18,6 +28,13 @@ internal class GeneralConfig
 			"AddMoreTeams",
 			false,
 			"Defines if 4 extra teams are added upon loading"
+		);
+
+		SelectedTheme = cfg.Bind(
+			SECTION,
+			"ColorTheme",
+			ColorTheme.Materium,
+			"Defines the theme of colors to use"
 		);
 	}
 }
