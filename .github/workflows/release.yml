@@ -28,7 +28,7 @@ jobs:
             PROJECT_FILE: ${{ env.PROJECT_FILE }}
 
       -   name: Publish to Thunderstore
-          run: dotnet pack -c Release -p:PublishTS=true --no-restore
+          run: dotnet pack "$PROJECT_FILE" -c Release -p:PublishTS=true --no-restore
           env:
             THUNDERSTORE_TOKEN: ${{ secrets.TCLI_AUTH_TOKEN }}
             PROJECT_FILE: ${{ env.PROJECT_FILE }}
