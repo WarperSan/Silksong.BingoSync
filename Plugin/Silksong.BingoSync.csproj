@@ -7,20 +7,13 @@
         <RepositoryUrl>https://github.com/WarperSan/Silksong.BingoSync</RepositoryUrl>
     </PropertyGroup>
 
-    <Import Condition="Exists('env.props')" Project="env.props"/>
+    <Import Condition="Exists('../env.props')" Project="../env.props"/>
 
     <!-- Project Properties -->
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
-
-    <!-- Files -->
-    <ItemGroup>
-        <Compile Remove="**/*.cs" />
-        <Compile Include="src/**/*.cs" />
-        <None Remove="SchemaGenerator/**/*"/>
-    </ItemGroup>
 
     <!-- Primary Package References -->
     <ItemGroup>
@@ -63,5 +56,5 @@
         <!-- Soft -->
     </ItemGroup>
 
-    <Import Project="Thunderstore.props"/>
+    <Import Project="../Thunderstore.props"/>
 </Project>
