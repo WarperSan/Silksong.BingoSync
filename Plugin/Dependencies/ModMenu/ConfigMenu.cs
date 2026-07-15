@@ -39,17 +39,20 @@ internal static class ConfigMenu
 	private static AbstractMenuScreen CreateGeneralConfig(GeneralConfig config)
 	{
 		PaginatedMenuScreenBuilder builder = new("General");
-		
+
 		if (ConfigEntryFactory.GenerateBoolElement(config.UseAdvancedTeams, out var advancedTeamsElement))
 			builder.Add(advancedTeamsElement);
 
+		if (ConfigEntryFactory.GenerateEnumChoiceElement(config.SelectedTheme, out var selectedThemeElement))
+			builder.Add(selectedThemeElement);
+
 		return builder.Build();
 	}
-	
+
 	private static AbstractMenuScreen CreateJoinConfig(JoinConfig config)
 	{
 		PaginatedMenuScreenBuilder builder = new("Join");
-		
+
 		if (ConfigEntryFactory.GenerateStringElement(config.Nickname, out var nicknameElement))
 			builder.Add(nicknameElement);
 
