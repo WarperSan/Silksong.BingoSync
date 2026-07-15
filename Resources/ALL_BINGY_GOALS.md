@@ -22,10 +22,6 @@
 
 **Break a Courier Item** | Progression level: ['act2'] | Other tags: ['quest']
 
-**Crawbug Clearing** | Progression level: ['widow'] | Other tags: ['quest']
-
-**Volatile Flintbeetles** | Progression level: ['cloak'] | Other tags: ['quest', 'locket']
-
 **3 Red Tools** | Progression level: ['dash'] | Other tags: ['tool', 'craft', 'blocking']
 
 **5 Red Tools** | Progression level: ['cloak'] | Other tags: ['tool', 'craft', 'blocking']

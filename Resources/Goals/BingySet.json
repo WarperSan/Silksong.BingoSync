@@ -749,6 +749,24 @@
 					"area": "verdania"
 				}
 			}
+		},
+		{
+			"name": "Crawbug Clearing",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "crawbug_clearing"
+				}
+			}
+		},
+		{
+			"name": "Volatile Flintbeetles",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "volatile_flintbeetles"
+				}
+			}
 		}
 	]
 }
