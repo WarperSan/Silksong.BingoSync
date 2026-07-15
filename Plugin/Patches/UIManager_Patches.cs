@@ -3,6 +3,7 @@ using HarmonyLib;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Containers;
 using Silksong.BingoSync.UI.Menus;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,8 @@ internal class UIManager_Patches
 		if (_bingoCanvas != null)
 			return;
 
+		var scheme = UI.Constants.Colors.GetSchemeForTheme(Configuration.SafeInstance.General.SelectedTheme.Value);
+
 		var gameObject = new GameObject(nameof(BingoSync) + "." + nameof(Canvas));
 		UnityEngine.Object.DontDestroyOnLoad(gameObject);
 
@@ -37,13 +40,13 @@ internal class UIManager_Patches
 
 		_bingoCanvas = canvas;
 
-		CreateConnectionMenu(gameObject.transform);
+		CreateConnectionMenu(scheme, gameObject.transform);
 
-		var boardContainer = BoardContainer.Create();
+		var boardContainer = BoardContainer.Create(scheme);
 		boardContainer.transform.SetParent(gameObject.transform, false);
 	}
 
-	private static void CreateConnectionMenu(Transform parent)
+	private static void CreateConnectionMenu(TeamColorScheme scheme, Transform parent)
 	{
 		var container = new GameObject(nameof(ConnectionMenu) + "-Container");
 		container.transform.SetParent(parent, false);
@@ -64,7 +67,7 @@ internal class UIManager_Patches
 			#endif
 		};
 
-		var menu = ConnectionMenu.Create(joinSettings);
+		var menu = ConnectionMenu.Create(scheme, joinSettings);
 		menu.transform.SetParent(container.transform, false);
 
 		if (menu.TryGetComponent(out RectTransform menuTransform))

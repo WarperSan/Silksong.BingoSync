@@ -1,11 +1,12 @@
 using BingoAPI.Models;
 using Silksong.BingoSync.UI.Items;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Silksong.BingoSync.UI.Containers;
 
-public class BingoBoard : MonoBehaviour
+internal class BingoBoard : MonoBehaviour
 {
 	private BingoCell[]? _cells;
 
@@ -57,7 +58,7 @@ public class BingoBoard : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoBoard"/>
 	/// </summary>
-	public static BingoBoard Create()
+	public static BingoBoard Create(TeamColorScheme scheme)
 	{
 		var gameObject = new GameObject(nameof(BingoBoard));
 		var rectTransform = gameObject.AddComponent<RectTransform>();
@@ -85,7 +86,7 @@ public class BingoBoard : MonoBehaviour
 
 		for (var i = 0; i < cells.Length; i++)
 		{
-			var cell = BingoCell.Create();
+			var cell = BingoCell.Create(scheme);
 
 			cell.transform.SetParent(grid.transform, false);
 

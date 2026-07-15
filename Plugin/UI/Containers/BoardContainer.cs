@@ -1,6 +1,7 @@
 using BingoAPI.Events;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Components;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 
 namespace Silksong.BingoSync.UI.Containers;
@@ -71,7 +72,7 @@ internal class BoardContainer : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="BoardContainer"/>
 	/// </summary>
-	public static BoardContainer Create()
+	public static BoardContainer Create(TeamColorScheme scheme)
 	{
 		var gameObject = new GameObject(nameof(BoardContainer));
 		var container = gameObject.AddComponent<BoardContainer>();
@@ -90,7 +91,7 @@ internal class BoardContainer : MonoBehaviour
 		);
 		container._toggleInput = input;
 
-		var board = BingoBoard.Create();
+		var board = BingoBoard.Create(scheme);
 		board.transform.SetParent(rectTransform, false);
 		container._board = board;
 

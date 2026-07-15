@@ -4,6 +4,7 @@ using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.Helpers;
 using Silksong.BingoSync.UI.Components;
 using Silksong.BingoSync.UI.Containers;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 using Button = Silksong.BingoSync.UI.Components.Button;
@@ -216,7 +217,7 @@ internal class ConnectionMenu : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="ConnectionMenu"/>
 	/// </summary>
-	public static ConnectionMenu Create(JoinRoomSettings settings)
+	public static ConnectionMenu Create(TeamColorScheme scheme, JoinRoomSettings settings)
 	{
 		var gameObject = new GameObject(nameof(ConnectionMenu));
 		var menu = gameObject.AddComponent<ConnectionMenu>();
@@ -244,7 +245,7 @@ internal class ConnectionMenu : MonoBehaviour
 		menu._joinForm = joinForm;
 
 		// Team Picker
-		var teamPicker = TeamPicker.Create(menu.OnTeamSelected);
+		var teamPicker = TeamPicker.Create(scheme, menu.OnTeamSelected);
 		teamPicker.transform.SetParent(mainLayoutGroup.transform, false);
 		menu._teamPicker = teamPicker;
 

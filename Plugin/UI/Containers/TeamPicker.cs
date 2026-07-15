@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using BingoAPI.Models;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Items;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -72,7 +73,7 @@ internal class TeamPicker : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="TeamPicker"/>
 	/// </summary>
-	public static TeamPicker Create(Action<Team> onTeamSelected)
+	public static TeamPicker Create(TeamColorScheme scheme, Action<Team> onTeamSelected)
 	{
 		var gameObject = new GameObject(nameof(TeamPicker));
 		var picker = gameObject.AddComponent<TeamPicker>();
@@ -92,26 +93,15 @@ internal class TeamPicker : MonoBehaviour
 
 		var buttons = new Dictionary<Team, TeamPickerButton>();
 
-		List<Team> teams =
-		[
-			Team.Red,
-			Team.Blue,
-			Team.Green,
-			Team.Yellow,
-		];
+		var teams = scheme.DefaultColors.ToList();
 
 		if (Configuration.SafeInstance.General.UseAdvancedTeams.Value)
-		{
-			teams.Add(Team.Purple);
-			teams.Add(Team.Navy);
-			teams.Add(Team.Pink);
-			teams.Add(Team.Brown);
-		}
+			teams.AddRange(scheme.AdvancedColors);
 
 		foreach (var team in teams)
 		{
 			var button = TeamPickerButton.Create(
-				team,
+				scheme.GetTeamColor(team),
 				picker.OnTeamSelected
 			);
 

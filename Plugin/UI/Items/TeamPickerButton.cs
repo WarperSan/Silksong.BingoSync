@@ -1,5 +1,6 @@
 using BingoAPI.Models;
 using Silksong.BingoSync.UI.Constants;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,16 +40,16 @@ internal class TeamPickerButton : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="TeamPickerButton"/>
 	/// </summary>
-	public static TeamPickerButton Create(Team team, Action<Team> onClick)
+	public static TeamPickerButton Create(TeamColorScheme.TeamColor team, Action<Team> onClick)
 	{
 		var gameObject = new GameObject(nameof(TeamPickerButton));
 		gameObject.AddComponent<RectTransform>();
 
 		var picker = gameObject.AddComponent<TeamPickerButton>();
-		picker.Team = team;
+		picker.Team = team.Team;
 		picker._onClick = onClick;
 
-		var teamColor = team.GetColor();
+		var teamColor = team.Color;
 		picker._teamColor = teamColor;
 
 		var image = gameObject.AddComponent<Image>();
@@ -86,7 +87,7 @@ internal class TeamPickerButton : MonoBehaviour
 		label.fontSize = 17;
 		label.color = Color.white;
 		label.alignment = TextAnchor.MiddleCenter;
-		label.text = team.GetDisplayName();
+		label.text = team.Name;
 
 		picker.Unselect();
 

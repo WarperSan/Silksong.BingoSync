@@ -1,6 +1,7 @@
 using BingoAPI.Goals;
 using BingoAPI.Models;
 using Silksong.BingoSync.UI.Constants;
+using Silksong.BingoSync.UI.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +61,7 @@ internal class BingoCell : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoCell"/>
 	/// </summary>
-	public static BingoCell Create()
+	public static BingoCell Create(TeamColorScheme scheme)
 	{
 		var gameObject = new GameObject(nameof(BingoCell));
 		gameObject.AddComponent<RectTransform>();
@@ -89,12 +90,14 @@ internal class BingoCell : MonoBehaviour
 			if (team == Team.None)
 				continue;
 
-			var backgroundImage = new GameObject(team.ToString());
+			var teamColor = scheme.GetTeamColor(team);
+
+			var backgroundImage = new GameObject(teamColor.Name);
 			backgroundImage.transform.SetParent(backgroundContainer.transform, false);
 
 			var image = backgroundImage.AddComponent<Image>();
 
-			image.color = team.GetColor();
+			image.color = teamColor.Color;
 
 			backgroundImages.Add(team, image);
 		}
