@@ -1,19 +1,12 @@
 # Changelog
 
 <details>
-<summary>v1.2.3</summary>
-
-## Additions
-- Added condition `has_completed_wish` with 54 simple goals
-
-</details>
-
-<details>
 <summary>v1.2.2</summary>
 
-## Added
+## Additions
 - Added condition `has_obtained_quill` with 3 simple goals
 - Added condition `has_obtained_map` with 28 simple goals
+- Added condition `has_completed_wish` with 54 simple goals
 
 ## Changes
 - Changed the schema used by files to better autocompletion
