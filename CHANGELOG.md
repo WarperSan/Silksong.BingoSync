@@ -1,6 +1,14 @@
 # Changelog
 
 <details>
+<summary>v1.2.3</summary>
+
+## Additions
+- Added condition `has_completed_wish` with 54 simple goals
+
+</details>
+
+<details>
 <summary>v1.2.2</summary>
 
 ## Added

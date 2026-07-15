@@ -1,0 +1,493 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/refs/heads/master/assets/generated/schema.json",
+	"name": "Simple Wish Goals",
+	"description": "Goals focused on completing each wish",
+	"goals": [
+		{
+			"name": "Complete The Lost Fleas",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "the_lost_fleas"
+				}
+			}
+		},
+		{
+			"name": "Complete Pinmaster's Oil",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "pinmasters_oil"
+				}
+			}
+		},
+		{
+			"name": "Complete My Missing Courier",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "my_missing_courier"
+				}
+			}
+		},
+		{
+			"name": "Complete My Missing Brother",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "my_missing_brother"
+				}
+			}
+		},
+		{
+			"name": "Complete Balm for the Wounded",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "balm_for_the_wounded"
+				}
+			}
+		},
+		{
+			"name": "Complete The Wandering Merchant",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "the_wandering_merchant"
+				}
+			}
+		},
+		{
+			"name": "Complete The Lost Merchant",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "the_lost_merchant"
+				}
+			}
+		},
+		{
+			"name": "Complete Rite of Rebirth",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "rite_of_rebirth"
+				}
+			}
+		},
+		{
+			"name": "Complete Infestation Operation",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "infestation_operation"
+				}
+			}
+		},
+		{
+			"name": "Complete Trails End",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "trails_end"
+				}
+			}
+		},
+		{
+			"name": "Complete Final Audience",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "final_audience"
+				}
+			}
+		},
+		{
+			"name": "Complete Silk and Soul",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "silk_and_soul"
+				}
+			}
+		},
+		{
+			"name": "Complete Fatal Resolve",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "fatal_resolve"
+				}
+			}
+		},
+		{
+			"name": "Complete Pain Anguish and Misery",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "pain_anguish_and_misery"
+				}
+			}
+		},
+		{
+			"name": "Complete Hero's Call",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "heros_call"
+				}
+			}
+		},
+		{
+			"name": "Complete Ecstasy of the End",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "ecstasy_of_the_end"
+				}
+			}
+		},
+		{
+			"name": "Complete Berry Picking",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "berry_picking"
+				}
+			}
+		},
+		{
+			"name": "Complete Rite of the Pollip",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "rite_of_the_pollip"
+				}
+			}
+		},
+		{
+			"name": "Complete Silver Bells",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "silver_bells"
+				}
+			}
+		},
+		{
+			"name": "Complete Alchemist's Assistant",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "alchemists_assistant"
+				}
+			}
+		},
+		{
+			"name": "Complete Great Taste of Pharloom",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "great_taste_of_pharloom"
+				}
+			}
+		},
+		{
+			"name": "Complete Advanced Alchemy",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "advanced_alchemy"
+				}
+			}
+		},
+		{
+			"name": "Complete Garb of the Pilgrims",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "garb_of_the_pilgrims"
+				}
+			}
+		},
+		{
+			"name": "Complete Flexile Spines",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "flexile_spines"
+				}
+			}
+		},
+		{
+			"name": "Complete Volatile Flintbeetles",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "volatile_flintbeetles"
+				}
+			}
+		},
+		{
+			"name": "Complete Crawbug Clearing",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "crawbug_clearing"
+				}
+			}
+		},
+		{
+			"name": "Complete Roach Guts",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "roach_guts"
+				}
+			}
+		},
+		{
+			"name": "Complete Fine Pins",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "fine_pins"
+				}
+			}
+		},
+		{
+			"name": "Complete Cloaks of the Choir",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "cloaks_of_the_choir"
+				}
+			}
+		},
+		{
+			"name": "Complete Broodfeast",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "broodfeast"
+				}
+			}
+		},
+		{
+			"name": "Complete Runtfeast",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "runtfeast"
+				}
+			}
+		},
+		{
+			"name": "Complete Dark Hearts",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "dark_hearts"
+				}
+			}
+		},
+		{
+			"name": "Complete The Terrible Tyrant",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "the_terrible_tyrant"
+				}
+			}
+		},
+		{
+			"name": "Complete Savage Beastfly",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "savage_beastfly"
+				}
+			}
+		},
+		{
+			"name": "Complete The Wailing Mother",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "the_wailing_mother"
+				}
+			}
+		},
+		{
+			"name": "Complete The Hidden Hunter",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "the_hidden_hunter"
+				}
+			}
+		},
+		{
+			"name": "Complete Bone Bottom Repairs",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "bone_bottom_repairs"
+				}
+			}
+		},
+		{
+			"name": "Complete A Lifesaving Bridge",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "a_lifesaving_bridge"
+				}
+			}
+		},
+		{
+			"name": "Complete Restoration of Bellhart",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "restoration_of_bellhart"
+				}
+			}
+		},
+		{
+			"name": "Complete An Icon of Hope",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "an_icon_of_hope"
+				}
+			}
+		},
+		{
+			"name": "Complete Bellhart's Glory",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "bellharts_glory"
+				}
+			}
+		},
+		{
+			"name": "Complete Building Up Songclave",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "building_up_songclave"
+				}
+			}
+		},
+		{
+			"name": "Complete Strengthening Songclave",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "strengthening_songclave"
+				}
+			}
+		},
+		{
+			"name": "Complete Bone Bottom Supplies",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "bone_bottom_supplies"
+				}
+			}
+		},
+		{
+			"name": "Complete Pilgrim's Rest Supplies",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "pilgrims_rest_supplies"
+				}
+			}
+		},
+		{
+			"name": "Complete Queen's Egg",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "queens_egg"
+				}
+			}
+		},
+		{
+			"name": "Complete Songclave Supplies",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "songclave_supplies"
+				}
+			}
+		},
+		{
+			"name": "Complete Fleatopia Supplies",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "fleatopia_supplies"
+				}
+			}
+		},
+		{
+			"name": "Complete Liquid Lacquer",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "liquid_lacquer"
+				}
+			}
+		},
+		{
+			"name": "Complete Survivor's Camp Supplies",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "survivors_camp_supplies"
+				}
+			}
+		},
+		{
+			"name": "Complete Bugs of Pharloom",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "bugs_of_pharloom"
+				}
+			}
+		},
+		{
+			"name": "Complete Fastest in Pharloom",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "fastest_in_pharloom"
+				}
+			}
+		},
+		{
+			"name": "Complete Passing of the Age",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "passing_of_the_age"
+				}
+			}
+		},
+		{
+			"name": "Complete A Vassal Lost",
+			"condition": {
+				"action": "has_completed_wish",
+				"params": {
+					"wish": "a_vassal_lost"
+				}
+			}
+		}
+	]
+}
