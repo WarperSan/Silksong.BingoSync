@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silksong.BingoSync", "Silksong.BingoSync.csproj", "{54D43194-5B14-4BF1-8A02-EC9BC70F4889}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silksong.BingoSync", "Plugin\Silksong.BingoSync.csproj", "{54D43194-5B14-4BF1-8A02-EC9BC70F4889}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaGenerator", "SchemaGenerator\SchemaGenerator.csproj", "{67A19A39-3E6A-4724-AD50-EF226174EF64}"
 EndProject

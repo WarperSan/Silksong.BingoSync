@@ -7,20 +7,11 @@
         <RepositoryUrl>https://github.com/WarperSan/Silksong.BingoSync</RepositoryUrl>
     </PropertyGroup>
 
-    <Import Condition="Exists('env.props')" Project="env.props"/>
-
     <!-- Project Properties -->
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
-
-    <!-- Files -->
-    <ItemGroup>
-        <Compile Remove="**/*.cs" />
-        <Compile Include="src/**/*.cs" />
-        <None Remove="SchemaGenerator/**/*"/>
-    </ItemGroup>
 
     <!-- Primary Package References -->
     <ItemGroup>
@@ -42,19 +33,6 @@
         <PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all"/>
     </ItemGroup>
 
-    <Choose>
-        <When Condition="'$(UseLocalBingoAPI)' == 'true' And Exists('$(LocalBingoAPI)')">
-            <ItemGroup>
-                <ProjectReference Include="$(LocalBingoAPI)"/>
-            </ItemGroup>
-        </When>
-        <Otherwise>
-            <ItemGroup>
-                <PackageReference Include="WarperSan.BingoAPI" Version="0.1.4-alpha"/>
-            </ItemGroup>
-        </Otherwise>
-    </Choose>
-
     <!-- Dependencies -->
     <ItemGroup>
         <!-- Hard -->
@@ -63,5 +41,5 @@
         <!-- Soft -->
     </ItemGroup>
 
-    <Import Project="Thunderstore.props"/>
+    <Import Project="../Thunderstore.props"/>
 </Project>

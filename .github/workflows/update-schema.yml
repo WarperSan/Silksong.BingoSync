@@ -27,12 +27,12 @@ jobs:
           dotnet-version: "9.x"
 
       - name: Restore
-        run: |
-          dotnet restore
-          dotnet tool restore
+        run: dotnet restore "$PROJECT_FILE"
+        env:
+          PROJECT_FILE: ${{ env.PROJECT_FILE }}
 
       - name: Create File
-        run: dotnet run --project "$PROJECT_FILE" "$OUTPUT_FILE"
+        run: dotnet run --no-restore --project "$PROJECT_FILE" "$OUTPUT_FILE"
         env:
           PROJECT_FILE: ${{ env.PROJECT_FILE }}
           OUTPUT_FILE: ${{ env.SCHEMA_FILE }}

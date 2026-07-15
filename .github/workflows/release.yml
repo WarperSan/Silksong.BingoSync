@@ -1,5 +1,8 @@
 name: Publish
 
+env:
+  PROJECT_FILE: './Plugin/Silksong.BingoSync.csproj'
+
 on:
   push:
     tags: [ "*" ]
@@ -20,11 +23,12 @@ jobs:
             dotnet-version: "9.x"
 
       -   name: Restore
-          run: |
-            dotnet restore
-            dotnet tool restore
+          run: dotnet restore "$PROJECT_FILE"
+          env:
+            PROJECT_FILE: ${{ env.PROJECT_FILE }}
 
       -   name: Publish to Thunderstore
+          run: dotnet pack "$PROJECT_FILE" -c Release -p:PublishTS=true --no-restore
           env:
             THUNDERSTORE_TOKEN: ${{ secrets.TCLI_AUTH_TOKEN }}
-          run: dotnet pack -c Release -p:PublishTS=true
+            PROJECT_FILE: ${{ env.PROJECT_FILE }}

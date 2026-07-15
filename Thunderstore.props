@@ -16,16 +16,16 @@
         <!-- Mod Files -->
         <ThunderstoreFile Include="$(TargetPath)" Destination="plugins/"/>
         <ThunderstoreFile
-                Include="$(SolutionDir)Resources/Goals/**/*.json"
+                Include="$(SolutionRoot)Resources/Goals/**/*.json"
                 Destination="plugins/Goals/%(RecursiveDir)"
         />
         <ThunderstoreFile Include="$(OutputPath)BingoAPI.dll" Destination="plugins/"/>
 
         <!-- Package Files -->
-        <ThunderstorePackageFile Include="$(SolutionDir)README.md"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)CHANGELOG.md"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)LICENSE"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)icon.png"/>
+        <ThunderstorePackageFile Include="$(SolutionRoot)README.md"/>
+        <ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md"/>
+        <ThunderstorePackageFile Include="$(SolutionRoot)LICENSE"/>
+        <ThunderstorePackageFile Include="$(SolutionRoot)icon.png"/>
 
         <!-- Thunderstore Dependencies -->
         <ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3"/>
