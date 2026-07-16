@@ -1,32 +1,32 @@
 <Project>
-    <Import Condition="Exists('env.props')" Project="env.props"/>
+	<Import Condition="Exists('env.props')" Project="env.props" />
 
-    <!-- Project Properties -->
-    <PropertyGroup>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <LangVersion>latest</LangVersion>
-        <SolutionRoot Condition="'$(SolutionRoot)' == ''">$(MSBuildThisFileDirectory)</SolutionRoot>
-    </PropertyGroup>
+	<!-- Project Properties -->
+	<PropertyGroup>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<SolutionRoot Condition="'$(SolutionRoot)' == ''">$(MSBuildThisFileDirectory)</SolutionRoot>
+	</PropertyGroup>
 
-    <!-- Debug -->
-    <PropertyGroup>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>embedded</DebugType>
-        <PathMap Condition="'$(Configuration)' == 'Release'">$(MSBuildProjectDirectory)=./</PathMap>
-    </PropertyGroup>
+	<!-- Debug -->
+	<PropertyGroup>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>embedded</DebugType>
+		<PathMap Condition="'$(Configuration)' == 'Release'">$(MSBuildProjectDirectory)=./</PathMap>
+	</PropertyGroup>
 
-    <!-- BingoAPI dependency -->
-    <Choose>
-        <When Condition="'$(UseLocalBingoAPI)' == 'true' And Exists('$(LocalBingoAPI)')">
-            <ItemGroup>
-                <ProjectReference Include="$(LocalBingoAPI)"/>
-            </ItemGroup>
-        </When>
-        <Otherwise>
-            <ItemGroup>
-                <PackageReference Include="WarperSan.BingoAPI" Version="0.1.4-alpha"/>
-            </ItemGroup>
-        </Otherwise>
-    </Choose>
+	<!-- BingoAPI dependency -->
+	<Choose>
+		<When Condition="'$(UseLocalBingoAPI)' == 'true' And Exists('$(LocalBingoAPI)')">
+			<ItemGroup>
+				<ProjectReference Include="$(LocalBingoAPI)" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<PackageReference Include="WarperSan.BingoAPI" Version="0.1.4-alpha" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
 </Project>

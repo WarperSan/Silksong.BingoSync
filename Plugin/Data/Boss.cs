@@ -150,6 +150,3 @@ public enum Boss
 	[EnumMember(Value = "watcher_at_the_edge")]
 	Watcher,
 }
-
-//[EnumMember(Value = "radiance")]
-//Radiance,

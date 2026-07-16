@@ -255,10 +255,7 @@ internal class ConnectionMenu : MonoBehaviour
 
 		var input = gameObject.AddComponent<CallOnInput>();
 
-		input.SetInput(
-			Configuration.SafeInstance.Join.ToggleUI,
-			menu.ToggleVisibility
-		);
+		input.SetInput(Configuration.SafeInstance.Join.ToggleUI, menu.ToggleVisibility);
 
 		menu.SetOffline();
 

@@ -13,14 +13,17 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Checks if the given <see cref="AncestralArt"/> was obtained
 	/// </summary>
-	public static bool HasObtainedAncestralArt(this PlayerData data, AncestralArt art) => art switch
+	public static bool HasObtainedAncestralArt(this PlayerData data, AncestralArt art)
 	{
-		AncestralArt.SwiftStep => data.hasDash,
-		AncestralArt.ClingGrip => data.hasWalljump,
-		AncestralArt.Needolin  => data.hasNeedolin,
-		AncestralArt.Clawline  => data.hasHarpoonDash,
-		AncestralArt.SilkSoar  => data.hasSuperJump,
-		AncestralArt.Sylphsong => data.HasSeenEvaHeal, // TODO: Check if this is the actual field
-		_                      => throw new InvalidCheckException<AncestralArt>(art),
-	};
+		return art switch
+		{
+			AncestralArt.SwiftStep => data.hasDash,
+			AncestralArt.ClingGrip => data.hasWalljump,
+			AncestralArt.Needolin  => data.hasNeedolin,
+			AncestralArt.Clawline  => data.hasHarpoonDash,
+			AncestralArt.SilkSoar  => data.hasSuperJump,
+			AncestralArt.Sylphsong => data.HasSeenEvaHeal, // TODO: Check if this is the actual field
+			_                      => throw new InvalidCheckException<AncestralArt>(art),
+		};
+	}
 }

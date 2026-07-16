@@ -62,12 +62,7 @@ internal class TeamPickerButton : MonoBehaviour
 
 		var buttonColors = button.colors;
 
-		buttonColors.disabledColor = new Color(
-			0.3f,
-			0.3f,
-			0.3f,
-			1f
-		);
+		buttonColors.disabledColor = new Color(0.3f, 0.3f, 0.3f, 1f);
 		button.colors = buttonColors;
 
 		picker._outline = button.gameObject.AddComponent<Outline>();

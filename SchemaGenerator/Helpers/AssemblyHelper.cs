@@ -38,7 +38,11 @@ internal static class AssemblyHelper
 				}
 				catch (Exception e)
 				{
-					Debugger.Log((int)TraceLevel.Warning, "Loading", $"Could not load {refName.FullName}: {e.Message}");
+					Debugger.Log(
+						(int)TraceLevel.Warning,
+						"Loading",
+						$"Could not load {refName.FullName}: {e.Message}"
+					);
 				}
 			}
 		}

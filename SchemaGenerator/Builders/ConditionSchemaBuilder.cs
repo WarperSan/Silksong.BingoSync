@@ -4,7 +4,7 @@ using NJsonSchema;
 namespace SchemaGenerator.Builders;
 
 /// <summary>
-/// Class responsible for creating a <see cref="JsonSchema"/> for a <see cref="ICondition"/> 
+/// Class responsible for creating a <see cref="JsonSchema"/> for a <see cref="ICondition"/>
 /// </summary>
 internal sealed class ConditionSchemaBuilder
 {
@@ -46,12 +46,11 @@ internal sealed class ConditionSchemaBuilder
 	public JsonSchema Build()
 	{
 		if (_action == null)
-			throw new NullReferenceException("Tried building a condition without specifying an action.");
+			throw new NullReferenceException(
+				"Tried building a condition without specifying an action."
+			);
 
-		var schema = new JsonSchema
-		{
-			Type = JsonObjectType.Object,
-		};
+		var schema = new JsonSchema { Type = JsonObjectType.Object };
 
 		BuildAction(schema, _action);
 		BuildParameters(schema, _parameters);
@@ -65,17 +64,16 @@ internal sealed class ConditionSchemaBuilder
 
 		schema.Properties.Add(
 			ACTION_PARAMETER_NAME,
-			new JsonSchemaProperty
-			{
-				Type = JsonObjectType.String,
-				Enumeration = { action },
-			}
+			new JsonSchemaProperty { Type = JsonObjectType.String, Enumeration = { action } }
 		);
 
 		schema.RequiredProperties.Add(ACTION_PARAMETER_NAME);
 	}
 
-	private static void BuildParameters(JsonSchema schema, Dictionary<string, JsonSchemaProperty> parameters)
+	private static void BuildParameters(
+		JsonSchema schema,
+		Dictionary<string, JsonSchemaProperty> parameters
+	)
 	{
 		const string PARAMS_PARAMETER_NAME = "params";
 
@@ -94,10 +92,7 @@ internal sealed class ConditionSchemaBuilder
 		if (paramsProp.RequiredProperties.Count > 0)
 			schema.RequiredProperties.Add(PARAMS_PARAMETER_NAME);
 
-		schema.Properties.Add(
-			PARAMS_PARAMETER_NAME,
-			paramsProp
-		);
+		schema.Properties.Add(PARAMS_PARAMETER_NAME, paramsProp);
 	}
 
 	#endregion

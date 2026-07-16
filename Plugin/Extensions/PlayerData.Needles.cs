@@ -13,15 +13,18 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Gets the index of the upgrade for the given <see cref="Needle"/>
 	/// </summary>
-	private static int GetNeedleUpgradeIndex(Needle needle) => needle switch
+	private static int GetNeedleUpgradeIndex(Needle needle)
 	{
-		Needle.Needle          => 0,
-		Needle.SharpenedNeedle => 1,
-		Needle.ShiningNeedle   => 2,
-		Needle.HivesteelNeedle => 3,
-		Needle.PaleSteelNeedle => 4,
-		_                      => throw new InvalidCheckException<Needle>(needle),
-	};
+		return needle switch
+		{
+			Needle.Needle          => 0,
+			Needle.SharpenedNeedle => 1,
+			Needle.ShiningNeedle   => 2,
+			Needle.HivesteelNeedle => 3,
+			Needle.PaleSteelNeedle => 4,
+			_                      => throw new InvalidCheckException<Needle>(needle),
+		};
+	}
 
 	/// <summary>
 	/// Checks if the given <see cref="Needle"/> was obtained

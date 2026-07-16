@@ -37,10 +37,7 @@ public partial class Plugin : BaseUnityPlugin
 
 		foreach (var goal in pool)
 		{
-			content.Add(new
-			{
-				name = goal.Name,
-			});
+			content.Add(new { name = goal.Name });
 		}
 
 		Log.Info(JsonConvert.SerializeObject(content));
