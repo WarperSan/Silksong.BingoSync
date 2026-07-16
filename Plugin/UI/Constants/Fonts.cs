@@ -6,7 +6,8 @@ internal static class Fonts
 {
 	private static readonly Lazy<(Font? Bold, Font? Normal)> TrajanFonts = new(() =>
 	{
-		Font? bold = null, normal = null;
+		Font? normal = null;
+		Font? bold = null;
 
 		foreach (var f in Resources.FindObjectsOfTypeAll<Font>())
 		{

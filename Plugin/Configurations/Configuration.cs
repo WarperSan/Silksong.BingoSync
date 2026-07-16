@@ -36,7 +36,9 @@ internal class Configuration
 		get
 		{
 			if (Instance == null)
-				throw new InvalidOperationException($"Tried to access '{nameof(Configuration)}' before it was loaded.");
+				throw new InvalidOperationException(
+					$"Tried to access '{nameof(Configuration)}' before it was loaded."
+				);
 
 			return Instance;
 		}

@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using BingoAPI.Conditions;
 using NJsonSchema;
 using SchemaGenerator;
@@ -85,10 +85,7 @@ var goalSetSchema = new JsonSchema
 			IsRequired = true,
 		},
 	},
-	Definitions =
-	{
-		["conditions"] = conditionsSchema,
-	},
+	Definitions = { ["conditions"] = conditionsSchema },
 };
 
 var directory = Path.GetDirectoryName(output);

@@ -33,12 +33,7 @@ internal class Button : MonoBehaviour
 
 		var image = gameObject.AddComponent<Image>();
 
-		image.color = new Color(
-			0f,
-			0f,
-			0f,
-			0.6f
-		);
+		image.color = new Color(0f, 0f, 0f, 0.6f);
 
 		var internalButton = gameObject.AddComponent<UnityEngine.UI.Button>();
 		internalButton.targetGraphic = image;

@@ -26,7 +26,7 @@ public enum Memento
 
 	[EnumMember(Value = "grey")]
 	Grey,
-	
+
 	[EnumMember(Value = "surface")]
 	Surface,
 

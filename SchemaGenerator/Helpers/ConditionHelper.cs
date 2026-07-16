@@ -14,7 +14,11 @@ internal static class ConditionHelper
 	/// <summary>
 	/// Attempts to create a <see cref="ConditionSchemaBuilder"/> from the given type
 	/// </summary>
-	public static bool TryCreateFromType(Type type, SchemaContext context, [NotNullWhen(true)] out ConditionSchemaBuilder? builder)
+	public static bool TryCreateFromType(
+		Type type,
+		SchemaContext context,
+		[NotNullWhen(true)] out ConditionSchemaBuilder? builder
+	)
 	{
 		// Only allow concrete types
 		if (type.IsAbstract || type.IsInterface)
@@ -38,8 +42,7 @@ internal static class ConditionHelper
 			return false;
 		}
 
-		builder = new ConditionSchemaBuilder()
-			.Action(attribute.Action);
+		builder = new ConditionSchemaBuilder().Action(attribute.Action);
 
 		foreach (var member in type.GetMembers())
 		{

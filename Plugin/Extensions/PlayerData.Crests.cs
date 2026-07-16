@@ -15,23 +15,26 @@ public static partial class PlayerDataExtensions
 	/// <summary>
 	/// Gets the identifier of the given <see cref="Crest"/>
 	/// </summary>
-	private static string GetCrestId(Crest crest) => crest switch
+	private static string GetCrestId(Crest crest)
 	{
-		// ReSharper disable StringLiteralTypo
-		Crest.Hunter             => "Hunter",
-		Crest.HunterEvolved      => "Hunter_v2",
-		Crest.HunterFullyEvolved => "Hunter_v3",
-		Crest.Reaper             => "Reaper",
-		Crest.Wanderer           => "Wanderer",
-		Crest.Beast              => "Warrior",
-		Crest.Cursed             => "Cursed",
-		Crest.Witch              => "Witch",
-		Crest.Architect          => "Toolmaster",
-		Crest.Shaman             => "Spell",
-		Crest.Cloakless          => "Cloakless",
-		// ReSharper restore StringLiteralTypo
-		_ => throw new InvalidCheckException<Crest>(crest),
-	};
+		return crest switch
+		{
+			// ReSharper disable StringLiteralTypo
+			Crest.Hunter => "Hunter",
+			Crest.HunterEvolved => "Hunter_v2",
+			Crest.HunterFullyEvolved => "Hunter_v3",
+			Crest.Reaper => "Reaper",
+			Crest.Wanderer => "Wanderer",
+			Crest.Beast => "Warrior",
+			Crest.Cursed => "Cursed",
+			Crest.Witch => "Witch",
+			Crest.Architect => "Toolmaster",
+			Crest.Shaman => "Spell",
+			Crest.Cloakless => "Cloakless",
+			// ReSharper restore StringLiteralTypo
+			_ => throw new InvalidCheckException<Crest>(crest),
+		};
+	}
 
 	/// <summary>
 	/// Gets the data of the given <see cref="Crest"/>

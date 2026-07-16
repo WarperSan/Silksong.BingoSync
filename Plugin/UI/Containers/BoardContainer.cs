@@ -84,10 +84,7 @@ internal class BoardContainer : MonoBehaviour
 
 		var input = gameObject.AddComponent<CallOnInput>();
 
-		input.SetInput(
-			Configuration.SafeInstance.Board.ToggleUI,
-			container.ToggleVisibility
-		);
+		input.SetInput(Configuration.SafeInstance.Board.ToggleUI, container.ToggleVisibility);
 		container._toggleInput = input;
 
 		var board = BingoBoard.Create();

@@ -6,7 +6,8 @@ namespace Silksong.BingoSync.Exceptions;
 /// <typeparam name="T">Type of the check</typeparam>
 public class InvalidCheckException<T> : InvalidOperationException
 {
-	public InvalidCheckException(T data) : base($"No {typeof(T)} check is implemented for the value '{data}'.")
-	{
-	}
+	private const string MESSAGE = "No {0} check is implemented for the value '{1}'.";
+
+	public InvalidCheckException(T data)
+		: base(string.Format(MESSAGE, typeof(T), data)) { }
 }

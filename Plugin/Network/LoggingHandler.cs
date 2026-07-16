@@ -7,12 +7,14 @@ namespace Silksong.BingoSync.Networking;
 /// </summary>
 internal class LoggingHandler : DelegatingHandler
 {
-	public LoggingHandler(HttpMessageHandler innerHandler) : base(innerHandler)
-	{
-	}
+	public LoggingHandler(HttpMessageHandler innerHandler)
+		: base(innerHandler) { }
 
 	/// <inheritdoc/>
-	protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+	protected override async Task<HttpResponseMessage> SendAsync(
+		HttpRequestMessage request,
+		CancellationToken cancellationToken
+	)
 	{
 		var requestPayload = "";
 

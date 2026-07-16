@@ -92,13 +92,7 @@ internal class TeamPicker : MonoBehaviour
 
 		var buttons = new Dictionary<Team, TeamPickerButton>();
 
-		List<Team> teams =
-		[
-			Team.Red,
-			Team.Blue,
-			Team.Green,
-			Team.Yellow,
-		];
+		List<Team> teams = [Team.Red, Team.Blue, Team.Green, Team.Yellow];
 
 		if (Configuration.SafeInstance.General.UseAdvancedTeams.Value)
 		{
@@ -110,10 +104,7 @@ internal class TeamPicker : MonoBehaviour
 
 		foreach (var team in teams)
 		{
-			var button = TeamPickerButton.Create(
-				team,
-				picker.OnTeamSelected
-			);
+			var button = TeamPickerButton.Create(team, picker.OnTeamSelected);
 
 			button.transform.SetParent(gameObject.transform, false);
 

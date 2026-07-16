@@ -24,10 +24,14 @@ internal static class EnumHelper
 			var attribute = member.GetCustomAttribute<EnumMemberAttribute>();
 
 			if (attribute == null)
-				throw new InvalidOperationException($"The field '{member.Name}' has no '{nameof(EnumMemberAttribute)}' attribute.");
+				throw new InvalidOperationException(
+					$"The field '{member.Name}' has no '{nameof(EnumMemberAttribute)}' attribute."
+				);
 
 			if (!attribute.IsValueSetExplicitly)
-				throw new InvalidOperationException($"The field '{member.Name}' must explicitly set a value.");
+				throw new InvalidOperationException(
+					$"The field '{member.Name}' must explicitly set a value."
+				);
 
 			if (attribute.Value == null)
 				throw new NullReferenceException($"The field '{member.Name}' must have a value.");
