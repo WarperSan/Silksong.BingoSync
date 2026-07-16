@@ -56,18 +56,18 @@ public static partial class PlayerDataExtensions
 	{
 		return memento switch
 		{
-			Memento.Sprintmaster   => data.CollectedMementoSprintmaster,
-			Memento.Guardian       => data.FleaGamesMementoGiven,
-			Memento.Hero           => throw new NotImplementedException(),
-			Memento.Hunter         => data.nuuMementoAwarded,
-			Memento.Grey           => data.CollectedMementoGrey,
-			Memento.Surface        => throw new NotImplementedException(),
-			Memento.Craw           => data.PickedUpCrowMemento,
+			Memento.Sprintmaster => data.CollectedMementoSprintmaster,
+			Memento.Guardian => data.FleaGamesMementoGiven,
+			Memento.Hero => throw new NotImplementedException(),
+			Memento.Hunter => data.nuuMementoAwarded,
+			Memento.Grey => data.CollectedMementoGrey,
+			Memento.Surface => throw new NotImplementedException(),
+			Memento.Craw => data.PickedUpCrowMemento,
 			Memento.EncrustedHeart => data.CollectedHeartCoral,
-			Memento.PollenHeart    => data.CollectedHeartFlower,
-			Memento.HunterHeart    => data.CollectedHeartHunter,
+			Memento.PollenHeart => data.CollectedHeartFlower,
+			Memento.HunterHeart => data.CollectedHeartHunter,
 			Memento.ConjoinedHeart => data.CollectedHeartClover,
-			_                      => throw new InvalidCheckException<Memento>(memento),
+			_ => throw new InvalidCheckException<Memento>(memento),
 		};
 	}
 

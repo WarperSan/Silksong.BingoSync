@@ -20,17 +20,17 @@ public static partial class PlayerDataExtensions
 		return crest switch
 		{
 			// ReSharper disable StringLiteralTypo
-			Crest.Hunter             => "Hunter",
-			Crest.HunterEvolved      => "Hunter_v2",
+			Crest.Hunter => "Hunter",
+			Crest.HunterEvolved => "Hunter_v2",
 			Crest.HunterFullyEvolved => "Hunter_v3",
-			Crest.Reaper             => "Reaper",
-			Crest.Wanderer           => "Wanderer",
-			Crest.Beast              => "Warrior",
-			Crest.Cursed             => "Cursed",
-			Crest.Witch              => "Witch",
-			Crest.Architect          => "Toolmaster",
-			Crest.Shaman             => "Spell",
-			Crest.Cloakless          => "Cloakless",
+			Crest.Reaper => "Reaper",
+			Crest.Wanderer => "Wanderer",
+			Crest.Beast => "Warrior",
+			Crest.Cursed => "Cursed",
+			Crest.Witch => "Witch",
+			Crest.Architect => "Toolmaster",
+			Crest.Shaman => "Spell",
+			Crest.Cloakless => "Cloakless",
 			// ReSharper restore StringLiteralTypo
 			_ => throw new InvalidCheckException<Crest>(crest),
 		};

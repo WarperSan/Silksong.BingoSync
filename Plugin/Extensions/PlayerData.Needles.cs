@@ -17,12 +17,12 @@ public static partial class PlayerDataExtensions
 	{
 		return needle switch
 		{
-			Needle.Needle          => 0,
+			Needle.Needle => 0,
 			Needle.SharpenedNeedle => 1,
-			Needle.ShiningNeedle   => 2,
+			Needle.ShiningNeedle => 2,
 			Needle.HivesteelNeedle => 3,
 			Needle.PaleSteelNeedle => 4,
-			_                      => throw new InvalidCheckException<Needle>(needle),
+			_ => throw new InvalidCheckException<Needle>(needle),
 		};
 	}
 

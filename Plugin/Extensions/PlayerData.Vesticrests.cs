@@ -17,9 +17,9 @@ public static partial class PlayerDataExtensions
 	{
 		return vesticrest switch
 		{
-			Vesticrest.Basic    => data.UnlockedExtraYellowSlot,
+			Vesticrest.Basic => data.UnlockedExtraYellowSlot,
 			Vesticrest.Upgraded => data.UnlockedExtraBlueSlot,
-			_                   => throw new InvalidCheckException<Vesticrest>(vesticrest),
+			_ => throw new InvalidCheckException<Vesticrest>(vesticrest),
 		};
 	}
 }

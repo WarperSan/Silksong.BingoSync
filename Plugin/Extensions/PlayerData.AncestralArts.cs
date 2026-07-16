@@ -19,11 +19,11 @@ public static partial class PlayerDataExtensions
 		{
 			AncestralArt.SwiftStep => data.hasDash,
 			AncestralArt.ClingGrip => data.hasWalljump,
-			AncestralArt.Needolin  => data.hasNeedolin,
-			AncestralArt.Clawline  => data.hasHarpoonDash,
-			AncestralArt.SilkSoar  => data.hasSuperJump,
+			AncestralArt.Needolin => data.hasNeedolin,
+			AncestralArt.Clawline => data.hasHarpoonDash,
+			AncestralArt.SilkSoar => data.hasSuperJump,
 			AncestralArt.Sylphsong => data.HasSeenEvaHeal, // TODO: Check if this is the actual field
-			_                      => throw new InvalidCheckException<AncestralArt>(art),
+			_ => throw new InvalidCheckException<AncestralArt>(art),
 		};
 	}
 }

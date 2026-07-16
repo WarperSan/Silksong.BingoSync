@@ -30,7 +30,7 @@ public static partial class PlayerDataExtensions
 				SaveSlotCompletionIcons.CompletionState.Act3Ending
 			),
 			Ending.PassingOfTheAge => data.MushroomQuestCompleted,
-			_                      => throw new InvalidCheckException<Ending>(ending),
+			_ => throw new InvalidCheckException<Ending>(ending),
 		};
 	}
 }

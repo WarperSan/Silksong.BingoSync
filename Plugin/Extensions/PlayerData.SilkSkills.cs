@@ -20,12 +20,12 @@ public static partial class PlayerDataExtensions
 		return skill switch
 		{
 			// ReSharper disable StringLiteralTypo
-			SilkSkill.Silkspear   => "Silk Spear",
+			SilkSkill.Silkspear => "Silk Spear",
 			SilkSkill.ThreadStorm => "Thread Sphere",
 			SilkSkill.CrossStitch => "Parry",
-			SilkSkill.Sharpdart   => "Silk Charge",
-			SilkSkill.RuneRage    => "Silk Bomb",
-			SilkSkill.PaleNails   => "Silk Boss Needle",
+			SilkSkill.Sharpdart => "Silk Charge",
+			SilkSkill.RuneRage => "Silk Bomb",
+			SilkSkill.PaleNails => "Silk Boss Needle",
 			// ReSharper restore StringLiteralTypo
 			_ => throw new InvalidCheckException<SilkSkill>(skill),
 		};

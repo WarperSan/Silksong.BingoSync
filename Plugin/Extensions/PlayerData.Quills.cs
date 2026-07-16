@@ -17,10 +17,10 @@ public static partial class PlayerDataExtensions
 	{
 		return quill switch
 		{
-			Quill.White  => 1,
-			Quill.Red    => 2,
+			Quill.White => 1,
+			Quill.Red => 2,
 			Quill.Purple => 3,
-			_            => throw new InvalidCheckException<Quill>(quill),
+			_ => throw new InvalidCheckException<Quill>(quill),
 		};
 	}
 
