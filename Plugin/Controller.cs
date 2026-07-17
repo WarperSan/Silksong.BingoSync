@@ -24,25 +24,20 @@ internal class Controller : IDisposable
 		_tracker = new GoalTracker();
 		_tracker.OnGoalMarked += OnGoalMarked;
 		_tracker.OnGoalCleared += OnGoalCleared;
-		
-		_client = new HttpClient(
-			new LoggingHandler(
-				new HttpClientHandler()
-			)
-		)
+
+		_client = new HttpClient(new LoggingHandler(new HttpClientHandler()))
 		{
 			Timeout = TimeSpan.FromSeconds(30),
 			BaseAddress = new Uri("https://bingosync.com"),
 			DefaultRequestHeaders =
 			{
-				UserAgent =
-				{
-					new ProductInfoHeaderValue(Plugin.Id, Plugin.Version),
-				},
+				UserAgent = { new ProductInfoHeaderValue(Plugin.Id, Plugin.Version) },
 			},
 		};
 
-		_session = new Session(Events, _client);
+		_client = new HttpClient();
+
+		_session = new Session(Events, _client, new Uri("ws://socket.bingosync.com"));
 	}
 
 	#region Events
