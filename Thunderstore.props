@@ -1,34 +1,34 @@
 <Project>
-    <!-- Package metadata -->
-    <PropertyGroup>
-        <ThunderstoreTeam>$(Authors)</ThunderstoreTeam>
-        <ThunderstoreName>$(AssemblyTitle.Replace('.', '_'))</ThunderstoreName>
-        <ThunderstoreDescription>$(Description)</ThunderstoreDescription>
-        <ThunderstoreWebsite>$(RepositoryUrl)</ThunderstoreWebsite>
+	<!-- Package metadata -->
+	<PropertyGroup>
+		<ThunderstoreTeam>$(Authors)</ThunderstoreTeam>
+		<ThunderstoreName>$(AssemblyTitle.Replace('.', '_'))</ThunderstoreName>
+		<ThunderstoreDescription>$(Description)</ThunderstoreDescription>
+		<ThunderstoreWebsite>$(RepositoryUrl)</ThunderstoreWebsite>
 
-        <ThunderstoreCommunities>hollow-knight-silksong</ThunderstoreCommunities>
-        <ThunderstoreCategories>mods</ThunderstoreCategories>
+		<ThunderstoreCommunities>hollow-knight-silksong</ThunderstoreCommunities>
+		<ThunderstoreCategories>mods</ThunderstoreCategories>
 
-        <ThunderstoreToken>$(THUNDERSTORE_TOKEN)</ThunderstoreToken>
-    </PropertyGroup>
+		<ThunderstoreToken>$(THUNDERSTORE_TOKEN)</ThunderstoreToken>
+	</PropertyGroup>
 
-    <ItemGroup>
-        <!-- Mod Files -->
-        <ThunderstoreFile Include="$(TargetPath)" Destination="plugins/"/>
-        <ThunderstoreFile
-                Include="$(SolutionRoot)Resources/Goals/**/*.json"
-                Destination="plugins/Goals/%(RecursiveDir)"
-        />
-        <ThunderstoreFile Include="$(OutputPath)BingoAPI.dll" Destination="plugins/"/>
+	<ItemGroup>
+		<!-- Mod Files -->
+		<ThunderstoreFile Include="$(TargetPath)" Destination="plugins/" />
+		<ThunderstoreFile
+			Include="$(SolutionRoot)Resources/Goals/**/*.json"
+			Destination="plugins/Goals/%(RecursiveDir)"
+		/>
+		<ThunderstoreFile Include="$(OutputPath)BingoAPI.dll" Destination="plugins/" />
 
-        <!-- Package Files -->
-        <ThunderstorePackageFile Include="$(SolutionRoot)README.md"/>
-        <ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md"/>
-        <ThunderstorePackageFile Include="$(SolutionRoot)LICENSE"/>
-        <ThunderstorePackageFile Include="$(SolutionRoot)icon.png"/>
+		<!-- Package Files -->
+		<ThunderstorePackageFile Include="$(SolutionRoot)README.md" />
+		<ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md" />
+		<ThunderstorePackageFile Include="$(SolutionRoot)LICENSE" />
+		<ThunderstorePackageFile Include="$(SolutionRoot)icon.png" />
 
-        <!-- Thunderstore Dependencies -->
-        <ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3"/>
-        <ThunderstoreDependency Include="silksong_modding-ModMenu" Version="0.7.6"/>
-    </ItemGroup>
+		<!-- Thunderstore Dependencies -->
+		<ThunderstoreDependency Include="silksong_modding-BepInExPack_Silksong" Version="1.0.3" />
+		<ThunderstoreDependency Include="silksong_modding-ModMenu" Version="0.7.6" />
+	</ItemGroup>
 </Project>

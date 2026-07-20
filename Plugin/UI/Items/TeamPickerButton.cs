@@ -12,6 +12,7 @@ internal class TeamPickerButton : MonoBehaviour
 {
 	private Outline? _outline;
 	private Action<Team>? _onClick;
+	private Color _teamColor = Color.white;
 
 	public Team Team { get; private set; }
 
@@ -30,7 +31,7 @@ internal class TeamPickerButton : MonoBehaviour
 	public void Unselect()
 	{
 		if (_outline != null)
-			_outline.effectColor = Team.GetColor();
+			_outline.effectColor = _teamColor;
 	}
 
 	private void OnClick() => _onClick?.Invoke(Team);
@@ -47,9 +48,12 @@ internal class TeamPickerButton : MonoBehaviour
 		picker.Team = team;
 		picker._onClick = onClick;
 
+		var teamColor = team.GetColor();
+		picker._teamColor = teamColor;
+
 		var image = gameObject.AddComponent<Image>();
-		var color = Color.black;
-		color.a = 0.6f;
+		var color = teamColor * 0.6f;
+		color.a = 1f;
 		image.color = color;
 
 		var button = gameObject.AddComponent<Button>();
@@ -58,15 +62,10 @@ internal class TeamPickerButton : MonoBehaviour
 
 		var buttonColors = button.colors;
 
-		buttonColors.disabledColor = new Color(
-			0.3f,
-			0.3f,
-			0.3f,
-			1f
-		);
+		buttonColors.disabledColor = new Color(0.3f, 0.3f, 0.3f, 1f);
 		button.colors = buttonColors;
 
-		var outline = button.gameObject.AddComponent<Outline>();
+		picker._outline = button.gameObject.AddComponent<Outline>();
 
 		var textGo = new GameObject(nameof(Text));
 		textGo.transform.SetParent(gameObject.transform, false);
@@ -84,7 +83,6 @@ internal class TeamPickerButton : MonoBehaviour
 		label.alignment = TextAnchor.MiddleCenter;
 		label.text = team.GetDisplayName();
 
-		picker._outline = outline;
 		picker.Unselect();
 
 		return picker;

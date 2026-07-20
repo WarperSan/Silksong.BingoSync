@@ -14,9 +14,12 @@ internal sealed class SchemaContext
 	/// Adds the given <see cref="JsonSchema"/> under the given <typeparamref name="T"/>
 	/// </summary>
 	public void AddSchema<T>(JsonSchema schema) => _schemaPerType.Add(typeof(T), schema);
-	
+
 	/// <summary>
 	/// Attempts to get the schema under the given <see cref="Type"/>
 	/// </summary>
-	public bool TryGetSchema(Type type, [NotNullWhen(true)] out JsonSchema? schema) => _schemaPerType.TryGetValue(type, out schema);
+	public bool TryGetSchema(Type type, [NotNullWhen(true)] out JsonSchema? schema)
+	{
+		return _schemaPerType.TryGetValue(type, out schema);
+	}
 }

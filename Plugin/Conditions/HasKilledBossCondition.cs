@@ -15,7 +15,7 @@ internal sealed class HasKilledBossCondition : ICondition
 	[JsonProperty("boss")]
 	[JsonRequired]
 	[Description("Name of the boss to kill")]
-	public required Boss Boss  { get; init; }
+	public required Boss Boss { get; init; }
 
 	/// <inheritdoc />
 	public bool IsMet() => PlayerData.instance.HasKilledBoss(Boss);

@@ -36,8 +36,8 @@ internal class TextField : MonoBehaviour
 	/// Creates a new instance of <see cref="TextField"/>
 	/// </summary>
 	public static TextField Create(
-		string                 placeholder = "",
-		InputField.ContentType type        = InputField.ContentType.Standard
+		string placeholder = "",
+		InputField.ContentType type = InputField.ContentType.Standard
 	)
 	{
 		var gameObject = new GameObject(nameof(TextField));
@@ -51,12 +51,7 @@ internal class TextField : MonoBehaviour
 
 		var image = gameObject.AddComponent<Image>();
 
-		image.color = new Color(
-			0f,
-			0f,
-			0f,
-			0.6f
-		);
+		image.color = new Color(0f, 0f, 0f, 0.6f);
 
 		// Text component
 		var textGameObject = new GameObject("Text");
@@ -89,12 +84,7 @@ internal class TextField : MonoBehaviour
 		placeholderText.font = text.font;
 		placeholderText.fontSize = text.fontSize;
 
-		placeholderText.color = new Color(
-			1f,
-			1f,
-			1f,
-			0.5f
-		);
+		placeholderText.color = new Color(1f, 1f, 1f, 0.5f);
 		placeholderText.alignment = TextAnchor.MiddleLeft;
 		placeholderText.text = placeholder;
 		placeholderText.fontStyle = FontStyle.Italic;

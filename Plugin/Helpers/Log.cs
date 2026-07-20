@@ -7,7 +7,9 @@ namespace Silksong.BingoSync.Helpers;
 /// </summary>
 internal static class Log
 {
-	private static readonly Lazy<ManualLogSource> Logger = new(() => BepInEx.Logging.Logger.CreateLogSource(Plugin.Id));
+	private static readonly Lazy<ManualLogSource> Logger = new(() =>
+		BepInEx.Logging.Logger.CreateLogSource(Plugin.Id)
+	);
 
 	/// <summary>
 	/// Logs any message incoming from <see cref="BingoAPI"/> directly

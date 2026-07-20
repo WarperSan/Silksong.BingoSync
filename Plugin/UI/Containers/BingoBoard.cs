@@ -48,9 +48,15 @@ public class BingoBoard : MonoBehaviour
 		dispatcher.OnOtherSquareCleared += OnSquareCleared;
 	}
 
-	private void OnSquareMarked(Player player, Square square, Team team) => _cells?[square.Slot.Index].AddTeam(team);
+	private void OnSquareMarked(Player player, Square square, Team team)
+	{
+		_cells?[square.Index].AddTeam(team);
+	}
 
-	private void OnSquareCleared(Player player, Square square, Team team) => _cells?[square.Slot.Index].RemoveTeam(team);
+	private void OnSquareCleared(Player player, Square square, Team team)
+	{
+		_cells?[square.Index].RemoveTeam(team);
+	}
 
 	#endregion
 

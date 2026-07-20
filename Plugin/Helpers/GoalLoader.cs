@@ -21,11 +21,7 @@ internal static class GoalLoader
 			return pool;
 		}
 
-		var files = Directory.GetFiles(
-			folder,
-			"*.json",
-			SearchOption.AllDirectories
-		);
+		var files = Directory.GetFiles(folder, "*.json", SearchOption.AllDirectories);
 
 		foreach (var file in files)
 		{

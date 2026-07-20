@@ -15,16 +15,16 @@ internal static class ParameterHelper
 	/// Attempts to create a <see cref="JsonSchemaProperty"/> from the given <see cref="MemberInfo"/>
 	/// </summary>
 	public static bool TryCreateFromMember(
-		MemberInfo                                  member,
-		SchemaContext                               context,
+		MemberInfo member,
+		SchemaContext context,
 		[NotNullWhen(true)] out JsonSchemaProperty? schema
 	)
 	{
 		var dataType = member switch
 		{
 			PropertyInfo propertyInfo => propertyInfo.PropertyType,
-			FieldInfo fieldInfo       => fieldInfo.FieldType,
-			_                         => null,
+			FieldInfo fieldInfo => fieldInfo.FieldType,
+			_ => null,
 		};
 
 		if (dataType is null)
@@ -57,11 +57,9 @@ internal static class ParameterHelper
 			schema = CreateFromPrimitive(type);
 		else if (context.TryGetSchema(type, out var referenceSchema))
 		{
-			schema = new JsonSchemaProperty
-			{
-				Reference = referenceSchema,
-			};
-		} else
+			schema = new JsonSchemaProperty { Reference = referenceSchema };
+		}
+		else
 			throw new NotImplementedException($"Type '{type}' is not implemented yet.");
 
 		return schema;
@@ -72,10 +70,7 @@ internal static class ParameterHelper
 	/// </summary>
 	private static JsonSchemaProperty CreateFromEnum(Type type)
 	{
-		var property = new JsonSchemaProperty
-		{
-			Type = JsonObjectType.String,
-		};
+		var property = new JsonSchemaProperty { Type = JsonObjectType.String };
 
 		foreach (var value in EnumHelper.GetValues(type))
 			property.Enumeration.Add(value);
@@ -118,9 +113,6 @@ internal static class ParameterHelper
 		else
 			objectType = JsonObjectType.None;
 
-		return new JsonSchemaProperty
-		{
-			Type = objectType,
-		};
+		return new JsonSchemaProperty { Type = objectType };
 	}
 }

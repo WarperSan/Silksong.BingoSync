@@ -58,10 +58,10 @@ internal class UIManager_Patches
 		var joinSettings = new JoinRoomSettings
 		{
 			Nickname = Configuration.Instance?.Join.Nickname.Value ?? "",
-			#if DEBUG
+#if DEBUG
 			Code = "6MuWtbUFQE-P70lS6-5BhQ",
 			Password = "abc",
-			#endif
+#endif
 		};
 
 		var menu = ConnectionMenu.Create(joinSettings);

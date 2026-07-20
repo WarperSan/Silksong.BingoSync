@@ -39,17 +39,22 @@ internal static class ConfigMenu
 	private static AbstractMenuScreen CreateGeneralConfig(GeneralConfig config)
 	{
 		PaginatedMenuScreenBuilder builder = new("General");
-		
-		if (ConfigEntryFactory.GenerateBoolElement(config.UseAdvancedTeams, out var advancedTeamsElement))
+
+		if (
+			ConfigEntryFactory.GenerateBoolElement(
+				config.UseAdvancedTeams,
+				out var advancedTeamsElement
+			)
+		)
 			builder.Add(advancedTeamsElement);
 
 		return builder.Build();
 	}
-	
+
 	private static AbstractMenuScreen CreateJoinConfig(JoinConfig config)
 	{
 		PaginatedMenuScreenBuilder builder = new("Join");
-		
+
 		if (ConfigEntryFactory.GenerateStringElement(config.Nickname, out var nicknameElement))
 			builder.Add(nicknameElement);
 
@@ -73,12 +78,19 @@ internal static class ConfigMenu
 	{
 		PaginatedMenuScreenBuilder builder = new("Experimental");
 
-		var warningLabel = new TextLabel("Theses settings are experimental and can cause performance issues");
+		var warningLabel = new TextLabel(
+			"Theses settings are experimental and can cause performance issues"
+		);
 		warningLabel.Text.color = Color.yellow;
 		warningLabel.Text.fontSize = 30;
 		builder.Add(warningLabel);
 
-		if (ConfigEntryFactory.GenerateBoolElement(config.EvaluateOnHeroUpdate, out var evaluateOnHeroUpdateElement))
+		if (
+			ConfigEntryFactory.GenerateBoolElement(
+				config.EvaluateOnHeroUpdate,
+				out var evaluateOnHeroUpdateElement
+			)
+		)
 			builder.Add(evaluateOnHeroUpdateElement);
 
 		return builder.Build();
