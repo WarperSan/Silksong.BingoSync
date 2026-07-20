@@ -35,7 +35,7 @@ internal class Controller : IDisposable
 			},
 		};
 
-		_session = new Session(Events, _client, new Uri("ws://socket.bingosync.com"));
+		_session = new Session(Events, _client, new Uri("wss://sockets.bingosync.com"));
 	}
 
 	#region Events
