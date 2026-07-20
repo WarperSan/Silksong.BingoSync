@@ -50,12 +50,12 @@ public class BingoBoard : MonoBehaviour
 
 	private void OnSquareMarked(Player player, Square square, Team team)
 	{
-		_cells?[square.Slot.Index].AddTeam(team);
+		_cells?[square.Index].AddTeam(team);
 	}
 
 	private void OnSquareCleared(Player player, Square square, Team team)
 	{
-		_cells?[square.Slot.Index].RemoveTeam(team);
+		_cells?[square.Index].RemoveTeam(team);
 	}
 
 	#endregion

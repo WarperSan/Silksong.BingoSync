@@ -115,13 +115,13 @@ internal class Controller : IDisposable
 
 	private void OnSquareMarked(Player player, Square square, Team team)
 	{
-		_card?.Mark(square.Slot.Index, team);
+		_card?.Mark(square.Index, team);
 		OnCardUpdated?.Invoke(_card);
 	}
 
 	private void OnSquareCleared(Player player, Square square, Team team)
 	{
-		_card?.Unmark(square.Slot.Index, team);
+		_card?.Unmark(square.Index, team);
 		OnCardUpdated?.Invoke(_card);
 	}
 
