@@ -1,38 +1,6 @@
-**2 Donation Quests** | Progression level: ['cloak'] | Other tags: ['quest']
-
-**3 Donation Quests** | Progression level: ['cloak'] | Other tags: ['quest', 'expensive']
-
 **Bellhome Key** | Progression level: ['clawline'] | Other tags: ['expensive', 'quest', 'npc']
 
-**2 Hunt Quests** | Progression level: ['cloak'] | Other tags: ['quest', 'blocking']
-
-**4 Hunt Quests** | Progression level: ['cloak'] | Other tags: ['quest', 'blocking']
-
-**2 Wayfarer Quests** | Progression level: ['widow'] | Other tags: ['quest', 'flea', 'blocking']
-
-**4 Wayfarer Quests** | Progression level: ['act2'] | Other tags: ['quest', 'flea', 'blocking']
-
-**2 Gather Quests** | Progression level: ['walljump'] | Other tags: ['quest', 'blocking']
-
-**3 Gather Quests** | Progression level: ['widow'] | Other tags: ['quest', 'blocking']
-
-**Complete 5 Quests** | Progression level: ['cloak'] | Other tags: ['quest']
-
-**Complete 7 Quests** | Progression level: ['walljump'] | Other tags: ['quest']
-
 **Break a Courier Item** | Progression level: ['act2'] | Other tags: ['quest']
-
-**3 Red Tools** | Progression level: ['dash'] | Other tags: ['tool', 'craft', 'blocking']
-
-**5 Red Tools** | Progression level: ['cloak'] | Other tags: ['tool', 'craft', 'blocking']
-
-**3 Blue Tools** | Progression level: ['dash'] | Other tags: ['tool', 'blocking']
-
-**3 Yellow Tools** | Progression level: ['early'] | Other tags: ['tool', 'blocking']
-
-**5 Yellow Tools** | Progression level: ['cloak'] | Other tags: ['tool', 'blocking']
-
-**2 of each tool type** | Progression level: ['dash'] | Other tags: ['tool', 'blocking']
 
 **Dead Bug's Purse & a Silkeater** | Progression level: ['walljump'] | Other tags: ['tool']
 
@@ -282,10 +250,6 @@
 
 **Get Cursed** | Progression level: ['clawline'] | Other tags: ['hardsave', 'npc']
 
-**Barbed Bracelet & Magnetite Dice** | Progression level: ['widow'] | Other tags: ['tool', 'npc', 'itemsync']
-
-**Claw Mirror & Injector Band** | Progression level: ['act2'] | Other tags: ['tool', 'fight', 'itemsync']
-
 **Enter Act 3** | Progression level: ['act3'] | Other tags: ['hardsave', 'blocking']
 
 **Beastling Call** | Progression level: ['act3'] | Other tags: ['fight', 'blocking']
@@ -306,15 +270,9 @@
 
 **Shadow Charger Journal Entry** | Progression level: ['act3'] | Other tags: ['collection']
 
-**Pollen Heart** | Progression level: ['silksoar'] | Other tags: ['fight', 'heart']
-
-**Hunter's Heart** | Progression level: ['silksoar'] | Other tags: ['fight', 'heart']
-
 **Inspect Magnetite in Brightvein** | Progression level: ['silksoar'] | Other tags: ['collection', 'location']
 
 **Verdania Fountain Orbs** | Progression level: ['silksoar'] | Other tags: ['fight']
-
-**Conjoined Heart** | Progression level: ['silksoar'] | Other tags: ['fight', 'heart']
 
 **Clear First Coral Tower Arena** | Progression level: ['silksoar'] | Other tags: ['fight', 'hard']
 
@@ -322,11 +280,7 @@
 
 **Talk to Mr. Mushroom** | Progression level: ['silksoar'] | Other tags: ['npc']
 
-**Surface Memento** | Progression level: ['silksoar'] | Other tags: ['hard', 'collection', 'location']
-
 **Imoba Journal Entry** | Progression level: ['silksoar'] | Other tags: ['collection']
-
-**Grey Memento** | Progression level: ['silksoar'] | Other tags: ['fight']
 
 **2 Mementos** | Progression level: ['silksoar'] | Other tags: ['collection']
 

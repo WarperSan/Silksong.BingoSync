@@ -425,6 +425,50 @@
 			}
 		},
 		{
+			"name": "Claw Mirror & Injector Band",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "claw_mirror"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "injector_band"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Barbed Bracelet & Magnetite Dice",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "barbed_bracelet"
+							}
+						},
+						{
+							"action": "has_obtained_tool",
+							"params": {
+								"tool": "magnetite_dice"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
 			"name": "Wanderer's Crest",
 			"condition": {
 				"action": "has_obtained_crest",
@@ -765,6 +809,51 @@
 				"action": "has_completed_wish",
 				"params": {
 					"wish": "volatile_flintbeetles"
+				}
+			}
+		},
+		{
+			"name": "Pollen Heart",
+			"condition": {
+				"action": "has_obtained_memento",
+				"params": {
+					"memento": "pollen_heart"
+				}
+			}
+		},
+		{
+			"name": "Hunter's Heart",
+			"condition": {
+				"action": "has_obtained_memento",
+				"params": {
+					"memento": "hunter_heart"
+				}
+			}
+		},
+		{
+			"name": "Conjoined Heart",
+			"condition": {
+				"action": "has_obtained_memento",
+				"params": {
+					"memento": "conjoined_heart"
+				}
+			}
+		},
+		{
+			"name": "Surface Memento",
+			"condition": {
+				"action": "has_obtained_memento",
+				"params": {
+					"memento": "surface"
+				}
+			}
+		},
+		{
+			"name": "Grey Memento",
+			"condition": {
+				"action": "has_obtained_memento",
+				"params": {
+					"memento": "grey"
 				}
 			}
 		}
