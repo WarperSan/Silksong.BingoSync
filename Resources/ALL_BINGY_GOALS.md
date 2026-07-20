@@ -26,24 +26,6 @@
 
 **4 Silk Skills** | Progression level: ['act2'] | Other tags: ['upgrade', 'hardsave']
 
-**Farfields Escape Mask Shard** | Progression level: ['clawline'] | Other tags: ['upgrade', 'hard']
-
-**Slab Mask Shard** | Progression level: ['faydown'] | Other tags: ['upgrade']
-
-**Bilewater Mask Shard** | Progression level: ['faydown'] | Other tags: ['upgrade', 'hard']
-
-**Deep Docks Mask Shard** | Progression level: ['walljump'] | Other tags: ['upgrade']
-
-**Shellwood + Vaults Mask Shards** | Progression level: ['act2'] | Other tags: ['upgrade']
-
-**Blasted Steps Mask Shard** | Progression level: ['faydown'] | Other tags: ['upgrade']
-
-**Cogwork Core Mask Shard** | Progression level: ['act2'] | Other tags: ['upgrade']
-
-**Wisp Thicket Mask Shard** | Progression level: ['faydown'] | Other tags: ['upgrade']
-
-**Mt. Fay Mask Shard** | Progression level: ['faydown'] | Other tags: ['upgrade']
-
 **Craggler** | Progression level: ['early'] | Other tags: ['fight']
 
 **Defeat a Rhinogrund** | Progression level: ['walljump'] | Other tags: ['fight', 'hard']
@@ -51,8 +33,6 @@
 **Disable the Clawmaidens** | Progression level: ['faydown'] | Other tags: ['fight']
 
 **Defeat a Covetous Pilgrim** | Progression level: ['cloak'] | Other tags: ['fight']
-
-**Cogwork Clapper Journal Entry** | Progression level: ['act2'] | Other tags: ['fight']
 
 **Free Green Prince** | Progression level: ['walljump'] | Other tags: ['npc', 'key']
 
@@ -96,65 +76,11 @@
 
 **Both Vendor Simple Keys** | Progression level: ['act2'] | Other tags: ['collection', 'scattered', 'expensive']
 
-**1 Extra Mask** | Progression level: ['widow'] | Other tags: ['upgrade']
-
-**2 Extra Masks** | Progression level: ['faydown'] | Other tags: ['upgrade']
-
 **Pay for a Flea Spa** | Progression level: ['walljump'] | Other tags: ['npc', 'flea']
-
-**Greymoor Fleas [2] + Kratt** | Progression level: ['walljump'] | Other tags: ['npc', 'flea']
-
-**Far Fields Fleas [2]** | Progression level: ['walljump'] | Other tags: ['flea']
-
-**Shellwood & Bellhart Fleas [2]** | Progression level: ['walljump'] | Other tags: ['flea']
-
-**Deep Docks Fleas [3]** | Progression level: ['clawline'] | Other tags: ['flea', 'hard']
-
-**Wormways & Blasted Steps Fleas [2]** | Progression level: ['walljump'] | Other tags: ['flea']
-
-**Underworks Fleas [2]** | Progression level: ['faydown'] | Other tags: ['flea']
-
-**Lower Bilewater & Hunter's March Fleas [2]** | Progression level: ['walljump'] | Other tags: ['flea']
-
-**Free 8 Fleas** | Progression level: ['cloak'] | Other tags: ['flea']
-
-**Free 10 Fleas** | Progression level: ['widow'] | Other tags: ['flea']
-
-**Free 12 Fleas** | Progression level: ['act2'] | Other tags: ['flea']
-
-**Free 14 Fleas** | Progression level: ['clawline'] | Other tags: ['flea']
 
 **Meet Caravan at the Grand Gate [12]** | Progression level: ['act2'] | Other tags: ['flea']
 
-**Sinner's Road & Vaults Fleas [2]** | Progression level: ['clawline'] | Other tags: ['flea']
-
-**Sands of Karak Flea [1]** | Progression level: ['clawline'] | Other tags: ['flea']
-
-**Exhaust Organ Flea [1]** | Progression level: ['widow'] | Other tags: ['flea']
-
-**Three Citadel Fleas** | Progression level: ['act2'] | Other tags: ['flea']
-
-**Mt. Fay Flea [1]** | Progression level: ['clawline'] | Other tags: ['flea']
-
-**Beat Big Flea** | Progression level: ['faydown'] | Other tags: ['fight']
-
 **Talk to Vog** | Progression level: ['faydown'] | Other tags: ['flea', 'npc']
-
-**Deep Docks Spool Fragments (2)** | Progression level: ['clawline'] | Other tags: ['upgrade']
-
-**Greymoor Spool Fragment** | Progression level: ['walljump'] | Other tags: ['upgrade']
-
-**Frey's Spool Fragment** | Progression level: ['widow'] | Other tags: ['upgrade']
-
-**Grand Gate Spool Fragment** | Progression level: ['act2'] | Other tags: ['upgrade']
-
-**High Halls Spool Fragment** | Progression level: ['faydown'] | Other tags: ['upgrade']
-
-**1 Spool Upgrade** | Progression level: ['early'] | Other tags: ['upgrade']
-
-**2 Spool Upgrades** | Progression level: ['walljump'] | Other tags: ['upgrade']
-
-**3 Spool Upgrades** | Progression level: ['clawline'] | Other tags: ['upgrade']
 
 **Have 3 Rosary Necklaces (no purchasing)** | Progression level: ['act2'] | Other tags: ['collection', 'scattered']
 
@@ -206,18 +132,6 @@
 
 **Save Jubilana** | Progression level: ['act2'] | Other tags: ['npc', 'quest']
 
-**Squirrm Journal Entry** | Progression level: ['widow'] | Other tags: ['collection']
-
-**Skullwing Journal Entry** | Progression level: ['widow'] | Other tags: ['collection']
-
-**Cragglite Journal Entry** | Progression level: ['act2'] | Other tags: ['collection']
-
-**Gromling Journal Entry** | Progression level: ['cloak'] | Other tags: ['collection', 'key']
-
-**Mite Mother Journal Entry** | Progression level: ['cloak'] | Other tags: ['collection']
-
-**Massive Mossgrub Journal Entry** | Progression level: ['faydown'] | Other tags: ['collection']
-
 **Obtain 2 Beast Shards** | Progression level: ['dash'] | Other tags: ['fight']
 
 **Obtain 3 Beast Shards** | Progression level: ['widow'] | Other tags: ['fight']
@@ -239,8 +153,6 @@
 **Meet Sherma in the Spa** | Progression level: ['act2'] | Other tags: ['npc']
 
 **2 Silk Hearts** | Progression level: ['faydown'] | Other tags: ['upgrade', 'fight', 'hardsave', 'hard']
-
-**Unravelled Journal Entry** | Progression level: ['faydown'] | Other tags: ['fight', 'hard']
 
 **Architect's Melody** | Progression level: ['clawline'] | Other tags: ['location', 'melody']
 
@@ -268,8 +180,6 @@
 
 **1 Arcane Egg** | Progression level: ['act3'] | Other tags: ['relic', 'collection']
 
-**Shadow Charger Journal Entry** | Progression level: ['act3'] | Other tags: ['collection']
-
 **Inspect Magnetite in Brightvein** | Progression level: ['silksoar'] | Other tags: ['collection', 'location']
 
 **Verdania Fountain Orbs** | Progression level: ['silksoar'] | Other tags: ['fight']
@@ -280,10 +190,6 @@
 
 **Talk to Mr. Mushroom** | Progression level: ['silksoar'] | Other tags: ['npc']
 
-**Imoba Journal Entry** | Progression level: ['silksoar'] | Other tags: ['collection']
-
 **2 Mementos** | Progression level: ['silksoar'] | Other tags: ['collection']
-
-**Brightvein Mask Shard** | Progression level: ['silksoar'] | Other tags: ['upgrade']
 
 **Win A Race** | Progression level: ['silksoar'] | Other tags: ['location', 'npc']
