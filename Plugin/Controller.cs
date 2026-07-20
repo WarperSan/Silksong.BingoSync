@@ -35,8 +35,6 @@ internal class Controller : IDisposable
 			},
 		};
 
-		_client = new HttpClient();
-
 		_session = new Session(Events, _client, new Uri("ws://socket.bingosync.com"));
 	}
 
