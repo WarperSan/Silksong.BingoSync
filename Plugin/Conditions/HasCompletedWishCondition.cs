@@ -1,4 +1,6 @@
-using BingoAPI.Conditions;
+using System.ComponentModel;
+using BingoAPI.Conditions.Attributes;
+using BingoAPI.Conditions.Interfaces;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Extensions;
@@ -13,6 +15,7 @@ internal class HasCompletedWishCondition : ICondition
 {
 	[JsonProperty("wish")]
 	[JsonRequired]
+	[Description("Name of the wish to complete")]
 	public required Wish Wish { get; init; }
 
 	/// <inheritdoc />

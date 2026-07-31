@@ -1,5 +1,8 @@
-using BingoAPI.Conditions;
+using System.Reflection;
+using BingoAPI.Conditions.Interfaces;
+using Newtonsoft.Json;
 using NJsonSchema;
+using SchemaGenerator.Helpers;
 
 namespace SchemaGenerator.Builders;
 
@@ -8,6 +11,29 @@ namespace SchemaGenerator.Builders;
 /// </summary>
 internal sealed class ConditionSchemaBuilder
 {
+	/// <summary>
+	/// Creates an instance of <see cref="ConditionSchemaBuilder"/> from the given <paramref name="type"/>
+	/// </summary>
+	public static ConditionSchemaBuilder CreateFromType(Type type, SchemaContext context)
+	{
+		var builder = new ConditionSchemaBuilder();
+
+		foreach (var member in type.GetMembers())
+		{
+			var jsonProperty = member.GetCustomAttribute<JsonPropertyAttribute>();
+
+			if (jsonProperty?.PropertyName == null)
+				continue;
+
+			if (!ParameterHelper.TryCreateFromMember(member, context, out var schema))
+				continue;
+
+			builder.Parameter(jsonProperty.PropertyName, schema);
+		}
+
+		return builder;
+	}
+
 	#region Action
 
 	private string? _action;
