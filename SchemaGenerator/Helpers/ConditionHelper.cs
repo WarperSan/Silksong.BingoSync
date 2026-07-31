@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using BingoAPI.Conditions;
-using Newtonsoft.Json;
+using BingoAPI.Conditions.Attributes;
+using BingoAPI.Conditions.Interfaces;
 using SchemaGenerator.Builders;
 
 namespace SchemaGenerator.Helpers;
@@ -42,20 +42,7 @@ internal static class ConditionHelper
 			return false;
 		}
 
-		builder = new ConditionSchemaBuilder().Action(attribute.Action);
-
-		foreach (var member in type.GetMembers())
-		{
-			var jsonProperty = member.GetCustomAttribute<JsonPropertyAttribute>();
-
-			if (jsonProperty?.PropertyName == null)
-				continue;
-
-			if (!ParameterHelper.TryCreateFromMember(member, context, out var schema))
-				continue;
-
-			builder.Parameter(jsonProperty.PropertyName, schema);
-		}
+		builder = ConditionSchemaBuilder.CreateFromType(type, context).Action(attribute.Action);
 
 		return true;
 	}
