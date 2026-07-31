@@ -29,20 +29,5 @@ public partial class Plugin : BaseUnityPlugin
 	private void Start()
 	{
 		ConditionRegistry.RegisterAll();
-
-		var goalsFolder = Path.GetAbsolutePath("Goals/");
-		var pool = GoalLoader.LoadPoolFromFolder(goalsFolder);
-
-		var content = new List<dynamic>();
-
-		foreach (var goal in pool)
-		{
-			content.Add(new { name = goal.Name });
-		}
-
-		Log.Info(JsonConvert.SerializeObject(content));
-
-		Controller.Pool = pool;
-		Log.Info($"Loaded '{pool.Count}' goals.");
 	}
 }

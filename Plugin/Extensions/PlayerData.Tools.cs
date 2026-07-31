@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Exceptions;
+using Silksong.BingoSync.Helpers;
 
 namespace Silksong.BingoSync.Extensions;
 
@@ -92,6 +93,44 @@ public static partial class PlayerDataExtensions
 		var id = GetToolId(tool);
 
 		return data.Tools.GetData(id);
+	}
+
+	/// <summary>
+	/// Gets the instance of <see cref="ToolItem"/> of the given <see cref="Tool"/>
+	/// </summary>
+	private static ToolItem? GetToolItem(Tool tool)
+	{
+		var id = GetToolId(tool);
+
+		foreach (var toolItem in ToolItemManager.GetAllTools())
+		{
+			Log.Info(toolItem.name + " => " + toolItem.DisplayName);
+		}
+		return ToolItemManager.GetToolByName(id);
+	}
+
+	/// <summary>
+	/// Gets the <see cref="ToolType"/> of the given <see cref="Tool"/>
+	/// </summary>
+	public static ToolType GetToolType(this Tool tool)
+	{
+		var toolItem = GetToolItem(tool);
+
+		if (toolItem == null)
+			throw new ArgumentException(
+				$"No instance of '{nameof(ToolItem)}' was found for '{tool}'."
+			);
+
+		return toolItem.Type switch
+		{
+			ToolItemType.Red => ToolType.Red,
+			ToolItemType.Blue => ToolType.Blue,
+			ToolItemType.Yellow => ToolType.Yellow,
+			ToolItemType.Skill => throw new InvalidOperationException(
+				$"The tool type '{ToolItemType.Skill}' cannot be converted to '{nameof(ToolType)}'."
+			),
+			_ => throw new InvalidCheckException<Tool>(tool),
+		};
 	}
 
 	/// <summary>
