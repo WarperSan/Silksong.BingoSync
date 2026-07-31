@@ -469,6 +469,15 @@
 			}
 		},
 		{
+			"name": "Upgrade Druid's Eye",
+			"condition": {
+				"action": "has_obtained_tool",
+				"params": {
+					"tool": "druids_eyes"
+				}
+			}
+		},
+		{
 			"name": "3 Red Tools",
 			"condition": {
 				"action": "has_obtained_tool_count",
@@ -591,6 +600,15 @@
 				"action": "has_obtained_crest",
 				"params": {
 					"crest": "shaman"
+				}
+			}
+		},
+		{
+			"name": "Evolved Hunter's Crest",
+			"condition": {
+				"action": "has_obtained_crest",
+				"params": {
+					"crest": "hunter_evolved"
 				}
 			}
 		},
@@ -1033,6 +1051,68 @@
 				"action": "has_obtained_memento",
 				"params": {
 					"memento": "grey"
+				}
+			}
+		},
+		{
+			"name": "2 Mementos",
+			"condition": {
+				"action": "SOME",
+				"params": {
+					"amount": 2,
+					"conditions": [
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "hunter"
+							}
+						},
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "craw"
+							}
+						},
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "sprintmaster"
+							}
+						},
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "hero"
+							}
+						},
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "grey"
+							}
+						},
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "guardian"
+							}
+						},
+						{
+							"action": "has_obtained_memento",
+							"params": {
+								"memento": "surface"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Upgrade Needle Twice",
+			"condition": {
+				"action": "has_obtained_needle",
+				"params": {
+					"needle": "shining_needle"
 				}
 			}
 		}

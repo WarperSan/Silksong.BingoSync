@@ -29,7 +29,6 @@
 - Unravelled Journal Entry
 - Shadow Charger Journal Entry
 - Imoba Journal Entry
-- Cogwork Clapper Journal Entry
 
 `has_obtained_mask_shard`
 - Farfields Escape Mask Shard
@@ -58,4 +57,16 @@
 - 1 Spool Upgrade
 - 2 Spool Upgrades
 - 3 Spool Upgrades
+
+`has_killed_enemy`
+- Craggler
+- Defeat a Rhinogrund
+- Defeat a Covetous Pilgrim
+- Defeat a Cogwork Clapper
+
+`has_unlocked_ventrica`
+- Underworks Ventrica
+- Choral Chambers Ventrica
+- High Halls Ventrica
+- Memorium Ventrica
 - 

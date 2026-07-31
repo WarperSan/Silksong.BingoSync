@@ -6,15 +6,9 @@
 
 **Pale Lake Craftmetal** | Progression level: ['faydown'] | Other tags: ['location', 'collection']
 
-**Upgrade Druid's Eye** | Progression level: ['faydown'] | Other tags: ['collection', 'scattered', 'tool']
-
 **Sell a Mossberry** | Progression level: ['early'] | Other tags: ['collection']
 
 **Needle Strike** | Progression level: ['walljump'] | Other tags: ['upgrade', 'fight']
-
-**Upgrade Needle Twice** | Progression level: ['act2'] | Other tags: ['upgrade', 'quest']
-
-**Evolved Hunter's Crest** | Progression level: ['widow'] | Other tags: ['upgrade', 'hardsave']
 
 **Faydown Cloak** | Progression level: ['faydown'] | Other tags: ['upgrade', 'hardsave', 'blocking']
 
@@ -26,13 +20,7 @@
 
 **4 Silk Skills** | Progression level: ['act2'] | Other tags: ['upgrade', 'hardsave']
 
-**Craggler** | Progression level: ['early'] | Other tags: ['fight']
-
-**Defeat a Rhinogrund** | Progression level: ['walljump'] | Other tags: ['fight', 'hard']
-
 **Disable the Clawmaidens** | Progression level: ['faydown'] | Other tags: ['fight']
-
-**Defeat a Covetous Pilgrim** | Progression level: ['cloak'] | Other tags: ['fight']
 
 **Free Green Prince** | Progression level: ['walljump'] | Other tags: ['npc', 'key']
 
@@ -51,14 +39,6 @@
 **Blasted Steps Silkeater & Craftmetal** | Progression level: ['walljump'] | Other tags: ['collection']
 
 **Pay To Confess** | Progression level: ['act2'] | Other tags: ['location']
-
-**Underworks Ventrica** | Progression level: ['act2'] | Other tags: ['location']
-
-**Choral Chambers Ventrica** | Progression level: ['act2'] | Other tags: ['location']
-
-**High Halls Ventrica** | Progression level: ['clawline'] | Other tags: ['location']
-
-**Memorium Ventrica** | Progression level: ['faydown'] | Other tags: ['location']
 
 **Obtain 3 Craftmetal** | Progression level: ['act2'] | Other tags: ['collection', 'scattered', 'craft']
 
@@ -189,7 +169,5 @@
 **Visit Styx's Nest** | Progression level: ['silksoar'] | Other tags: ['location', 'npc']
 
 **Talk to Mr. Mushroom** | Progression level: ['silksoar'] | Other tags: ['npc']
-
-**2 Mementos** | Progression level: ['silksoar'] | Other tags: ['collection']
 
 **Win A Race** | Progression level: ['silksoar'] | Other tags: ['location', 'npc']
