@@ -894,6 +894,104 @@
 			}
 		},
 		{
+			"name": "Complete 5 Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 5
+				}
+			}
+		},
+		{
+			"name": "Complete 7 Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 7
+				}
+			}
+		},
+		{
+			"name": "2 Donation Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 2,
+					"type": "donate"
+				}
+			}
+		},
+		{
+			"name": "2 Hunt Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 2,
+					"type": "hunt"
+				}
+			}
+		},
+		{
+			"name": "2 Wayfarer Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 2,
+					"type": "wayfarer"
+				}
+			}
+		},
+		{
+			"name": "2 Gather Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 2,
+					"type": "gather"
+				}
+			}
+		},
+		{
+			"name": "3 Donation Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 3,
+					"type": "donate"
+				}
+			}
+		},
+		{
+			"name": "3 Gather Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 3,
+					"type": "gather"
+				}
+			}
+		},
+		{
+			"name": "4 Hunt Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 4,
+					"type": "hunt"
+				}
+			}
+		},
+		{
+			"name": "4 Wayfarer Wishes",
+			"condition": {
+				"action": "has_completed_wish_count",
+				"params": {
+					"amount": 4,
+					"type": "wayfarer"
+				}
+			}
+		},
+		{
 			"name": "Pollen Heart",
 			"condition": {
 				"action": "has_obtained_memento",
