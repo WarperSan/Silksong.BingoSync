@@ -1,5 +1,5 @@
 using System.Reflection;
-using BingoAPI.Conditions;
+using BingoAPI.Conditions.Interfaces;
 using NJsonSchema;
 using SchemaGenerator;
 using SchemaGenerator.Helpers;
@@ -30,10 +30,11 @@ foreach (var assembly in AssemblyHelper.GetReferencedAssemblies(typeof(Plugin)))
 		if (type == null)
 			continue;
 
-		if (!ConditionHelper.TryCreateFromType(type, context, out var builder))
-			continue;
-
-		conditionsSchema.OneOf.Add(builder.Build());
+		if (
+			ConditionHelper.TryCreateFromType(type, context, out var builder)
+			|| FactoryHelper.TryCreateFromType(type, context, out builder)
+		)
+			conditionsSchema.OneOf.Add(builder.Build());
 	}
 }
 
