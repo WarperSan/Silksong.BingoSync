@@ -12,14 +12,6 @@
 - Complete 5 Quests
 - Complete 7 Quests
 
-`has_obtained_tool_type_count`
-- 3 Red Tools
-- 5 Red Tools
-- 3 Blue Tools
-- 3 Yellow Tools
-- 5 Yellow Tools
-- 2 of each tool type (AND + goal for each type)
-
 `has_found_flea`
 - Greymoor Fleas [2] + Kratt
 - Far Fields Fleas [2]

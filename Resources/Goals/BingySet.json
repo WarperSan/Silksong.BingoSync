@@ -469,6 +469,87 @@
 			}
 		},
 		{
+			"name": "3 Red Tools",
+			"condition": {
+				"action": "has_obtained_tool_count",
+				"params": {
+					"amount": 3,
+					"type": "red"
+				}
+			}
+		},
+		{
+			"name": "5 Red Tools",
+			"condition": {
+				"action": "has_obtained_tool_count",
+				"params": {
+					"amount": 5,
+					"type": "red"
+				}
+			}
+		},
+		{
+			"name": "3 Blue Tools",
+			"condition": {
+				"action": "has_obtained_tool_count",
+				"params": {
+					"amount": 5,
+					"type": "blue"
+				}
+			}
+		},
+		{
+			"name": "3 Yellow Tools",
+			"condition": {
+				"action": "has_obtained_tool_count",
+				"params": {
+					"amount": 3,
+					"type": "yellow"
+				}
+			}
+		},
+		{
+			"name": "5 Yellow Tools",
+			"condition": {
+				"action": "has_obtained_tool_count",
+				"params": {
+					"amount": 5,
+					"type": "yellow"
+				}
+			}
+		},
+		{
+			"name": "2 of each tool type",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_obtained_tool_count",
+							"params": {
+								"amount": 2,
+								"type": "red"
+							}
+						},
+						{
+							"action": "has_obtained_tool_count",
+							"params": {
+								"amount": 2,
+								"type": "blue"
+							}
+						},
+						{
+							"action": "has_obtained_tool_count",
+							"params": {
+								"amount": 2,
+								"type": "yellow"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
 			"name": "Wanderer's Crest",
 			"condition": {
 				"action": "has_obtained_crest",
