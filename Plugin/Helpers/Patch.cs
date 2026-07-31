@@ -16,6 +16,7 @@ internal static class Patch
 		harmony.PatchAll(typeof(Patches.PlayerData_Patches));
 		harmony.PatchAll(typeof(Patches.ToolItemManager_Patches));
 		harmony.PatchAll(typeof(Patches.HeroController_Patches));
+		harmony.PatchAll(typeof(Patches.GameManager_Patches));
 
 		Log.Debug("All patches applied.");
 	}
