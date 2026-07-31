@@ -51,7 +51,7 @@ internal static class ParameterHelper
 
 		if (type.IsEnum)
 			schema = CreateFromEnum(type);
-		else if (type.IsArray)
+		else if (type.IsArray || typeof(IEnumerable<>).IsAssignableFrom(type))
 			schema = CreateFromArray(type, context);
 		else if (type.IsPrimitive)
 			schema = CreateFromPrimitive(type);
@@ -59,10 +59,25 @@ internal static class ParameterHelper
 		{
 			schema = new JsonSchemaProperty { Reference = referenceSchema };
 		}
+		else if (Nullable.GetUnderlyingType(type) is not null)
+			schema = CreateFromNullable(type, context);
 		else
 			throw new NotImplementedException($"Type '{type}' is not implemented yet.");
 
 		return schema;
+	}
+
+	/// <summary>
+	/// Creates a <see cref="JsonSchemaProperty"/> for the given nullable type
+	/// </summary>
+	private static JsonSchemaProperty CreateFromNullable(Type type, SchemaContext context)
+	{
+		var underlyingType = Nullable.GetUnderlyingType(type);
+
+		if (underlyingType is null)
+			throw new ArgumentException($"Type '{type}' is not nullable.", nameof(type));
+
+		return CreateFromType(underlyingType, context);
 	}
 
 	/// <summary>
@@ -83,7 +98,9 @@ internal static class ParameterHelper
 	/// </summary>
 	private static JsonSchemaProperty CreateFromArray(Type type, SchemaContext context)
 	{
-		var elementType = type.GetElementType();
+		var elementType = type.IsArray
+			? type.GetElementType()
+			: type.GetGenericArguments().FirstOrDefault();
 
 		if (elementType is null)
 			throw new ArgumentException($"Type '{type}' has no element type.", nameof(type));
