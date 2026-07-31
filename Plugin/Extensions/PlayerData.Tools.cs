@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Silksong.BingoSync.Data;
 using Silksong.BingoSync.Exceptions;
-using Silksong.BingoSync.Helpers;
 
 namespace Silksong.BingoSync.Extensions;
 
@@ -11,8 +10,6 @@ namespace Silksong.BingoSync.Extensions;
 [SuppressMessage("ReSharper", "ConvertToExtensionBlock")]
 public static partial class PlayerDataExtensions
 {
-	// TODO: Consider if it is better to associate Tool with ToolItem
-
 	/// <summary>
 	/// Gets the identifier of the given <see cref="Tool"/>
 	/// </summary>
@@ -102,10 +99,6 @@ public static partial class PlayerDataExtensions
 	{
 		var id = GetToolId(tool);
 
-		foreach (var toolItem in ToolItemManager.GetAllTools())
-		{
-			Log.Info(toolItem.name + " => " + toolItem.DisplayName);
-		}
 		return ToolItemManager.GetToolByName(id);
 	}
 
