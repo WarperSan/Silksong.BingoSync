@@ -59,10 +59,25 @@ internal static class ParameterHelper
 		{
 			schema = new JsonSchemaProperty { Reference = referenceSchema };
 		}
+		else if (Nullable.GetUnderlyingType(type) is not null)
+			schema = CreateFromNullable(type, context);
 		else
 			throw new NotImplementedException($"Type '{type}' is not implemented yet.");
 
 		return schema;
+	}
+
+	/// <summary>
+	/// Creates a <see cref="JsonSchemaProperty"/> for the given nullable type
+	/// </summary>
+	private static JsonSchemaProperty CreateFromNullable(Type type, SchemaContext context)
+	{
+		var underlyingType = Nullable.GetUnderlyingType(type);
+
+		if (underlyingType is null)
+			throw new ArgumentException($"Type '{type}' is not nullable.", nameof(type));
+
+		return CreateFromType(underlyingType, context);
 	}
 
 	/// <summary>
