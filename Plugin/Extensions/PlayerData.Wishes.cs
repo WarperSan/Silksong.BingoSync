@@ -88,6 +88,44 @@ public static partial class PlayerDataExtensions
 	}
 
 	/// <summary>
+	/// Gets the instance of <see cref="FullQuestBase"/> of the given <see cref="Wish"/>
+	/// </summary>
+	private static FullQuestBase? GetWishItem(Wish wish)
+	{
+		var id = GetWishId(wish);
+
+		return QuestManager.GetQuest(id);
+	}
+
+	/// <summary>
+	/// Gets the <see cref="WishType"/> of the given <see cref="Wish"/>
+	/// </summary>
+	public static WishType GetWishType(this Wish wish)
+	{
+		var wishItem = GetWishItem(wish);
+
+		if (wishItem == null)
+			throw new ArgumentException(
+				$"No instance of '{nameof(FullQuestBase)}' was found for '{wish}'."
+			);
+
+		return wishItem.QuestType.name switch
+		{
+			"Wayfarer" => WishType.Wayfarer,
+			"Gather" => WishType.Gather,
+			"Hunt" => WishType.Hunt,
+			"Grand Hunt" => WishType.GrandHunt,
+			"Donate" => WishType.Donate,
+			"Courier" => WishType.Delivery,
+			"Journal" => WishType.Unique,
+			"Sprint" => WishType.Unique,
+			"Herald" => WishType.Unique,
+			"Steel Sentinel" => WishType.Unique,
+			_ => throw new InvalidCheckException<Wish>(wish),
+		};
+	}
+
+	/// <summary>
 	/// Checks if the given <see cref="Wish"/> was completed
 	/// </summary>
 	public static bool HasCompletedWish(this PlayerData data, Wish wish)
