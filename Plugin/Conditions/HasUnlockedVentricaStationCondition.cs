@@ -3,6 +3,7 @@ using BingoAPI.Conditions.Attributes;
 using BingoAPI.Conditions.Interfaces;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
+using Silksong.BingoSync.Extensions;
 
 namespace Silksong.BingoSync.Conditions;
 
