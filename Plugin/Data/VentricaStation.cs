@@ -10,7 +10,7 @@ namespace Silksong.BingoSync.Data;
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 [JsonConverter(typeof(StringEnumConverter))]
-public enum Ventrica
+public enum VentricaStation
 {
 	[EnumMember(Value = "memorium")]
 	Memorium,
