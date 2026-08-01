@@ -1115,6 +1115,42 @@
 					"needle": "shining_needle"
 				}
 			}
+		},
+		{
+			"name": "Underworks Ventrica",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "underworks"
+				}
+			}
+		},
+		{
+			"name": "Choral Chambers Ventrica",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "choral_chambers"
+				}
+			}
+		},
+		{
+			"name": "High Halls Ventrica",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "high_halls"
+				}
+			}
+		},
+		{
+			"name": "Memorium Ventrica",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "memorium"
+				}
+			}
 		}
 	]
 }
