@@ -136,6 +136,6 @@ public static partial class PlayerDataExtensions
 		if (!toolData.HasValue)
 			return false;
 
-		return toolData.Value.IsUnlocked;
+		return toolData.Value.IsUnlocked && !toolData.Value.IsHidden;
 	}
 }
