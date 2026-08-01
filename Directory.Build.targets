@@ -3,7 +3,7 @@
 	<Target
 		Name="Husky"
 		AfterTargets="Restore"
-		Condition="'$(HUSKY)' != 0"
+		Condition="'$(HUSKY)' != 0 And Exists('./.git/')"
 		Inputs="./.config/dotnet-tools.json"
 		Outputs="./.husky/_/install.stamp"
 	>
