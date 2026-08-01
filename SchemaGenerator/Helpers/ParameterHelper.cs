@@ -51,14 +51,12 @@ internal static class ParameterHelper
 
 		if (type.IsEnum)
 			schema = CreateFromEnum(type);
-		else if (type.IsArray || typeof(IEnumerable<>).IsAssignableFrom(type))
+		else if (TypeHelper.IsEnumerable(type))
 			schema = CreateFromArray(type, context);
 		else if (type.IsPrimitive)
 			schema = CreateFromPrimitive(type);
 		else if (context.TryGetSchema(type, out var referenceSchema))
-		{
 			schema = new JsonSchemaProperty { Reference = referenceSchema };
-		}
 		else if (Nullable.GetUnderlyingType(type) is not null)
 			schema = CreateFromNullable(type, context);
 		else
@@ -98,11 +96,7 @@ internal static class ParameterHelper
 	/// </summary>
 	private static JsonSchemaProperty CreateFromArray(Type type, SchemaContext context)
 	{
-		var elementType = type.IsArray
-			? type.GetElementType()
-			: type.GetGenericArguments().FirstOrDefault();
-
-		if (elementType is null)
+		if (!TypeHelper.TryGetItemType(type, out var elementType))
 			throw new ArgumentException($"Type '{type}' has no element type.", nameof(type));
 
 		var property = new JsonSchemaProperty
