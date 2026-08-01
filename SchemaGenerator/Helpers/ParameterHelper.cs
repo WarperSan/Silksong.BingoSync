@@ -56,9 +56,7 @@ internal static class ParameterHelper
 		else if (type.IsPrimitive)
 			schema = CreateFromPrimitive(type);
 		else if (context.TryGetSchema(type, out var referenceSchema))
-		{
 			schema = new JsonSchemaProperty { Reference = referenceSchema };
-		}
 		else if (Nullable.GetUnderlyingType(type) is not null)
 			schema = CreateFromNullable(type, context);
 		else
