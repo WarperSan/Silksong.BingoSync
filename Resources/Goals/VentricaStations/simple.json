@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/refs/heads/master/assets/generated/schema.json",
+	"name": "Simple Ventrica Stations Goals",
+	"description": "Goals focused on unlocking each Ventrica station",
+	"goals": [
+		{
+			"name": "Unlock Memorium Ventrica Station",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "memorium"
+				}
+			}
+		},
+		{
+			"name": "Unlock High Halls Station",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "high_halls"
+				}
+			}
+		},
+		{
+			"name": "Unlock First Shrine Station",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "first_shrine"
+				}
+			}
+		},
+		{
+			"name": "Unlock Choral Chambers Station",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "choral_chambers"
+				}
+			}
+		},
+		{
+			"name": "Unlock Grand Bellway Station",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "grand_bellway"
+				}
+			}
+		},
+		{
+			"name": "Unlock Underworks Station",
+			"condition": {
+				"action": "has_unlocked_ventrica_station",
+				"params": {
+					"station": "underworks"
+				}
+			}
+		}
+	]
+}
