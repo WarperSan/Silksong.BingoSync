@@ -52,6 +52,84 @@
             "action": {
               "type": "string",
               "enum": [
+                "has_completed_wish_count"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "amount"
+              ],
+              "properties": {
+                "amount": {
+                  "type": "integer",
+                  "description": "Minimum number of conditions that must be met"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Type of the wish to keep",
+                  "enum": [
+                    "wayfarer",
+                    "gather",
+                    "hunt",
+                    "grand_hunt",
+                    "donate",
+                    "delivery",
+                    "unique"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "has_obtained_tool_count"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "amount"
+              ],
+              "properties": {
+                "amount": {
+                  "type": "integer",
+                  "description": "Minimum number of conditions that must be met"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Type of the tool to keep",
+                  "enum": [
+                    "red",
+                    "blue",
+                    "yellow"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
                 "has_completed_ending"
               ]
             },
@@ -99,6 +177,7 @@
               "properties": {
                 "wish": {
                   "type": "string",
+                  "description": "Name of the wish to complete",
                   "enum": [
                     "the_lost_fleas",
                     "pinmasters_oil",
@@ -692,6 +771,42 @@
             "action": {
               "type": "string",
               "enum": [
+                "has_unlocked_ventrica_station"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "station"
+              ],
+              "properties": {
+                "station": {
+                  "type": "string",
+                  "description": "Name of the Ventrica station to unlock",
+                  "enum": [
+                    "memorium",
+                    "high_halls",
+                    "first_shrine",
+                    "choral_chambers",
+                    "grand_bellway",
+                    "underworks"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
                 "AND"
               ]
             },
@@ -734,7 +849,7 @@
               ],
               "properties": {
                 "condition": {
-                  "description": "Condition to inverse",
+                  "description": "Condition to negate",
                   "$ref": "#/definitions/conditions"
                 }
               }
