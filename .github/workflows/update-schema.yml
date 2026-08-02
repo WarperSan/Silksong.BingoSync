@@ -1,16 +1,19 @@
 name: Update Goals Schema
 
 env:
-  PROJECT_FILE: './SchemaGenerator/SchemaGenerator.csproj'
+  PROJECT_FILE: 'SchemaGenerator/SchemaGenerator.csproj'
   SCHEMA_FILE: 'assets/generated/schema.json'
 
 on:
   workflow_dispatch:
+  pull_request:
+      paths: &src_files
+          - 'Plugin/Conditions/**'
+          - 'Plugin/Data/**'
+          - 'SchemaGenerator/**'
   push:
-      paths:
-          - './Plugin/Conditions/**'
-          - './Plugin/Data/**'
-          - './SchemaGenerator/**'
+      branches: [ master ]
+      paths: *src_files
 
 permissions:
   contents: write
