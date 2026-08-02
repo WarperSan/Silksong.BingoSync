@@ -64,7 +64,9 @@
               "properties": {
                 "amount": {
                   "type": "integer",
-                  "description": "Minimum number of conditions that must be met"
+                  "description": "Minimum number of conditions that must be met",
+                  "maximum": 4294967295.0,
+                  "minimum": 0.0
                 },
                 "type": {
                   "type": "string",
@@ -105,7 +107,9 @@
               "properties": {
                 "amount": {
                   "type": "integer",
-                  "description": "Minimum number of conditions that must be met"
+                  "description": "Minimum number of conditions that must be met",
+                  "maximum": 4294967295.0,
+                  "minimum": 0.0
                 },
                 "area": {
                   "type": "string",
@@ -175,7 +179,9 @@
               "properties": {
                 "amount": {
                   "type": "integer",
-                  "description": "Minimum number of conditions that must be met"
+                  "description": "Minimum number of conditions that must be met",
+                  "maximum": 4294967295.0,
+                  "minimum": 0.0
                 },
                 "type": {
                   "type": "string",
@@ -1047,7 +1053,9 @@
                 "amount": {
                   "type": "integer",
                   "description": "Minimum number of conditions that must be met",
-                  "default": 1
+                  "default": 1,
+                  "maximum": 4294967295.0,
+                  "minimum": 0.0
                 }
               }
             }
