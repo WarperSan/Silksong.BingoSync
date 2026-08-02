@@ -6,6 +6,10 @@ env:
 
 on:
   workflow_dispatch:
+  push:
+      paths:
+          - './Plugin/Conditions/**'
+          - './Plugin/Data/**'
 
 permissions:
   contents: write
