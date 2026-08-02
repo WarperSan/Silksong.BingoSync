@@ -27,8 +27,8 @@ public enum Flea
 	[EnumMember(Value = "behind_skarrgard")]
 	BehindSkarrgard,
 
-	[EnumMember(Value = "behind_booby_trap")]
-	BehindBoobyTrap,
+	[EnumMember(Value = "behind_hunter_booby_trap")]
+	BehindHunterBoobyTrap,
 
 	[EnumMember(Value = "next_to_pilgrims_rest")]
 	NextToPilgrimsRest,

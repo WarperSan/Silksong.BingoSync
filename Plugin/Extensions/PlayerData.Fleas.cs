@@ -22,7 +22,7 @@ public static partial class PlayerDataExtensions
 			Flea.LeftOfSwiftStep => data.SavedFlea_Bone_East_05,
 			Flea.BehindDeepDocksFurnaceGauntlet => data.SavedFlea_Dock_03d,
 			Flea.BehindSkarrgard => data.SavedFlea_Ant_03,
-			Flea.BehindBoobyTrap => data.SavedFlea_Bone_East_17b,
+			Flea.BehindHunterBoobyTrap => data.SavedFlea_Bone_East_17b,
 			Flea.NextToPilgrimsRest => data.SavedFlea_Bone_East_10_Church,
 			Flea.CarriedByAknid => data.SavedFlea_Crawl_06,
 			Flea.AboveCrawLake => data.SavedFlea_Greymoor_15b,
