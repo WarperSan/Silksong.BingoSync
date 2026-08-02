@@ -41,7 +41,7 @@
 	</ItemGroup>
 
 	<Choose>
-		<When Condition="'$(UseLocalBingoAPI)' == 'true' And Exists('$(LocalBingoAPI)')">
+		<When Condition="'$(LocalBingoAPI)' != '' And Exists('$(LocalBingoAPI)')">
 			<ItemGroup>
 				<ProjectReference Include="$(LocalBingoAPI)" />
 			</ItemGroup>
