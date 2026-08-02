@@ -1416,6 +1416,42 @@
 					"flea": "huge_flea"
 				}
 			}
+		},
+		{
+			"name": "Free 8 Fleas",
+			"condition": {
+				"action": "has_found_flea_count",
+				"params": {
+					"amount": 8
+				}
+			}
+		},
+		{
+			"name": "Free 10 Fleas",
+			"condition": {
+				"action": "has_found_flea_count",
+				"params": {
+					"amount": 10
+				}
+			}
+		},
+		{
+			"name": "Free 12 Fleas",
+			"condition": {
+				"action": "has_found_flea_count",
+				"params": {
+					"amount": 12
+				}
+			}
+		},
+		{
+			"name": "Free 14 Fleas",
+			"condition": {
+				"action": "has_found_flea_count",
+				"params": {
+					"amount": 14
+				}
+			}
 		}
 	]
 }

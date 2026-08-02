@@ -1,9 +1,3 @@
-`has_found_flea_count`
-- Free 8 Fleas
-- Free 10 Fleas
-- Free 12 Fleas
-- Free 14 Fleas
-
 `has_obtained_journal_entry`
 - Squirrm Journal Entry
 - Skullwing Journal Entry
