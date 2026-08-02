@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -21,7 +22,9 @@ public enum Flea
 	Wormways,
 	Greymoor1,
 	Greymoor2,
-	Greymoor3,
+
+	[EnumMember(Value = "kratt")]
+	Kratt,
 	Bellhart,
 	Shellwood,
 	BlastedSteps,
@@ -33,12 +36,16 @@ public enum Flea
 	Underworks2,
 	ChoralChambers1,
 	ChoralChambers2,
-	Memorium,
+
+	[EnumMember(Value = "huge_flea")]
+	HugeFlea,
 	TheSlab1,
 	TheSlab2,
 	MountFay,
 	SandsOfKarak,
-	PutrifiedDucts,
+
+	[EnumMember(Value = "vog")]
+	Vog,
 	WhisperingVaults1,
 	WhisperingVaults2,
 }
