@@ -13,6 +13,9 @@
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	</PropertyGroup>
 
+	<Import Project="../Thunderstore.props" />
+	<Import Condition="Exists('../env.props')" Project="../env.props" />
+
 	<!-- Primary Package References -->
 	<ItemGroup>
 		<PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
@@ -37,6 +40,19 @@
 		<PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all" />
 	</ItemGroup>
 
+	<Choose>
+		<When Condition="'$(LocalBingoAPI)' != '' And Exists('$(LocalBingoAPI)')">
+			<ItemGroup>
+				<ProjectReference Include="$(LocalBingoAPI)" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<PackageReference Include="WarperSan.BingoAPI" Version="0.1.5-alpha" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
+
 	<!-- Dependencies -->
 	<ItemGroup>
 		<!-- Hard -->
@@ -44,6 +60,4 @@
 
 		<!-- Soft -->
 	</ItemGroup>
-
-	<Import Project="../Thunderstore.props" />
 </Project>
