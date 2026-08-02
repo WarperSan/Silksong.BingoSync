@@ -290,6 +290,66 @@
             "action": {
               "type": "string",
               "enum": [
+                "has_found_flea"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "flea"
+              ],
+              "properties": {
+                "flea": {
+                  "type": "string",
+                  "description": "Name of the flea to find",
+                  "enum": [
+                    "above_marrow_bellways",
+                    "behind_deep_docks_bellways",
+                    "left_of_swift_step",
+                    "behind_deep_docks_furnace_gauntlet",
+                    "behind_skarrgard",
+                    "behind_hunter_booby_trap",
+                    "next_to_pilgrims_rest",
+                    "carried_by_aknid",
+                    "above_craw_lake",
+                    "top_of_greymoor_left_tower",
+                    "kratt",
+                    "above_bellhart",
+                    "in_gahlia_pit",
+                    "above_grindle",
+                    "trapped_in_sinners_road",
+                    "guarded_by_snitchflies",
+                    "beside_exhaust_organ",
+                    "above_secret_bilewater_bench",
+                    "after_wisp_thicket",
+                    "across_cogwork_haulers_room",
+                    "after_choral_chambers_platforming",
+                    "after_vertical_sawblades_room",
+                    "huge_flea",
+                    "jailed_in_slab",
+                    "above_slab_bench",
+                    "frozen_in_ice",
+                    "under_voltnest",
+                    "vog",
+                    "right_of_songclave",
+                    "right_of_box_puzzle"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
                 "has_killed_boss"
               ]
             },
