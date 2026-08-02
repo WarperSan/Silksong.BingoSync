@@ -1,5 +1,4 @@
 using BepInEx.Configuration;
-using UnityEngine;
 
 namespace Silksong.BingoSync.Configurations;
 
@@ -10,5 +9,22 @@ internal class AccessibilityConfig
 {
 	private const string SECTION = "Accessibility";
 
-	public AccessibilityConfig(ConfigFile cfg) { }
+	public enum TextFont
+	{
+		Normal,
+		Bold,
+		Arial,
+	}
+
+	public readonly ConfigEntry<TextFont> BoardCellFont;
+
+	public AccessibilityConfig(ConfigFile cfg)
+	{
+		BoardCellFont = cfg.Bind(
+			SECTION,
+			"BoardCellFont",
+			TextFont.Normal,
+			"Defines what font to use for the board cells"
+		);
+	}
 }
