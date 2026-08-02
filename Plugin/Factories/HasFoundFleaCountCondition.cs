@@ -26,7 +26,6 @@ internal sealed class HasFoundFleaCountCondition
 		public Area? Area { get; init; }
 
 		[JsonProperty("include_unique")]
-		[DefaultValue(true)]
 		[Description("Defines if the unique fleas must be included")]
 		public bool? IncludeUnique { get; init; }
 	}
