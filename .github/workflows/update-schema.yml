@@ -11,6 +11,7 @@ on:
           - 'Plugin/Conditions/**'
           - 'Plugin/Data/**'
           - 'SchemaGenerator/**'
+          - '.github/workflows/update-schema.yml'
   push:
       branches: [ master ]
       paths: *src_files
