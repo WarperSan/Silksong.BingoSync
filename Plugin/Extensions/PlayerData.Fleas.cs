@@ -50,4 +50,45 @@ public static partial class PlayerDataExtensions
 			_ => throw new InvalidCheckException<Flea>(flea),
 		};
 	}
+
+	/// <summary>
+	/// Gets the <see cref="Area"/> where the given <see cref="Flea"/> is
+	/// </summary>
+	public static Area GetArea(this Flea flea)
+	{
+		return flea switch
+		{
+			Flea.AboveMarrowBellways => Area.TheMarrow,
+			Flea.BehindDeepDocksBellways => Area.DeepDocks,
+			Flea.LeftOfSwiftStep => Area.DeepDocks,
+			Flea.BehindDeepDocksFurnaceGauntlet => Area.DeepDocks,
+			Flea.BehindSkarrgard => Area.HuntersMarch,
+			Flea.BehindHunterBoobyTrap => Area.FarFields,
+			Flea.NextToPilgrimsRest => Area.FarFields,
+			Flea.CarriedByAknid => Area.Wormways,
+			Flea.AboveCrawLake => Area.Greymoor,
+			Flea.TopOfGreymoorLeftTower => Area.Greymoor,
+			Flea.Kratt => Area.Greymoor,
+			Flea.AboveBellhart => Area.Bellhart,
+			Flea.InGahliaPit => Area.Shellwood,
+			Flea.AboveGrindle => Area.BlastedSteps,
+			Flea.TrappedInSinnersRoad => Area.SinnersRoad,
+			Flea.GuardedBySnitchflies => Area.Bilewater,
+			Flea.BesideExhaustOrgan => Area.Bilewater,
+			Flea.AboveSecretBilewaterBench => Area.Bilewater,
+			Flea.AfterWispThicket => Area.Underworks,
+			Flea.AcrossCogworkHaulersRoom => Area.Underworks,
+			Flea.AfterChoralChambersPlatforming => Area.ChoralChambers,
+			Flea.AfterVerticalSawbladesRoom => Area.ChoralChambers,
+			Flea.HugeFlea => Area.Memorium,
+			Flea.JailedInSlab => Area.TheSlab,
+			Flea.AboveSlabBench => Area.TheSlab,
+			Flea.FrozenInIce => Area.MountFay,
+			Flea.UnderVoltnest => Area.SandsOfKarak,
+			Flea.Vog => Area.PutrifiedDucts,
+			Flea.RightOfSongclave => Area.WhisperingVaults,
+			Flea.RightOfBoxPuzzle => Area.WhisperingVaults,
+			_ => throw new InvalidCheckException<Flea>(flea),
+		};
+	}
 }
