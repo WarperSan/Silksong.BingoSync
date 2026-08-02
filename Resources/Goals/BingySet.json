@@ -1151,6 +1151,271 @@
 					"station": "memorium"
 				}
 			}
+		},
+		{
+			"name": "Greymoor Fleas [2] + Kratt",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "top_of_greymoor_left_tower"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "above_craw_lake"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "kratt"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Far Fields Fleas [2]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "behind_hunter_booby_trap"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "next_to_pilgrims_rest"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Shellwood & Bellhart Fleas [2]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "in_gahlia_pit"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "above_bellhart"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Deep Docks Fleas [3]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "behind_deep_docks_bellways"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "behind_deep_docks_furnace_gauntlet"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "left_of_swift_step"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Wormways & Blasted Steps Fleas [2]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "carried_by_aknid"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "above_grindle"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Underworks Fleas [2]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "after_wisp_thicket"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "across_cogwork_haulers_room"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Lower Bilewater & Hunter's March Fleas [2]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "guarded_by_snitchflies"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "trapped_in_sinners_road"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Sinner's Road & Vaults Fleas [2]",
+			"condition": {
+				"action": "AND",
+				"params": {
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "right_of_box_puzzle"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "trapped_in_sinners_road"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Sands of Karak Flea [1]",
+			"condition": {
+				"action": "has_found_flea",
+				"params": {
+					"flea": "under_voltnest"
+				}
+			}
+		},
+		{
+			"name": "Exhaust Organ Flea [1]",
+			"condition": {
+				"action": "has_found_flea",
+				"params": {
+					"flea": "beside_exhaust_organ"
+				}
+			}
+		},
+		{
+			"name": "Three Citadel Fleas",
+			"condition": {
+				"action": "SOME",
+				"params": {
+					"amount": 3,
+					"conditions": [
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "after_vertical_sawblades_room"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "after_choral_chambers_platforming"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "huge_flea"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "right_of_box_puzzle"
+							}
+						},
+						{
+							"action": "has_found_flea",
+							"params": {
+								"flea": "right_of_songclave"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Mt. Fay Flea [1]",
+			"condition": {
+				"action": "has_found_flea",
+				"params": {
+					"flea": "frozen_in_ice"
+				}
+			}
+		},
+		{
+			"name": "Beat Big Flea",
+			"condition": {
+				"action": "has_found_flea",
+				"params": {
+					"flea": "huge_flea"
+				}
+			}
 		}
 	]
 }

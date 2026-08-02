@@ -1,18 +1,3 @@
-`has_found_flea`
-- Greymoor Fleas [2] + Kratt
-- Far Fields Fleas [2]
-- Shellwood & Bellhart Fleas [2]
-- Deep Docks Fleas [3]
-- Wormways & Blasted Steps Fleas [2]
-- Underworks Fleas [2]
-- Lower Bilewater & Hunter's March Fleas [2]
-- Sinner's Road & Vaults Fleas [2]
-- Sands of Karak Flea [1]
-- Exhaust Organ Flea [1]
-- Three Citadel Fleas
-- Mt. Fay Flea [1]
-- Beat Big Flea
-
 `has_found_flea_count`
 - Free 8 Fleas
 - Free 10 Fleas
