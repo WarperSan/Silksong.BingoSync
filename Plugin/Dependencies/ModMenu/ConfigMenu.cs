@@ -21,6 +21,7 @@ internal static class ConfigMenu
 			CreateGeneralConfig(configuration.General),
 			CreateJoinConfig(configuration.Join),
 			CreateBoardConfig(configuration.Board),
+			CreateAccessibilityConfig(configuration.Accessibility),
 			CreateExperimentalConfig(configuration.Experimental),
 		};
 
@@ -92,6 +93,21 @@ internal static class ConfigMenu
 			)
 		)
 			builder.Add(evaluateOnHeroUpdateElement);
+
+		return builder.Build();
+	}
+
+	private static AbstractMenuScreen CreateAccessibilityConfig(AccessibilityConfig config)
+	{
+		PaginatedMenuScreenBuilder builder = new("Accessibility");
+
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardCellFont,
+				out var boardCellFontElement
+			)
+		)
+			builder.Add(boardCellFontElement);
 
 		return builder.Build();
 	}
