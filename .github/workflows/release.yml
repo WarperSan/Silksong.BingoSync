@@ -1,7 +1,7 @@
 name: Publish
 
 env:
-  PROJECT_FILE: './Plugin/Silksong.BingoSync.csproj'
+  PROJECT_FILE: 'Plugin/Silksong.BingoSync.csproj'
 
 on:
   push:
