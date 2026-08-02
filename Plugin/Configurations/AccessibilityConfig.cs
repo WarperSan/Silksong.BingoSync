@@ -14,6 +14,7 @@ internal class AccessibilityConfig
 		Normal,
 		Bold,
 		Arial,
+		Default,
 	}
 
 	public readonly ConfigEntry<TextFont> BoardCellFont;
