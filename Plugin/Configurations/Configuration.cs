@@ -11,6 +11,7 @@ internal class Configuration
 	public readonly BoardConfig Board;
 	public readonly JoinConfig Join;
 	public readonly ExperimentalConfig Experimental;
+	public readonly AccessibilityConfig Accessibility;
 
 	private Configuration(ConfigFile cfg)
 	{
@@ -18,6 +19,7 @@ internal class Configuration
 		Board = new BoardConfig(cfg);
 		Join = new JoinConfig(cfg);
 		Experimental = new ExperimentalConfig(cfg);
+		Accessibility = new AccessibilityConfig(cfg);
 	}
 
 	/// <summary>
