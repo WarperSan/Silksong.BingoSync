@@ -93,6 +93,76 @@
             "action": {
               "type": "string",
               "enum": [
+                "has_found_flea_count"
+              ]
+            },
+            "params": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "amount"
+              ],
+              "properties": {
+                "amount": {
+                  "type": "integer",
+                  "description": "Minimum number of conditions that must be met"
+                },
+                "area": {
+                  "type": "string",
+                  "description": "Area of the fleas to keep",
+                  "enum": [
+                    "the_abyss",
+                    "bellhart",
+                    "bilewater",
+                    "blasted_steps",
+                    "bone_bottom",
+                    "the_cradle",
+                    "deep_docks",
+                    "far_fields",
+                    "greymoor",
+                    "hunters_march",
+                    "the_marrow",
+                    "the_mist",
+                    "moss_grotto",
+                    "mount_fay",
+                    "putrified_ducts",
+                    "red_memory",
+                    "sands_of_karak",
+                    "shellwood",
+                    "sinners_road",
+                    "the_slab",
+                    "underworks",
+                    "verdania",
+                    "weavenest_atla",
+                    "wisp_thicket",
+                    "wormways",
+                    "choral_chambers",
+                    "cogwork_core",
+                    "grand_gate",
+                    "high_halls",
+                    "memorium",
+                    "whispering_vaults",
+                    "whiteward"
+                  ]
+                },
+                "include_unique": {
+                  "type": "boolean",
+                  "description": "Defines if the unique fleas must be included"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "action",
+            "params"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
                 "has_obtained_tool_count"
               ]
             },
