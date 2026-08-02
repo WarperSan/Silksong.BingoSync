@@ -20,6 +20,10 @@ internal sealed class HasFoundFleaCountCondition
 		[JsonRequired]
 		[Description("Minimum number of conditions that must be met")]
 		public uint Amount { get; init; }
+
+		[JsonProperty("area")]
+		[Description("Area of the fleas to keep")]
+		public Area? Area { get; init; }
 	}
 
 	/// <summary>
@@ -35,6 +39,14 @@ internal sealed class HasFoundFleaCountCondition
 	{
 		foreach (Flea flea in Enum.GetValues(typeof(Flea)))
 		{
+			if (parameters.Area.HasValue)
+			{
+				var fleaArea = flea.GetArea();
+
+				if (parameters.Area.Value != fleaArea)
+					continue;
+			}
+
 			yield return flea;
 		}
 	}
