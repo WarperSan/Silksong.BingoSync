@@ -849,6 +849,13 @@
 				"action": "manual",
 				"params": {}
 			}
+		},
+		{
+			"name": "Cogwork Clapper Journal Entry",
+			"condition": {
+				"action": "manual",
+				"params": {}
+			}
 		}
 	]
 }
