@@ -93,4 +93,12 @@ public static partial class PlayerDataExtensions
 			_ => throw new InvalidCheckException<Flea>(flea),
 		};
 	}
+
+	/// <summary>
+	/// Checks if the given <see cref="Flea"/> is an unique flea
+	/// </summary>
+	public static bool IsUnique(this Flea flea)
+	{
+		return flea is Flea.HugeFlea or Flea.Kratt or Flea.Vog;
+	}
 }
