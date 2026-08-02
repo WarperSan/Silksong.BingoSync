@@ -1,0 +1,727 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WarperSan/Silksong.BingoSync/refs/heads/master/assets/generated/schema.json",
+	"name": "Bingy Goals Manual",
+	"description": "Goals used by Bingy (Manual)",
+	"goals": [
+		{
+			"name": "Bellhome Key",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Break a Courier Item",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Dead Bug's Purse & a Silkeater",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Pale Lake Craftmetal",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Sell a Mossberry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Needle Strike",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Faydown Cloak",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Apostate Key",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Use a Simple Key in Deep Docks",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Disable the Clawmaidens",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Free Green Prince",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Win a Loddie Minigame",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Styx & Huntress",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Break Both of Styx's One-ways",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Loam",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Mask Maker",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Buy From Grindle (No String)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Blasted Steps Silkeater & Craftmetal",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Pay To Confess",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 3 Craftmetal",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 5 Craftmetal",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Crustnut",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Mossberry Soup",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Vintage Nectar",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Twisted Bud",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Both Free Simple Keys",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Both Vendor Simple Keys",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Pay for a Flea Spa",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Meet Caravan at the Grand Gate [12]",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Vog",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Have 3 Rosary Necklaces (no purchasing)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Have 6 Rosary Strings (no purchasing)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Break 8 Rosary Strings (no purchasing)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Break 4 Shard Bundles (no purchasing)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Break 6 Shard Bundles (no purchasing)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 3 Silkeaters",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 5 Silkeaters",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "1 Tool Pouch Upgrade",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "1 Crafting Kit",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "3 Tool Pouch Upgrades/Crafting Kits",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 5 Memory Lockets",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Fully Unlock a Non-Hunter's Crest",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Have 3 Different Types of Relic",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 4 Different Types of Relic",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 2 Rune Harps",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 3 Bone Scrolls",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 4 Bone Scrolls",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Shakra at 5 Locations",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Fix the Sinner's Road Bench",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 5 Maps",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 8 Maps",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Shakra in Bilewater",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Shakra in Sands of Karak",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Huntress",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Save Jubilana",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 2 Beast Shards",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 3 Beast Shards",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 4 Beast Shards",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Obtain 5 Beast Shards",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Bilewater Bellway",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Forge Daughter and Twelfth Architect",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "1 Cogheart Piece",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "2 Cogheart Pieces",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Activate Second Sentinel",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Meet Sherma in the Spa",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "2 Silk Hearts",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Architect's Melody",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Conductor's Melody",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Vaultkeeper's Melody",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Get Cursed",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Enter Act 3",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Beastling Call",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "3 Void Masses",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "6 Void Masses",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Save Pinmaster Plinney",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Flick at Survivor's Camp",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Defeat a Black-threaded Boss",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Pin Badge",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "1 Arcane Egg",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Inspect Magnetite in Brightvein",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Verdania Fountain Orbs",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Clear First Coral Tower Arena",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Visit Styx's Nest",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Talk to Mr. Mushroom",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Win A Race",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Squirrm Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Skullwing Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Cragglite Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Gromling Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Mite Mother Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Massive Mossgrub Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Unravelled Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Shadow Charger Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Imoba Journal Entry",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Farfields Escape Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Slab Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Bilewater Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Deep Docks Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Shellwood + Vaults Mask Shards",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Blasted Steps Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Cogwork Core Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Wisp Thicket Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Mt. Fay Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Brightvein Mask Shard",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "1 Extra Mask",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "2 Extra Masks",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Deep Docks Spool Fragments (2)",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Greymoor Spool Fragment",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Frey's Spool Fragment",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Grand Gate Spool Fragment",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "High Halls Spool Fragment",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "1 Spool Upgrade",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "2 Spool Upgrades",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "3 Spool Upgrades",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Craggler",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Defeat a Rhinogrund",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Defeat a Covetous Pilgrim",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "Defeat a Cogwork Clapper",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "3 Silk Skills",
+			"condition": {
+				"action": "manual"
+			}
+		},
+		{
+			"name": "4 Silk Skills",
+			"condition": {
+				"action": "manual"
+			}
+		}
+	]
+}

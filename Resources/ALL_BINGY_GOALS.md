@@ -16,10 +16,6 @@
 
 **Use a Simple Key in Deep Docks** | Progression level: ['early'] | Other tags: ['key', 'location', 'fight']
 
-**3 Silk Skills** | Progression level: ['widow'] | Other tags: ['upgrade', 'hardsave']
-
-**4 Silk Skills** | Progression level: ['act2'] | Other tags: ['upgrade', 'hardsave']
-
 **Disable the Clawmaidens** | Progression level: ['faydown'] | Other tags: ['fight']
 
 **Free Green Prince** | Progression level: ['walljump'] | Other tags: ['npc', 'key']

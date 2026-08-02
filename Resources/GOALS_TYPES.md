@@ -42,3 +42,7 @@
 - Defeat a Rhinogrund
 - Defeat a Covetous Pilgrim
 - Defeat a Cogwork Clapper
+
+`has_obtained_silk_skill_count`
+- 3 Silk Skills
+- 4 Silk Skills
