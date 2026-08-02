@@ -113,17 +113,27 @@ internal static class ParameterHelper
 	/// </summary>
 	private static JsonSchemaProperty CreateFromPrimitive(Type type)
 	{
-		JsonObjectType objectType;
+		var property = new JsonSchemaProperty();
 
-		if (type == typeof(int) || type == typeof(uint))
-			objectType = JsonObjectType.Integer;
+		if (type == typeof(int))
+		{
+			property.Type = JsonObjectType.Integer;
+			property.Minimum = int.MinValue;
+			property.Maximum = int.MaxValue;
+		}
+		else if (type == typeof(uint))
+		{
+			property.Type = JsonObjectType.Integer;
+			property.Minimum = uint.MinValue;
+			property.Maximum = uint.MaxValue;
+		}
 		else if (type == typeof(bool))
-			objectType = JsonObjectType.Boolean;
+			property.Type = JsonObjectType.Boolean;
 		else if (type == typeof(string))
-			objectType = JsonObjectType.String;
+			property.Type = JsonObjectType.String;
 		else
-			objectType = JsonObjectType.None;
+			property.Type = JsonObjectType.None;
 
-		return new JsonSchemaProperty { Type = objectType };
+		return property;
 	}
 }
