@@ -58,6 +58,7 @@ public static partial class PlayerDataExtensions
 	{
 		return flea switch
 		{
+			// ReSharper disable DuplicatedSwitchExpressionArms
 			Flea.AboveMarrowBellways => Area.TheMarrow,
 			Flea.BehindDeepDocksBellways => Area.DeepDocks,
 			Flea.LeftOfSwiftStep => Area.DeepDocks,
@@ -88,6 +89,7 @@ public static partial class PlayerDataExtensions
 			Flea.Vog => Area.PutrifiedDucts,
 			Flea.RightOfSongclave => Area.WhisperingVaults,
 			Flea.RightOfBoxPuzzle => Area.WhisperingVaults,
+			// ReSharper restore DuplicatedSwitchExpressionArms
 			_ => throw new InvalidCheckException<Flea>(flea),
 		};
 	}
