@@ -15,18 +15,4 @@
 		<DebugType>embedded</DebugType>
 		<PathMap Condition="'$(Configuration)' == 'Release'">$(MSBuildProjectDirectory)=./</PathMap>
 	</PropertyGroup>
-
-	<!-- BingoAPI dependency -->
-	<Choose>
-		<When Condition="'$(UseLocalBingoAPI)' == 'true' And Exists('$(LocalBingoAPI)')">
-			<ItemGroup>
-				<ProjectReference Include="$(LocalBingoAPI)" />
-			</ItemGroup>
-		</When>
-		<Otherwise>
-			<ItemGroup>
-				<PackageReference Include="WarperSan.BingoAPI" Version="0.1.5-alpha" />
-			</ItemGroup>
-		</Otherwise>
-	</Choose>
 </Project>

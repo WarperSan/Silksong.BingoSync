@@ -37,6 +37,19 @@
 		<PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all" />
 	</ItemGroup>
 
+	<Choose>
+		<When Condition="'$(UseLocalBingoAPI)' == 'true' And Exists('$(LocalBingoAPI)')">
+			<ItemGroup>
+				<ProjectReference Include="$(LocalBingoAPI)" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<PackageReference Include="WarperSan.BingoAPI" Version="0.1.5-alpha" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
+
 	<!-- Dependencies -->
 	<ItemGroup>
 		<!-- Hard -->
