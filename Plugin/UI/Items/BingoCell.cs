@@ -112,7 +112,7 @@ internal class BingoCell : MonoBehaviour
 
 		var text = textGo.AddComponent<Text>();
 		text.fontSize = 12;
-		text.text = "OwO";
+		text.text = "Placeholder";
 		text.alignment = TextAnchor.MiddleLeft;
 		text.color = Color.white;
 		text.font = Fonts.Normal;
