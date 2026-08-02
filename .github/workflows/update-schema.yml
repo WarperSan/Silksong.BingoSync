@@ -10,6 +10,7 @@ on:
       paths:
           - './Plugin/Conditions/**'
           - './Plugin/Data/**'
+          - './SchemaGenerator/**'
 
 permissions:
   contents: write
