@@ -24,6 +24,11 @@ internal sealed class HasFoundFleaCountCondition
 		[JsonProperty("area")]
 		[Description("Area of the fleas to keep")]
 		public Area? Area { get; init; }
+
+		[JsonProperty("include_unique")]
+		[DefaultValue(true)]
+		[Description("Defines if the unique fleas must be included")]
+		public bool? IncludeUnique { get; init; }
 	}
 
 	/// <summary>
@@ -44,6 +49,14 @@ internal sealed class HasFoundFleaCountCondition
 				var fleaArea = flea.GetArea();
 
 				if (parameters.Area.Value != fleaArea)
+					continue;
+			}
+
+			if (parameters.IncludeUnique.HasValue)
+			{
+				var isUnique = flea.IsUnique();
+
+				if (isUnique && !parameters.IncludeUnique.Value)
 					continue;
 			}
 
