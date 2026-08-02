@@ -842,6 +842,13 @@
 				"action": "manual",
 				"params": {}
 			}
+		},
+		{
+			"name": "Deep Diver Journal Entry",
+			"condition": {
+				"action": "manual",
+				"params": {}
+			}
 		}
 	]
 }
