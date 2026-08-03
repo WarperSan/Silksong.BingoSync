@@ -117,6 +117,14 @@ internal static class ConfigMenu
 		)
 			builder.Add(boardPositionElement);
 
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardScale,
+				out var boardScaleElement
+			)
+		)
+			builder.Add(boardScaleElement);
+
 		return builder.Build();
 	}
 }

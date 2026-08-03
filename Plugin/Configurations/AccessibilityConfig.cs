@@ -29,6 +29,17 @@ internal class AccessibilityConfig
 
 	public readonly ConfigEntry<ElementPosition> BoardPosition;
 
+	public enum ElementScale
+	{
+		Compact,
+		Normal,
+		Medium,
+		Large,
+		ExtraLarge,
+	}
+
+	public readonly ConfigEntry<ElementScale> BoardScale;
+
 	public AccessibilityConfig(ConfigFile cfg)
 	{
 		BoardCellFont = cfg.Bind(
@@ -43,6 +54,13 @@ internal class AccessibilityConfig
 			"BoardPosition",
 			ElementPosition.TopRight,
 			"Defines where the board is located on the screen"
+		);
+
+		BoardScale = cfg.Bind(
+			SECTION,
+			"BoardScale",
+			ElementScale.Normal,
+			"Defines the scale of the board"
 		);
 	}
 }
