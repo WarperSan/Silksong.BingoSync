@@ -111,6 +111,9 @@ public class BingoBoard : MonoBehaviour
 		var canvasGroup = gameObject.AddComponent<CanvasGroup>();
 		canvasGroup.blocksRaycasts = false;
 
+		var accessibilityOpacity = gameObject.AddComponent<AccessibilityOpacity>();
+		accessibilityOpacity.Bind(Configuration.SafeInstance.Accessibility.BoardOpacity);
+
 		return board;
 	}
 }
