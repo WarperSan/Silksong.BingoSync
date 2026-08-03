@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Silksong.BingoSync.UI.Components;
 
 /// <summary>
-/// Component responsible to update a <see cref="Text"/> using <see cref="AccessibilityConfig.BoardCellFont"/>
+/// Component responsible to update a <see cref="Text"/> using <see cref="AccessibilityConfig.TextFont"/>
 /// </summary>
 [RequireComponent(typeof(Text))]
 internal class AccessibilityTextFont : SettingUpdateNotifier<AccessibilityConfig.TextFont>
@@ -15,18 +15,18 @@ internal class AccessibilityTextFont : SettingUpdateNotifier<AccessibilityConfig
 	private Text? _text;
 
 	/// <inheritdoc/>
-	protected override void OnSettingChanged(AccessibilityConfig.TextFont font)
+	protected override void OnSettingChanged(AccessibilityConfig.TextFont value)
 	{
 		if (_text == null)
 			return;
 
-		_text.font = font switch
+		_text.font = value switch
 		{
 			AccessibilityConfig.TextFont.Normal => Fonts.Normal,
 			AccessibilityConfig.TextFont.Bold => Fonts.Bold,
 			AccessibilityConfig.TextFont.Arial => Fonts.Arial,
 			AccessibilityConfig.TextFont.Default => Fonts.Default,
-			_ => throw new ArgumentOutOfRangeException(nameof(font), font, null),
+			_ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
 		};
 	}
 

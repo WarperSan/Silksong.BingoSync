@@ -5,21 +5,21 @@ using UnityEngine;
 namespace Silksong.BingoSync.UI.Components;
 
 /// <summary>
-/// Component responsible to update a <see cref="RectTransform"/> using <see cref="AccessibilityConfig.BoardPosition"/>
+/// Component responsible to update a <see cref="RectTransform"/> using <see cref="AccessibilityConfig.ElementPosition"/>
 /// </summary>
 [RequireComponent(typeof(RectTransform))]
-internal class AccessibilityBoardPosition
+internal class AccessibilityElementPosition
 	: SettingUpdateNotifier<AccessibilityConfig.ElementPosition>
 {
 	private RectTransform? _rectTransform;
 
 	/// <inheritdoc/>
-	protected override void OnSettingChanged(AccessibilityConfig.ElementPosition position)
+	protected override void OnSettingChanged(AccessibilityConfig.ElementPosition value)
 	{
 		if (_rectTransform == null)
 			return;
 
-		switch (position)
+		switch (value)
 		{
 			case AccessibilityConfig.ElementPosition.TopLeft:
 				_rectTransform.anchorMax = new Vector2(0, 1);
@@ -42,7 +42,7 @@ internal class AccessibilityBoardPosition
 				_rectTransform.pivot = new Vector2(1, 0);
 				break;
 			default:
-				throw new ArgumentOutOfRangeException(nameof(position), position, null);
+				throw new ArgumentOutOfRangeException(nameof(value), value, null);
 		}
 	}
 
