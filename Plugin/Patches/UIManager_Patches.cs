@@ -55,13 +55,13 @@ internal class UIManager_Patches
 		rectTransform.offsetMax = new Vector2(0f, 20f);
 		rectTransform.pivot = new Vector2(1f, 0f);
 
+		var joinConfig = Configuration.Instance?.Join;
+
 		var joinSettings = new JoinRoomSettings
 		{
-			Nickname = Configuration.Instance?.Join.Nickname.Value ?? "",
-#if DEBUG
-			Code = "6MuWtbUFQE-P70lS6-5BhQ",
-			Password = "abc",
-#endif
+			Nickname = joinConfig?.Nickname.Value ?? "",
+			Code = joinConfig?.Code.Value ?? "",
+			Password = joinConfig?.Password.Value ?? "",
 		};
 
 		var menu = ConnectionMenu.Create(joinSettings);
