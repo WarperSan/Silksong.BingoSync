@@ -125,6 +125,13 @@ internal static class ConfigMenu
 		)
 			builder.Add(boardScaleElement);
 
+		if (
+			MenuElementGenerators
+				.CreateIntSliderGenerator()
+				.Invoke(config.BoardOpacity, out var boardOpacityElement)
+		)
+			builder.Add(boardOpacityElement);
+
 		return builder.Build();
 	}
 }

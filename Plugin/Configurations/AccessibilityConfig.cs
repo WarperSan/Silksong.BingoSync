@@ -40,6 +40,8 @@ internal class AccessibilityConfig
 
 	public readonly ConfigEntry<ElementScale> BoardScale;
 
+	public readonly ConfigEntry<int> BoardOpacity;
+
 	public AccessibilityConfig(ConfigFile cfg)
 	{
 		BoardCellFont = cfg.Bind(
@@ -61,6 +63,16 @@ internal class AccessibilityConfig
 			"BoardScale",
 			ElementScale.Normal,
 			"Defines the scale of the board"
+		);
+
+		BoardOpacity = cfg.Bind(
+			SECTION,
+			"BoardOpacity",
+			100,
+			new ConfigDescription(
+				"Defines the opacity of the board",
+				new AcceptableValueRange<int>(0, 100)
+			)
 		);
 	}
 }
