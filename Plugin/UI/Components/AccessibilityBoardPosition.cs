@@ -1,7 +1,5 @@
-using BepInEx.Configuration;
 using Silksong.BingoSync.Configurations;
 using UnityEngine;
-using PositionEntry = BepInEx.Configuration.ConfigEntry<Silksong.BingoSync.Configurations.AccessibilityConfig.ElementPosition>;
 
 namespace Silksong.BingoSync.UI.Components;
 
@@ -9,44 +7,13 @@ namespace Silksong.BingoSync.UI.Components;
 /// Component responsible to update a <see cref="RectTransform"/> using <see cref="AccessibilityConfig.BoardPosition"/>
 /// </summary>
 [RequireComponent(typeof(RectTransform))]
-internal class AccessibilityBoardPosition : MonoBehaviour
+internal class AccessibilityBoardPosition
+	: SettingUpdateNotifier<AccessibilityConfig.ElementPosition>
 {
 	private RectTransform? _rectTransform;
-	private PositionEntry? _config;
 
-	/// <summary>
-	/// Binds this component with the given <see cref="ConfigEntry{T}"/>
-	/// </summary>
-	public void Bind(PositionEntry config)
-	{
-		Unbind();
-		_config = config;
-		_config.SettingChanged += OnRawSettingChanged;
-
-		OnSettingChanged(_config.Value);
-	}
-
-	/// <summary>
-	/// Unbinds this component with all bound <see cref="ConfigEntry{T}"/>
-	/// </summary>
-	public void Unbind()
-	{
-		_config?.SettingChanged -= OnRawSettingChanged;
-		_config = null;
-	}
-
-	private void OnRawSettingChanged(object sender, EventArgs e)
-	{
-		if (e is not SettingChangedEventArgs settings)
-			return;
-
-		if (settings.ChangedSetting is not PositionEntry config)
-			return;
-
-		OnSettingChanged(config.Value);
-	}
-
-	private void OnSettingChanged(AccessibilityConfig.ElementPosition position)
+	/// <inheritdoc/>
+	protected override void OnSettingChanged(AccessibilityConfig.ElementPosition position)
 	{
 		if (_rectTransform == null)
 			return;
@@ -82,6 +49,4 @@ internal class AccessibilityBoardPosition : MonoBehaviour
 	{
 		_rectTransform = GetComponent<RectTransform>();
 	}
-
-	private void OnDestroy() => Unbind();
 }

@@ -1,9 +1,7 @@
-using BepInEx.Configuration;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Constants;
 using UnityEngine;
 using UnityEngine.UI;
-using FontEntry = BepInEx.Configuration.ConfigEntry<Silksong.BingoSync.Configurations.AccessibilityConfig.TextFont>;
 
 namespace Silksong.BingoSync.UI.Components;
 
@@ -11,44 +9,12 @@ namespace Silksong.BingoSync.UI.Components;
 /// Component responsible to update a <see cref="Text"/> using <see cref="AccessibilityConfig.BoardCellFont"/>
 /// </summary>
 [RequireComponent(typeof(Text))]
-internal class AccessibilityTextFont : MonoBehaviour
+internal class AccessibilityTextFont : SettingUpdateNotifier<AccessibilityConfig.TextFont>
 {
 	private Text? _text;
-	private FontEntry? _config;
 
-	/// <summary>
-	/// Binds this component with the given <see cref="ConfigEntry{T}"/>
-	/// </summary>
-	public void Bind(FontEntry config)
-	{
-		Unbind();
-		_config = config;
-		_config.SettingChanged += OnRawSettingChanged;
-
-		OnSettingChanged(_config.Value);
-	}
-
-	/// <summary>
-	/// Unbinds this component with all bound <see cref="ConfigEntry{T}"/>
-	/// </summary>
-	public void Unbind()
-	{
-		_config?.SettingChanged -= OnRawSettingChanged;
-		_config = null;
-	}
-
-	private void OnRawSettingChanged(object sender, EventArgs e)
-	{
-		if (e is not SettingChangedEventArgs settings)
-			return;
-
-		if (settings.ChangedSetting is not FontEntry config)
-			return;
-
-		OnSettingChanged(config.Value);
-	}
-
-	private void OnSettingChanged(AccessibilityConfig.TextFont font)
+	/// <inheritdoc/>
+	protected override void OnSettingChanged(AccessibilityConfig.TextFont font)
 	{
 		if (_text == null)
 			return;
@@ -67,6 +33,4 @@ internal class AccessibilityTextFont : MonoBehaviour
 	{
 		_text = GetComponent<Text>();
 	}
-
-	private void OnDestroy() => Unbind();
 }
