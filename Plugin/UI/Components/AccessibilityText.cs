@@ -24,6 +24,8 @@ internal class AccessibilityText : MonoBehaviour
 		Unbind();
 		_config = config;
 		_config.SettingChanged += OnRawSettingChanged;
+
+		OnSettingChanged(_config.Value);
 	}
 
 	/// <summary>
