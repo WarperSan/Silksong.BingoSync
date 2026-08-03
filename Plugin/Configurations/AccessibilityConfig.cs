@@ -31,11 +31,11 @@ internal class AccessibilityConfig
 
 	public enum ElementScale
 	{
-		Compact,
+		VerySmall,
+		Small,
 		Normal,
-		Medium,
 		Large,
-		ExtraLarge,
+		VeryLarge,
 	}
 
 	public readonly ConfigEntry<ElementScale> BoardScale;

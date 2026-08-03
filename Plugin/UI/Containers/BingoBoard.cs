@@ -73,8 +73,11 @@ public class BingoBoard : MonoBehaviour
 		rectTransform.anchorMin = Vector2.one;
 		rectTransform.pivot = Vector2.one;
 
-		var accessibilityRect = gameObject.AddComponent<AccessibilityBoardPosition>();
-		accessibilityRect.Bind(Configuration.SafeInstance.Accessibility.BoardPosition);
+		var accessibilityPosition = gameObject.AddComponent<AccessibilityElementPosition>();
+		accessibilityPosition.Bind(Configuration.SafeInstance.Accessibility.BoardPosition);
+
+		var accessibilityScale = gameObject.AddComponent<AccessibilityElementScale>();
+		accessibilityScale.Bind(Configuration.SafeInstance.Accessibility.BoardScale);
 
 		var sizeFitter = gameObject.AddComponent<ContentSizeFitter>();
 		sizeFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
