@@ -8,6 +8,8 @@
 - Added config `BoardPosition` that allows to change where the board is located
 - Added config `BoardScale` that allows to change how big the board is shown
 - Added config `BoardOpacity` that allows to change the opacity of the board
+- Added config `DefaultCode` that allows to set a default code for the join panel
+- Added config `DefaultPassword` that allows to set a default password for the join panel
 - Added condition `has_obtained_quill` with 3 simple goals
 - Added condition `has_obtained_map` with 28 simple goals
 - Added condition `has_completed_wish` with 54 simple goals

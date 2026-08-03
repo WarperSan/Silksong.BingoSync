@@ -59,6 +59,12 @@ internal static class ConfigMenu
 		if (ConfigEntryFactory.GenerateStringElement(config.Nickname, out var nicknameElement))
 			builder.Add(nicknameElement);
 
+		if (ConfigEntryFactory.GenerateStringElement(config.Code, out var codeElement))
+			builder.Add(codeElement);
+
+		if (ConfigEntryFactory.GenerateStringElement(config.Password, out var passwordElement))
+			builder.Add(passwordElement);
+
 		if (ConfigEntryFactory.GenerateKeyCodeElement(config.ToggleUI, out var toggleUIElement))
 			builder.Add(toggleUIElement);
 
