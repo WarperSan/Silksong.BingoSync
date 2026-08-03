@@ -109,6 +109,14 @@ internal static class ConfigMenu
 		)
 			builder.Add(boardCellFontElement);
 
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardPosition,
+				out var boardPositionElement
+			)
+		)
+			builder.Add(boardPositionElement);
+
 		return builder.Build();
 	}
 }
