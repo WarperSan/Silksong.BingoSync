@@ -1,4 +1,5 @@
 using Silksong.BingoSync.Configurations;
+using Silksong.BingoSync.UI.Abstract;
 using UnityEngine;
 
 namespace Silksong.BingoSync.UI.Components;

@@ -1,7 +1,7 @@
 using BepInEx.Configuration;
 using UnityEngine;
 
-namespace Silksong.BingoSync.UI.Components;
+namespace Silksong.BingoSync.UI.Abstract;
 
 /// <summary>
 /// Component used to notify this component about changes to the bound <see cref="ConfigEntry{T}"/>
