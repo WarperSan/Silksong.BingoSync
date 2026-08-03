@@ -109,6 +109,29 @@ internal static class ConfigMenu
 		)
 			builder.Add(boardCellFontElement);
 
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardPosition,
+				out var boardPositionElement
+			)
+		)
+			builder.Add(boardPositionElement);
+
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardScale,
+				out var boardScaleElement
+			)
+		)
+			builder.Add(boardScaleElement);
+
+		if (
+			MenuElementGenerators
+				.CreateIntSliderGenerator()
+				.Invoke(config.BoardOpacity, out var boardOpacityElement)
+		)
+			builder.Add(boardOpacityElement);
+
 		return builder.Build();
 	}
 }

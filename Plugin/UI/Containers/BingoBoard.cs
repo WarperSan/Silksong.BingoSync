@@ -1,4 +1,6 @@
 using BingoAPI.Models;
+using Silksong.BingoSync.Configurations;
+using Silksong.BingoSync.UI.Components;
 using Silksong.BingoSync.UI.Items;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,6 +73,12 @@ public class BingoBoard : MonoBehaviour
 		rectTransform.anchorMin = Vector2.one;
 		rectTransform.pivot = Vector2.one;
 
+		var accessibilityPosition = gameObject.AddComponent<AccessibilityElementPosition>();
+		accessibilityPosition.Bind(Configuration.SafeInstance.Accessibility.BoardPosition);
+
+		var accessibilityScale = gameObject.AddComponent<AccessibilityElementScale>();
+		accessibilityScale.Bind(Configuration.SafeInstance.Accessibility.BoardScale);
+
 		var sizeFitter = gameObject.AddComponent<ContentSizeFitter>();
 		sizeFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
 		sizeFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
@@ -102,6 +110,9 @@ public class BingoBoard : MonoBehaviour
 
 		var canvasGroup = gameObject.AddComponent<CanvasGroup>();
 		canvasGroup.blocksRaycasts = false;
+
+		var accessibilityOpacity = gameObject.AddComponent<AccessibilityOpacity>();
+		accessibilityOpacity.Bind(Configuration.SafeInstance.Accessibility.BoardOpacity);
 
 		return board;
 	}

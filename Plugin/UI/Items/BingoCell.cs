@@ -119,7 +119,7 @@ internal class BingoCell : MonoBehaviour
 		text.color = Color.white;
 		text.font = Fonts.Normal;
 
-		var accessibilityText = textGo.AddComponent<AccessibilityText>();
+		var accessibilityText = textGo.AddComponent<AccessibilityTextFont>();
 		accessibilityText.Bind(Configuration.SafeInstance.Accessibility.BoardCellFont);
 
 		cell._text = text;
