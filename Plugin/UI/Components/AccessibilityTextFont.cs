@@ -8,10 +8,10 @@ using FontEntry = BepInEx.Configuration.ConfigEntry<Silksong.BingoSync.Configura
 namespace Silksong.BingoSync.UI.Components;
 
 /// <summary>
-/// Component responsible to manage accessibility features for <see cref="Text"/>
+/// Component responsible to update a <see cref="Text"/> using <see cref="AccessibilityConfig.BoardCellFont"/>
 /// </summary>
 [RequireComponent(typeof(Text))]
-internal class AccessibilityText : MonoBehaviour
+internal class AccessibilityTextFont : MonoBehaviour
 {
 	private Text? _text;
 	private FontEntry? _config;
