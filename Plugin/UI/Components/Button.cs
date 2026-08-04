@@ -7,7 +7,7 @@ namespace Silksong.BingoSync.UI.Components;
 /// <summary>
 /// Component responsible to manage a 'pressed' input
 /// </summary>
-internal class Button : MonoBehaviour
+internal sealed class Button : MonoBehaviour
 {
 	private Action? _onClick;
 	private Text? _label;

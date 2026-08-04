@@ -8,7 +8,7 @@ namespace Silksong.BingoSync.UI.Containers;
 /// <summary>
 /// Component responsible to manage a <see cref="BingoBoard"/>
 /// </summary>
-internal class BoardContainer : MonoBehaviour
+internal sealed class BoardContainer : MonoBehaviour
 {
 	private BingoBoard? _board;
 	private CallOnInput? _toggleInput;

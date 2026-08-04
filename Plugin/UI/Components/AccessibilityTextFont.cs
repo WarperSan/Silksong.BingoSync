@@ -10,7 +10,7 @@ namespace Silksong.BingoSync.UI.Components;
 /// Component responsible to update a <see cref="Text"/> using <see cref="AccessibilityConfig.TextFont"/>
 /// </summary>
 [RequireComponent(typeof(Text))]
-internal class AccessibilityTextFont : SettingUpdateNotifier<AccessibilityConfig.TextFont>
+internal sealed class AccessibilityTextFont : SettingUpdateNotifier<AccessibilityConfig.TextFont>
 {
 	private Text? _text;
 
