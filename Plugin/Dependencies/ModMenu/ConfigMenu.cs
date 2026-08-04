@@ -59,6 +59,12 @@ internal static class ConfigMenu
 		if (ConfigEntryFactory.GenerateStringElement(config.Nickname, out var nicknameElement))
 			builder.Add(nicknameElement);
 
+		if (ConfigEntryFactory.GenerateStringElement(config.Code, out var codeElement))
+			builder.Add(codeElement);
+
+		if (ConfigEntryFactory.GenerateStringElement(config.Password, out var passwordElement))
+			builder.Add(passwordElement);
+
 		if (ConfigEntryFactory.GenerateKeyCodeElement(config.ToggleUI, out var toggleUIElement))
 			builder.Add(toggleUIElement);
 
@@ -108,6 +114,29 @@ internal static class ConfigMenu
 			)
 		)
 			builder.Add(boardCellFontElement);
+
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardPosition,
+				out var boardPositionElement
+			)
+		)
+			builder.Add(boardPositionElement);
+
+		if (
+			ConfigEntryFactory.GenerateEnumChoiceElement(
+				config.BoardScale,
+				out var boardScaleElement
+			)
+		)
+			builder.Add(boardScaleElement);
+
+		if (
+			MenuElementGenerators
+				.CreateIntSliderGenerator()
+				.Invoke(config.BoardOpacity, out var boardOpacityElement)
+		)
+			builder.Add(boardOpacityElement);
 
 		return builder.Build();
 	}

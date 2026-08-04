@@ -11,7 +11,7 @@ namespace Silksong.BingoSync.UI.Items;
 /// <summary>
 /// Component responsible to display a given <see cref="Goal"/>
 /// </summary>
-internal class BingoCell : MonoBehaviour
+internal sealed class BingoCell : MonoBehaviour
 {
 	private Text? _text;
 	private Dictionary<Team, Image>? _teamMarks;
@@ -119,7 +119,7 @@ internal class BingoCell : MonoBehaviour
 		text.color = Color.white;
 		text.font = Fonts.Normal;
 
-		var accessibilityText = textGo.AddComponent<AccessibilityText>();
+		var accessibilityText = textGo.AddComponent<AccessibilityTextFont>();
 		accessibilityText.Bind(Configuration.SafeInstance.Accessibility.BoardCellFont);
 
 		cell._text = text;

@@ -19,6 +19,29 @@ internal class AccessibilityConfig
 
 	public readonly ConfigEntry<TextFont> BoardCellFont;
 
+	public enum ElementPosition
+	{
+		TopLeft,
+		TopRight,
+		BottomLeft,
+		BottomRight,
+	}
+
+	public readonly ConfigEntry<ElementPosition> BoardPosition;
+
+	public enum ElementScale
+	{
+		VerySmall,
+		Small,
+		Normal,
+		Large,
+		VeryLarge,
+	}
+
+	public readonly ConfigEntry<ElementScale> BoardScale;
+
+	public readonly ConfigEntry<int> BoardOpacity;
+
 	public AccessibilityConfig(ConfigFile cfg)
 	{
 		BoardCellFont = cfg.Bind(
@@ -26,6 +49,30 @@ internal class AccessibilityConfig
 			"BoardCellFont",
 			TextFont.Normal,
 			"Defines what font to use for the board cells"
+		);
+
+		BoardPosition = cfg.Bind(
+			SECTION,
+			"BoardPosition",
+			ElementPosition.TopRight,
+			"Defines where the board is located on the screen"
+		);
+
+		BoardScale = cfg.Bind(
+			SECTION,
+			"BoardScale",
+			ElementScale.Normal,
+			"Defines the scale of the board"
+		);
+
+		BoardOpacity = cfg.Bind(
+			SECTION,
+			"BoardOpacity",
+			100,
+			new ConfigDescription(
+				"Defines the opacity of the board",
+				new AcceptableValueRange<int>(0, 100)
+			)
 		);
 	}
 }
