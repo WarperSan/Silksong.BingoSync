@@ -8,7 +8,7 @@ namespace Silksong.BingoSync.UI.Containers;
 /// <summary>
 /// Component responsible to manage all inputs for joining
 /// </summary>
-internal sealed class JoinForm : MonoBehaviour
+internal class JoinForm : MonoBehaviour
 {
 	private CanvasGroup? _canvasGroup;
 	private TextField? _roomCodeInput;

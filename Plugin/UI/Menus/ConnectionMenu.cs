@@ -10,7 +10,7 @@ using Button = Silksong.BingoSync.UI.Components.Button;
 
 namespace Silksong.BingoSync.UI.Menus;
 
-internal sealed class ConnectionMenu : MonoBehaviour
+internal class ConnectionMenu : MonoBehaviour
 {
 	#region State
 

@@ -1,5 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using BingoAPI.Goals;
 using BingoAPI.Models;
 using Silksong.BingoSync.Configurations;
 using Silksong.BingoSync.UI.Components;
@@ -9,10 +7,9 @@ using UnityEngine.UI;
 
 namespace Silksong.BingoSync.UI.Containers;
 
-internal sealed class BingoBoard : MonoBehaviour
+public class BingoBoard : MonoBehaviour
 {
-	private RectTransform? _rectTransform;
-	private GridLayoutGroup? _gridLayout;
+	private BingoCell[]? _cells;
 
 	private void Awake() => Subscribe(Plugin.Controller);
 
@@ -24,122 +21,17 @@ internal sealed class BingoBoard : MonoBehaviour
 		if (card == null)
 			return;
 
-		if (_gridLayout == null)
+		if (_cells == null)
 			return;
 
-		_gridLayout.enabled = false;
-
-		DisableAllCells();
-
-		var count = card.Size * card.Size;
-		_gridLayout.constraintCount = card.Size;
-
-		for (var i = 0; i < count; i++)
+		for (var i = 0; i < _cells.Length; i++)
 		{
 			var goal = card.GetGoalAt(i);
 			var teams = card.GetTeamsAt(i);
 
-			SetSquare(i, goal, teams);
-		}
-
-		_gridLayout.enabled = true;
-		LayoutRebuilder.ForceRebuildLayoutImmediate(_rectTransform);
-	}
-
-	#region Cells
-
-	private readonly List<BingoCell?> _cells = [];
-
-	/// <summary>
-	/// Creates a new instance of <see cref="BingoCell"/>
-	/// </summary>
-	private BingoCell CreateCell()
-	{
-		var cell = BingoCell.Create();
-
-		var parent = _gridLayout != null ? _gridLayout.transform : transform;
-		cell.transform.SetParent(parent, false);
-
-		return cell;
-	}
-
-	/// <summary>
-	/// Sets the given <see cref="BingoCell"/> at the given index
-	/// </summary>
-	private void SetCellAt(int index, BingoCell cell)
-	{
-		if (_cells.Count > index)
-		{
-			_cells[index] = cell;
-			return;
-		}
-
-		for (var i = _cells.Count; i < index; i++)
-			_cells.Add(null);
-
-		_cells.Add(cell);
-	}
-
-	/// <summary>
-	/// Attempts to get the <see cref="BingoCell"/> at the given index
-	/// </summary>
-	private bool TryGetCell(int index, [NotNullWhen(true)] out BingoCell? cell)
-	{
-		if (index < 0 || index >= _cells.Count)
-		{
-			cell = null;
-			return false;
-		}
-
-		cell = _cells[index];
-		return cell != null;
-	}
-
-	/// <summary>
-	/// Gets or creates a <see cref="BingoCell"/> at the given index
-	/// </summary>
-	private BingoCell GetOrCreateCell(int index)
-	{
-		if (TryGetCell(index, out var cell))
-			return cell;
-
-		cell = CreateCell();
-
-		SetCellAt(index, cell);
-		return cell;
-	}
-
-	/// <summary>
-	/// Disables all created <see cref="BingoCell"/>
-	/// </summary>
-	private void DisableAllCells()
-	{
-		for (var i = _cells.Count - 1; i >= 0; i--)
-		{
-			var cell = _cells[i];
-
-			// Clear entry
-			if (cell == null)
-			{
-				_cells.RemoveAt(i);
-				continue;
-			}
-
-			cell.gameObject.SetActive(false);
+			_cells[i].SetSquare(goal, teams);
 		}
 	}
-
-	/// <summary>
-	/// Sets the information of the square at the given index
-	/// </summary>
-	private void SetSquare(int index, Goal goal, Team teams)
-	{
-		var cell = GetOrCreateCell(index);
-		cell.SetSquare(goal, teams);
-		cell.gameObject.SetActive(true);
-	}
-
-	#endregion
 
 	#region Events
 
@@ -160,18 +52,12 @@ internal sealed class BingoBoard : MonoBehaviour
 
 	private void OnSquareMarked(Player player, Square square, Team team)
 	{
-		if (!TryGetCell(square.Index, out var cell))
-			return;
-
-		cell.AddTeam(team);
+		_cells?[square.Index].AddTeam(team);
 	}
 
 	private void OnSquareCleared(Player player, Square square, Team team)
 	{
-		if (!TryGetCell(square.Index, out var cell))
-			return;
-
-		cell.RemoveTeam(team);
+		_cells?[square.Index].RemoveTeam(team);
 	}
 
 	#endregion
@@ -182,12 +68,10 @@ internal sealed class BingoBoard : MonoBehaviour
 	public static BingoBoard Create()
 	{
 		var gameObject = new GameObject(nameof(BingoBoard));
-		var board = gameObject.AddComponent<BingoBoard>();
 		var rectTransform = gameObject.AddComponent<RectTransform>();
 		rectTransform.anchorMax = Vector2.one;
 		rectTransform.anchorMin = Vector2.one;
 		rectTransform.pivot = Vector2.one;
-		board._rectTransform = rectTransform;
 
 		var accessibilityPosition = gameObject.AddComponent<AccessibilityElementPosition>();
 		accessibilityPosition.Bind(Configuration.SafeInstance.Accessibility.BoardPosition);
@@ -203,13 +87,26 @@ internal sealed class BingoBoard : MonoBehaviour
 
 		backgroundShadow.color = Color.black;
 
+		var board = gameObject.AddComponent<BingoBoard>();
 		var grid = gameObject.AddComponent<GridLayoutGroup>();
 		grid.cellSize = Vector2.one * 100f;
 		grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
 		grid.constraintCount = 5;
 		grid.childAlignment = TextAnchor.UpperLeft;
 		grid.spacing = Vector2.one * 5f;
-		board._gridLayout = grid;
+
+		var cells = new BingoCell[25];
+
+		for (var i = 0; i < cells.Length; i++)
+		{
+			var cell = BingoCell.Create();
+
+			cell.transform.SetParent(grid.transform, false);
+
+			cells[i] = cell;
+		}
+
+		board._cells = cells;
 
 		var canvasGroup = gameObject.AddComponent<CanvasGroup>();
 		canvasGroup.blocksRaycasts = false;

@@ -11,7 +11,7 @@ namespace Silksong.BingoSync.UI.Items;
 /// <summary>
 /// Component responsible to display a given <see cref="Goal"/>
 /// </summary>
-internal sealed class BingoCell : MonoBehaviour
+internal class BingoCell : MonoBehaviour
 {
 	private Text? _text;
 	private Dictionary<Team, Image>? _teamMarks;
