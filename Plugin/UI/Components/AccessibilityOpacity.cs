@@ -7,7 +7,7 @@ namespace Silksong.BingoSync.UI.Components;
 /// Component responsible to update a <see cref="CanvasGroup"/> using a <see cref="int"/>
 /// </summary>
 [RequireComponent(typeof(CanvasGroup))]
-internal sealed class AccessibilityOpacity : SettingUpdateNotifier<int>
+internal class AccessibilityOpacity : SettingUpdateNotifier<int>
 {
 	private CanvasGroup? _canvasGroup;
 

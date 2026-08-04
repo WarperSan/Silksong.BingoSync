@@ -7,7 +7,7 @@ namespace Silksong.BingoSync.UI.Components;
 /// <summary>
 /// Component responsible to manage <see cref="string"/> input
 /// </summary>
-internal sealed class TextField : MonoBehaviour
+internal class TextField : MonoBehaviour
 {
 	private InputField? _inputField;
 

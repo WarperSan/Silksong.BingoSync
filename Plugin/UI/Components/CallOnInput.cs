@@ -6,7 +6,7 @@ namespace Silksong.BingoSync.UI.Components;
 /// <summary>
 /// Component responsible to call a callback when an input is activated
 /// </summary>
-internal sealed class CallOnInput : MonoBehaviour
+internal class CallOnInput : MonoBehaviour
 {
 	private Func<KeyCode>? _key;
 	private Action? _onInput;

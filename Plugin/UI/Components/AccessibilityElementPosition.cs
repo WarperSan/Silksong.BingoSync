@@ -8,7 +8,7 @@ namespace Silksong.BingoSync.UI.Components;
 /// Component responsible to update a <see cref="RectTransform"/> using <see cref="AccessibilityConfig.ElementPosition"/>
 /// </summary>
 [RequireComponent(typeof(RectTransform))]
-internal sealed class AccessibilityElementPosition
+internal class AccessibilityElementPosition
 	: SettingUpdateNotifier<AccessibilityConfig.ElementPosition>
 {
 	private RectTransform? _rectTransform;
