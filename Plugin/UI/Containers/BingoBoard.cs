@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Silksong.BingoSync.UI.Containers;
 
-public class BingoBoard : MonoBehaviour
+internal sealed class BingoBoard : MonoBehaviour
 {
 	private RectTransform? _rectTransform;
 	private GridLayoutGroup? _gridLayout;

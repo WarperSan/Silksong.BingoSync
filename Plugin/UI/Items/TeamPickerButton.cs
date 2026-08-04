@@ -8,7 +8,7 @@ namespace Silksong.BingoSync.UI.Items;
 /// <summary>
 /// Component responsible to display a <see cref="BingoAPI.Models.Team"/>
 /// </summary>
-internal class TeamPickerButton : MonoBehaviour
+internal sealed class TeamPickerButton : MonoBehaviour
 {
 	private Outline? _outline;
 	private Action<Team>? _onClick;

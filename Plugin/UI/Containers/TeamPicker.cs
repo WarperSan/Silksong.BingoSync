@@ -10,7 +10,7 @@ namespace Silksong.BingoSync.UI.Containers;
 /// <summary>
 /// Component responsible to pick a <see cref="BingoAPI.Models.Team"/>
 /// </summary>
-internal class TeamPicker : MonoBehaviour
+internal sealed class TeamPicker : MonoBehaviour
 {
 	private CanvasGroup? _canvasGroup;
 	private Dictionary<Team, TeamPickerButton>? _buttons;
