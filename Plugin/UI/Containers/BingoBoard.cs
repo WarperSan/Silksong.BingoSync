@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using BingoAPI.Goals;
 using BingoAPI.Models;
 using Silksong.BingoSync.Configurations;
-using Silksong.BingoSync.Helpers;
 using Silksong.BingoSync.UI.Components;
 using Silksong.BingoSync.UI.Items;
 using UnityEngine;
@@ -40,7 +39,7 @@ public class BingoBoard : MonoBehaviour
 			var goal = card.GetGoalAt(i);
 			var teams = card.GetTeamsAt(i);
 
-			SetCell(i, goal, teams);
+			SetSquare(i, goal, teams);
 		}
 
 		_gridLayout.enabled = true;
@@ -54,7 +53,7 @@ public class BingoBoard : MonoBehaviour
 	/// <summary>
 	/// Creates a new instance of <see cref="BingoCell"/>
 	/// </summary>
-	internal BingoCell CreateCell()
+	private BingoCell CreateCell()
 	{
 		var cell = BingoCell.Create();
 
@@ -65,9 +64,26 @@ public class BingoBoard : MonoBehaviour
 	}
 
 	/// <summary>
+	/// Sets the given <see cref="BingoCell"/> at the given index
+	/// </summary>
+	private void SetCellAt(int index, BingoCell cell)
+	{
+		if (_cells.Count > index)
+		{
+			_cells[index] = cell;
+			return;
+		}
+
+		for (var i = _cells.Count; i < index; i++)
+			_cells.Add(null);
+
+		_cells.Add(cell);
+	}
+
+	/// <summary>
 	/// Attempts to get the <see cref="BingoCell"/> at the given index
 	/// </summary>
-	internal bool TryGetCell(int index, [NotNullWhen(true)] out BingoCell? cell)
+	private bool TryGetCell(int index, [NotNullWhen(true)] out BingoCell? cell)
 	{
 		if (index < 0 || index >= _cells.Count)
 		{
@@ -77,6 +93,20 @@ public class BingoBoard : MonoBehaviour
 
 		cell = _cells[index];
 		return cell != null;
+	}
+
+	/// <summary>
+	/// Gets or creates a <see cref="BingoCell"/> at the given index
+	/// </summary>
+	private BingoCell GetOrCreateCell(int index)
+	{
+		if (TryGetCell(index, out var cell))
+			return cell;
+
+		cell = CreateCell();
+
+		SetCellAt(index, cell);
+		return cell;
 	}
 
 	/// <summary>
@@ -100,30 +130,11 @@ public class BingoBoard : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Sets the information of the cell at the given index
+	/// Sets the information of the square at the given index
 	/// </summary>
-	private void SetCell(int index, Goal goal, Team teams)
+	private void SetSquare(int index, Goal goal, Team teams)
 	{
-		if (!TryGetCell(index, out var cell))
-		{
-			Log.Info("Creating at: " + index);
-			cell = CreateCell();
-			Log.Info("Created: " + index);
-
-			if (_cells.Count <= index)
-			{
-				for (var i = _cells.Count; i < index; i++)
-				{
-					Log.Info("Adding null:" + i);
-					_cells.Add(null);
-				}
-
-				_cells.Add(cell);
-			}
-			else
-				_cells[index] = cell;
-		}
-
+		var cell = GetOrCreateCell(index);
 		cell.SetSquare(goal, teams);
 		cell.gameObject.SetActive(true);
 	}
