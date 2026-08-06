@@ -6,854 +6,854 @@
 		{
 			"name": "Bellhome Key",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Break a Courier Item",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Dead Bug's Purse & a Silkeater",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Pale Lake Craftmetal",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Sell a Mossberry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Needle Strike",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Faydown Cloak",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Apostate Key",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Use a Simple Key in Deep Docks",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Disable the Clawmaidens",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Free Green Prince",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Win a Loddie Minigame",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Styx & Huntress",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Break Both of Styx's One-ways",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Loam",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Mask Maker",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Buy From Grindle (No String)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Blasted Steps Silkeater & Craftmetal",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Pay To Confess",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 3 Craftmetal",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 5 Craftmetal",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Crustnut",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Mossberry Soup",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Vintage Nectar",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Twisted Bud",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Both Free Simple Keys",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Both Vendor Simple Keys",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Pay for a Flea Spa",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Meet Caravan at the Grand Gate [12]",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Vog",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Have 3 Rosary Necklaces (no purchasing)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Have 6 Rosary Strings (no purchasing)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Break 8 Rosary Strings (no purchasing)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Break 4 Shard Bundles (no purchasing)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Break 6 Shard Bundles (no purchasing)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 3 Silkeaters",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 5 Silkeaters",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "1 Tool Pouch Upgrade",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "1 Crafting Kit",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "3 Tool Pouch Upgrades/Crafting Kits",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 5 Memory Lockets",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Fully Unlock a Non-Hunter's Crest",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Have 3 Different Types of Relic",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 4 Different Types of Relic",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 2 Rune Harps",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 3 Bone Scrolls",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 4 Bone Scrolls",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Shakra at 5 Locations",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Fix the Sinner's Road Bench",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 5 Maps",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 8 Maps",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Shakra in Bilewater",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Shakra in Sands of Karak",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Huntress",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Save Jubilana",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 2 Beast Shards",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 3 Beast Shards",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 4 Beast Shards",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Obtain 5 Beast Shards",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Bilewater Bellway",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Forge Daughter and Twelfth Architect",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "1 Cogheart Piece",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "2 Cogheart Pieces",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Activate Second Sentinel",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Meet Sherma in the Spa",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "2 Silk Hearts",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Architect's Melody",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Conductor's Melody",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Vaultkeeper's Melody",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Get Cursed",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Enter Act 3",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Beastling Call",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "3 Void Masses",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "6 Void Masses",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Save Pinmaster Plinney",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Flick at Survivor's Camp",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Defeat a Black-threaded Boss",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Pin Badge",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "1 Arcane Egg",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Inspect Magnetite in Brightvein",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Verdania Fountain Orbs",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Clear First Coral Tower Arena",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Visit Styx's Nest",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Talk to Mr. Mushroom",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Win A Race",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Squirrm Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Skullwing Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Cragglite Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Gromling Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Mite Mother Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Massive Mossgrub Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Unravelled Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Shadow Charger Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Imoba Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Farfields Escape Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Slab Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Bilewater Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Deep Docks Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Shellwood + Vaults Mask Shards",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Blasted Steps Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Cogwork Core Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Wisp Thicket Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Mt. Fay Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Brightvein Mask Shard",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "1 Extra Mask",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "2 Extra Masks",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Deep Docks Spool Fragments (2)",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Greymoor Spool Fragment",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Frey's Spool Fragment",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Grand Gate Spool Fragment",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "High Halls Spool Fragment",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "1 Spool Upgrade",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "2 Spool Upgrades",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "3 Spool Upgrades",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Craggler",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Defeat a Rhinogrund",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Defeat a Covetous Pilgrim",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Defeat a Cogwork Clapper",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "3 Silk Skills",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "4 Silk Skills",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Deep Diver Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		},
 		{
 			"name": "Cogwork Clapper Journal Entry",
 			"condition": {
-				"action": "manual",
+				"action": "MANUAL",
 				"params": {}
 			}
 		}
