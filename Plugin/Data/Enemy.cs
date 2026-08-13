@@ -87,9 +87,6 @@ public enum Enemy
 	[EnumMember(Value = "pilgrim_hulk")]
 	PilgrimHulk,
 
-	[EnumMember(Value = "weary_pilgrim")]
-	WearyPilgrim,
-
 	[EnumMember(Value = "pilgrim_bellbearer")]
 	PilgrimBellbearer,
 
@@ -374,9 +371,6 @@ public enum Enemy
 
 	[EnumMember(Value = "corrcrust_karaka")]
 	CorrcrustKaraka,
-
-	[EnumMember(Value = "voltvyrm")]
-	Voltvyrm,
 
 	[EnumMember(Value = "drapefly")]
 	Drapefly,
