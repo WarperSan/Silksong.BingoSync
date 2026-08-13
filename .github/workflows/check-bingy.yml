@@ -3,9 +3,11 @@ name: Check Bingy Goals
 env:
     BRANCH: '22-implement-bingy'
     LABEL: 'bingy'
+
     REMOTE_GOALS_FILE: 'https://raw.githubusercontent.com/Zhetadelta/Silksong.BingoGenerator/refs/heads/main/assets/generated/silksong_readable.md'
     REMOTE_GOALS_REGEX: '(?<=\*\*)(.+)(?=\*\*)'
     REMOTE_OUTPUT_FILE: '/tmp/remote.txt'
+
     LOCAL_GOALS_FILES: |
         Resources/Goals/BingySet-Manual.json
         Resources/Goals/BingySet.json
@@ -84,7 +86,7 @@ jobs:
                         --title "[BINGY] Goals list changed ($(date -u +%Y-%m-%d))" \
                         --label "$LABEL" \
                         --body "$(cat <<EOF
-                    Comparison of \`$LOCAL_GOALS_FILE\` against the upstream source.
+                    Comparison of goals from [`${BRANCH}`](${BRANCH_URL}) against the upstream source.
                     
                     **Added:**
                     \`\`\`
@@ -101,6 +103,8 @@ jobs:
                     )"
                 env:
                     WORKFLOW_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    BRANCH_URL: "${{ github.server_url }}/${{ github.repository }}/tree/${{ env.BRANCH }}"
+                    BRANCH: ${{ env.BRANCH }}
                     ADDED: ${{ steps.compare.outputs.added }}
                     REMOVED: ${{ steps.compare.outputs.removed }}
                     LABEL: ${{ env.LABEL }}
