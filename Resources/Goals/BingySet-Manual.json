@@ -599,69 +599,6 @@
 			}
 		},
 		{
-			"name": "Squirrm Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Skullwing Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Cragglite Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Gromling Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Mite Mother Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Massive Mossgrub Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Unravelled Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Shadow Charger Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Imoba Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
 			"name": "Farfields Escape Mask Shard",
 			"condition": {
 				"action": "MANUAL",
@@ -838,20 +775,6 @@
 		},
 		{
 			"name": "4 Silk Skills",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Deep Diver Journal Entry",
-			"condition": {
-				"action": "MANUAL",
-				"params": {}
-			}
-		},
-		{
-			"name": "Cogwork Clapper Journal Entry",
 			"condition": {
 				"action": "MANUAL",
 				"params": {}

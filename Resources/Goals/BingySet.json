@@ -1452,6 +1452,105 @@
 					"amount": 14
 				}
 			}
+		},
+		{
+			"name": "Squirrm Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "squirrm"
+				}
+			}
+		},
+		{
+			"name": "Skullwing Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "skullwing"
+				}
+			}
+		},
+		{
+			"name": "Cragglite Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "cragglite"
+				}
+			}
+		},
+		{
+			"name": "Gromling Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "gromling"
+				}
+			}
+		},
+		{
+			"name": "Mite Mother Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "mitemother"
+				}
+			}
+		},
+		{
+			"name": "Massive Mossgrub Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "massive_mossgrub"
+				}
+			}
+		},
+		{
+			"name": "Unravelled Journal Entry",
+			"condition": {
+				"action": "has_killed_boss",
+				"params": {
+					"boss": "the_unravelled"
+				}
+			}
+		},
+		{
+			"name": "Shadow Charger Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "shadow_charger"
+				}
+			}
+		},
+		{
+			"name": "Imoba Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "imoba"
+				}
+			}
+		},
+		{
+			"name": "Deep Diver Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "deep_diver"
+				}
+			}
+		},
+		{
+			"name": "Cogwork Clapper Journal Entry",
+			"condition": {
+				"action": "has_obtained_journal_entry",
+				"params": {
+					"enemy": "cogwork_clapper"
+				}
+			}
 		}
 	]
 }
