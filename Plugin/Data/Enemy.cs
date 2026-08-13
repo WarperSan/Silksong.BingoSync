@@ -9,4 +9,4 @@ namespace Silksong.BingoSync.Data;
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 [JsonConverter(typeof(StringEnumConverter))]
-public class Enemy { }
+public enum Enemy { }
