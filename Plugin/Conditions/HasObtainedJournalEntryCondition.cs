@@ -19,5 +19,5 @@ internal sealed class HasObtainedJournalEntryCondition : ICondition
 	public required Enemy Enemy { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => PlayerData.instance.HasJournalEntry(Enemy);
+	public bool IsMet() => PlayerData.instance.HasObtainedJournalEntry(Enemy);
 }
