@@ -751,6 +751,27 @@
 				"action": "MANUAL",
 				"params": {}
 			}
+		},
+		{
+			"name": "Defeat a Covetous Pilgrim",
+			"condition": {
+				"action": "MANUAL",
+				"params": {}
+			}
+		},
+		{
+			"name": "3 Silk Skills",
+			"condition": {
+				"action": "MANUAL",
+				"params": {}
+			}
+		},
+		{
+			"name": "4 Silk Skills",
+			"condition": {
+				"action": "MANUAL",
+				"params": {}
+			}
 		}
 	]
 }
