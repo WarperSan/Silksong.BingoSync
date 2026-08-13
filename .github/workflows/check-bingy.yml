@@ -2,6 +2,7 @@ name: Check Bingy Goals
 
 env:
     BRANCH: '22-implement-bingy'
+    LABEL: 'bingy'
     REMOTE_GOALS_FILE: 'https://raw.githubusercontent.com/Zhetadelta/Silksong.BingoGenerator/refs/heads/main/assets/generated/silksong_readable.md'
     REMOTE_GOALS_REGEX: '(?<=\*\*)(.+)(?=\*\*)'
     REMOTE_OUTPUT_FILE: '/tmp/remote.txt'
@@ -80,7 +81,8 @@ jobs:
                 if: steps.compare.outputs.has_diff == 'true'
                 run: |
                     gh issue create \
-                        -t "[BINGY] Goals list changed ($(date -u +%Y-%m-%d))" \
+                        --title "[BINGY] Goals list changed ($(date -u +%Y-%m-%d))" \
+                        --label "$LABEL" \
                         --body "$(cat <<EOF
                     Comparison of \`$LOCAL_GOALS_FILE\` against the upstream source.
                     
@@ -101,6 +103,7 @@ jobs:
                     WORKFLOW_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                     ADDED: ${{ steps.compare.outputs.added }}
                     REMOVED: ${{ steps.compare.outputs.removed }}
+                    LABEL: ${{ env.LABEL }}
 
                   
             
