@@ -425,50 +425,6 @@
 			}
 		},
 		{
-			"name": "Claw Mirror & Injector Band",
-			"condition": {
-				"action": "AND",
-				"params": {
-					"conditions": [
-						{
-							"action": "has_obtained_tool",
-							"params": {
-								"tool": "claw_mirror"
-							}
-						},
-						{
-							"action": "has_obtained_tool",
-							"params": {
-								"tool": "injector_band"
-							}
-						}
-					]
-				}
-			}
-		},
-		{
-			"name": "Barbed Bracelet & Magnetite Dice",
-			"condition": {
-				"action": "AND",
-				"params": {
-					"conditions": [
-						{
-							"action": "has_obtained_tool",
-							"params": {
-								"tool": "barbed_bracelet"
-							}
-						},
-						{
-							"action": "has_obtained_tool",
-							"params": {
-								"tool": "magnetite_dice"
-							}
-						}
-					]
-				}
-			}
-		},
-		{
 			"name": "Upgrade Druid's Eye",
 			"condition": {
 				"action": "has_obtained_tool",
@@ -478,7 +434,7 @@
 			}
 		},
 		{
-			"name": "3 Red Tools",
+			"name": "Have 3 Red Tools",
 			"condition": {
 				"action": "has_obtained_tool_count",
 				"params": {
@@ -488,7 +444,7 @@
 			}
 		},
 		{
-			"name": "5 Red Tools",
+			"name": "Have 5 Red Tools",
 			"condition": {
 				"action": "has_obtained_tool_count",
 				"params": {
@@ -498,7 +454,7 @@
 			}
 		},
 		{
-			"name": "3 Blue Tools",
+			"name": "Have 3 Blue Tools",
 			"condition": {
 				"action": "has_obtained_tool_count",
 				"params": {
@@ -508,7 +464,7 @@
 			}
 		},
 		{
-			"name": "3 Yellow Tools",
+			"name": "Have 3 Yellow Tools",
 			"condition": {
 				"action": "has_obtained_tool_count",
 				"params": {
@@ -518,7 +474,7 @@
 			}
 		},
 		{
-			"name": "5 Yellow Tools",
+			"name": "Have 5 Yellow Tools",
 			"condition": {
 				"action": "has_obtained_tool_count",
 				"params": {
@@ -528,7 +484,7 @@
 			}
 		},
 		{
-			"name": "2 of each tool type",
+			"name": "Have 2 of Each Tool Type",
 			"condition": {
 				"action": "AND",
 				"params": {
@@ -586,7 +542,7 @@
 			}
 		},
 		{
-			"name": "Witch's Crest",
+			"name": "Witch Crest",
 			"condition": {
 				"action": "has_obtained_crest",
 				"params": {
@@ -1113,15 +1069,6 @@
 				"action": "has_obtained_needle",
 				"params": {
 					"needle": "shining_needle"
-				}
-			}
-		},
-		{
-			"name": "Underworks Ventrica",
-			"condition": {
-				"action": "has_unlocked_ventrica_station",
-				"params": {
-					"station": "underworks"
 				}
 			}
 		},
