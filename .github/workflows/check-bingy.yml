@@ -103,6 +103,7 @@ jobs:
                       --label "$LABEL" \
                       --body "$BODY"
                 env:
+                    GH_TOKEN: ${{ github.token }}
                     WORKFLOW_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                     BRANCH_URL: "${{ github.server_url }}/${{ github.repository }}/tree/${{ env.BRANCH }}"
                     BRANCH: ${{ env.BRANCH }}
