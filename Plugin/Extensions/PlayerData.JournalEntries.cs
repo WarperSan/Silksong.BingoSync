@@ -84,4 +84,12 @@ public static partial class PlayerDataExtensions
 			_ => throw new InvalidCheckException<Boss>(boss),
 		};
 	}
+
+	/// <summary>
+	/// Checks if the journal entry of the given <see cref="Enemy"/> has been obtained
+	/// </summary>
+	public static bool HasJournalEntry(this PlayerData data, Enemy enemy)
+	{
+		throw new NotImplementedException();
+	}
 }

@@ -3,6 +3,7 @@ using BingoAPI.Conditions.Attributes;
 using BingoAPI.Conditions.Interfaces;
 using Newtonsoft.Json;
 using Silksong.BingoSync.Data;
+using Silksong.BingoSync.Extensions;
 
 namespace Silksong.BingoSync.Conditions;
 
@@ -18,5 +19,5 @@ internal sealed class HasObtainedJournalEntryCondition : ICondition
 	public required Enemy Enemy { get; init; }
 
 	/// <inheritdoc />
-	public bool IsMet() => throw new NotImplementedException();
+	public bool IsMet() => PlayerData.instance.HasJournalEntry(Enemy);
 }
