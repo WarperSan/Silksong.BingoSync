@@ -76,6 +76,7 @@ jobs:
                       echo "has_diff=true" >> "$GITHUB_OUTPUT"
                     else
                       echo "has_diff=false" >> "$GITHUB_OUTPUT"
+                      echo "No difference has been found!"
                     fi
                 env:
                     LOCAL: ${{ env.LOCAL_OUTPUT_FILE }}
