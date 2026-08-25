@@ -35,12 +35,6 @@ jobs:
             -   name: Extract Remote Goals
                 run: |
                     RAW_GOALS=$(curl -f "$GOALS_URL")
-                    
-                    if [ $? -ne 0 ]; then
-                        echo "Error while requesting '$GOALS_URL':\n$RAW_GOALS"
-                        exit 1
-                    fi
-                    
                     GOALS=$(echo "$RAW_GOALS" | grep -Po "$GOALS_REGEX" | sort -u)
                     echo "$GOALS" > "$OUTPUT_FILE"
                 env:
